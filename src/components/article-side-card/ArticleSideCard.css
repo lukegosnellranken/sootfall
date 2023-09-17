@@ -1,0 +1,21 @@
+#div-articlesidecard-all-items {
+    background-color: rgb(250, 246, 246);
+    background-image: url('../../images/background3.png');
+    width: 100%;
+    border-radius: .5%;
+    border-width: .5em;
+    box-shadow: 0em 0em .5em .15em rgba(14, 13, 13, 0.199);
+    margin-top: .75em;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: .2em;
+    padding-bottom: .2em;
+}
+
+#div-articlesidecard-stitch {
+    margin-left: .2em;
+    margin-right: .2em;
+    border-width: .1em;
+    border-style: dashed;
+    border-color: rgb(187, 184, 184);
+}

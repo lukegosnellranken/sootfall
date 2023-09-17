@@ -1,0 +1,16 @@
+#div-footer-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+}
+
+#p-footer-text {
+    text-align: center;
+    color: gray;
+}
+
+@media screen and (max-width: 800px) {
+    #p-footer-text {
+        font-size: 70%;
+    }
+}

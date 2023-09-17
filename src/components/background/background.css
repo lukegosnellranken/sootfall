@@ -1,0 +1,164 @@
+.background {
+    width: 100%;
+    max-height: 30em;
+    filter: brightness(50%);
+}
+
+#image-background-logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    margin: auto;
+    width: 12%;
+    min-width: 8em;
+}
+
+#div-background-container {
+    position: relative;
+    width: 100%;
+    height: 12em;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../images/ginger-background.jpg);   
+    background-position: center;
+    background-size: cover;
+}
+
+#div-background-bmc {
+    width: 10em;
+    position: absolute;
+    bottom: .5em;
+    left: .5em;
+}
+
+#image-background-bmc {
+    width: 100%;
+    transition: all .2s ease-in-out; 
+}
+
+#image-background-bmc:hover {
+    transform: scale(1.05);
+}
+
+#div-background-social-links {
+    position: absolute;
+    bottom: .75em;
+    right: 2em;
+}
+
+.social-link {
+    border-color: #5c3000;
+    color: white;
+    background-color: #5c3000;
+    transition: all .2s ease-in-out; 
+}
+
+.social-link:hover {
+    opacity: 80%;
+    color: white;
+    transform: scale(1.1);
+}
+
+#social-links-facebook {
+    text-decoration: none;
+    font-size: 120%;
+    margin-left: .5em;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: .05em;
+}
+
+#social-links-facebook::before {
+    position: relative;
+    bottom: -.20em;
+}
+
+#social-links-pinterest {
+    text-decoration: none;
+    font-size: 120%;
+    margin-left: .5em;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: .05em;
+}
+
+#social-links-pinterest::before {
+    position: relative;
+    bottom: -.15em;
+    left: -.01em;
+}
+
+#social-links-instagram {
+    text-decoration: none;
+    font-size: 120%;
+    margin-left: .5em;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: .05em;
+}
+
+#social-links-instagram::before {
+    position: relative;
+    bottom: -.18em;
+    right: -.025em;
+}
+
+#social-links-rss {
+    text-decoration: none;
+    font-size: 120%;
+    margin-left: .5em;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: .05em;
+}
+
+#social-links-rss::before {
+    position: relative;
+    bottom: -.20em;
+    right: -.05em;
+}
+
+.fa {
+    width: 1.5em;
+    height: 1.5em;
+    text-align: center;
+}
+  
+.fa:hover {
+    opacity: 0.95;
+}
+
+
+
+@media screen and (max-width: 800px) {
+    #div-background-container {
+        margin-top: -.5em;
+    }
+
+    #social-links-facebook {
+        font-size: 90%;
+    }
+
+    #social-links-pinterest {
+        font-size: 90%;
+    }
+
+    #social-links-instagram {
+        font-size: 90%;
+    }
+
+    #social-links-rss {
+        font-size: 90%;
+    }
+
+    #div-background-bmc {
+        width: 7.5em;
+    }    
+}
+
+@media screen and (max-width: 440px) {
+    #div-background-container {
+        margin-top: -1em;
+    }
+}

@@ -1,0 +1,114 @@
+#div-homecard-card {
+    background-color: rgb(250, 246, 246);
+    background-image: url('../../images/background3.png');
+    border-radius: .5%;
+    border-width: .5em;
+    box-shadow: 0em 0em .5em .15em rgba(14, 13, 13, 0.199);
+    margin-top: 2em;
+    padding-top: .2em;
+    padding-bottom: .2em;
+}
+
+#stitch-homecard-div {
+    margin-left: .2em;
+    margin-right: .2em;
+    border-width: .1em;
+    border-style: dashed;
+    border-color: rgb(187, 184, 184);
+}
+
+#h1-homecard-title {
+    color: #3c2600;
+    text-shadow: 1px 1px 2px #5c3000;
+    font-family: Qwitcher Grypen, sans-serif;
+    font-weight: lighter;
+    font-size: 300%;
+    text-align: center;
+    padding-top: .5em;
+    max-width: 10em;
+    text-decoration: underline dashed gray 1px;
+}
+
+#div-homecard-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#div-homecard-article-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 2em;
+}
+
+#div-homecard-pagination {
+    display: flex;
+    justify-content: center;
+}
+
+#div-homecard-items-pagination {
+    display: block;
+}
+
+.page-link {
+    color: gray;
+}
+
+.page-item.active .page-link {
+    background-color: #bba98a;
+    box-shadow: none;
+    border-color: #bba98a;
+}
+
+.page-item.disabled .page-link {
+    background-color: rgb(234, 226, 226);
+}
+
+.disabled:active {
+    border: none;
+    box-shadow: none;
+}
+
+.page-link:hover {
+    background-color: #dbcfb7;
+    color: gray;
+}
+
+.page-link:active {
+    border: none;
+    box-shadow: none;
+}
+
+.pagination {
+    border-width: .01em;
+    border-style: dashed;
+    border-color: gray;
+}
+
+#div-homecard-pagination {
+    padding-bottom: 1em;
+}
+
+
+
+@media screen and (max-width: 700px) {
+    #div-homecard-card {
+        margin-top: 1em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #h1-homecard-title {
+        font-size: 270%;
+    }
+}
+
+@media screen and (max-width: 545px) {
+    #h1-homecard-title {
+        font-size: 220%;
+    }
+}
+
+
+@import "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css";

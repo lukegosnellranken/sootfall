@@ -1,0 +1,49 @@
+#homecomponent-container {
+    display: flex;
+    justify-content: center;
+}
+
+#div-homecomponent-card {
+    display: block;
+    width: 70%;
+    padding-left: 3%;
+    padding-right: .75%;
+}
+
+#div-homecomponent-side-card {
+    display: block;
+    width: 30%;
+    padding-left: .75%;
+    padding-right: 3%;
+}
+
+#div-homecomponent-mobile-card {
+    display: none;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+
+
+
+@media screen and (max-width: 700px) {
+    #div-homecomponent-card {
+        width: 100%;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+
+    #div-homecomponent-side-card {
+        display: none;
+    }
+
+    #div-homecomponent-mobile-card {
+        display: block;
+        width: 100%;
+    }
+
+    #homecomponent-container {
+        display: flex;
+        flex-direction: column;
+    }
+}

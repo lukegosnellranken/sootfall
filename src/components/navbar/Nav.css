@@ -1,0 +1,46 @@
+#div-nav-container {
+    margin-top: .8%;
+}
+
+#nav-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#div-nav-list {
+    width: 60%;
+}
+
+#ul-nav-list {
+    display: flex;
+    list-style-type: none;
+    text-decoration: none;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: .2%;
+    padding-left: 0%;
+    margin-left: 0%;
+}
+
+
+
+
+@media screen and (max-width: 1000px) {
+    #div-nav-list {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #div-nav-list {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    #div-nav-list {
+        margin-top: -.5em;
+        width: 100%;
+    }
+}

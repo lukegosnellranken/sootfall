@@ -1,0 +1,151 @@
+#div-homecardcontent-container {
+    background: none;
+    width: 100%;
+    text-align: center;
+    border-bottom-width: .05em;
+    border-bottom-style: dashed;
+    border-bottom-color: rgb(187, 184, 184);
+    display: flex;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    transition: background-color 1s ease-out 100ms;
+}
+
+.article-link {
+    text-decoration: none;
+}
+
+#div-homecardcontent-container:hover {
+    background-color: #d6d4d0;
+}
+
+#div-homecardcontent-image {
+    width: 25%;
+    margin-left: .5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#div-homecardcontent-title-date-description {
+    width: 75%;
+    margin-top: 1.5%;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+}
+
+#image-homecardcontent-image {
+    border-style: solid;
+    border-width: .05em;
+    border-color: gray;
+    width: 70%;
+}
+
+#p-homecardcontent-title {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: left;
+    margin-left: 1em;
+    font-weight: bold;
+    font-size: 140%;
+    font-family: Inter, sans-serif;
+    color: rgb(64, 65, 66);
+    text-align: left;
+}
+
+#p-homecardcontent-date {
+    font-size: 80%;
+    color: gray;
+    letter-spacing: .05em;
+    padding: 0;
+    margin: 0;
+    padding-top: 0.5em;
+    display: flex;
+    justify-content: left;
+    margin-left: 2em;
+    font-family: Inter, sans-serif;
+}
+
+#div-homecardcontent-description {
+    display: flex;
+    justify-content: left;
+}
+
+#p-homecardcontent-description {
+    padding: 0;
+    margin: 0;
+    margin-left: 1.5em;
+    margin-top: .5em;
+    font-family: Inter, sans-serif;
+    font-size: 100%;
+    color: rgb(64, 65, 66);
+    text-align: left;
+    width: 80%;
+}
+
+#article-card-link {
+    text-decoration: none;
+}
+
+
+
+@media screen and (max-width: 1200px) {
+    #div-homecardcontent-description {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #div-homecardcontent-image {
+        width: 40%;
+        margin-left: 0%;
+    }
+
+    #image-homecardcontent-image {
+        margin-left: -2em;
+    }
+
+    #div-homecardcontent-title-date-description {
+        width: 70%;
+        margin-right: .5em;
+        margin-left: -2.5em;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #div-homecardcontent-description {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #p-homecardcontent-title {
+        font-size: 120%;
+        padding-left: 1%;
+    }
+
+    #p-homecardcontent-date {
+        font-size: 80% !important;
+    }
+
+    #p-homecardcontent-description {
+        font-size: 90%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #p-homecardcontent-title {
+        font-size: 100%;
+        padding-left: 1%;
+    }
+
+    #p-homecardcontent-date {
+        font-size: 60% !important;
+    }
+
+    #p-homecardcontent-description {
+        font-size: 80%;
+    }
+}
