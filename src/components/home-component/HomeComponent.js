@@ -12,19 +12,19 @@ function HomeComponent() {
         <div id="homecomponent-container">
             <div id="div-homecomponent-mobile-card">
                 <HomeMobileCard
-                    title1 = "Welcome to Ginger Nook!"
+                    title1 = "A Society for Burning Souls"
                     image1 = {sidmobile}
                     description1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi hendrerit vestibulum aliquam. Integer sed luctus mauris, in eleifend est. Praesent aliquet orci nec nisi iaculis pharetra. Donec aliquam neque sit amet laoreet auctor."
                 />
             </div>
             <div id="div-homecomponent-card">
                 <HomeCard
-                    title = "Writings from the Cribside"
+                    title = "Ruminations"
                 />
             </div>
             <div id="div-homecomponent-side-card">
                 <HomeSideCard
-                    title1 = "Welcome to Ginger Nook!"
+                    title1 = "Welcome, Weary Souls"
                     image1 = {sid}
                     description1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi hendrerit vestibulum aliquam. Integer sed luctus mauris, in eleifend est. Praesent aliquet orci nec nisi iaculis pharetra. Donec aliquam neque sit amet laoreet auctor. Maecenas sem odio, varius quis metus ut, placerat viverra nulla. Donec mattis velit mauris, ut pellentesque dolor aliquam eu. Quisque vehicula magna massa, sed facilisis justo maximus et. Pellentesque a finibus nibh. Nullam in elementum risus. Suspendisse lacinia fringilla metus nec vehicula. Fusce maximus velit id tempor pharetra."
                     title2 = "Buy Us a Coffee"

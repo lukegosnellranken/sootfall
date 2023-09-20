@@ -4,7 +4,7 @@
     text-align: center;
     border-bottom-width: .05em;
     border-bottom-style: dashed;
-    border-bottom-color: rgb(187, 184, 184);
+    border-bottom-color: rgb(50, 50, 50);
     display: flex;
     transition: background-color 1s ease-out 100ms;
 }

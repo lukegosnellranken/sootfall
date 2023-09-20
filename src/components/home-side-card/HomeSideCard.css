@@ -1,9 +1,10 @@
 #div-homesidecard-container {
-    background-color: rgb(250, 246, 246);
+    /* background-color: rgb(250, 246, 246); */
     background-image: url('../../images/background3.png');
+    background-image: linear-gradient(to bottom, rgba(5, 5, 5, .7), rgba(0, 0, 0, .7));
     border-radius: .5%;
     border-width: .5em;
-    box-shadow: 0em 0em .5em .15em rgba(14, 13, 13, 0.199);
+    box-shadow: 0em 0em .8em .15em rgba(255, 255, 255, 0.199);
     margin-top: 2em;
     margin-left: auto;
     margin-right: auto;
@@ -17,7 +18,7 @@
     margin-right: .2em;
     border-width: .1em;
     border-style: dashed;
-    border-color: rgb(187, 184, 184);
+    border-color: rgb(50, 50, 50);
 }
 
 .sections {
@@ -31,8 +32,8 @@
     font-family: Qwitcher Grypen, sans-serif;
     font-weight: lighter;
     font-size: 300%;
-    color: #3c2600;
-    text-shadow: 1px 1px 2px #5c3000;
+    color: #818181;
+    text-shadow: 1px 1px 2px #494949;
     text-decoration: underline dashed gray 1px;
 }
 
@@ -46,7 +47,7 @@
 
 .separator {
     border-bottom-style: dashed;
-    border-bottom-color: rgb(187, 184, 184);
+    border-bottom-color: rgb(50, 50, 50);
     border-bottom-width: .1em;
 }
 
@@ -60,7 +61,7 @@
     border-width: 3px 3px 5px 5px;
     border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
     transform: rotate(-1deg);
-    border: solid #5c3000;
+    border: solid rgb(50, 50, 50);
 }
 
 #image-section-2-image {

@@ -1,5 +1,6 @@
 #div-nav-container {
-    margin-top: .8%;
+    padding-top: .8%;
+    background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.95));
 }
 
 #nav-nav {

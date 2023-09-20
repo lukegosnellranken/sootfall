@@ -1,6 +1,6 @@
 #div-articlesidecard-all-items {
-    background-color: rgb(250, 246, 246);
     background-image: url('../../images/background3.png');
+    background-image: linear-gradient(to bottom, rgba(5, 5, 5, .7), rgba(0, 0, 0, .7));
     width: 100%;
     border-radius: .5%;
     border-width: .5em;
@@ -17,5 +17,5 @@
     margin-right: .2em;
     border-width: .1em;
     border-style: dashed;
-    border-color: rgb(187, 184, 184);
+    border-color: rgb(50, 50, 50);
 }

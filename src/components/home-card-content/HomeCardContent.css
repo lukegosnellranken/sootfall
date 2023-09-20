@@ -4,7 +4,7 @@
     text-align: center;
     border-bottom-width: .05em;
     border-bottom-style: dashed;
-    border-bottom-color: rgb(187, 184, 184);
+    border-bottom-color: rgb(50, 50, 50);
     display: flex;
     padding-bottom: 1em;
     padding-top: 1em;
@@ -16,7 +16,7 @@
 }
 
 #div-homecardcontent-container:hover {
-    background-color: #d6d4d0;
+    background-color:rgba(17, 17, 17, 0.5);
 }
 
 #div-homecardcontent-image {

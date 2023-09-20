@@ -1,15 +1,18 @@
 import React from "react";
 import './background.css';
-import logo from '../../images/gingernooklogo-plain3.png';
+import logo from '../../images/sootfall-logo6.png';
+import tagline from '../../images/sootfall-tagline.png';
 import bmc from '../../images/bmc-logo3.png'; 
 
 function Background() {
     return (
         <div>
             <div id="div-background-container">
-                <a href="http://gingernook.com/">
-                    {<img src={logo} alt="logo" id="image-background-logo" href="http://gingernook.com"/>}
-                </a>
+                <div id="div-background-logo">
+                    <a href="http://gingernook.com/">
+                        {<img src={logo} alt="logo" id="image-background-logo" href="http://gingernook.com"/>}
+                    </a>
+                </div>
                 <div id="div-background-bmc">
                     <a href="https://buymeacoffee.com/gingernook" target="_blank" rel="noreferrer"><img id="image-background-bmc" src={bmc} alt="" /> </a>
                 </div>
