@@ -1,9 +1,9 @@
 #div-homemobilecard-container {
-    background-color: rgb(250, 246, 246);
     background-image: url('../../images/background3.png');
+    background-image: linear-gradient(to bottom, rgba(5, 5, 5, .7), rgba(0, 0, 0, .7));
     border-radius: .5%;
     border-width: .5em;
-    box-shadow: 0em 0em .5em .15em rgba(14, 13, 13, 0.199);
+    box-shadow: 0em 0em .8em .15em rgba(255, 255, 255, 0.199);
     margin-top: .75em;
     margin-left: auto;
     margin-right: auto;
@@ -17,7 +17,7 @@
     margin-right: .2em;
     border-width: .1em;
     border-style: dashed;
-    border-color: rgb(187, 184, 184);
+    border-color: rgb(50, 50, 50);
 }
 
 #div-homemobilecard-content-container {
@@ -48,14 +48,15 @@
     font-family: Qwitcher Grypen, sans-serif;
     font-weight: lighter;
     font-size: 300%;
-    color: #3c2600;
-    text-shadow: 1px 1px 2px #5c3000;
+    color: #818181;
+    text-shadow: 1px 1px 2px #494949;
     text-decoration: underline dashed gray 1px;
 }
 
 #p-homemobilecard-content {
     font-size: 100%;
     padding-left: .5em;
+    color: gray;
 }
 
 

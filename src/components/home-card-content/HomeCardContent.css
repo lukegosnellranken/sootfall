@@ -51,13 +51,15 @@
     font-weight: bold;
     font-size: 140%;
     font-family: Inter, sans-serif;
-    color: rgb(64, 65, 66);
+    color: #818181;
+    text-shadow: .05em .05em .05em #494949;
     text-align: left;
 }
 
 #p-homecardcontent-date {
     font-size: 80%;
     color: gray;
+    text-shadow: .02em .02em .02em #494949;
     letter-spacing: .05em;
     padding: 0;
     margin: 0;
@@ -80,7 +82,8 @@
     margin-top: .5em;
     font-family: Inter, sans-serif;
     font-size: 100%;
-    color: rgb(64, 65, 66);
+    color: gray;
+    text-shadow: .02em .02em .02em #494949;
     text-align: left;
     width: 80%;
 }

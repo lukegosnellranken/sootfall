@@ -34,15 +34,12 @@
     margin-right: 2.5%;
 }
 
-#p-articlesidecardcontent-title {
-    text-align: center;
-}
-
 #image-articlesidecardcontent {
     width: 100%;
 }
 
 #p-articlesidecardcontent-title {
+    text-align: center;
     padding: 0;
     margin: 0;
     display: flex;
@@ -50,7 +47,7 @@
     font-weight: bold;
     font-size: 90%;
     font-family: Inter, sans-serif;
-    color: rgb(64, 65, 66);
+    color: #818181;
 }
 
 .date {
