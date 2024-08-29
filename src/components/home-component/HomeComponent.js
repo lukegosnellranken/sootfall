@@ -3,8 +3,8 @@ import './HomeComponent.css';
 import HomeCard from "../home-card/HomeCard";
 import HomeSideCard from "../home-side-card/HomeSideCard";
 import HomeMobileCard from "../home-mobile-card/HomeMobileCard";
-import sid from '../../images/wutheringedit2.jpg';
-import sidmobile from '../../images/wutheringedit2.jpg';
+import sid from '../../images/wutheringedit3.jpg';
+import sidmobile from '../../images/wutheringedit3.jpg';
 import beans from '../../images/coffee-beans5.png';
 
 function HomeComponent() {
