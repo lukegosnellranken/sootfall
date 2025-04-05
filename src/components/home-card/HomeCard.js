@@ -8,11 +8,14 @@ function HomeCard(props) {
     let [initDataArray, setInitDataArray] = useState([]);
     console.log(initDataArray);
 
+    const token = 'ff75d12ddbfa3b18817eacba0f70b6fc3ef76c0d2e13da25468bfa16a6deaffd1f071ccc5ef1cff42ce2d2618ec6f457da47f6eceede245b00c59711b268482613864751271af51baf71109535b1bb87eff397e4193ffef7d08300aaa4e685792c019da43d928a18fff82ed34920c0aabfbdfc0fa2b22bd7379fb264eaebf0f4';
+
     useEffect(() => {
         const fetchData = async () => {
-            await fetch('https://strapi-production-2ac8.up.railway.app/api/articles?populate=*')
+            await fetch('http://localhost:1337/api/articles?populate=*', {headers: {'Authorization': `Bearer ${token}`}})
             .then(res => {
                 if (res.ok) {
+                    console.log(res);
                     return res.json()
                 } else {
                     console.log('Articles res error');
@@ -21,13 +24,11 @@ function HomeCard(props) {
             .then(data => {
                 let iArray = [];
                 for (let i = 0; i < data.data.length; i++) {
-                    let title = data.data[i].attributes.Title;
-                    let dateString = data.data[i].attributes.Date.replaceAll("-","/");
+                    let title = data.data[i].title;
+                    let dateString = data.data[i].date.replaceAll("-","/");
                     dateString = dateString.slice(5) + "/" + dateString.slice(0,4);
-                    let image = data.data[i].attributes.Media.data.attributes.formats.thumbnail.url;
-                    console.log(image);
-                    let description = data.data[i].attributes.Description;
-                    iArray.push([title, dateString, image, description]);
+                    let image = 'http://localhost:1337' + data.data[i].image.formats.thumbnail.url;
+                    iArray.push([title, dateString, image]);
                 }
                 setInitDataArray(iArray.reverse());
             })
@@ -101,7 +102,6 @@ function HomeCard(props) {
                             title = {currentItems[currentItems.length-(i+1)][0]}
                             date = {currentItems[currentItems.length-(i+1)][1]}
                             image = {currentItems[currentItems.length-(i+1)][2]}
-                            description = {currentItems[currentItems.length-(i+1)][3]}
                         />
                     </div>
                 ))}

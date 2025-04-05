@@ -11,9 +11,11 @@ function ArticleCard() {
     console.log(articleDataArray);
     const { id } = useParams();
 
+    const token = 'ff75d12ddbfa3b18817eacba0f70b6fc3ef76c0d2e13da25468bfa16a6deaffd1f071ccc5ef1cff42ce2d2618ec6f457da47f6eceede245b00c59711b268482613864751271af51baf71109535b1bb87eff397e4193ffef7d08300aaa4e685792c019da43d928a18fff82ed34920c0aabfbdfc0fa2b22bd7379fb264eaebf0f4';
+
     useEffect(() => {
         const fetchData = async () => {
-            await fetch('https://strapi-production-2ac8.up.railway.app/api/articles?populate=*')
+            await fetch('http://localhost:1337/api/articles?populate=*', {headers: {'Authorization': `Bearer ${token}`}})
             .then(res => {
                 if (res.ok) {
                     return res.json()
@@ -24,12 +26,11 @@ function ArticleCard() {
             .then(data => {
                 let iArray = [];
                 for (let i = 0; i < data.data.length; i++) {
-                    let title = data.data[i].attributes.Title;
-                    let dateString = data.data[i].attributes.Date.replaceAll("-","/");
+                    let title = data.data[i].title;
+                    let dateString = data.data[i].date.replaceAll("-","/");
                     dateString = dateString.slice(5) + "/" + dateString.slice(0,4);
-                    let image = data.data[i].attributes.Media.data.attributes.formats.thumbnail.url;
-                    let content = data.data[i].attributes.Content;
-                    iArray.push([title, dateString, image, content]);
+                    let image = 'http://localhost:1337' + data.data[i].image.formats.thumbnail.url;
+                    iArray.push([title, dateString, image]);
                 }
                 setInitDataArray(iArray.reverse());
             })
