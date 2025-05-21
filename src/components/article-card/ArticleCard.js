@@ -6,14 +6,14 @@ import './ArticleCard.css';
 
 function ArticleCard() {
     let [initDataArray, setInitDataArray] = useState([]);
-    // Set filler items in array so that the return does not cause an error on the initial render
-    let [articleDataArray, setArticleDataArray] = useState([["Loading...", "Loading...", "Loading...", "Loading..."]]);
-    console.log(articleDataArray);
+    let [articleDataArray, setArticleDataArray] = useState([[]]);
     const { id } = useParams();
 
     const token = 'ff75d12ddbfa3b18817eacba0f70b6fc3ef76c0d2e13da25468bfa16a6deaffd1f071ccc5ef1cff42ce2d2618ec6f457da47f6eceede245b00c59711b268482613864751271af51baf71109535b1bb87eff397e4193ffef7d08300aaa4e685792c019da43d928a18fff82ed34920c0aabfbdfc0fa2b22bd7379fb264eaebf0f4';
 
+    // Fetch data for all articles on mount and convert to JSON if res is ok
     useEffect(() => {
+        let iArray = [];
         const fetchData = async () => {
             await fetch('http://localhost:1337/api/articles?populate=*', {headers: {'Authorization': `Bearer ${token}`}})
             .then(res => {
@@ -24,27 +24,31 @@ function ArticleCard() {
                 }
             })
             .then(data => {
-                let iArray = [];
+                // Dynamically push data of each article as an array to iArray
                 for (let i = 0; i < data.data.length; i++) {
                     let title = data.data[i].title;
                     let dateString = data.data[i].date.replaceAll("-","/");
                     dateString = dateString.slice(5) + "/" + dateString.slice(0,4);
                     let image = 'http://localhost:1337' + data.data[i].image.formats.thumbnail.url;
-                    iArray.push([title, dateString, image]);
+                    let content = data.data[i].content;
+                    iArray.push([title, dateString, image, content]);
                 }
-                setInitDataArray(iArray.reverse());
             })
             .catch(error => {console.log(error)});
+            // set initDataArray to iArray (order of iArray is reversed)
+            setInitDataArray(iArray.reverse());
         }
         fetchData();
     }, []);
 
-    console.log("test " + id);
+    // All articles are now in initDataArray. When initDataArray or id updates, run through initDataArray to find the correct article (title === id)
+    // Push the correct article's items to iArray, set ArticleDataArray to iArray
     useEffect(() => {
+        // Return on initial call since setInitDataArray will not yet have been called in above useEffect
+        if (initDataArray === 0) { return; }
         let iArray = [];
         for (let i = 0; i < initDataArray.length; i++) {
             if (initDataArray[i][0].replace(/\s+/g, '-').toLowerCase() === id) {
-                console.log('yes!');
                 let title = initDataArray[i][0];
                 let dateString = initDataArray[i][1];
                 let image = initDataArray[i][2];
