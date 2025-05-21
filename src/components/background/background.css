@@ -12,15 +12,14 @@
     bottom: 0;
     display: block;
     margin: auto;
-    width: 17%;
-    min-width: 8em;
+    max-width: 250px;
 }
 
 #div-background-container {
     position: relative;
     width: 100%;
     height: 12em;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../images/sootfall-background3.jpg);   
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../images/logo-background.png);   
     background-position: center;
     background-size: cover;
     box-shadow: 0em 0em .8em .15em rgba(255, 255, 255, 0.199);
@@ -137,6 +136,11 @@
     #div-background-container {
         margin-top: -.5em;
     }
+
+    #image-background-logo {
+        max-width: 150px;
+    }
+
 
     #social-links-facebook {
         font-size: 90%;

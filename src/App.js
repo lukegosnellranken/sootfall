@@ -27,8 +27,8 @@ function App() {
             <Route path='/our-family' element={<OurFamily/>}/>
           </Routes>
         </BrowserRouter>
-        <Footer/>
       </div>
+      <Footer/>
     </div>
   );
 }

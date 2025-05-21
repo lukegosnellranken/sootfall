@@ -1,7 +1,7 @@
 import React from "react";
 import './background.css';
-import logo from '../../images/sootfall-logo6.png';
-import tagline from '../../images/sootfall-tagline.png';
+import logo from '../../images/sootfall-logo8.png';
+// import tagline from '../../images/sootfall-tagline.png';
 import bmc from '../../images/bmc-logo3.png'; 
 
 function Background() {
@@ -10,7 +10,7 @@ function Background() {
             <div id="div-background-container">
                 <div id="div-background-logo">
                     <a href="http://gingernook.com/">
-                        {<img src={logo} alt="logo" id="image-background-logo" href="http://gingernook.com"/>}
+                        {<img src={logo} alt="logo" id="image-background-logo" href="#"/>}
                     </a>
                 </div>
                 <div id="div-background-bmc">

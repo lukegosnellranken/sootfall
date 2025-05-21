@@ -1,8 +1,8 @@
 body {
     background-image: url("./images/background3.png");
     /* background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.95)); */
-    background-repeat: repeat-x;
-    background-repeat: repeat-y;
+    /* background-repeat: repeat-x;
+    background-repeat: repeat-y; */
 }
 
 body, html {
@@ -10,7 +10,7 @@ body, html {
     padding:0;
 }
 
-#div-content-and-footer {
+#appDiv {
     background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.95));
 }
 

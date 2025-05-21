@@ -1,6 +1,12 @@
+#div-content-and-footer {
+    display: flex;
+    justify-content: center;
+}
+
 #homecomponent-container {
     display: flex;
     justify-content: center;
+    max-width: 1920px;
 }
 
 #div-homecomponent-card {

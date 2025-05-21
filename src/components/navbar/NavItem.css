@@ -1,14 +1,14 @@
-#li-nav-item {
+.li-nav-item {
     transition: all .2s ease-in-out; 
     width: 100%;
     text-align: center;
 }
 
-#li-nav-item:hover {
+.li-nav-item:hover {
     transform: scale(1.1);
 }
 
-#li-nav-item a {
+.li-nav-item a {
     text-decoration: none;
     color: #818181;
     font-size: 200%;
@@ -17,18 +17,18 @@
     white-space: nowrap;
 }
 
-#li-nav-item a:hover {
-    color: #5c3000;
+.li-nav-item a:hover {
+    color: #ffffff;
 }
 
 @media screen and (max-width: 800px) {
-    #li-nav-item a {
+    .li-nav-item a {
         font-size: 200%;
     }
 }
 
 @media screen and (max-width: 600px) {
-    #li-nav-item a {
+    .li-nav-item a {
         font-family: Qwitcher Grypen, sans-serif;
         font-size: 150%;
     }
