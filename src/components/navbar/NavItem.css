@@ -2,6 +2,7 @@
     transition: all .2s ease-in-out; 
     width: 100%;
     text-align: center;
+    padding-top: .5em;
 }
 
 .li-nav-item:hover {
@@ -11,14 +12,15 @@
 .li-nav-item a {
     text-decoration: none;
     color: #818181;
+    text-shadow: .03em .03em .03em #494949;
     font-size: 200%;
-    font-family: Qwitcher Grypen, sans-serif;
+    font-family: Bilbo, sans-serif;
     text-decoration: none;
     white-space: nowrap;
 }
 
 .li-nav-item a:hover {
-    color: #ffffff;
+    color: #818181;
 }
 
 @media screen and (max-width: 800px) {

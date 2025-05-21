@@ -7,6 +7,8 @@
     border-bottom-color: rgb(50, 50, 50);
     display: flex;
     transition: background-color 1s ease-out 100ms;
+    padding-bottom: 1em;
+    padding-top: 1em;
 }
 
 .article-link {
@@ -18,10 +20,15 @@
 }
 
 #div-articlesidecardcontent-image {
-    width: 50%;
+    width: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-width: 3px 3px 5px 5px;
+    border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
+    transform: rotate(-1deg);
+    border: solid rgb(50, 50, 50);
+    margin-left: .5%;
 }
 
 #div-articlesidecardcontent-title {
@@ -94,11 +101,19 @@
     #p-articlesidecardcontent-title {
         font-size: 70%;
     }
+
+    #div-articlesidecardcontent-image {
+        width: 25%;
+    }
 }
 
 @media screen and (max-width: 1000px) {
     #div-articlesidecardcontent-title {
         font-size: 60%;
+    }
+
+    #div-articlesidecardcontent-image {
+        width: 20%;
     }
 }
 
