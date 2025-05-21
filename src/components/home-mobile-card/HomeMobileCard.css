@@ -9,7 +9,8 @@
     margin-right: auto;
     padding-top: .2em;
     padding-bottom: .2em;
-    font-family: Inter, sans-serif;
+    font-family: Bilbo, sans-serif;
+    font-size: 150%;
 }
 
 #div-homemobilecard-stitch {
@@ -45,9 +46,9 @@
 #p-homemobilecard-title {
     text-align: center;
     padding-top: 5%;
-    font-family: Qwitcher Grypen, sans-serif;
+    font-family: Bilbo, sans-serif;
+    font-size: 250%;
     font-weight: lighter;
-    font-size: 300%;
     color: #818181;
     text-shadow: 1px 1px 2px #494949;
     text-decoration: underline dashed gray 1px;

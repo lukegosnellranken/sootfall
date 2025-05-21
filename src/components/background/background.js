@@ -1,6 +1,6 @@
 import React from "react";
 import './background.css';
-import logo from '../../images/sootfall-logo8.png';
+import logo from '../../images/sootfall-logo9.png';
 // import tagline from '../../images/sootfall-tagline.png';
 import bmc from '../../images/bmc-logo3.png'; 
 

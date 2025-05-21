@@ -27,8 +27,8 @@ function ArticleCard() {
                 // Dynamically push data of each article as an array to iArray
                 for (let i = 0; i < data.data.length; i++) {
                     let title = data.data[i].title;
-                    let dateString = data.data[i].date.replaceAll("-","/");
-                    dateString = dateString.slice(5) + "/" + dateString.slice(0,4);
+                    let dateString = data.data[i].date;
+                    dateString = dateString.slice(5) + "-" + dateString.slice(0,4);
                     let image = 'http://localhost:1337' + data.data[i].image.formats.thumbnail.url;
                     let content = data.data[i].content;
                     iArray.push([title, dateString, image, content]);

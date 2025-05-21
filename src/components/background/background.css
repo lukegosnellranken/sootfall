@@ -19,7 +19,7 @@
     position: relative;
     width: 100%;
     height: 12em;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../images/logo-background.png);   
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../images/sootfall-new-background.png);   
     background-position: center;
     background-size: cover;
     box-shadow: 0em 0em .8em .15em rgba(255, 255, 255, 0.199);

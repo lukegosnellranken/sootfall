@@ -49,15 +49,15 @@
     justify-content: left;
     margin-left: 1em;
     font-weight: bold;
-    font-size: 140%;
-    font-family: Inter, sans-serif;
+    font-size: 300%;
+    font-family: Bilbo, sans-serif;
     color: #818181;
     text-shadow: .05em .05em .05em #494949;
     text-align: left;
 }
 
 #p-homecardcontent-date {
-    font-size: 80%;
+    font-size: 150%;
     color: gray;
     text-shadow: .02em .02em .02em #494949;
     letter-spacing: .05em;
@@ -67,7 +67,7 @@
     display: flex;
     justify-content: left;
     margin-left: 2em;
-    font-family: Inter, sans-serif;
+    font-family: Bilbo, sans-serif;
 }
 
 #div-homecardcontent-description {
@@ -80,7 +80,7 @@
     margin: 0;
     margin-left: 1.5em;
     margin-top: .5em;
-    font-family: Inter, sans-serif;
+    font-family: Bilbo, sans-serif;
     font-size: 100%;
     color: gray;
     text-shadow: .02em .02em .02em #494949;

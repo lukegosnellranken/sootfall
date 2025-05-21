@@ -24,8 +24,8 @@
     margin-left: 1%;
     margin-top: .5%;
     max-height: .75em;
-    font-family: Inter, sans-serif;
-    font-size: 100%;
+    font-family: Bilbo, sans-serif;
+    font-size: 200%;
 }
 
 #p-articlecard-back-link a {
@@ -81,10 +81,10 @@
 }
 
 #p-articlecard-title {
-    font-family: Inter, sans-serif;
+    font-family: Bilbo, sans-serif;
     padding-top: 1em;
     font-weight: bold;
-    font-size: 200%;
+    font-size: 350%;
     color: #818181;
     text-shadow: .05em .05em .05em #494949;
     max-width: 20em;
@@ -93,8 +93,8 @@
 }
 
 #p-articlecard-date {
-    font-family: Inter, sans-serif;
-    font-size: 80%;
+    font-family: Bilbo, sans-serif;
+    font-size: 150%;
     color: gray;
     text-shadow: .02em .02em .02em #494949;
     letter-spacing: .05em;
@@ -109,7 +109,8 @@
 
 #p-articlecard-main-content {
     width: 80%;
-    font-family: Inter, sans-serif;
+    font-family: Bilbo, sans-serif;
+    font-size: 250%;
     color: gray;
     text-shadow: .02em .02em .02em #494949;
 }

@@ -45,8 +45,8 @@
     display: flex;
     justify-content: left;
     font-weight: bold;
-    font-size: 90%;
-    font-family: Inter, sans-serif;
+    font-size: 150%;
+    font-family: Bilbo, sans-serif;
     color: #818181;
 }
 
@@ -60,7 +60,7 @@
     display: flex;
     justify-content: left;
     margin-left: 2em;
-    font-family: Inter, sans-serif;
+    font-family: Bilbo, sans-serif;
 }
 
 .div-description {
@@ -73,7 +73,7 @@
     margin: 0;
     margin-left: 1.5em;
     margin-top: .5em;
-    font-family: Inter, sans-serif;
+    font-family: Bilbo, sans-serif;
     font-size: 80%;
     color: rgb(64, 65, 66);
     text-align: left;
