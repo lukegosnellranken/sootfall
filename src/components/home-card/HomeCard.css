@@ -53,18 +53,33 @@
     display: block;
 }
 
+.pagination {
+    border-radius: 8%;
+}
+
 .page-link {
-    color: gray;
+    color: whitesmoke;
+    border-color: #818181;
+    font-family: Bilbo, sans-serif;
+    font-weight: bold;
+    font-size: 120%;
+}
+
+.page-item .page-link {
+    background-color: #414141;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .page-item.active .page-link {
-    background-color: gray;
-    box-shadow: none;
-    border-color: gray;
+    background-color: #212121;
+    border-color: #818181;
+    color: #818181;
 }
 
 .page-item.disabled .page-link {
-    background-color: rgb(234, 226, 226);
+    background-color: #414141;
+    border-color: #818181;
+    color: #818181;
 }
 
 .disabled:active {
@@ -91,8 +106,6 @@
 #div-homecard-pagination {
     padding-bottom: 1em;
 }
-
-
 
 @media screen and (max-width: 700px) {
     #div-homecard-card {

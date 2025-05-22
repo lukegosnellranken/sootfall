@@ -10,7 +10,7 @@ function Background() {
             <div id="div-background-container">
                 <div id="div-background-logo">
                     <a href="http://gingernook.com/">
-                        {<img src={logo} alt="logo" id="image-background-logo" href="#"/>}
+                        {<img src={logo} alt="logo" id="image-background-logo" href="http://localhost:3000/"/>}
                     </a>
                 </div>
                 <div id="div-background-bmc">

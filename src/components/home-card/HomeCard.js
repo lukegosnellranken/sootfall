@@ -3,10 +3,11 @@ import { useState, useEffect } from "react";
 import './HomeCard.css';
 import HomeCardContent from "../home-card-content/HomeCardContent";
 import ReactPaginate from 'react-paginate';
+import { useRef } from "react";
 
 function HomeCard(props) {
     let [initDataArray, setInitDataArray] = useState([]);
-    console.log(initDataArray);
+    const paginationRef = useRef(null);
 
     const token = 'ff75d12ddbfa3b18817eacba0f70b6fc3ef76c0d2e13da25468bfa16a6deaffd1f071ccc5ef1cff42ce2d2618ec6f457da47f6eceede245b00c59711b268482613864751271af51baf71109535b1bb87eff397e4193ffef7d08300aaa4e685792c019da43d928a18fff82ed34920c0aabfbdfc0fa2b22bd7379fb264eaebf0f4';
 
@@ -63,7 +64,7 @@ function HomeCard(props) {
             <div id="div-homecard-items-pagination">
                 <div id="div-homecard-items">
                     <Items currentItems={currentItems} />
-                    <div id="div-homecard-pagination">
+                    <div id="div-homecard-pagination" ref={paginationRef}>
                         <ReactPaginate
                             nextLabel=">"
                             onPageChange={handlePageClick}
@@ -87,12 +88,21 @@ function HomeCard(props) {
                     </div>
                 </div>
             </div>
-            
         );
     }
 
     function Items({ currentItems }) {
-        console.log("rerendered Items return!");
+        // Remove tabindex from each element with the page-link class
+        // This removes unsightly blue boxes around the pagination buttons
+        useEffect(() => {
+            if (paginationRef.current) {
+                let list = paginationRef.current.querySelectorAll(".page-link");
+                list.forEach(item => {
+                    item.removeAttribute("tabindex");
+                });
+            }
+        });
+
         return (
             <div id="div-homecard-article-card">      
                 {currentItems.reverse().map((article, i) => (
@@ -108,15 +118,14 @@ function HomeCard(props) {
             </div>
         );
     }
-    
+
     return (
         <div id="div-homecard-card">
             <div id="div-homecard-stitch">
                 <div id="div-homecard-title">
                     <h1 id="h1-homecard-title">{props.title}</h1>
                 </div>
-                <PaginatedItems itemsPerPage={8} />
-                {console.log("rerendered Card return!")}
+                <PaginatedItems itemsPerPage={1} />
             </div>
         </div>
     );
