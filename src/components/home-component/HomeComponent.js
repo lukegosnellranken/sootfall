@@ -23,7 +23,7 @@ function HomeComponent() {
             </div>
             <div id="div-homecomponent-side-card">
                 <HomeSideCard
-                    title1 = "Welcome"
+                    title1 = "Burning Midnight"
                     image1 = {wuthering}
                     description1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi hendrerit vestibulum aliquam. Integer sed luctus mauris, in eleifend est. Praesent aliquet orci nec nisi iaculis pharetra. Donec aliquam neque sit amet laoreet auctor. Maecenas sem odio, varius quis metus ut, placerat viverra nulla. Donec mattis velit mauris, ut pellentesque dolor aliquam eu. Quisque vehicula magna massa, sed facilisis justo maximus et. Pellentesque a finibus nibh. Nullam in elementum risus. Suspendisse lacinia fringilla metus nec vehicula. Fusce maximus velit id tempor pharetra."
                     title2 = "Buy Us a Coffee"
