@@ -1,6 +1,6 @@
 #div-homesidecard-container {
     /* background-color: rgb(250, 246, 246); */
-    background-image: url('../../images/background3.png');
+    background-image: url('../../images/background.png');
     background-image: linear-gradient(to bottom, rgba(5, 5, 5, .7), rgba(0, 0, 0, .7));
     border-radius: .5%;
     border-width: .5em;
@@ -72,7 +72,7 @@
 #image-section-2-image {
     width: 100%;
     z-index:0;
-    opacity: 90%;
+    opacity: 50%;
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
 }
 

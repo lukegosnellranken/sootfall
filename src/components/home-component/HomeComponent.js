@@ -3,9 +3,8 @@ import './HomeComponent.css';
 import HomeCard from "../home-card/HomeCard";
 import HomeSideCard from "../home-side-card/HomeSideCard";
 import HomeMobileCard from "../home-mobile-card/HomeMobileCard";
-import sid from '../../images/wutheringedit3.jpg';
-import sidmobile from '../../images/wutheringedit3.jpg';
-import beans from '../../images/coffee-beans5.png';
+import wuthering from '../../images/wuthering.jpg';
+import beans from '../../images/coffee-beans.png';
 
 function HomeComponent() {
     return (
@@ -13,7 +12,7 @@ function HomeComponent() {
             <div id="div-homecomponent-mobile-card">
                 <HomeMobileCard
                     title1 = "Welcome"
-                    image1 = {sidmobile}
+                    image1 = {wuthering}
                     description1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi hendrerit vestibulum aliquam. Integer sed luctus mauris, in eleifend est. Praesent aliquet orci nec nisi iaculis pharetra. Donec aliquam neque sit amet laoreet auctor."
                 />
             </div>
@@ -25,7 +24,7 @@ function HomeComponent() {
             <div id="div-homecomponent-side-card">
                 <HomeSideCard
                     title1 = "Welcome"
-                    image1 = {sid}
+                    image1 = {wuthering}
                     description1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi hendrerit vestibulum aliquam. Integer sed luctus mauris, in eleifend est. Praesent aliquet orci nec nisi iaculis pharetra. Donec aliquam neque sit amet laoreet auctor. Maecenas sem odio, varius quis metus ut, placerat viverra nulla. Donec mattis velit mauris, ut pellentesque dolor aliquam eu. Quisque vehicula magna massa, sed facilisis justo maximus et. Pellentesque a finibus nibh. Nullam in elementum risus. Suspendisse lacinia fringilla metus nec vehicula. Fusce maximus velit id tempor pharetra."
                     title2 = "Buy Us a Coffee"
                     image2 = {beans}

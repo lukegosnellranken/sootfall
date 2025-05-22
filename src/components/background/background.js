@@ -1,27 +1,27 @@
 import React from "react";
 import './background.css';
-import logo from '../../images/sootfall-logo9.png';
+import logo from '../../images/sootfall-logo.png';
 // import tagline from '../../images/sootfall-tagline.png';
-import bmc from '../../images/bmc-logo3.png'; 
+import bmc from '../../images/bmc-logo.png'; 
 
 function Background() {
     return (
         <div>
             <div id="div-background-container">
                 <div id="div-background-logo">
-                    <a href="http://gingernook.com/">
+                    <a href="http://localhost:3000/">
                         {<img src={logo} alt="logo" id="image-background-logo" href="http://localhost:3000/"/>}
                     </a>
                 </div>
                 <div id="div-background-bmc">
-                    <a href="https://buymeacoffee.com/gingernook" target="_blank" rel="noreferrer"><img id="image-background-bmc" src={bmc} alt="" /> </a>
+                    <a href="http://localhost:3000/" target="_blank" rel="noreferrer"><img id="image-background-bmc" src={bmc} alt="" /> </a>
                 </div>
-                <div id="div-background-social-links">
+                {/* <div id="div-background-social-links">
                     <a id="social-links-facebook" href="https://gingernook.com/" className="fa fa-facebook social-link"> </a>
                     <a id="social-links-pinterest" href="https://gingernook.com/" className="fa fa-pinterest social-link"> </a>
                     <a id="social-links-instagram" href="https://gingernook.com/" className="fa fa-instagram social-link"> </a>
                     <a id="social-links-rss" href="https://gingernook.com/" className="fa fa-rss social-link"> </a>
-                </div>
+                </div> */}
             </div>
         </div>
     )

@@ -1,9 +1,8 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import './HomeCard.css';
 import HomeCardContent from "../home-card-content/HomeCardContent";
 import ReactPaginate from 'react-paginate';
-import { useRef } from "react";
 
 function HomeCard(props) {
     let [initDataArray, setInitDataArray] = useState([]);
