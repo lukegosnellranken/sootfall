@@ -28,7 +28,11 @@ function HomeCard(props) {
                     let dateString = data.data[i].date;
                     dateString = dateString.slice(5) + "-" + dateString.slice(0,4);
                     let image = 'http://localhost:1337' + data.data[i].image.formats.thumbnail.url;
-                    iArray.push([title, dateString, image]);
+                    let tags = data.data[i].tags
+                    if (tags != null) {
+                        tags = tags.split(",").map(item => item.trim());
+                    }
+                    iArray.push([title, dateString, image, tags]);
                 }
                 setInitDataArray(iArray.reverse());
             })
@@ -63,6 +67,7 @@ function HomeCard(props) {
             <div id="div-homecard-items-pagination">
                 <div id="div-homecard-items">
                     <Items currentItems={currentItems} />
+                    {console.log(currentItems)}
                     <div id="div-homecard-pagination" ref={paginationRef}>
                         <ReactPaginate
                             nextLabel=">"
@@ -111,6 +116,7 @@ function HomeCard(props) {
                             title = {currentItems[currentItems.length-(i+1)][0]}
                             date = {currentItems[currentItems.length-(i+1)][1]}
                             image = {currentItems[currentItems.length-(i+1)][2]}
+                            tags = {currentItems[currentItems.length-(i+1)][3]}
                         />
                     </div>
                 ))}

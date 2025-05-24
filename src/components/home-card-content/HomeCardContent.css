@@ -27,7 +27,7 @@
     align-items: center;
 }
 
-#div-homecardcontent-title-date-description {
+#div-homecardcontent-title-date-tags {
     width: 75%;
     margin-top: 1.5%;
     display: flex;
@@ -71,22 +71,23 @@
     font-family: Bilbo, sans-serif;
 }
 
-#div-homecardcontent-description {
+#div-homecardcontent-tags {
     display: flex;
     justify-content: left;
 }
 
-#p-homecardcontent-description {
-    padding: 0;
-    margin: 0;
-    margin-left: 1.5em;
-    margin-top: .5em;
-    font-family: Bilbo, sans-serif;
-    font-size: 100%;
+#p-homecardcontent-tags {
+    font-size: 150%;
     color: gray;
     text-shadow: .02em .02em .02em #494949;
-    text-align: left;
-    width: 80%;
+    letter-spacing: .05em;
+    padding: 0;
+    margin: 0;
+    padding-top: 0.5em;
+    display: flex;
+    justify-content: left;
+    margin-left: 2em;
+    font-family: Bilbo, sans-serif;
 }
 
 #article-card-link {
@@ -96,7 +97,7 @@
 
 
 @media screen and (max-width: 1200px) {
-    #div-homecardcontent-description {
+    #div-homecardcontent-tags {
         width: 100%;
     }
 }
@@ -111,7 +112,7 @@
         margin-left: -2em;
     }
 
-    #div-homecardcontent-title-date-description {
+    #div-homecardcontent-title-date-tags {
         width: 70%;
         margin-right: .5em;
         margin-left: -2.5em;
@@ -119,7 +120,7 @@
 }
 
 @media screen and (max-width: 700px) {
-    #div-homecardcontent-description {
+    #div-homecardcontent-tags {
         width: 100%;
     }
 }
@@ -134,7 +135,7 @@
         font-size: 80% !important;
     }
 
-    #p-homecardcontent-description {
+    #p-homecardcontent-tags {
         font-size: 90%;
     }
 }
@@ -149,7 +150,7 @@
         font-size: 60% !important;
     }
 
-    #p-homecardcontent-description {
+    #p-homecardcontent-tags {
         font-size: 80%;
     }
 }

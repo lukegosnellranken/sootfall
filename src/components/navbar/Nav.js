@@ -11,7 +11,7 @@ function Nav() {
                     <ul id="ul-nav-list">
                         <NavItem name="Home" href="#"/>
                         <NavItem name="Updates" href="#"/>
-                        <NavItem name="Tags" href="#"/>
+                        <NavItem name="Tags" href="tags"/>
                         <NavItem name="Donate" href="#"/>
                     </ul>
                 </div>
