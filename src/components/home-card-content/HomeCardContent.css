@@ -41,6 +41,7 @@
     border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
     transform: rotate(-1deg);
     border: solid rgb(50, 50, 50);
+    opacity: .75;
 }
 
 #p-homecardcontent-title {
@@ -89,6 +90,12 @@
     justify-content: left;
     margin-left: 1em;
     font-family: Bilbo, sans-serif;
+    transition: all .2s ease-in-out; 
+    cursor: default;
+}
+
+.p-homecardcontent-tags:hover {
+    transform: scale(1.1);
 }
 
 #article-card-link {

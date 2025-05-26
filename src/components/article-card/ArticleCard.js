@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from 'react-markdown'
 import './ArticleCard.css';
+import lantern from '../../images/lantern2.png';
 
 function ArticleCard() {
     let [initDataArray, setInitDataArray] = useState([]);
@@ -31,7 +32,8 @@ function ArticleCard() {
                     dateString = dateString.slice(5) + "-" + dateString.slice(0,4);
                     let image = 'http://localhost:1337' + data.data[i].image.formats.thumbnail.url;
                     let content = data.data[i].content;
-                    iArray.push([title, dateString, image, content]);
+                    let tags = data.data[i].tags;
+                    iArray.push([title, dateString, image, content, tags]);
                 }
             })
             .catch(error => {console.log(error)});
@@ -53,7 +55,8 @@ function ArticleCard() {
                 let dateString = initDataArray[i][1];
                 let image = initDataArray[i][2];
                 let content = initDataArray[i][3];
-                iArray.push([title, dateString, image, content]);
+                let tags = initDataArray[i][4];
+                iArray.push([title, dateString, image, content, tags]);
             }
         }
         // Only set articleDataArray if iArray is populated so that it is not set to an empty array, causing an unnecessary
@@ -80,6 +83,12 @@ function ArticleCard() {
                         <div id="div-articlecard-date">
                             <p id="p-articlecard-date">{articleDataArray[0][1]}</p>
                         </div>
+                        <div id="div-articlecard-tags">
+                            {/* <p id="p-articlecard-tags">{articleDataArray[0][4]}</p> */}
+                        </div>
+                    </div>
+                    <div id="div-articlecard-lantern">
+                        <img src={lantern} alt="" id="p-articlecard-lantern" />
                     </div>
                 </div>
                 <div className="separator"></div>

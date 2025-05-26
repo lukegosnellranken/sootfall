@@ -27,7 +27,7 @@ function HomeCardContent(props) {
                         {
                             props.tags ?
                             props.tags.map((item => (
-                                <span
+                                <p
                                     key={item}
                                     className="p-homecardcontent-tags"
                                     onClick={(e) => {
@@ -36,7 +36,7 @@ function HomeCardContent(props) {
                                     }}
                                 >
                                     {item}
-                                </span>
+                                </p>
                             )))
                             : null
                         }
