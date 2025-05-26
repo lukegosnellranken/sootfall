@@ -146,6 +146,31 @@
 }
 
 
+#div-articlecardcontent-tags {
+    display: flex;
+    justify-content: center;
+}
+
+.p-articlecardcontent-tags {
+    font-size: 155%;
+    color: gray;
+    text-shadow: .02em .02em .02em #494949;
+    letter-spacing: .05em;
+    padding: 0;
+    margin: 0;
+    padding-top: 0.5em;
+    display: flex;
+    margin-left: .5em;
+    margin-right: .5em;
+    font-family: Bilbo, sans-serif;
+    transition: all .2s ease-in-out; 
+    cursor: default;
+}
+
+.p-articlecardcontent-tags:hover {
+    transform: scale(1.1);
+}
+
 
 
 @media screen and (max-width: 800px) {

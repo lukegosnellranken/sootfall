@@ -24,6 +24,7 @@ function HomeCardContent(props) {
                         <p id="p-homecardcontent-date">{props.date}</p>
                     </div>
                     <div id="div-homecardcontent-tags">
+                        {console.log(props.tags)}
                         {
                             props.tags ?
                             props.tags.map((item => (

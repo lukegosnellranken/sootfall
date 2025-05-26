@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import ReactMarkdown from 'react-markdown'
 import './ArticleCard.css';
 import lantern from '../../images/lantern2.png';
@@ -12,6 +12,12 @@ function ArticleCard() {
 
     const token = 'ff75d12ddbfa3b18817eacba0f70b6fc3ef76c0d2e13da25468bfa16a6deaffd1f071ccc5ef1cff42ce2d2618ec6f457da47f6eceede245b00c59711b268482613864751271af51baf71109535b1bb87eff397e4193ffef7d08300aaa4e685792c019da43d928a18fff82ed34920c0aabfbdfc0fa2b22bd7379fb264eaebf0f4';
 
+    const navigate = useNavigate();
+    
+    const handleNavigation = (path) => {
+        navigate(path);
+    };
+    
     // Fetch data for all articles on mount and convert to JSON if res is ok
     useEffect(() => {
         let iArray = [];
@@ -56,6 +62,9 @@ function ArticleCard() {
                 let image = initDataArray[i][2];
                 let content = initDataArray[i][3];
                 let tags = initDataArray[i][4];
+                if (tags != null) {
+                    tags = tags.split(",").map(item => item.trim());
+                }
                 iArray.push([title, dateString, image, content, tags]);
             }
         }
@@ -83,8 +92,23 @@ function ArticleCard() {
                         <div id="div-articlecard-date">
                             <p id="p-articlecard-date">{articleDataArray[0][1]}</p>
                         </div>
-                        <div id="div-articlecard-tags">
-                            {/* <p id="p-articlecard-tags">{articleDataArray[0][4]}</p> */}
+                        <div id="div-articlecardcontent-tags">
+                            {
+                                articleDataArray[0][4] ?
+                                articleDataArray[0][4].map((item => (
+                                    <p
+                                        key={item}
+                                        className="p-articlecardcontent-tags"
+                                        onClick={(e) => {
+                                            e.stopPropagation(); // Prevent parent div click event
+                                            handleNavigation(`/tags/${item}`);
+                                        }}
+                                    >
+                                        {item}
+                                    </p>
+                                )))
+                                : null
+                            }
                         </div>
                     </div>
                     <div id="div-articlecard-lantern">
