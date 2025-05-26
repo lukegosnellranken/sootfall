@@ -3,10 +3,11 @@ import './HomeCardContent.css';
 import { useNavigate } from "react-router-dom";
 
 function HomeCardContent(props) {
+    // The solution for a Link inside a Link (nested <a> tags)
     const navigate = useNavigate();
 
     const handleNavigation = (path) => {
-        navigate(path); // Navigate to the specified path
+        navigate(path);
     };
     
     return (
