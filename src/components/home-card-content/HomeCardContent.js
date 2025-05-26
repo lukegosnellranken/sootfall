@@ -3,16 +3,13 @@ import './HomeCardContent.css';
 import { useNavigate } from "react-router-dom";
 
 function HomeCardContent(props) {
-
     const navigate = useNavigate();
 
     const handleNavigation = (path) => {
         navigate(path); // Navigate to the specified path
     };
-
     
     return (
-        // <Link to={props.sub} className="article-link">
         <div className="article-link" onClick={() => handleNavigation(props.sub)}>
             <div id="div-homecardcontent-container">
                 <div id="div-homecardcontent-image">
@@ -28,9 +25,6 @@ function HomeCardContent(props) {
                     <div id="div-homecardcontent-tags">
                         {
                             props.tags ?
-                            // props.tags.map((item => (
-                            //     <Link key = {item} to = {`/tags/${item}`} className = "p-homecardcontent-tags">{item}</Link>
-                            // )))
                             props.tags.map((item => (
                                 <span
                                     key={item}
