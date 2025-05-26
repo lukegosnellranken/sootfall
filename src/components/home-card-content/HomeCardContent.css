@@ -74,9 +74,10 @@
 #div-homecardcontent-tags {
     display: flex;
     justify-content: left;
+    padding-left: 1.5em;
 }
 
-#p-homecardcontent-tags {
+.p-homecardcontent-tags {
     font-size: 150%;
     color: gray;
     text-shadow: .02em .02em .02em #494949;
@@ -86,7 +87,7 @@
     padding-top: 0.5em;
     display: flex;
     justify-content: left;
-    margin-left: 2em;
+    margin-left: 1em;
     font-family: Bilbo, sans-serif;
 }
 
@@ -135,7 +136,7 @@
         font-size: 80% !important;
     }
 
-    #p-homecardcontent-tags {
+    .p-homecardcontent-tags {
         font-size: 90%;
     }
 }
@@ -150,7 +151,7 @@
         font-size: 60% !important;
     }
 
-    #p-homecardcontent-tags {
+    .p-homecardcontent-tags {
         font-size: 80%;
     }
 }

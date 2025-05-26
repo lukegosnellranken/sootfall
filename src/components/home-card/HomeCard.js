@@ -112,6 +112,7 @@ function HomeCard(props) {
                 {currentItems.reverse().map((article, i) => (
                     <div key={i}>
                         <HomeCardContent
+                            key = {i}
                             sub = {`/articles/${(currentItems[currentItems.length-(i+1)][0]).replace(/\s+/g, '-').toLowerCase()}`}
                             title = {currentItems[currentItems.length-(i+1)][0]}
                             date = {currentItems[currentItems.length-(i+1)][1]}

@@ -1,21 +1,19 @@
 import React from "react";
 import './HomeCardContent.css';
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function HomeCardContent(props) {
-    console.log(props.tags);
-    let tagLinks = [];
 
-    if (props.tags) {
-        tagLinks = props.tags.map(item => (
-            <Link id = {item} to = {`/tags/${item}`}></Link>
-        ));
-    }
-    console.log(tagLinks);
+    const navigate = useNavigate();
 
+    const handleNavigation = (path) => {
+        navigate(path); // Navigate to the specified path
+    };
 
+    
     return (
-        <Link to={props.sub} className="article-link">
+        // <Link to={props.sub} className="article-link">
+        <div className="article-link" onClick={() => handleNavigation(props.sub)}>
             <div id="div-homecardcontent-container">
                 <div id="div-homecardcontent-image">
                     <img src={props.image} alt="" id="image-homecardcontent-image" />
@@ -28,12 +26,29 @@ function HomeCardContent(props) {
                         <p id="p-homecardcontent-date">{props.date}</p>
                     </div>
                     <div id="div-homecardcontent-tags">
-                        <p id="p-homecardcontent-tags">{props.tags ? tagLinks.join(" ") : props.tags}</p>
-                        
+                        {
+                            props.tags ?
+                            // props.tags.map((item => (
+                            //     <Link key = {item} to = {`/tags/${item}`} className = "p-homecardcontent-tags">{item}</Link>
+                            // )))
+                            props.tags.map((item => (
+                                <span
+                                    key={item}
+                                    className="p-homecardcontent-tags"
+                                    onClick={(e) => {
+                                        e.stopPropagation(); // Prevent parent div click event
+                                        handleNavigation(`/tags/${item}`);
+                                    }}
+                                >
+                                    {item}
+                                </span>
+                            )))
+                            : null
+                        }
                     </div>
                 </div>
             </div>
-        </Link>
+        </div>
     );
 }
 
