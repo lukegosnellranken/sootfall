@@ -1,10 +1,12 @@
 import React from "react";
 import './Tag.css';
 
-function Tags() {
+function Tag() {
     return (
         <div>
             tags
         </div>
     );
 }
+
+export default Tag;

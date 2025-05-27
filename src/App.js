@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Article from './pages/Article';
 import NotFound from './pages/NotFound';
-import OurFamily from './pages/OurFamily';
+import Tag from './pages/Tag';
 
 function App() {
   // fetch('http://localhost:1337/api/articles')
@@ -24,7 +24,7 @@ function App() {
             <Route index element={<Home/>}/>
             <Route path='/articles/:id' element={<Article/>}/>
             <Route path='*' element={<NotFound/>}/>
-            <Route path='/our-family' element={<OurFamily/>}/>
+            <Route path='/tags/:tagName' element={<Tag/>}/>
           </Routes>
         </BrowserRouter>
       </div>
