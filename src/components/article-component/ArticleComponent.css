@@ -1,32 +1,25 @@
 #div-articlecomponent-full-article-container {
     display: inline-block;
     justify-content: center;
+    max-width: 1920px;
+    padding-left: 3%;
+    padding-right: 3%;
 }
 
 #div-articlecomponent-full-article {
     width: 100%;
-    padding-left: 5%;
-    padding-right: 5%;
 }
 
 #div-articlecomponent-full-article-side-card {
     width: 100%;
-    padding-right: 5%;
-    padding-left: 5%;
 }
-
-
 
 @media screen and (max-width: 700px) {
     #div-articlecomponent-full-article {
         width: 100%;
-        padding-right: .75%;
-        padding-left: .75%;
     }
     
     #div-articlecomponent-full-article-side-card {
         width: 100%;
-        padding-right: 3%;
-        padding-left: 3%;
     }
 }

@@ -202,10 +202,6 @@
 }
 
 @media screen and (max-width: 700px) {
-    #div-articlecard-full-article-card {
-        width: 95%;
-    }
-
     #p-articlecard-back-link {
         font-size: 70%;
         margin-top: .75%;
