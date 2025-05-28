@@ -34,12 +34,21 @@ function HomeCard(props) {
                     }
                     iArray.push([title, dateString, image, tags]);
                 }
-                setInitDataArray(iArray.reverse());
+                // If homepage, display all articles from most to least recent
+                if (props.pageType === "home") {
+                    iArray.sort((a, b) => new Date(b[1]) - new Date(a[1]));
+                }
+                // If tag page, display only articles that contain the specified tag from most to least recent
+                if (props.pageType === "tag") {
+                    iArray = iArray.filter(arr => arr[3] && arr[3].includes(props.tag));
+                    iArray.sort((a, b) => new Date(b[1]) - new Date(a[1]));
+                }
+                setInitDataArray(iArray);
             })
             .catch(error => {console.log(error)});
         }
         fetchData();
-    }, []);
+    }, [props.pageType, props.tag]);
     
     function PaginatedItems({ itemsPerPage }) {
         // We start with an empty list of items.

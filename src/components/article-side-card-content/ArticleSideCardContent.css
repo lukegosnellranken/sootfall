@@ -43,6 +43,7 @@
 
 #image-articlesidecardcontent {
     width: 100%;
+    opacity: .75;
 }
 
 #p-articlesidecardcontent-title {
