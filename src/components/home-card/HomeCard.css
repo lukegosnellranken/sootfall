@@ -19,6 +19,31 @@
     border-color: rgb(50, 50, 50);
 }
 
+#p-homecard-back-link {
+    margin-left: 1%;
+    margin-top: .5%;
+    max-height: .75em;
+    font-family: Bilbo, sans-serif;
+    font-size: 200%;
+    position: absolute;
+    transition: all .2s ease-in-out; 
+}
+
+#p-homecard-back-link:hover {
+    transform: scale(1.1);
+}
+
+#p-homecard-back-link a {
+    text-decoration: none;
+    color: #818181;
+}
+
+#div-homecard-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 #h1-homecard-title {
     color: #818181;
     text-shadow: 1px 1px 2px #494949;
@@ -29,12 +54,6 @@
     padding-top: .5em;
     max-width: 10em;
     text-decoration: underline dashed gray 1px;
-}
-
-#div-homecard-title {
-    width: 100%;
-    display: flex;
-    justify-content: center;
 }
 
 #div-homecard-article-card {

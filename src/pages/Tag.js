@@ -4,9 +4,7 @@ import TagComponent from "../components/tag-component/TagComponent";
 
 function Tag() {
     return (
-        <div>
-            <TagComponent/>
-        </div>
+        <TagComponent/>
     );
 }
 

@@ -1,4 +1,5 @@
 import React from "react";
+import './TagComponent.css';
 import HomeCard from "../home-card/HomeCard";
 
 function TagComponent() {
@@ -6,12 +7,14 @@ function TagComponent() {
     const formattedPathname = pathname.charAt(0).toUpperCase() + pathname.slice(1);
 
     return(
-        <div>
-            <HomeCard
-                title = {formattedPathname}
-                pageType = "tag"
-                tag = {pathname}
-            />
+        <div id="tagcomponent-container">
+            <div id="div-tagcomponent-card">
+                <HomeCard
+                    title = {formattedPathname}
+                    pageType = "tag"
+                    tag = {pathname}
+                />
+            </div>
         </div>
     )
 }

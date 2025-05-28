@@ -39,7 +39,8 @@ function HomeCardContent(props) {
                                     {item}
                                 </p>
                             )))
-                            : null
+                            // invisible text to keep height consistent
+                            : <p className="p-homecardcontent-tags" style={{ visibility: "hidden" }}>|</p>
                         }
                     </div>
                 </div>

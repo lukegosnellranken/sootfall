@@ -9,6 +9,7 @@
     padding-bottom: 1em;
     padding-top: 1em;
     transition: background-color 1s ease-out 100ms;
+    max-height: 20em;
 }
 
 .article-link {
@@ -36,7 +37,8 @@
 }
 
 #image-homecardcontent-image {
-    width: 70%;
+    height: 100%;
+    object-fit: contain;
     border-width: 3px 3px 5px 5px;
     border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
     transform: rotate(-1deg);

@@ -137,6 +137,13 @@ function HomeCard(props) {
     return (
         <div id="div-homecard-card">
             <div id="div-homecard-stitch">
+                {
+                    props.pageType === "tag" ?
+                    <div id="div-homecard-back-link">
+                        <p id="p-homecard-back-link"><a href="http://localhost:3000/">Return</a></p>
+                    </div>
+                    : null
+                }
                 <div id="div-homecard-title">
                     <h1 id="h1-homecard-title">{props.title}</h1>
                 </div>
