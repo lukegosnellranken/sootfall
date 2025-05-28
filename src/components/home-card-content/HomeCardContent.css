@@ -22,10 +22,7 @@
 
 #div-homecardcontent-image {
     width: 25%;
-    margin-left: .5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-left: 2%;
 }
 
 #div-homecardcontent-title-date-tags {
@@ -58,6 +55,8 @@
     color: #818181;
     text-shadow: .05em .05em .05em #494949;
     text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 #p-homecardcontent-date {
@@ -67,7 +66,6 @@
     letter-spacing: .05em;
     padding: 0;
     margin: 0;
-    padding-top: 0.5em;
     display: flex;
     justify-content: left;
     margin-left: 2em;

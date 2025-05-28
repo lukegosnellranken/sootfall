@@ -10,7 +10,6 @@
     padding-top: .2em;
     padding-bottom: .2em;
     font-family: Bilbo, sans-serif;
-    font-size: 150%;
 }
 
 #div-homemobilecard-stitch {
@@ -23,15 +22,15 @@
 
 #div-homemobilecard-content-container {
     display: flex;
-    width: 100%;
 }
 
 #div-homemobilecard-image {
     width: 40%;
-    margin-left: .5%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    object-fit: contain;
+    border-width: 3px 3px 5px 5px;
+    border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
+    transform: rotate(-.8deg);
+    border: solid rgb(50, 50, 50);
 }
 
 #image-homemobilecard-image {
@@ -47,7 +46,7 @@
     text-align: center;
     padding-top: 5%;
     font-family: Bilbo, sans-serif;
-    font-size: 250%;
+    font-size: 300%;
     font-weight: lighter;
     color: #818181;
     text-shadow: 1px 1px 2px #494949;

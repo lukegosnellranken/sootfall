@@ -147,7 +147,7 @@ function HomeCard(props) {
                 <div id="div-homecard-title">
                     <h1 id="h1-homecard-title">{props.title}</h1>
                 </div>
-                <PaginatedItems itemsPerPage={1} />
+                <PaginatedItems itemsPerPage={5} />
             </div>
         </div>
     );
