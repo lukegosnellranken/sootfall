@@ -35,7 +35,7 @@ function ArticleCard() {
                 for (let i = 0; i < data.data.length; i++) {
                     let title = data.data[i].title;
                     let dateString = data.data[i].date;
-                    dateString = dateString.slice(5) + "-" + dateString.slice(0,4);
+                    dateString = dateString.slice(5) + "-" + dateString.slice(2,4);
                     let image = 'http://localhost:1337' + data.data[i].image.formats.thumbnail.url;
                     let content = data.data[i].content;
                     let tags = data.data[i].tags;

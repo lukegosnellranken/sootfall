@@ -26,13 +26,14 @@ function HomeCard(props) {
                 for (let i = 0; i < data.data.length; i++) {
                     let title = data.data[i].title;
                     let dateString = data.data[i].date;
-                    dateString = dateString.slice(5) + "-" + dateString.slice(0,4);
+                    dateString = dateString.slice(5) + "-" + dateString.slice(2,4);
                     let image = 'http://localhost:1337' + data.data[i].image.formats.thumbnail.url;
-                    let tags = data.data[i].tags
+                    let tags = data.data[i].tags;
+                    let author = data.data[i].author;
                     if (tags != null) {
                         tags = tags.split(",").map(item => item.trim());
                     }
-                    iArray.push([title, dateString, image, tags]);
+                    iArray.push([title, dateString, image, tags, author]);
                 }
                 // If homepage, display all articles from most to least recent
                 if (props.pageType === "home") {
@@ -127,6 +128,7 @@ function HomeCard(props) {
                             date = {currentItems[currentItems.length-(i+1)][1]}
                             image = {currentItems[currentItems.length-(i+1)][2]}
                             tags = {currentItems[currentItems.length-(i+1)][3]}
+                            author = {currentItems[currentItems.length-(i+1)][4]}
                         />
                     </div>
                 ))}

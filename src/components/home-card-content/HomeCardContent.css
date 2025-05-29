@@ -59,17 +59,38 @@
     overflow: hidden;
 }
 
-#p-homecardcontent-date {
+#div-homecardcontent-author-date {
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+}
+
+#p-homecardcontent-date, #p-homecardcontent-author, #p-homecardcontent-separator {
     font-size: 150%;
     color: gray;
     text-shadow: .02em .02em .02em #494949;
     letter-spacing: .05em;
     padding: 0;
     margin: 0;
-    display: flex;
-    justify-content: left;
     margin-left: 2em;
     font-family: Bilbo, sans-serif;
+}
+
+#p-homecardcontent-separator {
+    opacity: .5;
+    line-height: 100%;
+    user-select: none;
+    cursor: default;
+}
+
+#div-tag-stitch {
+    border-bottom-width: .1em;
+    border-bottom-style: solid;
+    border-color: rgb(50, 50, 50);
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: .5em;
+    opacity: .5;
 }
 
 #div-homecardcontent-tags {
