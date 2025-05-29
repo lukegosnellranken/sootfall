@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Article from './pages/Article';
 import NotFound from './pages/NotFound';
 import Tag from './pages/Tag';
+import Author from './pages/Author';
 
 function App() {
   // fetch('http://localhost:1337/api/articles')
@@ -25,6 +26,7 @@ function App() {
             <Route path='/articles/:id' element={<Article/>}/>
             <Route path='*' element={<NotFound/>}/>
             <Route path='/tags/:tagName' element={<Tag/>}/>
+            <Route path='/authors/:authorName' element={<Author/>}/>
           </Routes>
         </BrowserRouter>
       </div>

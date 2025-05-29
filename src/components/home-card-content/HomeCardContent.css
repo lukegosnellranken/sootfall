@@ -28,9 +28,7 @@
 #div-homecardcontent-title-date-tags {
     width: 75%;
     margin-top: 1.5%;
-    display: flex;
-    justify-content: left;
-    flex-direction: column;
+    margin-left: -15%;
 }
 
 #image-homecardcontent-image {
@@ -47,8 +45,7 @@
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: left;
-    margin-left: 1em;
+    justify-content: center;
     font-weight: bold;
     font-size: 300%;
     font-family: Bilbo, sans-serif;
@@ -62,7 +59,6 @@
 #div-homecardcontent-author-date {
     display: flex;
     justify-content: center;
-    width: fit-content;
 }
 
 #p-homecardcontent-date, #p-homecardcontent-author, #p-homecardcontent-separator {
@@ -72,8 +68,23 @@
     letter-spacing: .05em;
     padding: 0;
     margin: 0;
-    margin-left: 2em;
     font-family: Bilbo, sans-serif;
+    flex: 1
+}
+
+#p-homecardcontent-author {
+    margin-left: 25%;
+}
+
+#p-homecardcontent-date {
+    margin-right: 25%;
+}
+
+#p-homecardcontent-author {
+    text-shadow: .02em .02em .02em #494949;
+    font-family: Bilbo, sans-serif;
+    transition: all .2s ease-in-out; 
+    cursor: default;
 }
 
 #p-homecardcontent-separator {
@@ -87,16 +98,15 @@
     border-bottom-width: .1em;
     border-bottom-style: solid;
     border-color: rgb(50, 50, 50);
-    margin-right: 5%;
-    margin-left: 5%;
+    margin-right: 20%;
+    margin-left: 20%;
     margin-top: .5em;
     opacity: .5;
 }
 
 #div-homecardcontent-tags {
     display: flex;
-    justify-content: left;
-    padding-left: 1.5em;
+    justify-content: center;
 }
 
 .p-homecardcontent-tags {
@@ -107,15 +117,14 @@
     padding: 0;
     margin: 0;
     padding-top: 0.5em;
-    display: flex;
-    justify-content: left;
-    margin-left: 1em;
+    margin-left: .5em;
+    margin-right: .5em;
     font-family: Bilbo, sans-serif;
     transition: all .2s ease-in-out; 
     cursor: default;
 }
 
-.p-homecardcontent-tags:hover {
+.p-homecardcontent-tags:hover, #p-homecardcontent-author:hover {
     transform: scale(1.1);
 }
 

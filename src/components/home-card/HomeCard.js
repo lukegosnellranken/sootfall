@@ -40,8 +40,13 @@ function HomeCard(props) {
                     iArray.sort((a, b) => new Date(b[1]) - new Date(a[1]));
                 }
                 // If tag page, display only articles that contain the specified tag from most to least recent
-                if (props.pageType === "tag") {
+                else if (props.pageType === "tag") {
                     iArray = iArray.filter(arr => arr[3] && arr[3].includes(props.tag));
+                    iArray.sort((a, b) => new Date(b[1]) - new Date(a[1]));
+                }
+                // If author page, display only articles written by the specified author from most to least recent
+                else if (props.pageType === "author") {
+                    iArray = iArray.filter(arr => arr[4] && arr[4].toLowerCase() === props.author.toLowerCase());
                     iArray.sort((a, b) => new Date(b[1]) - new Date(a[1]));
                 }
                 setInitDataArray(iArray);
@@ -49,7 +54,7 @@ function HomeCard(props) {
             .catch(error => {console.log(error)});
         }
         fetchData();
-    }, [props.pageType, props.tag]);
+    }, [props.pageType, props.tag, props.author]);
     
     function PaginatedItems({ itemsPerPage }) {
         // We start with an empty list of items.
