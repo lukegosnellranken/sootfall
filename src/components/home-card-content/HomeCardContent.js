@@ -16,43 +16,45 @@ function HomeCardContent(props) {
                 <div id="div-homecardcontent-image">
                     <img src={props.image} alt="" id="image-homecardcontent-image" />
                 </div>
-                <div id="div-homecardcontent-title-date-tags">
-                    <div id="div-homecardcontent-title">
-                        <p id="p-homecardcontent-title">{props.title}</p>
-                    </div>
-                    <div id="div-homecardcontent-author-date">
-                        {
-                            <p id="p-homecardcontent-author"
-                                onClick={(e) => {
-                                        e.stopPropagation(); // Prevent parent div click event
-                                        handleNavigation(`/authors/${props.author.toLowerCase()}`);
-                                }}
-                            >
-                                {props.author}
-                            </p>
-                        }
-                        <p id="p-homecardcontent-separator">___ . ___</p>
-                        <p id="p-homecardcontent-date">{props.date}</p>
-                    </div>
-                    <div id="div-tag-stitch"></div>
-                    <div id="div-homecardcontent-tags">
-                        {
-                            props.tags ?
-                            props.tags.map((item => (
-                                <p
-                                    key={item}
-                                    className="p-homecardcontent-tags"
+                <div id="div-homecardcontent-article-info">
+                    <div id="div-homecardcontent-title-date-tags">
+                        <div id="div-homecardcontent-title">
+                            <p id="p-homecardcontent-title">{props.title}</p>
+                        </div>
+                        <div id="div-homecardcontent-author-date">
+                            {
+                                <p id="p-homecardcontent-author"
                                     onClick={(e) => {
-                                        e.stopPropagation(); // Prevent parent div click event
-                                        handleNavigation(`/tags/${item}`);
+                                            e.stopPropagation(); // Prevent parent div click event
+                                            handleNavigation(`/authors/${props.author.toLowerCase()}`);
                                     }}
                                 >
-                                    {item}
+                                    {props.author}
                                 </p>
-                            )))
-                            // invisible text to keep height consistent
-                            : <p className="p-homecardcontent-tags" style={{ visibility: "hidden" }}>|</p>
-                        }
+                            }
+                            <p id="p-homecardcontent-separator">___ . ___</p>
+                            <p id="p-homecardcontent-date">{props.date}</p>
+                        </div>
+                        <div id="div-tag-stitch"></div>
+                        <div id="div-homecardcontent-tags">
+                            {
+                                props.tags ?
+                                props.tags.map((item => (
+                                    <p
+                                        key={item}
+                                        className="p-homecardcontent-tags"
+                                        onClick={(e) => {
+                                            e.stopPropagation(); // Prevent parent div click event
+                                            handleNavigation(`/tags/${item}`);
+                                        }}
+                                    >
+                                        {item}
+                                    </p>
+                                )))
+                                // invisible text to keep height consistent
+                                : <p className="p-homecardcontent-tags" style={{ visibility: "hidden" }}>|</p>
+                            }
+                        </div>
                     </div>
                 </div>
             </div>

@@ -6,6 +6,7 @@
     border-bottom-style: dashed;
     border-bottom-color: rgb(50, 50, 50);
     display: flex;
+    justify-content: center;
     padding-bottom: 1em;
     padding-top: 1em;
     transition: background-color 1s ease-out 100ms;
@@ -22,17 +23,23 @@
 
 #div-homecardcontent-image {
     width: 25%;
-    margin-left: 2%;
+    display: flex;
+    justify-content: end;
+}
+
+#div-homecardcontent-article-info {
+    width: 75%;
+    margin-top: 1.5%;
+    display: flex;
+    justify-content: center;
 }
 
 #div-homecardcontent-title-date-tags {
-    width: 75%;
-    margin-top: 1.5%;
-    margin-left: -15%;
+    width: 100%;
 }
 
 #image-homecardcontent-image {
-    height: 100%;
+    /* height: 100%; */
     object-fit: contain;
     border-width: 3px 3px 5px 5px;
     border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
@@ -53,7 +60,7 @@
     text-shadow: .05em .05em .05em #494949;
     text-align: left;
     white-space: nowrap;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #div-homecardcontent-author-date {
@@ -69,22 +76,18 @@
     padding: 0;
     margin: 0;
     font-family: Bilbo, sans-serif;
-    flex: 1
+    flex: 1;
+    white-space: nowrap;
 }
 
 #p-homecardcontent-author {
-    margin-left: 25%;
+    transition: all .2s ease-in-out; 
+    cursor: default;
+    text-align: end;
 }
 
 #p-homecardcontent-date {
-    margin-right: 25%;
-}
-
-#p-homecardcontent-author {
-    text-shadow: .02em .02em .02em #494949;
-    font-family: Bilbo, sans-serif;
-    transition: all .2s ease-in-out; 
-    cursor: default;
+    text-align: start;
 }
 
 #p-homecardcontent-separator {
