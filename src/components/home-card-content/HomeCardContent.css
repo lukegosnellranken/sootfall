@@ -24,7 +24,7 @@
 #div-homecardcontent-image {
     width: 25%;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 #div-homecardcontent-article-info {

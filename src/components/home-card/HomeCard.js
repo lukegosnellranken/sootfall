@@ -49,12 +49,22 @@ function HomeCard(props) {
                     iArray = iArray.filter(arr => arr[4] && arr[4].toLowerCase() === props.author.toLowerCase());
                     iArray.sort((a, b) => new Date(b[1]) - new Date(a[1]));
                 }
+                // If search page, display only articles related to the search
+                else if (props.pageType === "search") {
+                    const search = props.search ? props.search.toLowerCase() : "";
+                    iArray = iArray.filter(arr =>
+                        (arr[0] && arr[0].toLowerCase().includes(search)) || // title
+                        (arr[3] && arr[3].some(tag => tag.toLowerCase().includes(search))) || // tags
+                        (arr[4] && arr[4].toLowerCase().includes(search)) // author
+                    );
+                }
                 setInitDataArray(iArray);
             })
             .catch(error => {console.log(error)});
         }
+        console.log(props.pageType);
         fetchData();
-    }, [props.pageType, props.tag, props.author]);
+    }, [props.pageType, props.tag, props.author, props.search]);
     
     function PaginatedItems({ itemsPerPage }) {
         // We start with an empty list of items.

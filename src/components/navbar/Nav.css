@@ -11,10 +11,12 @@
 }
 
 #div-nav-list {
-    width: 60%;
+    width: 100%;
+    display: flex;
 }
 
 #ul-nav-list {
+    width: 80%;
     display: flex;
     list-style-type: none;
     text-decoration: none;
@@ -25,7 +27,32 @@
     margin-left: 0%;
 }
 
+#form-search {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+#input-search {
+    background-color: rgba(10, 10, 10, 0.95);
+    border-radius: .5em;
+    border-width: .1em;
+    border-style: solid;
+    border-color: rgb(50, 50, 50);
+    font-family: Bilbo, sans-serif;
+    font-size: 150%;
+    color: #818181;
+    letter-spacing: .05em;
+    padding-left: .5em;
+    width: 80%;
+}
+
+#input-search:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: rgb(75, 75, 75);
+}
 
 
 @media screen and (max-width: 1000px) {

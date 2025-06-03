@@ -3,9 +3,10 @@ import Nav from './components/navbar/Nav';
 import Background from './components/background/background';
 import './App.css';
 import Footer from './components/footer/Footer';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Article from './pages/Article';
+import Search from './pages/Search';
 import NotFound from './pages/NotFound';
 import Tag from './pages/Tag';
 import Author from './pages/Author';
@@ -20,15 +21,14 @@ function App() {
       <Nav/>
       <Background/>
       <div id='div-content-and-footer'>
-        <BrowserRouter>
-          <Routes>
-            <Route index element={<Home/>}/>
-            <Route path='/articles/:id' element={<Article/>}/>
-            <Route path='*' element={<NotFound/>}/>
-            <Route path='/tags/:tagName' element={<Tag/>}/>
-            <Route path='/authors/:authorName' element={<Author/>}/>
-          </Routes>
-        </BrowserRouter>
+        <Routes>
+          <Route index element={<Home/>}/>
+          <Route path='/articles/:id' element={<Article/>}/>
+          <Route path='*' element={<NotFound/>}/>
+          <Route path='/tags/:tagName' element={<Tag/>}/>
+          <Route path='/authors/:authorName' element={<Author/>}/>
+          <Route path='/search/:searchName' element={<Search/>}/>
+        </Routes>
       </div>
       <Footer/>
     </div>
