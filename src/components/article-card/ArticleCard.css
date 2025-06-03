@@ -95,6 +95,95 @@
     padding-left: 5%;
 }
 
+
+#div-articlecard-title-date-tags {
+    width: 100%;
+}
+
+#p-articlecard-title {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 300%;
+    font-family: Bilbo, sans-serif;
+    color: #818181;
+    text-shadow: .05em .05em .05em #494949;
+    text-align: left;
+    white-space: nowrap;
+    /* overflow: hidden; */
+}
+
+#div-articlecard-author-date {
+    display: flex;
+    justify-content: center;
+}
+
+#p-articlecard-date, #p-articlecard-author, #p-articlecard-separator {
+    font-size: 150%;
+    color: gray;
+    text-shadow: .02em .02em .02em #494949;
+    letter-spacing: .05em;
+    padding: 0;
+    margin: 0;
+    font-family: Bilbo, sans-serif;
+    flex: 1;
+    white-space: nowrap;
+}
+
+#p-articlecard-author {
+    transition: all .2s ease-in-out; 
+    cursor: default;
+    text-align: end;
+}
+
+#p-articlecard-date {
+    text-align: start;
+}
+
+#p-articlecard-separator {
+    opacity: .5;
+    line-height: 100%;
+    user-select: none;
+    cursor: default;
+    text-align: center;
+}
+
+#div-tag-stitch {
+    border-bottom-width: .1em;
+    border-bottom-style: solid;
+    border-color: rgb(50, 50, 50);
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: .5em;
+    opacity: .5;
+}
+
+#div-articlecard-tags {
+    display: flex;
+    justify-content: center;
+}
+
+.p-articlecard-tags {
+    font-size: 150%;
+    color: gray;
+    text-shadow: .02em .02em .02em #494949;
+    letter-spacing: .05em;
+    padding: 0;
+    margin: 0;
+    padding-top: 0.5em;
+    margin-left: .5em;
+    margin-right: .5em;
+    font-family: Bilbo, sans-serif;
+    transition: all .2s ease-in-out; 
+    cursor: default;
+}
+
+.p-articlecard-tags:hover, #p-articlecard-author:hover {
+    transform: scale(1.1);
+}
+
 #p-articlecard-title {
     font-family: Bilbo, sans-serif;
     padding-top: 1em;

@@ -10,7 +10,7 @@ function AuthorComponent() {
     <div id="tagcomponent-container">
         <div id="div-tagcomponent-card">
             <HomeCard
-                title = {formattedPathname}
+                title = {"Author: " + formattedPathname}
                 pageType = "author"
                 author = {pathname}
             />

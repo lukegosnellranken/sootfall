@@ -39,7 +39,8 @@ function ArticleCard() {
                     let image = 'http://localhost:1337' + data.data[i].image.formats.thumbnail.url;
                     let content = data.data[i].content;
                     let tags = data.data[i].tags;
-                    iArray.push([title, dateString, image, content, tags]);
+                    let author = data.data[i].author;
+                    iArray.push([title, dateString, image, content, tags, author]);
                 }
             })
             .catch(error => {console.log(error)});
@@ -62,10 +63,11 @@ function ArticleCard() {
                 let image = initDataArray[i][2];
                 let content = initDataArray[i][3];
                 let tags = initDataArray[i][4];
+                let author = initDataArray[i][5];
                 if (tags != null) {
                     tags = tags.split(",").map(item => item.trim());
                 }
-                iArray.push([title, dateString, image, content, tags]);
+                iArray.push([title, dateString, image, content, tags, author]);
             }
         }
         // Only set articleDataArray if iArray is populated so that it is not set to an empty array, causing an unnecessary
@@ -85,20 +87,32 @@ function ArticleCard() {
                     <div id="div-articlecard-image">
                         <img src={articleDataArray[0][2]} alt="" id="p-articlecard-image" />
                     </div>
-                    <div id="div-articlecard-title-date">
+                    <div id="div-articlecard-title-date-tags">
                         <div id="div-articlecard-title">
                             <p id="p-articlecard-title">{articleDataArray[0][0]}</p>
                         </div>
-                        <div id="div-articlecard-date">
+                        <div id="div-articlecard-author-date">
+                            {
+                                <p id="p-articlecard-author"
+                                    onClick={(e) => {
+                                            e.stopPropagation(); // Prevent parent div click event
+                                            handleNavigation(`/authors/${articleDataArray[0][5].toLowerCase()}`);
+                                    }}
+                                >
+                                    {articleDataArray[0][5]}
+                                </p>
+                            }
+                            <p id="p-articlecard-separator">___ . ___</p>
                             <p id="p-articlecard-date">{articleDataArray[0][1]}</p>
                         </div>
-                        <div id="div-articlecardcontent-tags">
+                        <div id="div-tag-stitch"></div>
+                        <div id="div-articlecard-tags">
                             {
                                 articleDataArray[0][4] ?
                                 articleDataArray[0][4].map((item => (
                                     <p
                                         key={item}
-                                        className="p-articlecardcontent-tags"
+                                        className="p-articlecard-tags"
                                         onClick={(e) => {
                                             e.stopPropagation(); // Prevent parent div click event
                                             handleNavigation(`/tags/${item}`);
@@ -107,7 +121,8 @@ function ArticleCard() {
                                         {item}
                                     </p>
                                 )))
-                                : null
+                                // invisible text to keep height consistent
+                                : <p className="p-articlecard-tags" style={{ visibility: "hidden" }}>|</p>
                             }
                         </div>
                     </div>

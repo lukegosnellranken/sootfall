@@ -14,7 +14,7 @@ function TagComponent() {
         <div id="tagcomponent-container">
             <div id="div-tagcomponent-card">
                 <HomeCard
-                    title = {formattedPathname}
+                    title = {"Tag: " + formattedPathname}
                     pageType = "tag"
                     tag = {tagName}
                 />

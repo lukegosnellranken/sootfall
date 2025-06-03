@@ -8,15 +8,14 @@ function SearchComponent() {
     // when performing a new search when the user is already on the same route
     const { searchName } = useParams();
     const decodedSearchName = decodeURIComponent(searchName);
-    const formattedDecodedSaerchName = decodedSearchName.charAt(0).toUpperCase() + decodedSearchName.slice(1);
     
     return(
     <div id="tagcomponent-container">
         <div id="div-tagcomponent-card">
             <HomeCard
-                title = {formattedDecodedSaerchName}
+                title = {"Search results for: " + decodedSearchName}
                 pageType = "search"
-                search = {formattedDecodedSaerchName}
+                search = {decodedSearchName}
             />
         </div>
     </div>
