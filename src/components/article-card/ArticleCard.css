@@ -135,11 +135,16 @@
 #p-articlecard-author {
     transition: all .2s ease-in-out; 
     cursor: default;
-    text-align: end;
+    text-align: center;
+    margin-left: 15%;
+    text-decoration: underline dashed;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
 }
 
 #p-articlecard-date {
-    text-align: start;
+    text-align: center;
+    margin-right: 15%;
 }
 
 #p-articlecard-separator {

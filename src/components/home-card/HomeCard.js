@@ -155,7 +155,7 @@ function HomeCard(props) {
         <div id="div-homecard-card">
             <div id="div-homecard-stitch">
                 {
-                    props.pageType === "tag" ?
+                    props.pageType === "tag" || props.pageType === "author" ?
                     <div id="div-homecard-back-link">
                         <p id="p-homecard-back-link"><a href="http://localhost:3000/">Return</a></p>
                     </div>

@@ -23,19 +23,21 @@ function HomeCardContent(props) {
                         </div>
                         <div id="div-homecardcontent-author-date">
                             {
-                                <p id="p-homecardcontent-author"
-                                    onClick={(e) => {
-                                            e.stopPropagation(); // Prevent parent div click event
-                                            handleNavigation(`/authors/${props.author.toLowerCase()}`);
-                                    }}
-                                >
-                                    {props.author}
+                                <p id="p-homecardcontent-author-date">
+                                    By
+                                    <span id="span-homecardcontent-author"
+                                        onClick={(e) => {
+                                                e.stopPropagation(); // Prevent parent div click event
+                                                handleNavigation(`/authors/${props.author.toLowerCase()}`);
+                                        }}
+                                    >
+                                        {props.author}
+                                    </span>
+                                     - 
+                                    <span id="span-homecardcontent-date">{props.date}</span>
                                 </p>
                             }
-                            <p id="p-homecardcontent-separator">___ . ___</p>
-                            <p id="p-homecardcontent-date">{props.date}</p>
                         </div>
-                        <div id="div-tag-stitch"></div>
                         <div id="div-homecardcontent-tags">
                             {
                                 props.tags ?

@@ -49,52 +49,46 @@
 }
 
 #p-homecardcontent-title {
-    padding: 0;
     margin: 0;
+    margin-left: 5%;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     font-weight: bold;
     font-size: 300%;
     font-family: Bilbo, sans-serif;
     color: #818181;
     text-shadow: .05em .05em .05em #494949;
-    text-align: left;
     white-space: nowrap;
-    /* overflow: hidden; */
 }
 
-#div-homecardcontent-author-date {
-    display: flex;
-    justify-content: center;
-}
-
-#p-homecardcontent-date, #p-homecardcontent-author, #p-homecardcontent-separator {
+#p-homecardcontent-author-date {
+    text-align: left;
+    margin: 0;
+    margin-left: 5%;
     font-size: 150%;
     color: gray;
     text-shadow: .02em .02em .02em #494949;
     letter-spacing: .05em;
-    padding: 0;
-    margin: 0;
     font-family: Bilbo, sans-serif;
-    flex: 1;
-    white-space: nowrap;
 }
 
-#p-homecardcontent-author {
+#span-homecardcontent-date, #span-homecardcontent-author {
+    margin-left: .3em;
+    margin-right: .3em;
+}
+
+#span-homecardcontent-author {
     transition: all .2s ease-in-out; 
     cursor: default;
     text-align: end;
+    display: inline-block; /*Necessary for transform to work*/
+    text-decoration: underline dashed;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
 }
 
-#p-homecardcontent-date {
+#span-homecardcontent-date {
     text-align: start;
-}
-
-#p-homecardcontent-separator {
-    opacity: .5;
-    line-height: 100%;
-    user-select: none;
-    cursor: default;
 }
 
 #div-tag-stitch {
@@ -109,7 +103,7 @@
 
 #div-homecardcontent-tags {
     display: flex;
-    justify-content: center;
+    margin-left: 5%;
 }
 
 .p-homecardcontent-tags {
@@ -120,14 +114,14 @@
     padding: 0;
     margin: 0;
     padding-top: 0.5em;
-    margin-left: .5em;
-    margin-right: .5em;
+    /* margin-left: .5em; */
+    margin-right: 1em;
     font-family: Bilbo, sans-serif;
     transition: all .2s ease-in-out; 
     cursor: default;
 }
 
-.p-homecardcontent-tags:hover, #p-homecardcontent-author:hover {
+.p-homecardcontent-tags:hover, #span-homecardcontent-author:hover {
     transform: scale(1.1);
 }
 
@@ -172,10 +166,6 @@
         padding-left: 1%;
     }
 
-    #p-homecardcontent-date {
-        font-size: 80% !important;
-    }
-
     .p-homecardcontent-tags {
         font-size: 90%;
     }
@@ -185,10 +175,6 @@
     #p-homecardcontent-title {
         font-size: 100%;
         padding-left: 1%;
-    }
-
-    #p-homecardcontent-date {
-        font-size: 60% !important;
     }
 
     .p-homecardcontent-tags {
