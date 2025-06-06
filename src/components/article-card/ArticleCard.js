@@ -77,11 +77,40 @@ function ArticleCard() {
         }
     }, [initDataArray, id]);
 
+    function readArticle(content) {
+        let synth = window.speechSynthesis;
+        let voices = synth.getVoices();
+        if (voices.length > 0) {
+            let speech = new SpeechSynthesisUtterance();
+            console.log(voices);
+            speech.voice = voices[0];
+            speech.text = content;
+            speech.volume = 1;
+            speech.rate = .75;
+            speech.pitch = 1;
+            window.speechSynthesis.speak(speech);
+        } else {
+            setTimeout(() => readArticle(content), 100);
+        }
+    }
+
+    useEffect(() => {
+        // Cleanup: stop speech when unmounting or navigating away
+        setTimeout(100);
+        return () => {
+            console.log("Cleanup: stopping speech synthesis");
+            window.speechSynthesis.cancel();
+        };
+    }, []);
+
     return (
         <div id="div-articlecard-full-article-card">
             <div id="div-articlecard-stitch">
                 <div id="div-articlecard-back-link">
-                    <p id="p-articlecard-back-link"><a href="http://localhost:3000/">Return</a></p>
+                    {/* <p id="p-articlecard-back-link"><a href="http://localhost:3000/">Return</a></p> */}
+                    <p id="p-articlecard-back-link" onClick={() => navigate(-1)}>
+                        Return
+                    </p>
                 </div>
                 <div id="div-articlecard-image-title-date">
                     <div id="div-articlecard-image">
@@ -133,6 +162,7 @@ function ArticleCard() {
                 <div className="separator"></div>
                 <div id="div-articlecard-main-content">
                     <div id="p-articlecard-main-content"><ReactMarkdown>{articleDataArray[0][3]}</ReactMarkdown></div>
+                    <button onClick={() => readArticle(articleDataArray[0][3])}>Read</button>
                 </div>
             </div>
         </div>

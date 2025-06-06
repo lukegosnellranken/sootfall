@@ -27,16 +27,14 @@
     font-family: Bilbo, sans-serif;
     font-size: 200%;
     position: absolute;
-    transition: all .2s ease-in-out; 
+    transition: all .2s ease-in-out;
+    text-decoration: none;
+    color: #818181;
+    cursor: pointer;
 }
 
 #p-articlecard-back-link:hover {
     transform: scale(1.1);
-}
-
-#p-articlecard-back-link a {
-    text-decoration: none;
-    color: #818181;
 }
 
 #div-articlecard-image-title-date {
@@ -134,7 +132,7 @@
 
 #p-articlecard-author {
     transition: all .2s ease-in-out; 
-    cursor: default;
+    cursor: pointer;
     text-align: center;
     margin-left: 15%;
     text-decoration: underline dashed;
@@ -151,7 +149,6 @@
     opacity: .5;
     line-height: 100%;
     user-select: none;
-    cursor: default;
     text-align: center;
 }
 
@@ -182,7 +179,7 @@
     margin-right: .5em;
     font-family: Bilbo, sans-serif;
     transition: all .2s ease-in-out; 
-    cursor: default;
+    cursor: pointer;
 }
 
 .p-articlecard-tags:hover, #p-articlecard-author:hover {

@@ -1,9 +1,12 @@
 import React from "react";
 import './NavItem.css';
+import { Link } from "react-router-dom";
 
 function NavItem(props) {
     return (
-        <li className="li-nav-item"><a href={"http://localhost:3000/" + props.href}>{props.name}</a></li>
+        <li className="li-nav-item">
+            <Link to={`/${props.href}`}>{props.name}</Link>
+        </li>
     )
 }
 

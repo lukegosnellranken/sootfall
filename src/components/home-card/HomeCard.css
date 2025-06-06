@@ -27,15 +27,12 @@
     font-size: 200%;
     position: absolute;
     transition: all .2s ease-in-out; 
+    text-decoration: none;
+    color: #818181;
 }
 
 #p-homecard-back-link:hover {
     transform: scale(1.1);
-}
-
-#p-homecard-back-link a {
-    text-decoration: none;
-    color: #818181;
 }
 
 #div-homecard-title {

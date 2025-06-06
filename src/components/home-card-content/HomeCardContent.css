@@ -59,6 +59,7 @@
     color: #818181;
     text-shadow: .05em .05em .05em #494949;
     white-space: nowrap;
+    cursor: default;
 }
 
 #p-homecardcontent-author-date {
@@ -70,6 +71,7 @@
     text-shadow: .02em .02em .02em #494949;
     letter-spacing: .05em;
     font-family: Bilbo, sans-serif;
+    cursor: default;
 }
 
 #span-homecardcontent-date, #span-homecardcontent-author {
@@ -79,7 +81,7 @@
 
 #span-homecardcontent-author {
     transition: all .2s ease-in-out; 
-    cursor: default;
+    cursor: pointer;
     text-align: end;
     display: inline-block; /*Necessary for transform to work*/
     text-decoration: underline dashed;
@@ -118,7 +120,7 @@
     margin-right: 1em;
     font-family: Bilbo, sans-serif;
     transition: all .2s ease-in-out; 
-    cursor: default;
+    cursor: pointer;
 }
 
 .p-homecardcontent-tags:hover, #span-homecardcontent-author:hover {
