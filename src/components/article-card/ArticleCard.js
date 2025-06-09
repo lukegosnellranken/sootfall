@@ -78,19 +78,44 @@ function ArticleCard() {
     }, [initDataArray, id]);
 
     function readArticle(content) {
-        let synth = window.speechSynthesis;
-        let voices = synth.getVoices();
-        if (voices.length > 0) {
-            let speech = new SpeechSynthesisUtterance();
+        // Uses Google fonts in header of index.html
+        const readButton = document.getElementById("i-btn-read");
+        const pauseButton = document.getElementById("i-btn-pause");
+        if (readButton.innerText === "play_arrow") {
+            let synth = window.speechSynthesis;
+            let voices = synth.getVoices();
             console.log(voices);
-            speech.voice = voices[0];
-            speech.text = content;
-            speech.volume = 1;
-            speech.rate = .75;
-            speech.pitch = 1;
-            window.speechSynthesis.speak(speech);
-        } else {
-            setTimeout(() => readArticle(content), 100);
+            if (voices.length > 0) {
+                let speech = new SpeechSynthesisUtterance();
+                console.log(voices);
+                speech.voice = voices[0];
+                speech.text = content;
+                speech.volume = 1;
+                speech.rate = .75;
+                speech.pitch = 1;
+                window.speechSynthesis.speak(speech);
+                readButton.innerText = "stop";
+            } else {
+                setTimeout(() => readArticle(content), 100);
+            }
+        } else if (readButton.innerText === "stop") {
+            window.speechSynthesis.cancel();
+            readButton.innerText = "play_arrow";
+            pauseButton.innerText = "pause_circle_outline";
+        }
+    }
+
+    function pauseArticle() {
+        const readButton = document.getElementById("i-btn-read");
+        const pauseButton = document.getElementById("i-btn-pause");
+        if (pauseButton.innerText === "pause_circle_outline") {
+            if (readButton.innerText === "stop") {
+                window.speechSynthesis.pause();
+                pauseButton.innerText = "play_circle_outline";
+            }
+        } else if (pauseButton.innerText === "play_circle_outline") {
+            window.speechSynthesis.resume();
+            pauseButton.innerText = "pause_circle_outline";
         }
     }
 
@@ -98,8 +123,18 @@ function ArticleCard() {
         // Cleanup: stop speech when unmounting or navigating away
         setTimeout(100);
         return () => {
-            console.log("Cleanup: stopping speech synthesis");
             window.speechSynthesis.cancel();
+        };
+    }, []);
+
+    useEffect(() => {
+        // Stop speechSynthesis when the user refreshes the page
+        const handleUnload = () => {
+            window.speechSynthesis.cancel();
+        };
+        window.addEventListener("beforeunload", handleUnload);
+        return () => {
+            window.removeEventListener("beforeunload", handleUnload);
         };
     }, []);
 
@@ -160,9 +195,17 @@ function ArticleCard() {
                     </div>
                 </div>
                 <div className="separator"></div>
+                    <div id="div-articlecard-voicesynthesis">
+                        <button id="btn-read"  onClick={() => readArticle(articleDataArray[0][3])}>
+                            <i id="i-btn-read" className="material-icons">play_arrow</i>
+                        </button>
+                        <button id="btn-pause" onClick={() => pauseArticle()}>
+                            <i id="i-btn-pause" className="material-icons">pause_circle_outline</i>
+                        </button>
+                    </div>
+                <div className="separator"></div>
                 <div id="div-articlecard-main-content">
                     <div id="p-articlecard-main-content"><ReactMarkdown>{articleDataArray[0][3]}</ReactMarkdown></div>
-                    <button onClick={() => readArticle(articleDataArray[0][3])}>Read</button>
                 </div>
             </div>
         </div>

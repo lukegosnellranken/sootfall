@@ -236,7 +236,6 @@
     border-bottom-width: .1em;
 }
 
-
 #div-articlecardcontent-tags {
     display: flex;
     justify-content: center;
@@ -262,6 +261,24 @@
     transform: scale(1.1);
 }
 
+#div-articlecard-voicesynthesis {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.material-icons {
+    vertical-align: bottom;
+}
+
+#btn-read, #btn-pause {
+    background-color: #818181;
+}
+
+#btn-read:active:hover, #btn-pause:active:hover {
+    background-color: #414141;
+}
 
 
 @media screen and (max-width: 800px) {
