@@ -32,7 +32,7 @@ function HomeCard(props) {
                     dateString = dateString.slice(5) + "-" + dateString.slice(2,4);
                     let image = 'http://localhost:1337' + data.data[i].image.formats.thumbnail.url;
                     let tags = data.data[i].tags;
-                    let author = data.data[i].author;
+                    let author = data.data[i].author.name;
                     if (tags != null) {
                         tags = tags.split(",").map(item => item.trim());
                     }

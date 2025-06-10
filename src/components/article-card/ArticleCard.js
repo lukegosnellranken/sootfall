@@ -43,7 +43,7 @@ function ArticleCard() {
                     let image = 'http://localhost:1337' + data.data[i].image.formats.thumbnail.url;
                     let content = data.data[i].content;
                     let tags = data.data[i].tags;
-                    let author = data.data[i].author;
+                    let author = data.data[i].author.name;
                     iArray.push([title, dateString, image, content, tags, author]);
                 }
             })
