@@ -8,7 +8,9 @@ import lantern from '../../images/lantern2.png';
 function ArticleCard() {
     let [initDataArray, setInitDataArray] = useState([]);
     let [articleDataArray, setArticleDataArray] = useState([[]]);
-    const { id } = useParams();
+    let { id } = useParams();
+    // Remove all special characters from the id
+    id = id.replace(/[^a-zA-Z0-9-_]/g, "");
 
     const token = 'ff75d12ddbfa3b18817eacba0f70b6fc3ef76c0d2e13da25468bfa16a6deaffd1f071ccc5ef1cff42ce2d2618ec6f457da47f6eceede245b00c59711b268482613864751271af51baf71109535b1bb87eff397e4193ffef7d08300aaa4e685792c019da43d928a18fff82ed34920c0aabfbdfc0fa2b22bd7379fb264eaebf0f4';
 
@@ -57,7 +59,8 @@ function ArticleCard() {
         if (initDataArray === 0) { return; }
         let iArray = [];
         for (let i = 0; i < initDataArray.length; i++) {
-            if (initDataArray[i][0].replace(/\s+/g, '-').toLowerCase() === id) {
+            // First replace dashes with spaces, set string to lowercase, then remove all special characters to compare to the santized id
+            if (initDataArray[i][0].replace(/\s+/g, '-').toLowerCase().replace(/[^a-zA-Z0-9-_]/g, "") === id) {
                 let title = initDataArray[i][0];
                 let dateString = initDataArray[i][1];
                 let image = initDataArray[i][2];
@@ -196,7 +199,7 @@ function ArticleCard() {
                 </div>
                 <div className="separator"></div>
                     <div id="div-articlecard-voicesynthesis">
-                        <button id="btn-read"  onClick={() => readArticle(articleDataArray[0][3])}>
+                        <button id="btn-read" onClick={() => readArticle(articleDataArray[0][3])}>
                             <i id="i-btn-read" className="material-icons">play_arrow</i>
                         </button>
                         <button id="btn-pause" onClick={() => pauseArticle()}>

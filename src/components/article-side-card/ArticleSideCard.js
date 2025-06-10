@@ -9,7 +9,8 @@ function ArticleSideCard(props) {
     let currentItems = initDataArray;
     let currentArticle = ['filler'];
     console.log(initDataArray);
-    const { id } = useParams();
+    let { id } = useParams();
+    id = id.replace(/[^a-zA-Z0-9-_]/g, "");
 
     const token = 'ff75d12ddbfa3b18817eacba0f70b6fc3ef76c0d2e13da25468bfa16a6deaffd1f071ccc5ef1cff42ce2d2618ec6f457da47f6eceede245b00c59711b268482613864751271af51baf71109535b1bb87eff397e4193ffef7d08300aaa4e685792c019da43d928a18fff82ed34920c0aabfbdfc0fa2b22bd7379fb264eaebf0f4';
 
@@ -43,7 +44,7 @@ function ArticleSideCard(props) {
     function items() {
         // Remove current article from array
         for (let i = 0; i < currentItems.length; i++) { 
-            if (currentItems[i][0].replace(/\s+/g, '-').toLowerCase() === id) {
+            if (currentItems[i][0].replace(/\s+/g, '-').toLowerCase().replace(/[^a-zA-Z0-9-_]/g, "") === id) {
                 currentArticle = currentItems[i];
                 currentItems.splice(i, 1);
             }
