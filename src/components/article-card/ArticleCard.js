@@ -8,6 +8,8 @@ import lantern from '../../images/lantern2.png';
 function ArticleCard() {
     let [initDataArray, setInitDataArray] = useState([]);
     let [articleDataArray, setArticleDataArray] = useState([[]]);
+    const [voices, setVoices] = useState([]);
+    const [selectedVoice, setSelectedVoice] = useState("");
     let { id } = useParams();
     // Remove all special characters from the id
     id = id.replace(/[^a-zA-Z0-9-_]/g, "");
@@ -80,23 +82,67 @@ function ArticleCard() {
         }
     }, [initDataArray, id]);
 
+    useEffect(() => {
+        setVoiceStyles();
+        function loadVoices() {
+            const allVoices = window.speechSynthesis.getVoices();
+            setVoices(allVoices);
+            if (allVoices.length > 0 && !selectedVoice) {
+                setSelectedVoice(allVoices[0].name);
+            }
+        }
+        loadVoices();
+        // Rerun loadVoices if voice data changes
+        window.speechSynthesis.onvoiceschanged = loadVoices;
+        // Reset to null on unmount to prevent event triggers
+        return () => {
+            window.speechSynthesis.onvoiceschanged = null;
+        }
+    }, [selectedVoice]);
+
+    function setVoiceStyles() {
+        const readButton = document.getElementById("i-btn-read");
+        const pauseButtonParent = document.getElementById("btn-pause");
+        const selectDropdown = document.getElementById("select-voice");
+        if (readButton.innerText === "play_arrow") {
+            pauseButtonParent.classList.add("btn-disable");
+        } else {
+            if (pauseButtonParent.classList.contains("btn-disable")) {
+                pauseButtonParent.classList.remove("btn-disable");
+            }
+        }
+        if (readButton.innerText === "stop") {
+            selectDropdown.classList.add("btn-disable");
+            selectDropdown.setAttribute("disabled", "")
+        } else {
+            if (selectDropdown.classList.contains("btn-disable")) {
+                selectDropdown.classList.remove("btn-disable");
+            }
+            if (selectDropdown.hasAttribute("disabled")) {
+                selectDropdown.removeAttribute("disabled");
+            }
+        }
+    }
+
     function readArticle(content) {
         // Uses Google fonts in header of index.html
         const readButton = document.getElementById("i-btn-read");
         const pauseButton = document.getElementById("i-btn-pause");
         if (readButton.innerText === "play_arrow") {
             let synth = window.speechSynthesis;
-            let voices = synth.getVoices();
+            let allVoices = synth.getVoices();
             console.log(voices);
             if (voices.length > 0) {
                 let speech = new SpeechSynthesisUtterance();
-                console.log(voices);
-                speech.voice = voices[0];
+                let voice = allVoices.find(v => v.name === selectedVoice);
+                if (voice) {
+                    speech.voice = voice;
+                }
                 speech.text = content;
                 speech.volume = 1;
                 speech.rate = .75;
                 speech.pitch = 1;
-                window.speechSynthesis.speak(speech);
+                synth.speak(speech);
                 readButton.innerText = "stop";
             } else {
                 setTimeout(() => readArticle(content), 100);
@@ -106,6 +152,7 @@ function ArticleCard() {
             readButton.innerText = "play_arrow";
             pauseButton.innerText = "pause_circle_outline";
         }
+        setVoiceStyles();
     }
 
     function pauseArticle() {
@@ -120,6 +167,7 @@ function ArticleCard() {
             window.speechSynthesis.resume();
             pauseButton.innerText = "pause_circle_outline";
         }
+        setVoiceStyles();
     }
 
     useEffect(() => {
@@ -199,6 +247,17 @@ function ArticleCard() {
                 </div>
                 <div className="separator"></div>
                     <div id="div-articlecard-voicesynthesis">
+                        <select
+                            id="select-voice"
+                            value={selectedVoice}
+                            onChange={e => setSelectedVoice(e.target.value)}
+                        >
+                            {voices.map(voice => (
+                                <option key={voice.name} className="option-voice" value={voice.name}>
+                                    {voice.name} ({voice.lang})
+                                </option>
+                            ))}
+                        </select>
                         <button id="btn-read" onClick={() => readArticle(articleDataArray[0][3])}>
                             <i id="i-btn-read" className="material-icons">play_arrow</i>
                         </button>

@@ -4,8 +4,8 @@ import { useParams } from "react-router-dom";
 import HomeCard from "../home-card/HomeCard";
 
 function TagComponent() {
-    const pathname = window.location.pathname.split("/").pop();
-    const formattedPathname = pathname.charAt(0).toUpperCase() + pathname.slice(1);
+    let pathname = window.location.pathname.split("/").pop();
+    pathname = decodeURIComponent(pathname);
     // Using useParams is necessary for causing the page to rerender
     // when clicking a new tag when the user is already on the same route
     const { tagName } = useParams();
@@ -14,7 +14,7 @@ function TagComponent() {
         <div id="tagcomponent-container">
             <div id="div-tagcomponent-card">
                 <HomeCard
-                    title = {"Tag: " + formattedPathname}
+                    title = {"Tag: " + pathname}
                     pageType = "tag"
                     tag = {tagName}
                 />
