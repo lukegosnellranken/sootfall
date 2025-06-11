@@ -17,9 +17,9 @@ function AuthorComponent() {
     return(
     <div id="tagcomponent-container">
         <div id="div-tagcomponent-card">
-            <AuthorCard/>
+            <AuthorCard />
             <HomeCard
-                title = {"Author: " + capitalizeWords(pathname)}
+                title = {"Writings by " + capitalizeWords(pathname)}
                 pageType = "author"
                 author = {pathname}
             />

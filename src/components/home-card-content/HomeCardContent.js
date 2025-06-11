@@ -18,9 +18,7 @@ function HomeCardContent(props) {
                 </div>
                 <div id="div-homecardcontent-article-info">
                     <div id="div-homecardcontent-title-date-tags">
-                        <div id="div-homecardcontent-title">
-                            <p id="p-homecardcontent-title">{props.title}</p>
-                        </div>
+                        <p id="p-homecardcontent-title">{props.title}</p>
                         <div id="div-homecardcontent-author-date">
                             {
                                 <p id="p-homecardcontent-author-date">

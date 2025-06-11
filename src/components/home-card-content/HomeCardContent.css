@@ -23,8 +23,9 @@
 
 #div-homecardcontent-image {
     width: 25%;
+    min-height: 12em;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 #div-homecardcontent-article-info {
@@ -39,7 +40,7 @@
 }
 
 #image-homecardcontent-image {
-    /* height: 100%; */
+    height: 100%;
     object-fit: contain;
     border-width: 3px 3px 5px 5px;
     border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
@@ -50,7 +51,7 @@
 
 #p-homecardcontent-title {
     margin: 0;
-    margin-left: 5%;
+    margin-left: 2%;
     display: flex;
     justify-content: left;
     font-weight: bold;
@@ -65,7 +66,7 @@
 #p-homecardcontent-author-date {
     text-align: left;
     margin: 0;
-    margin-left: 5%;
+    margin-left: 2%;
     font-size: 150%;
     color: gray;
     text-shadow: .02em .02em .02em #494949;
@@ -105,7 +106,7 @@
 
 #div-homecardcontent-tags {
     display: flex;
-    margin-left: 5%;
+    margin-left: 2%;
 }
 
 .p-homecardcontent-tags {
@@ -140,19 +141,8 @@
 }
 
 @media screen and (max-width: 1000px) {
-    #div-homecardcontent-image {
-        width: 40%;
-        margin-left: 0%;
-    }
-
-    #image-homecardcontent-image {
-        margin-left: -2em;
-    }
-
     #div-homecardcontent-title-date-tags {
-        width: 70%;
-        margin-right: .5em;
-        margin-left: -2.5em;
+
     }
 }
 
@@ -165,7 +155,6 @@
 @media screen and (max-width: 600px) {
     #p-homecardcontent-title {
         font-size: 120%;
-        padding-left: 1%;
     }
 
     .p-homecardcontent-tags {
@@ -176,7 +165,6 @@
 @media screen and (max-width: 450px) {
     #p-homecardcontent-title {
         font-size: 100%;
-        padding-left: 1%;
     }
 
     .p-homecardcontent-tags {
