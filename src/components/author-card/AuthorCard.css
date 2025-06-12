@@ -7,6 +7,11 @@
     margin-top: 2em;
     padding-top: .2em;
     padding-bottom: .2em;
+    transition: background-color 1s ease-out 100ms;
+}
+
+#div-authorcard:hover {
+    background-color:rgba(17, 17, 17, 0.5);
 }
 
 #div-authorcard-stitch {
