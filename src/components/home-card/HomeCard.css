@@ -27,6 +27,7 @@
     transition: all .2s ease-in-out; 
     text-decoration: none;
     color: #818181;
+    cursor: pointer;
 }
 
 #p-homecard-back-link:hover {

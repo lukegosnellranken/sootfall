@@ -10,12 +10,9 @@ import Search from './pages/Search';
 import NotFound from './pages/NotFound';
 import Tag from './pages/Tag';
 import Author from './pages/Author';
+import Authors from './pages/Authors';
 
 function App() {
-  // fetch('http://localhost:1337/api/articles')
-  //   .then(res => {return res.json()})
-  //   .then(data => {console.log(data)})
-  //   .catch(error => {console.log(error)});
   return (
     <div id='appDiv'>
       <Nav/>
@@ -27,6 +24,7 @@ function App() {
           <Route path='*' element={<NotFound/>}/>
           <Route path='/tags/:tagName' element={<Tag/>}/>
           <Route path='/authors/:authorName' element={<Author/>}/>
+          <Route path='/authors' element={<Authors/>}/>
           <Route path='/search/:searchName' element={<Search/>}/>
         </Routes>
       </div>
