@@ -8,7 +8,6 @@ function ArticleSideCard(props) {
     let [initDataArray, setInitDataArray] = useState([]);
     let currentItems = initDataArray;
     let currentArticle = ['filler'];
-    console.log(initDataArray);
     let { id } = useParams();
     id = id.replace(/[^a-zA-Z0-9-_]/g, "");
 
@@ -67,7 +66,6 @@ function ArticleSideCard(props) {
     function restoreCurrentArticle() {
         if (!currentItems.includes(currentArticle)) {
             if (currentArticle !== 'filler') {
-                console.log('filler');
                 currentItems.push(currentArticle);
             }
         }

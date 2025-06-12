@@ -56,7 +56,6 @@ function AuthorComponent() {
     // Check for data in authorArray before attempting to render components
     return(
         <div id="authorscomponent-container">
-            {console.log(authorArray)}
             <div id="div-authorscomponent-card">
                 {
                     authorArray[0] && (

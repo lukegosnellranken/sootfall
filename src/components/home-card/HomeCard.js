@@ -18,7 +18,6 @@ function HomeCard(props) {
             await fetch('http://localhost:1337/api/articles?populate=*', {headers: {'Authorization': `Bearer ${token}`}})
             .then(res => {
                 if (res.ok) {
-                    console.log(res);
                     return res.json()
                 } else {
                     console.log('Articles res error');
@@ -65,7 +64,6 @@ function HomeCard(props) {
             })
             .catch(error => {console.log(error)});
         }
-        console.log(props.pageType);
         fetchData();
     }, [props.pageType, props.tag, props.author, props.search]);
     
@@ -87,7 +85,6 @@ function HomeCard(props) {
         // Invoke when user click to request another page.
         const handlePageClick = (event) => {
             const newOffset = event.selected * itemsPerPage % initDataArray.length;
-            // console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
             setItemOffset(newOffset);
         };
 
@@ -95,7 +92,6 @@ function HomeCard(props) {
             <div id="div-homecard-items-pagination">
                 <div id="div-homecard-items">
                     <Items currentItems={currentItems} />
-                    {console.log(currentItems)}
                     <div id="div-homecard-pagination" ref={paginationRef}>
                         <ReactPaginate
                             nextLabel=">"

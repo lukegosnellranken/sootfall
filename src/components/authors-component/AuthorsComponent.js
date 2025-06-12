@@ -14,7 +14,6 @@ function AuthorsComponent() {
             await fetch('http://localhost:1337/api/authors?populate=*', {headers: {'Authorization': `Bearer ${token}`}})
             .then(res => {
                 if (res.ok) {
-                    console.log(res);
                     return res.json()
                 } else {
                     console.log('Articles res error');
@@ -42,7 +41,6 @@ function AuthorsComponent() {
     
     return(
         <div id="authorscomponent-container">
-            {console.log(authorArray)}
             <div id="div-authorscomponent-card">
                 {
                     authorArray.map(([name, image, description], id) => ( 
