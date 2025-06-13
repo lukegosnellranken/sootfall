@@ -49,6 +49,7 @@ function AuthorsComponent() {
                             authorName={name}
                             authorImage={image}
                             authorDescription={description}
+                            pageType="authors"
                         />
                     ))
                 }

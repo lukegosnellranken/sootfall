@@ -9,8 +9,9 @@ function AuthorCard(props) {
         navigate(path);
     };
 
+    // Only navigate to author page if on authors page
     return (
-        <div id="div-authorcard" onClick={() => handleNavigation(`/authors/${props.authorName.toLowerCase()}`)}>
+        <div id="div-authorcard" onClick={props.pageType === "authors" ? () => handleNavigation(`/authors/${props.authorName.toLowerCase()}`) : undefined}>
             <div id="div-authorcard-stitch">
                 <div id='div-authorcard-content'>
                     <div id="div-authorcard-image">
