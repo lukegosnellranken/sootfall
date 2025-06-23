@@ -8,10 +8,12 @@
 
 #div-articlecomponent-full-article {
     width: 100%;
+    box-shadow: 0em 0em .8em .15em rgba(255, 255, 255, 0.199);
 }
 
 #div-articlecomponent-full-article-side-card {
     width: 100%;
+    box-shadow: 0em 0em .8em .15em rgba(255, 255, 255, 0.199);
 }
 
 @media screen and (max-width: 700px) {
