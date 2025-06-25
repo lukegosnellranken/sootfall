@@ -1,5 +1,5 @@
 import React from "react";
-import './Author.css';
+import './Author.scss';
 import AuthorComponent from "../components/author-component/AuthorComponent";
 
 function Author() {

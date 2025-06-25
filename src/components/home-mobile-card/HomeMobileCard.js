@@ -1,5 +1,5 @@
 import React from "react";
-import './HomeMobileCard.css';
+import './HomeMobileCard.scss';
 
 function MobileCard(props) {
     return (

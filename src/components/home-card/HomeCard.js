@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import './HomeCard.css';
+import './HomeCard.scss';
 import HomeCardContent from "../home-card-content/HomeCardContent";
 import ReactPaginate from 'react-paginate';
 

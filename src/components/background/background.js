@@ -1,5 +1,5 @@
 import React from "react";
-import './background.css';
+import './background.scss';
 import logo from '../../images/sootfall-logo1.png';
 // import tagline from '../../images/sootfall-tagline.png';
 import bmc from '../../images/bmc-logo.png'; 

@@ -1,5 +1,5 @@
 import React from "react";
-import './TagComponent.css';
+import './TagComponent.scss';
 import { useParams } from "react-router-dom";
 import HomeCard from "../home-card/HomeCard";
 

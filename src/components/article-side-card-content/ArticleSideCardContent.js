@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './ArticleSideCardContent.css';
+import './ArticleSideCardContent.scss';
 
 function ArticleSideCardContent(props) {
     window.scrollTo(0, 0);

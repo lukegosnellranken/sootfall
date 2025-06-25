@@ -1,5 +1,5 @@
 import React from "react";
-import './HomeCardContent.css';
+import './HomeCardContent.scss';
 import { useNavigate } from "react-router-dom";
 
 function HomeCardContent(props) {

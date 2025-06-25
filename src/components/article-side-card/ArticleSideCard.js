@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import './ArticleSideCard.css';
+import './ArticleSideCard.scss';
 import ArticleSideCardContent from "../article-side-card-content/ArticleSideCardContent";
 
 function ArticleSideCard(props) {

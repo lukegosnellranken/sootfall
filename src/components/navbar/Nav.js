@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './Nav.css';
+import './Nav.scss';
 import NavItem from "./NavItem";
 import { useNavigate } from "react-router-dom";
  

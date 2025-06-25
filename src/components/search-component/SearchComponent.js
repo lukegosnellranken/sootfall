@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import './SearchComponent.css';
+import './SearchComponent.scss';
 import HomeCard from "../home-card/HomeCard";
 
 function SearchComponent() {

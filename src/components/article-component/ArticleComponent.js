@@ -1,6 +1,6 @@
 import ArticleCard from "../article-card/ArticleCard";
 import ArticleSideCard from "../article-side-card/ArticleSideCard";
-import './ArticleComponent.css';
+import './ArticleComponent.scss';
 
 function ArticleComponent() {
     return(

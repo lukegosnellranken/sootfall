@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import './AuthorComponent.css';
+import './AuthorComponent.scss';
 import AuthorCard from "../author-card/AuthorCard";
 import HomeCard from "../home-card/HomeCard";
 
