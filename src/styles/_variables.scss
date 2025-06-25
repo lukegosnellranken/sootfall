@@ -1,0 +1,68 @@
+// Site text styles
+$site-font: Bilbo, sans-serif;
+$site-text-color: #818181;
+$site-active-background-color: #818181;
+$site-disabled-background-color: #414141;
+$site-text-shadow: .05em .02em .05em #494949;
+$site-letter-spacing: .05em;
+$site-transition: all .2s ease-in-out;
+$site-transform: scale(1.1);
+
+// Top padding of all cards
+$card-top-padding: .2em;
+
+// CSS reset
+@mixin pm-reset {
+    padding: 0;
+    margin: 0;
+}
+
+// Common text styles
+@mixin common-text {
+    color: $site-text-color;
+    text-shadow: $site-text-shadow;
+    font-family: $site-font;
+}
+
+// Common image styles
+@mixin common-image {
+    border-style: solid;
+    border-width: .05em;
+    border-width: 3px 3px 5px 5px;
+    border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
+    transform: rotate(-2deg);
+    border: solid rgb(50, 50, 50);
+    opacity: .75;
+}
+
+// Flex and center
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+// All same-origin site links
+@mixin origin-link {
+    text-decoration: underline dashed;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    cursor: pointer;
+}
+
+
+// Stitch displayed on cards
+@mixin stitch {
+    margin-left: .2em;
+    margin-right: .2em;
+    border-width: .1em;
+    border-style: dashed;
+    border-color: rgb(50, 50, 50);
+}
+
+// Horizontal separator decoration
+@mixin separator{
+    opacity: .5;
+    line-height: 100%;
+    user-select: none;
+    text-align: center;
+}

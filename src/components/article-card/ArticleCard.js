@@ -200,7 +200,7 @@ function ArticleCard() {
                 </div>
                 <div id="div-articlecard-image-title-date">
                     <div id="div-articlecard-image">
-                        <img src={articleDataArray[0][2]} alt="" id="p-articlecard-image" />
+                        <img src={articleDataArray[0][2]} alt="" id="img-articlecard-image" />
                     </div>
                     <div id="div-articlecard-title-date-tags">
                         <div id="div-articlecard-title">

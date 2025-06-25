@@ -1,8 +1,5 @@
 body {
     background-image: url("./images/background.png");
-    /* background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.95)); */
-    /* background-repeat: repeat-x;
-    background-repeat: repeat-y; */
 }
 
 body, html {
@@ -12,13 +9,5 @@ body, html {
 
 #appDiv {
     background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.95));
-    min-height: 100vh;
+    min-height: 100vh; // full height of viewport
 }
-
-/* #appDiv {
-    background-color: whitesmoke;
-    border-style: solid;
-    border-color: rgb(226, 218, 218);
-    border-width: 1px;
-    border-radius: 25px;
-} */
