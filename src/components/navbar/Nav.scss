@@ -1,13 +1,7 @@
-#div-nav-container {
-    /* padding-top: .8%; */
-    background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.25));
-    /* opacity: 0.5; */
-}
+@import '../../styles/variables';
 
-#nav-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#div-nav-container {
+    background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.25));
 }
 
 #div-nav-list {
@@ -35,14 +29,13 @@
 }
 
 #input-search {
+    @include common-text;
     background-color: rgba(10, 10, 10, 0.95);
     border-radius: .5em;
     border-width: .1em;
     border-style: solid;
     border-color: rgb(50, 50, 50);
-    font-family: Bilbo, sans-serif;
     font-size: 150%;
-    color: #818181;
     letter-spacing: .05em;
     padding-left: .5em;
     width: 80%;

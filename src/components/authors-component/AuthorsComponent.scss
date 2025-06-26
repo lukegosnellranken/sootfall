@@ -1,5 +1,7 @@
+@import '../../styles/variables';
+
 #authorscomponent-container {
-    max-width: 1920px;
+    max-width: $site-container-max-width;
     width: 100%;
     padding-left: 3%;
     padding-right: 3%;

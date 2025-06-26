@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+
 .background {
     width: 100%;
     max-height: 30em;
@@ -22,7 +24,7 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../images/sootfall-background.png);   
     background-position: center;
     background-size: cover;
-    box-shadow: 0em 0em .8em .15em rgba(255, 255, 255, 0.199);
+    box-shadow: $site-box-shadow;
 }
 
 #div-background-bmc {

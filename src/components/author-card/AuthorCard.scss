@@ -1,25 +1,20 @@
+@import '../../styles/variables';
+
 #div-authorcard {
-    background-image: url('../../images/background.png');
-    background-image: linear-gradient(to bottom, rgba(5, 5, 5, .7), rgba(0, 0, 0, .7));
-    border-radius: .5%;
-    border-width: .5em;
-    box-shadow: 0em 0em .8em .15em rgba(255, 255, 255, 0.199);
-    margin-top: 2em;
-    padding-top: .2em;
-    padding-bottom: .2em;
-    transition: background-color 1s ease-out 100ms;
+    background-image: $site-background-image-gradient;
+    box-shadow: $site-box-shadow;
+    margin-top: $card-vertical-margin;
+    padding-top: $card-vertical-padding;
+    padding-bottom: $card-vertical-padding;
+    transition: $site-transition;
 }
 
 #div-authorcard:hover {
-    background-color:rgba(17, 17, 17, 0.5);
+    background-color: $site-hover-color;
 }
 
 #div-authorcard-stitch {
-    margin-left: .2em;
-    margin-right: .2em;
-    border-width: .1em;
-    border-style: dashed;
-    border-color: rgb(50, 50, 50);
+    @include stitch;
 }
 
 #div-authorcard-content {
@@ -29,20 +24,14 @@
 }
 
 #div-authorcard-image {
+    @include flex-center;
     width: 25%;
     min-height: 12em;
-    display: flex;
-    justify-content: center;
 }
 
 #img-authorcard {
+    @include common-image;
     height: 100%;
-    object-fit: contain;
-    border-width: 3px 3px 5px 5px;
-    border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
-    transform: rotate(-1deg);
-    border: solid rgb(50, 50, 50);
-    opacity: .75;
 }
 
 #div-author-name-description {
@@ -50,20 +39,16 @@
 }
 
 #p-authorcard-name {
+    @include common-text;
     margin-left: 2%;
     font-weight: bold;
     font-size: 300%;
-    font-family: Bilbo, sans-serif;
-    color: #818181;
-    text-shadow: .05em .05em .05em #494949;
 }
 
 #p-authorcard-description {
+    @include common-text;
     margin-left: 2%;
     font-weight: bold;
-    font-family: Bilbo, sans-serif;
     font-size: 150%;
-    color: gray;
-    text-shadow: .02em .02em .02em #494949;
-    letter-spacing: .05em;
+    letter-spacing: $site-letter-spacing;
 }

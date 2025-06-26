@@ -1,24 +1,18 @@
+@import '../../styles/variables';
+
 #div-homesidecard-container {
-    /* background-color: rgb(250, 246, 246); */
-    background-image: url('../../images/background.png');
-    background-image: linear-gradient(to bottom, rgba(5, 5, 5, .7), rgba(0, 0, 0, .7));
+    @include common-text;
+    background-image: $site-background-image-gradient;
     border-radius: .5%;
     border-width: .5em;
-    box-shadow: 0em 0em .8em .15em rgba(255, 255, 255, 0.199);
-    margin-top: 2em;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: .2em;
-    padding-bottom: .2em;
-    font-family: Bilbo, sans-serif;
+    box-shadow: $site-box-shadow;
+    margin-top: $card-vertical-margin;
+    padding-top: $card-vertical-padding;
+    padding-bottom: $card-vertical-padding;
 }
 
 #div-homesidecard-stitch {
-    margin-left: .2em;
-    margin-right: .2em;
-    border-width: .1em;
-    border-style: dashed;
-    border-color: rgb(50, 50, 50);
+    @include stitch;
 }
 
 .sections {
@@ -27,12 +21,11 @@
 }
 
 .section-title {
+    @include common-text;
     text-align: center;
     padding-top: 5%;
     font-weight: lighter;
     font-size: 350%;
-    color: #818181;
-    text-shadow: 1px 1px 2px #494949;
     text-decoration: underline dashed gray 1px;
 }
 
@@ -45,19 +38,17 @@
 }
 
 .separator {
-    border-bottom-style: dashed;
-    border-bottom-color: rgb(50, 50, 50);
-    border-bottom-width: .1em;
+    @include stitch-bottom;
 }
 
 #p-section-1-content {
     padding-top: 5%;
-    color: gray;
+    color: $site-text-color;
 }
 
 #p-section-2-content {
     padding-top: 5%;
-    color: gray;
+    color: $site-text-color;
 }
 
 #image-section-1-image {

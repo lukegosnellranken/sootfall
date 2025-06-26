@@ -1,12 +1,8 @@
-#div-content-and-footer {
-    display: flex;
-    justify-content: center;
-}
+@import '../../styles/variables';
 
 #homecomponent-container {
-    display: flex;
-    justify-content: center;
-    max-width: 1920px;
+    @include flex-center;
+    max-width: $site-container-max-width;
     padding-left: 3%;
     padding-right: 3%;
 }

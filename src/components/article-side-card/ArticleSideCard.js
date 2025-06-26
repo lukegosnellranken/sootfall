@@ -72,7 +72,7 @@ function ArticleSideCard(props) {
     }
 
     return (
-        <div id="div-articlesidecard-all-items">
+        <div id="div-articlesidecard-card">
             <div id="div-articlesidecard-stitch">
                 <div id="div-articlesidecard-content">
                     {items()}

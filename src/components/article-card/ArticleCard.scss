@@ -3,8 +3,8 @@
 #div-articlecard-full-article-card {
     background-image: linear-gradient(to bottom, rgba(5, 5, 5, .7), rgba(0, 0, 0, .7));
     width: 100%;
-    margin-top: 2em;
-    padding-top: $card-top-padding;
+    margin-top: $card-vertical-margin;
+    padding-top: $card-vertical-padding;
     padding-bottom: .2em;
     border-radius: .5%;
     border-width: .5em;

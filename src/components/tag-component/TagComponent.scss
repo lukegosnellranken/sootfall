@@ -1,12 +1,7 @@
-#div-content-and-footer {
-    display: flex;
-    justify-content: center;
-}
+@import '../../styles/variables';
 
 #tagcomponent-container {
-    display: flex;
-    justify-content: center;
-    max-width: 1920px;
+    max-width: $site-container-max-width;
     width: 100%;
 }
 

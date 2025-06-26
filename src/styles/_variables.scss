@@ -4,17 +4,27 @@ $site-text-color: #818181;
 $site-active-background-color: #818181;
 $site-disabled-background-color: #414141;
 $site-text-shadow: .05em .02em .05em #494949;
+$site-hover-color: rgba(17, 17, 17, 0.5);
 $site-letter-spacing: .05em;
 $site-transition: all .2s ease-in-out;
 $site-transform: scale(1.1);
+$site-container-max-width: 1920px;
+$site-box-shadow: 0em 0em .8em .15em rgba(255, 255, 255, 0.199);
+$site-background-image-gradient: linear-gradient(to bottom, rgba(5, 5, 5, .7), rgba(0, 0, 0, .7));
 
-// Top padding of all cards
-$card-top-padding: .2em;
+// Top margin and padding of all cards
+$card-vertical-margin: 2em;
+$card-vertical-padding: .2em;
 
 // CSS reset
 @mixin pm-reset {
     padding: 0;
     margin: 0;
+}
+
+@mixin container-padding {
+    padding-left: 3%;
+    padding-right: 3%;
 }
 
 // Common text styles
@@ -30,7 +40,7 @@ $card-top-padding: .2em;
     border-width: .05em;
     border-width: 3px 3px 5px 5px;
     border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
-    transform: rotate(-2deg);
+    transform: rotate(-1deg);
     border: solid rgb(50, 50, 50);
     opacity: .75;
 }
@@ -57,6 +67,13 @@ $card-top-padding: .2em;
     border-width: .1em;
     border-style: dashed;
     border-color: rgb(50, 50, 50);
+}
+
+// Bottom stitch
+@mixin stitch-bottom {
+    border-bottom-width: .05em;
+    border-bottom-style: dashed;
+    border-bottom-color: rgb(50, 50, 50);
 }
 
 // Horizontal separator decoration

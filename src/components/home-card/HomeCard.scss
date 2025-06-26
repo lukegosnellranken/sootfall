@@ -1,12 +1,13 @@
+@import '../../styles/variables';
+
 #div-homecard-card {
-    background-image: url('../../images/background.png');
-    background-image: linear-gradient(to bottom, rgba(5, 5, 5, .7), rgba(0, 0, 0, .7));
+    background-image: $site-background-image-gradient;
     border-radius: .5%;
     border-width: .5em;
-    box-shadow: 0em 0em .8em .15em rgba(255, 255, 255, 0.199);
-    margin-top: 2em;
-    padding-top: .2em;
-    padding-bottom: .2em;
+    box-shadow: $site-box-shadow;
+    margin-top: $card-vertical-margin;
+    padding-top: $card-vertical-padding;
+    padding-bottom: $card-vertical-padding;
 }
 
 #div-homecard-stitch {
@@ -18,32 +19,28 @@
 }
 
 #p-homecard-back-link {
+    @include common-text;
+    transition: $site-transition;
     margin-left: 1%;
     margin-top: .5%;
     max-height: .75em;
-    font-family: Bilbo, sans-serif;
     font-size: 200%;
     position: absolute;
-    transition: all .2s ease-in-out; 
     text-decoration: none;
-    color: #818181;
     cursor: pointer;
 }
 
 #p-homecard-back-link:hover {
-    transform: scale(1.1);
+    transform: $site-transform;
 }
 
 #div-homecard-title {
+    @include flex-center;
     width: 100%;
-    display: flex;
-    justify-content: center;
 }
 
 #h1-homecard-title {
-    color: #818181;
-    text-shadow: 1px 1px 2px #494949;
-    font-family: Bilbo, sans-serif;
+    @include common-text;
     font-weight: lighter;
     font-size: 350%;
     text-align: center;
@@ -53,15 +50,12 @@
 }
 
 #div-homecard-article-card {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
     padding-bottom: 2em;
 }
 
 #div-homecard-pagination {
-    display: flex;
-    justify-content: center;
+    @include flex-center;
 }
 
 #div-homecard-items-pagination {

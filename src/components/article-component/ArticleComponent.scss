@@ -1,19 +1,18 @@
+@import '../../styles/variables';
+
 #div-articlecomponent-full-article-container {
+    @include container-padding;
     display: inline-block;
     justify-content: center;
-    max-width: 1920px;
-    padding-left: 3%;
-    padding-right: 3%;
+    max-width: $site-container-max-width;
 }
 
 #div-articlecomponent-full-article {
-    width: 100%;
-    box-shadow: 0em 0em .8em .15em rgba(255, 255, 255, 0.199);
+    box-shadow: $site-box-shadow;
 }
 
 #div-articlecomponent-full-article-side-card {
-    width: 100%;
-    box-shadow: 0em 0em .8em .15em rgba(255, 255, 255, 0.199);
+    box-shadow: $site-box-shadow;
 }
 
 @media screen and (max-width: 700px) {
