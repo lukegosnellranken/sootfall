@@ -1,5 +1,9 @@
 @import './styles/variables';
 
+#div-content-and-footer {
+    @include flex-center;
+}
+
 body {
     background-image: url("./images/background.png");
 }
