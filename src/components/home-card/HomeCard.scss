@@ -121,21 +121,21 @@
     padding-bottom: 1em;
 }
 
+@media screen and (max-width: 1400px) {
+    #h1-homecard-title {
+        font-size: 250%;
+    }
+}
+
 @media screen and (max-width: 1200px) {
     #div-homecard-card {
         margin-top: 1em;
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
     #h1-homecard-title {
-        font-size: 270%;
-    }
-}
-
-@media screen and (max-width: 545px) {
-    #h1-homecard-title {
-        font-size: 220%;
+        font-size: 200%;
     }
 }
 

@@ -152,7 +152,7 @@
 
 #p-articlecard-main-content {
     @include common-text;
-    font-size: 200%;
+    font-size: $fs-content;
     letter-spacing: 0.03em;
     width: 80%;
 }

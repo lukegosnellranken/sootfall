@@ -20,24 +20,29 @@
 }
 
 #div-homemobilecard-image {
-    width: 40%;
-    object-fit: contain;
+    @include flex-center;
+    align-items: center;
+    width: 25%;
+    margin-left: 3%;
+    padding-top: $card-vertical-padding;
+    padding-bottom: $card-vertical-padding;
+}
+
+#image-homemobilecard-image {
+    width: 100%;
     border-width: 3px 3px 5px 5px;
     border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
     transform: rotate(-.8deg);
     border: solid rgb(50, 50, 50);
 }
 
-#image-homemobilecard-image {
-    width: 100%;
-}
-
 #div-homemobilecard-title-content {
-    width: 60%;
-    margin-right: .5em; 
+    width: 75%;
+    margin-right: 1em;
+    margin-left: 1em; 
 }
 
-#p-homemobilecard-title {
+#h1-homemobilecard-title {
     @include common-text;
     text-align: center;
     padding-top: 5%;
@@ -48,49 +53,24 @@
 
 #p-homemobilecard-content {
     @include common-text;
-    font-size: 100%;
+    font-size: $fs-description;
     padding-left: .5em;
 }
 
+// Responsive styles
 
-
-
-@media screen and (max-width: 600px) {
-    #p-homemobilecard-title {
-        font-size: 270%;
-    }
-
-    #p-homemobilecard-content {
-        font-size: 90%;
+@media screen and (max-width: 1400px) {
+    #h1-homemobilecard-title {
+        font-size: 250%;
     }
 }
 
-@media screen and (max-width: 545px) {
-    #p-homemobilecard-title {
-        font-size: 220%;
-    }
+@media screen and (max-width: 1200px) {
+    
 }
 
-@media screen and (max-width: 450px) {
-    #p-homemobilecard-title {
-        margin-left: -50%;
-    }
-
-    #p-homemobilecard-content {
-        font-size: 80%;
-    }
-
-    #div-homemobilecard-image {
-        width: 35%;
-    }
-
-    #div-homemobilecard-title-content {
-        width: 65%; 
-    }
-}
-
-@media screen and (max-width: 370px) {
-    #p-homemobilecard-title {
-        margin-left: -50%;
+@media screen and (max-width: 700px) {
+    #h1-homemobilecard-title {
+        font-size: 200%;
     }
 }

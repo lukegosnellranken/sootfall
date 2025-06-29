@@ -23,7 +23,7 @@
 .section-title {
     @include common-text;
     text-align: center;
-    padding-top: 5%;
+    padding-top: .5em;
     font-weight: lighter;
     font-size: 300%;
     letter-spacing: $site-letter-spacing;
@@ -31,7 +31,9 @@
 }
 
 .section-content {
-    font-size: 150%;
+    @include common-text;
+    letter-spacing: $site-letter-spacing;
+    font-size: $fs-description;
 }
 
 .section-1-content {
@@ -52,9 +54,13 @@
     color: $site-text-color;
 }
 
+#div-image-section-1 {
+    @include flex-center;
+}
+
 #image-section-1-image {
+    width: 75%;
     /* Border taken from https://codepen.io/mp/pen/kBEeKw */
-    width: 100%;
     border-width: 3px 3px 5px 5px;
     border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
     transform: rotate(-1deg);

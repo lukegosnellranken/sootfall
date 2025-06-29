@@ -10,7 +10,7 @@ function MobileCard(props) {
                         <img id="image-homemobilecard-image" src={props.image1} alt="" />
                     </div>
                     <div id="div-homemobilecard-title-content">
-                        <p id="p-homemobilecard-title">{props.title1}</p>
+                        <h1 id="h1-homemobilecard-title">{props.title1}</h1>
                         <p id="p-homemobilecard-content">{props.description1}</p>
                     </div>
                 </div>
