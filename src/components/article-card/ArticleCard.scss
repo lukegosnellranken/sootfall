@@ -38,6 +38,13 @@
     padding-bottom: 2.5em;
 }
 
+#div-articlecard-title-date-tags {
+    @include flex-center;
+    flex-direction: column;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
 #div-articlecard-title-date {
     @include flex-center;
     flex-direction: column;
@@ -68,19 +75,22 @@
 
 #p-articlecard-title {
     @include pm-reset;
+    @include common-text;
+    padding-top: 1em;
+    letter-spacing: 0.03em;
+    font-size: 250%;
+    font-weight: bold;
+    text-align: center;
     text-wrap: balance;
 }
 
 #div-articlecard-author-date {
-    @include flex-center;
-}
-
-#p-articlecard-date, #p-articlecard-author, #p-articlecard-separator {
     @include common-text;
     @include pm-reset;
+    @include flex-center;
     font-size: 150%;
     letter-spacing: $site-letter-spacing;
-    flex: 1;
+    // flex: 1;
     white-space: nowrap; // Never wrap author name
 }
 
@@ -89,19 +99,30 @@
     transition: $site-transition;
     text-align: center;
     margin-left: 15%;
+    min-width: 80px; // Approximate size of date text -- causes seperator to be in middle of page
+    margin-bottom: 0;
 }
 
 #p-articlecard-date {
     text-align: center;
     margin-right: 15%;
+    margin-bottom: 0;
 }
 
 #p-articlecard-separator {
     @include separator;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 0;
 }
 
 #div-articlecard-tags {
     @include flex-center;
+    flex-wrap: wrap;
+    text-wrap: balance;
+    margin-left: 2%;
+    gap: 0 .2em;
+    width: 100%;
 }
 
 .p-articlecard-tags {
@@ -120,24 +141,8 @@
     transform: $site-transform;
 }
 
-#p-articlecard-title {
-    @include common-text;
-    padding-top: 1em;
-    font-weight: bold;
-    font-size: 350%;
-    max-width: 20em;
-    text-align: center;
-}
-
-#p-articlecard-date {
-    @include common-text;
-    font-size: 150%;
-    letter-spacing: $site-letter-spacing;
-}
-
 #img-articlecard-image {
     @include common-image;
-    // width: 100%;
 }
 
 #p-articlecard-lantern {
@@ -147,8 +152,9 @@
 
 #p-articlecard-main-content {
     @include common-text;
+    font-size: 200%;
+    letter-spacing: 0.03em;
     width: 80%;
-    font-size: 250%;
 }
 
 #div-articlecard-voicesynthesis {
@@ -180,60 +186,97 @@
     background-color: $site-disabled-background-color !important;
 }
 
+// Responsive styles
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1400px) {
+    // Text styles
     #p-articlecard-title {
-        font-size: 150%;
-        max-width: 15em;
+        font-size: 200%;
     }
 
-    #p-articlecard-main-content {
-        font-size: 100%;
+    #div-articlecard-author-date {
+        font-size: 140%;
     }
 
-    #p-articlecard-back-link {
+    #div-articlecard-tags {
         font-size: 80%;
     }
 
-    #p-articlecard-date {
-        font-size: 70%;
+    #p-articlecard-back-link {
+        font-size: 150%;
     }
 
-    #div-articlecard-image-title-date {
-        padding-top: .5em;
-        padding-bottom: .5em;
-    }
-
-    #div-articlecard-main-content {
-        padding-top: 1em;
+    #p-articlecard-main-content {
+        font-size: 180%;
     }
 }
 
 @media screen and (max-width: 700px) {
-    #p-articlecard-back-link {
-        font-size: 70%;
-        margin-top: .75%;
-    }
-}
-
-@media screen and (max-width: 440px) {
-    #p-articlecard-back-link {
-        font-size: 60%;
-    }
-
+    // Text styles
     #p-articlecard-title {
-        font-size: 120%;
+        font-size: 180%;
+    }
+
+    #div-articlecard-author-date {
+        font-size: 125%;
+    }
+
+    #div-articlecard-tags {
+        font-size: 75%;
     }
 
     #p-articlecard-main-content {
-        font-size: 90%;
+        font-size: 150%;
     }
 
-    #p-articlecard-date {
+    // Div styles
+    #div-homecardcontent-image {
+        width: 33.33%;
+    }
+
+    #div-homecardcontent-article-info {
+        width: 66.66%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    // Text styles
+    #p-articlecard-title {
+        font-size: 160%;
+    }
+
+    #div-articlecard-author-date {
+        font-size: 110%;
+    }
+
+    #div-articlecard-tags {
         font-size: 70%;
     }
 
-    #div-articlecard-main-content {
-        padding-top: .5em;
+    #p-articlecard-main-content {
+        font-size: 140%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    // Text styles
+    #p-articlecard-title {
+        font-size: 140%;
+        letter-spacing: 0.03em;
+        margin-left: 4%;
+    }
+
+    #div-articlecard-author-date {
+        font-size: 90%;
+        margin-left: 4%;
+    }
+
+    #div-articlecard-tags {
+        font-size: 60%;
+        margin-left: 4%;
+    }
+
+    #p-articlecard-main-content {
+        font-size: 125%;
     }
 }
