@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+
 #div-homecardcontent-container {
     background: none;
     width: 100%;
@@ -23,24 +25,29 @@
 
 #div-homecardcontent-image {
     width: 25%;
-    min-height: 12em;
     display: flex;
     justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 #div-homecardcontent-article-info {
     width: 75%;
-    margin-top: 1.5%;
     display: flex;
     justify-content: center;
 }
 
 #div-homecardcontent-title-date-tags {
+    @include flex-center;
     width: 100%;
+    flex-direction: column;
+    height: 100%;
+
 }
 
 #image-homecardcontent-image {
-    height: 100%;
+    max-width: 100%;   // Add this line
+    height: auto;      // Add this line
     object-fit: contain;
     border-width: 3px 3px 5px 5px;
     border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
@@ -54,12 +61,14 @@
     margin-left: 2%;
     display: flex;
     justify-content: left;
+    text-align: left;
     font-weight: bold;
     font-size: 300%;
     font-family: Bilbo, sans-serif;
     color: #818181;
     text-shadow: .05em .05em .05em #494949;
-    white-space: nowrap;
+    // white-space: nowrap;
+    text-wrap: balance;
     cursor: default;
 }
 
@@ -106,7 +115,12 @@
 
 #div-homecardcontent-tags {
     display: flex;
+    flex-wrap: wrap;
+    text-wrap: balance;
     margin-left: 2%;
+    gap: 0 .2em;
+    width: 100%;
+    
 }
 
 .p-homecardcontent-tags {
@@ -132,42 +146,90 @@
     text-decoration: none;
 }
 
-
-
-@media screen and (max-width: 1200px) {
-    #div-homecardcontent-tags {
-        width: 100%;
-    }
+// Page text styles
+#p-homecardcontent-title {
+    font-size: 250%;
 }
 
-@media screen and (max-width: 1000px) {
-    #div-homecardcontent-title-date-tags {
+#p-homecardcontent-author-date {
+    font-size: 150%;
+}
 
+#div-homecardcontent-tags {
+    font-size: 90%;
+}
+
+
+
+@media screen and (max-width: 1400px) {
+    // Text styles
+    #p-homecardcontent-title {
+        font-size: 200%;
+    }
+
+    #p-homecardcontent-author-date {
+        font-size: 150%;
+    }
+
+    #div-homecardcontent-tags {
+        font-size: 80%;
     }
 }
 
 @media screen and (max-width: 700px) {
+    // Text styles
+    #p-homecardcontent-title {
+        font-size: 180%;
+    }
+
+    #p-homecardcontent-author-date {
+        font-size: 125%;
+    }
+
     #div-homecardcontent-tags {
-        width: 100%;
+        font-size: 75%;
+    }
+
+    // Div styles
+    #div-homecardcontent-image {
+        width: 33.33%;
+    }
+
+    #div-homecardcontent-article-info {
+        width: 66.66%;
     }
 }
 
 @media screen and (max-width: 600px) {
+    // Text styles
     #p-homecardcontent-title {
-        font-size: 120%;
+        font-size: 160%;
     }
 
-    .p-homecardcontent-tags {
-        font-size: 90%;
+    #p-homecardcontent-author-date {
+        font-size: 110%;
+    }
+
+    #div-homecardcontent-tags {
+        font-size: 70%;
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 500px) {
+    // Text styles
     #p-homecardcontent-title {
-        font-size: 100%;
+        font-size: 140%;
+        letter-spacing: 0.03em;
+        margin-left: 4%;
     }
 
-    .p-homecardcontent-tags {
-        font-size: 80%;
+    #p-homecardcontent-author-date {
+        font-size: 90%;
+        margin-left: 4%;
+    }
+
+    #div-homecardcontent-tags {
+        font-size: 60%;
+        margin-left: 4%;
     }
 }
