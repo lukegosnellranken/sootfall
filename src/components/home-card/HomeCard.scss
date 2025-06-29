@@ -34,6 +34,10 @@
     transform: $site-transform;
 }
 
+#div-stitchBottom {
+    @include stitch-bottom;
+}
+
 #div-homecard-title {
     @include flex-center;
     width: 100%;

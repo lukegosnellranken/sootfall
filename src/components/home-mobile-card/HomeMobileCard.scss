@@ -44,11 +44,12 @@
 
 #h1-homemobilecard-title {
     @include common-text;
-    text-align: center;
+    text-align: left;
     padding-top: 5%;
+    padding-left: .25em;
     font-size: 300%;
     font-weight: lighter;
-    text-decoration: underline dashed gray 1px;
+    // text-decoration: underline dashed gray 1px;
 }
 
 #p-homemobilecard-content {

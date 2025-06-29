@@ -165,6 +165,7 @@ function HomeCard(props) {
                 <div id="div-homecard-title">
                     <h1 id="h1-homecard-title">{props.title}</h1>
                 </div>
+                <div id="div-stitchBottom"></div>
                 <PaginatedItems itemsPerPage={5} />
             </div>
         </div>
