@@ -7,7 +7,7 @@ function SideCard(props) {
             <div id="div-homesidecard-stitch">
                 <div id="div-homesidecard-content">
                     <div id="div-section-1" className="sections">
-                        <p id="p-section-1-title" className="section-title">{props.title1}</p>
+                        <h1 id="p-section-1-title" className="section-title">{props.title1}</h1>
                         <img id="image-section-1-image" src={props.image1} alt="" />
                         <p id="p-section-1-content" className="section-content">{props.description1}</p>
                     </div>

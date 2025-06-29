@@ -42,7 +42,8 @@
 #h1-homecard-title {
     @include common-text;
     font-weight: lighter;
-    font-size: 350%;
+    font-size: 300%;
+    letter-spacing: $site-letter-spacing;
     text-align: center;
     padding-top: .5em;
     max-width: 10em;
