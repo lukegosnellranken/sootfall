@@ -8,14 +8,14 @@ import ReactPaginate from 'react-paginate';
 function HomeCard(props) {
     let [initDataArray, setInitDataArray] = useState([]);
     const paginationRef = useRef(null);
-
+    const API_URL = process.env.REACT_APP_API_URL; // Get domain from .env
     const token = 'ff75d12ddbfa3b18817eacba0f70b6fc3ef76c0d2e13da25468bfa16a6deaffd1f071ccc5ef1cff42ce2d2618ec6f457da47f6eceede245b00c59711b268482613864751271af51baf71109535b1bb87eff397e4193ffef7d08300aaa4e685792c019da43d928a18fff82ed34920c0aabfbdfc0fa2b22bd7379fb264eaebf0f4';
 
     const navigate = useNavigate();
     
     useEffect(() => {
         const fetchData = async () => {
-            await fetch('http://localhost:1337/api/articles?populate=*', {headers: {'Authorization': `Bearer ${token}`}})
+            await fetch(`${API_URL}/api/articles?populate=*`, {headers: {'Authorization': `Bearer ${token}`}})
             .then(res => {
                 if (res.ok) {
                     return res.json()
@@ -29,7 +29,7 @@ function HomeCard(props) {
                     let title = data.data[i].title;
                     let dateString = data.data[i].date;
                     dateString = dateString.slice(5) + "-" + dateString.slice(2,4);
-                    let image = 'http://localhost:1337' + data.data[i].image.formats.thumbnail.url;
+                    let image = API_URL + data.data[i].image.formats.thumbnail.url;
                     let tags = data.data[i].tags;
                     let author = data.data[i].author.name;
                     if (tags != null) {
@@ -65,7 +65,7 @@ function HomeCard(props) {
             .catch(error => {console.log(error)});
         }
         fetchData();
-    }, [props.pageType, props.tag, props.author, props.search]);
+    }, [props.pageType, props.tag, props.author, props.search, API_URL]);
     
     function PaginatedItems({ itemsPerPage }) {
         // We start with an empty list of items.
