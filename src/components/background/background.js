@@ -3,6 +3,7 @@ import './background.scss';
 import logo from '../../images/sootfall-logo1.png';
 // import tagline from '../../images/sootfall-tagline.png';
 import bmc from '../../images/bmc-logo.png'; 
+import wutheringman from '../../images/wutheringman.png';
 
 function Background() {
     return (
@@ -13,8 +14,11 @@ function Background() {
                         {<img src={logo} alt="logo" id="image-background-logo" href="http://localhost:3000/"/>}
                     </a>
                 </div>
-                <div id="div-background-bmc">
+                {/* <div id="div-background-bmc">
                     <a href="http://localhost:3000/" target="_blank" rel="noreferrer"><img id="image-background-bmc" src={bmc} alt="" /> </a>
+                </div> */}
+                <div id="div-wutheringman">
+                    <img id="img-wutheringman" src={wutheringman}/>
                 </div>
                 {/* <div id="div-background-social-links">
                     <a id="social-links-facebook" href="https://gingernook.com/" className="fa fa-facebook social-link"> </a>

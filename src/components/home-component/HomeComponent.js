@@ -9,17 +9,17 @@ import beans from '../../images/coffee-beans.png';
 function HomeComponent() {
     return (
         <div id="homecomponent-container">
-            <div id="div-homecomponent-mobile-card">
-                <HomeMobileCard
-                    title1 = "Burning the Night"
-                    image1 = {wuthering}
-                    description1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi hendrerit vestibulum aliquam. Integer sed luctus mauris, in eleifend est. Praesent aliquet orci nec nisi iaculis pharetra. Donec aliquam neque sit amet laoreet auctor."
-                />
-            </div>
             <div id="div-homecomponent-card">
                 <HomeCard
                     title = "Ruminations"
                     pageType = "home"
+                />
+            </div>
+            <div id="div-homecomponent-mobile-card">
+                <HomeMobileCard
+                    title1 = "Burning the Night"
+                    image1 = {wuthering}
+                    description1 = "Sootfall is a collective of prose and poetry writers seeking to understand and put to order the unending enigma of being through the God-given craft of thoughtful expression."
                 />
             </div>
             <div id="div-homecomponent-side-card">

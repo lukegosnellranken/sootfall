@@ -45,11 +45,11 @@
 #h1-homemobilecard-title {
     @include common-text;
     text-align: left;
-    padding-top: 5%;
+    padding-top: .5em;
     padding-left: .25em;
     font-size: 300%;
     font-weight: lighter;
-    // text-decoration: underline dashed gray 1px;
+    text-decoration: underline dashed gray 1px;
 }
 
 #p-homemobilecard-content {
@@ -70,8 +70,12 @@
     
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
     #h1-homemobilecard-title {
         font-size: 200%;
+    }
+
+    #div-homemobilecard-image {
+        display: none;
     }
 }

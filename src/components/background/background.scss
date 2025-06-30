@@ -43,6 +43,11 @@
     transform: scale(1.05);
 }
 
+#img-wutheringman {
+    height: 8em;
+    display: none;
+}
+
 #div-background-social-links {
     position: absolute;
     bottom: .75em;
@@ -162,7 +167,15 @@
 
     #div-background-bmc {
         width: 7.5em;
-    }    
+    }
+
+    #div-background-container {
+        height: 8em;
+    }
+
+    #img-wutheringman {
+        display: inline;
+    }
 }
 
 @media screen and (max-width: 440px) {
