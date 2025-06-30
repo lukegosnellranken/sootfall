@@ -32,10 +32,20 @@
 
 #div-articlecard-image-title-date {
     @include flex-center;
-    width: 80%;
     padding-top: 2.5em;
-    margin-left: 10%;
     padding-bottom: 2.5em;
+}
+
+#div-articlecard-image {
+    @include flex-center;
+    width: 33.3%;
+    margin-left: 2em;
+}
+
+#img-articlecard-image {
+    @include common-image;
+    max-width: 20em;
+    object-fit: cover;
 }
 
 #div-articlecard-title-date-tags {
@@ -51,17 +61,8 @@
     width: 66.6%;
 }
 
-#div-articlecard-image {
-    @include flex-center;
-    flex-direction: column;
-    height: auto;
-    width: 33.3%;
-    max-width: 20em;
-}
-
 #div-articlecard-lantern {
     @include flex-center;
-    flex-direction: column;
     width: 33.3%;
     max-width: 20em;
 }
@@ -139,10 +140,6 @@
 
 .p-articlecard-tags:hover, #p-articlecard-author:hover {
     transform: $site-transform;
-}
-
-#img-articlecard-image {
-    @include common-image;
 }
 
 #p-articlecard-lantern {
