@@ -38,14 +38,17 @@
 
 #div-articlecard-image {
     @include flex-center;
-    width: 33.3%;
-    margin-left: 2em;
+    align-items: center;
+    width: 50%;
+    // margin-left: 2em;
+    overflow: hidden;
+    max-width: 20em;
 }
 
 #img-articlecard-image {
     @include common-image;
-    max-width: 20em;
-    object-fit: cover;
+    width: 100%;
+    object-fit: contain;
 }
 
 #div-articlecard-title-date-tags {
@@ -53,12 +56,7 @@
     flex-direction: column;
     padding-left: 2em;
     padding-right: 2em;
-}
-
-#div-articlecard-title-date {
-    @include flex-center;
-    flex-direction: column;
-    width: 66.6%;
+    width: 50%;
 }
 
 #div-articlecard-lantern {
@@ -79,7 +77,7 @@
     @include common-text;
     padding-top: 1em;
     letter-spacing: 0.03em;
-    font-size: 250%;
+    font-size: 275%;
     font-weight: bold;
     text-align: center;
     text-wrap: balance;
@@ -89,39 +87,49 @@
     @include common-text;
     @include pm-reset;
     @include flex-center;
-    font-size: 150%;
+    font-size: 175%;
     letter-spacing: $site-letter-spacing;
-    // flex: 1;
     white-space: nowrap; // Never wrap author name
+    gap: 0.5em;
 }
 
 #p-articlecard-author {
     @include origin-link;
     transition: $site-transition;
-    text-align: center;
-    margin-left: 15%;
-    min-width: 80px; // Approximate size of date text -- causes seperator to be in middle of page
-    margin-bottom: 0;
+    text-align: right;
 }
 
 #p-articlecard-date {
-    text-align: center;
-    margin-right: 15%;
-    margin-bottom: 0;
+    text-align: left;
 }
 
 #p-articlecard-separator {
     @include separator;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 0;
+    text-align: center;
+}
+
+#p-articlecard-author,
+#p-articlecard-date,
+#p-articlecard-separator {
+    flex: 1 1 0;
+    margin: 0;
+    min-width: 0; // Prevents overflow if content is long
+}
+
+#div-tag-stitch {
+    border-bottom-width: .1em;
+    border-bottom-style: solid;
+    border-color: rgb(50, 50, 50);
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: .5em;
+    opacity: .5;
 }
 
 #div-articlecard-tags {
     @include flex-center;
     flex-wrap: wrap;
     text-wrap: balance;
-    margin-left: 2%;
     gap: 0 .2em;
     width: 100%;
 }
@@ -208,18 +216,38 @@
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1000px) {
+    #div-articlecard-image-title-date {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        flex-direction: column;
+        align-items: center
+    }
+
+    #div-articlecard-image {
+        @include pm-reset;
+        justify-content: center;
+    }
+
+    #div-articlecard-title-date-tags {
+        width: 100%;
+    }
+
+    #p-articlecard-title {
+        padding-top: .25em;
+    }
+
     // Text styles
     #p-articlecard-title {
-        font-size: 180%;
+        font-size: 250%;
     }
 
     #div-articlecard-author-date {
-        font-size: 125%;
+        font-size: 150%;
     }
 
     #div-articlecard-tags {
-        font-size: 75%;
+        font-size: 80%;
     }
 
     #p-articlecard-main-content {
@@ -234,11 +262,11 @@
 @media screen and (max-width: 600px) {
     // Text styles
     #p-articlecard-title {
-        font-size: 160%;
+        font-size: 225%;
     }
 
     #div-articlecard-author-date {
-        font-size: 110%;
+        font-size: 125%;
     }
 
     #div-articlecard-tags {
@@ -247,28 +275,5 @@
 
     #p-articlecard-main-content {
         font-size: 140%;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    // Text styles
-    #p-articlecard-title {
-        font-size: 140%;
-        letter-spacing: 0.03em;
-        margin-left: 4%;
-    }
-
-    #div-articlecard-author-date {
-        font-size: 90%;
-        margin-left: 4%;
-    }
-
-    #div-articlecard-tags {
-        font-size: 60%;
-        margin-left: 4%;
-    }
-
-    #p-articlecard-main-content {
-        font-size: 125%;
     }
 }

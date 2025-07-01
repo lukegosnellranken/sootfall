@@ -240,9 +240,9 @@ function ArticleCard() {
                             }
                         </div>
                     </div>
-                    <div id="div-articlecard-lantern">
+                    {/* <div id="div-articlecard-lantern">
                         <img src={lantern} alt="" id="p-articlecard-lantern" />
-                    </div>
+                    </div> */}
                 </div>
                 <div className="separator"></div>
                     <div id="div-articlecard-voicesynthesis">
