@@ -3,7 +3,7 @@ import './background.scss';
 import logo from '../../images/sootfall-logo1.png';
 // import tagline from '../../images/sootfall-tagline.png';
 // import bmc from '../../images/bmc-logo.png'; 
-import wutheringman from '../../images/wutheringman.png';
+import wutheringman from '../../images/wutheringman2.png';
 
 function Background() {
     return (
