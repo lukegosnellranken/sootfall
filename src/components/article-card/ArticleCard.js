@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import ReactMarkdown from 'react-markdown'
 import './ArticleCard.scss';
-import lantern from '../../images/lantern2.png';
+// import lantern from '../../images/lantern2.png';
 
 function ArticleCard() {
     let [initDataArray, setInitDataArray] = useState([]);
@@ -39,7 +39,7 @@ function ArticleCard() {
                     let title = data.data[i].title;
                     let dateString = data.data[i].date;
                     dateString = dateString.slice(5) + "-" + dateString.slice(2,4);
-                    let image = API_URL + data.data[i].image.formats.thumbnail.url;
+                    let image = API_URL + data.data[i].image.formats.medium.url;
                     let content = data.data[i].content;
                     let tags = data.data[i].tags;
                     let author = data.data[i].author.name;
@@ -77,9 +77,11 @@ function ArticleCard() {
         // Only set articleDataArray if iArray is populated so that it is not set to an empty array, causing an unnecessary
         // re-render and an error in the return, which would call a non-existent object in articleDataArray
         if (iArray.length > 0) {
+            // Replace base URL in images to env-defined URL
+            iArray[0][3] = iArray[0][3].replaceAll(/https?:\/\/[^/]+/g, API_URL);
             setArticleDataArray(iArray);
         }
-    }, [initDataArray, id]);
+    }, [initDataArray, id, API_URL]);
 
     useEffect(() => {
         setVoiceStyles();

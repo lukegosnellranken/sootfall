@@ -38,7 +38,7 @@ function AuthorComponent() {
                 for (let i = 0; i < data.length; i++) { 
                     if (data[i].name === capitalizeWords(pathname)) {
                         let name = data[i].name
-                        let image = API_URL + data[i].image.formats.thumbnail.url;
+                        let image = API_URL + data[i].image.formats.small.url;
                         let description = data[i].description;
                         iArray.push([name, image, description]);
                     }

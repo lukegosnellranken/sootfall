@@ -30,7 +30,7 @@ function ArticleSideCard(props) {
                     let title = data.data[i].title;
                     let dateString = data.data[i].date.replaceAll("-","/");
                     dateString = dateString.slice(5) + "/" + dateString.slice(0,4);
-                    let image = API_URL + data.data[i].image.formats.thumbnail.url;
+                    let image = API_URL + data.data[i].image.formats.medium.url;
                     iArray.push([title, dateString, image]);
                 }
                 setInitDataArray(iArray.slice(0,8).reverse());

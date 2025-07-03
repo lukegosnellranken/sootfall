@@ -65,13 +65,6 @@
     max-width: 20em;
 }
 
-#div-articlecard-main-content {
-    @include flex-center;
-    padding-top: 2em;
-    padding-right: 2.5%;
-    padding-left: 2.5%;
-}
-
 #p-articlecard-title {
     @include pm-reset;
     @include common-text;
@@ -155,13 +148,6 @@
     opacity: .75;
 }
 
-#p-articlecard-main-content {
-    @include common-text;
-    font-size: $fs-content;
-    letter-spacing: 0.03em;
-    width: 80%;
-}
-
 #div-articlecard-voicesynthesis {
     @include flex-center;
     margin-top: 1em;
@@ -191,12 +177,35 @@
     background-color: $site-disabled-background-color !important;
 }
 
+// Main content styles
+#div-articlecard-main-content {
+    @include flex-center;
+    padding-top: 2em;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+#p-articlecard-main-content {
+    @include common-text;
+    font-size: $fs-content;
+    letter-spacing: 0.03em;
+}
+
+#p-articlecard-main-content p:has(img) {
+    @include flex-center;
+}
+
+#p-articlecard-main-content img {
+    @include common-image;
+    width: 75%;
+}
+
 // Responsive styles
 
 @media screen and (max-width: 1400px) {
     // Text styles
     #p-articlecard-title {
-        font-size: 200%;
+        font-size: 225%;
     }
 
     #div-articlecard-author-date {
@@ -237,9 +246,14 @@
         padding-top: .25em;
     }
 
+    #div-articlecard-main-content {
+        padding-right: 2.5%;
+        padding-left: 2.5%;
+    }
+
     // Text styles
     #p-articlecard-title {
-        font-size: 250%;
+        font-size: 200%;
     }
 
     #div-articlecard-author-date {
@@ -252,6 +266,7 @@
 
     #p-articlecard-main-content {
         font-size: 150%;
+        width: 90%;
     }
 
     #select-voice {
@@ -260,9 +275,14 @@
 }
 
 @media screen and (max-width: 600px) {
+    #div-articlecard-main-content {
+        padding-right: .5%;
+        padding-left: .5%;
+    }
+    
     // Text styles
     #p-articlecard-title {
-        font-size: 225%;
+        font-size: 180%;
     }
 
     #div-articlecard-author-date {
@@ -274,6 +294,6 @@
     }
 
     #p-articlecard-main-content {
-        font-size: 140%;
+        font-size: 125%;
     }
 }

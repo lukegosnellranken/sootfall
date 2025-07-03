@@ -29,7 +29,7 @@ function HomeCard(props) {
                     let title = data.data[i].title;
                     let dateString = data.data[i].date;
                     dateString = dateString.slice(5) + "-" + dateString.slice(2,4);
-                    let image = API_URL + data.data[i].image.formats.thumbnail.url;
+                    let image = API_URL + data.data[i].image.formats.medium.url;
                     let tags = data.data[i].tags;
                     let author = data.data[i].author.name;
                     if (tags != null) {

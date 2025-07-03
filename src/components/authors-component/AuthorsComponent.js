@@ -27,7 +27,7 @@ function AuthorsComponent() {
                 // Iterate through all author data
                 for (let i = 0; i < data.length; i++) { 
                     let name = data[i].name
-                    let image = API_URL + data[i].image.formats.thumbnail.url;
+                    let image = API_URL + data[i].image.formats.medium.url;
                     let description = data[i].description;
                     iArray.push([name, image, description]); 
                 }
