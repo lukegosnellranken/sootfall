@@ -80,6 +80,8 @@
     @include common-text;
     @include pm-reset;
     @include flex-center;
+    align-items: center;
+    // text-align: center;
     font-size: 175%;
     letter-spacing: $site-letter-spacing;
     white-space: nowrap; // Never wrap author name
@@ -105,6 +107,7 @@
 #p-articlecard-date,
 #p-articlecard-separator {
     flex: 1 1 0;
+    text-align: center;
     margin: 0;
     min-width: 0; // Prevents overflow if content is long
 }
