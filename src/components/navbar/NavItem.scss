@@ -23,8 +23,13 @@
 }
 
 @media screen and (max-width: 800px) {
+    .li-nav-item {
+        padding-top: 0;
+        padding-bottom: .5em;
+    }
+    
     .li-nav-item a {
-        font-size: 200%;
+        font-size: 140%;
     }
 }
 

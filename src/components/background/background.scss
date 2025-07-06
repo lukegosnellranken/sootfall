@@ -140,10 +140,6 @@
 
 
 @media screen and (max-width: 800px) {
-    #div-background-container {
-        margin-top: -.5em;
-    }
-
     #image-background-logo {
         max-width: 150px;
     }
@@ -175,11 +171,5 @@
 
     #img-wutheringman {
         display: inline;
-    }
-}
-
-@media screen and (max-width: 440px) {
-    #div-background-container {
-        margin-top: -1em;
     }
 }

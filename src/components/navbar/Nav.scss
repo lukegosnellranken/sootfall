@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 
 #div-nav-container {
-    background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.25));
+    background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.25)); 
 }
 
 #div-nav-list {
@@ -32,7 +32,7 @@
     @include common-text;
     background-color: rgba(10, 10, 10, 0.95);
     border-radius: .5em;
-    border-width: .1em;
+    border-width: 2px;
     border-style: solid;
     border-color: rgb(50, 50, 50);
     font-size: 150%;
@@ -47,22 +47,121 @@
     border-color: rgb(75, 75, 75);
 }
 
-
-@media screen and (max-width: 1000px) {
-    #div-nav-list {
-        width: 70%;
-    }
+// Input search shared styles
+#input-search,
+#input-search-mobile {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="rgb(65,65,65)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99a1 1 0 001.41-1.41l-4.99-5zm-6 0C8.01 14 6 11.99 6 9.5S8.01 5 10.5 5 15 7.01 15 9.5 12.99 14 10.5 14z"/></svg>');
+    background-repeat: no-repeat;
+    background-size: 1.2em 1.2em;
+    background-position: 0.7em center;
+    padding-left: 2.5em; // Make space for the icon
+    padding-top: .1em;
 }
+
+#input-search:focus,
+#input-search-mobile:focus {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="rgb(129,129,129)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99a1 1 0 001.41-1.41l-4.99-5zm-6 0C8.01 14 6 11.99 6 9.5S8.01 5 10.5 5 15 7.01 15 9.5 12.99 14 10.5 14z"/></svg>');
+}
+
+#input-search::placeholder,
+#input-search-mobile::placeholder {
+    color: $site-disabled-background-color;
+}
+
+#input-search:focus::placeholder,
+#input-search-mobile:focus::placeholder {
+    color: $site-text-color;
+}
+
+// Mobile styles
+
+#nav-list-mobile {
+    @include flex-center;
+    align-items: center;
+    max-height: 0; // Instead of display: none. Needed for transition on open/close
+    overflow: hidden;
+}
+
+#div-mobile-hamburger-search {
+    display: flex;
+}
+
+#form-search-mobile {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 1em;
+}
+
+#input-search-mobile {
+    @include common-text;
+    background-color: rgba(10, 10, 10, 0.95);
+    border-radius: .5em;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(50, 50, 50);
+    font-size: 120%;
+    letter-spacing: .05em;
+    padding-left: 2.2em;
+    width: 80%;
+}
+
+#input-search-mobile:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: rgb(75, 75, 75);
+}
+
+#btn-hamburger {
+    background-color: rgba(10, 10, 10, 0.95);
+    border-radius: .5em;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(50, 50, 50);
+    margin-left: 1em;
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+#btn-hamburger.open {
+    border-color: $site-text-color;
+}
+
+#div-hamburger span {
+    background-color: $site-disabled-background-color;
+}
+
+#div-hamburger span.open {
+    background-color: $site-text-color;
+}
+
+#ul-nav-list-mobile {
+    @include pm-reset;
+    display: flex;
+    width: 100%;
+    list-style: none;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.2s; // Text fades before menu closes
+}
+
+#ul-nav-list-mobile.open {
+    max-height: 1000px; // Must be larger than menu's height for transition on open/close
+    opacity: 1;
+}
+
+// Responsive styles
 
 @media screen and (max-width: 800px) {
     #div-nav-list {
-        width: 80%;
+        display: none;
     }
-}
-
-@media screen and (max-width: 440px) {
-    #div-nav-list {
-        margin-top: -.5em;
-        width: 100%;
+    
+    #nav-list-mobile {
+        display: block;
+        max-height: fit-content;
+        overflow: auto;
     }
 }
