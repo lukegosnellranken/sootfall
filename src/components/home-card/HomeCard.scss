@@ -61,6 +61,7 @@
 
 #div-homecard-pagination {
     @include flex-center;
+    padding-bottom: 1em;
 }
 
 #div-homecard-items-pagination {
@@ -84,7 +85,7 @@
 }
 
 .page-item .page-link {
-    background-color: #414141;
+    background-color: $site-disabled-background-color;
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -118,11 +119,7 @@
 .pagination {
     border-width: .01em;
     border-style: dashed;
-    border-color: gray;
-}
-
-#div-homecard-pagination {
-    padding-bottom: 1em;
+    border-color: $site-active-background-color;
 }
 
 @media screen and (max-width: 1400px) {
@@ -134,6 +131,17 @@
 @media screen and (max-width: 1200px) {
     #div-homecard-card {
         margin-top: 1em;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .pagination {
+        line-height: 1.1;
+    }
+
+    #div-homecard-pagination {
+        margin-top: -1.5em;
+        margin-bottom: -1.5em;
     }
 }
 
