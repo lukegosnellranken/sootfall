@@ -24,7 +24,7 @@
     margin-left: 1%;
     margin-top: .5%;
     max-height: .75em;
-    font-size: 200%;
+    font-size: $fs-content;
     position: absolute;
     text-decoration: none;
     cursor: pointer;
@@ -140,6 +140,12 @@
 @media screen and (max-width: 700px) {
     #h1-homecard-title {
         font-size: 200%;
+        padding-top: .1em;
+        margin-bottom: 0em;
+    }
+
+    #p-homecard-back-link {
+        font-size: 120%;
     }
 }
 

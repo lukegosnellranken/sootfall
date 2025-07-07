@@ -201,6 +201,7 @@
 #p-articlecard-main-content img {
     @include common-image;
     width: 75%;
+    max-width: 15em;
 }
 
 // Responsive styles

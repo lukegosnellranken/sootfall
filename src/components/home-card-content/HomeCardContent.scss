@@ -21,6 +21,7 @@
 #div-homecardcontent-image {
     @include flex-center;
     width: 25%;
+    max-width: 200px;
     margin-left: .5em;
     align-items: flex-start;
     overflow: hidden;
