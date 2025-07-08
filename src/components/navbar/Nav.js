@@ -36,6 +36,8 @@ function Nav() {
                         />
                     </form>
                 </div>
+            </nav>
+            <nav id="nav-nav-mobile">
                 <div id="nav-list-mobile">
                     <div id="div-mobile-hamburger-search">
                         <button
