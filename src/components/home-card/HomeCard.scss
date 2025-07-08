@@ -143,6 +143,11 @@
         margin-top: -1.5em;
         margin-bottom: -1.5em;
     }
+
+    #div-homecard-card {
+        margin-top: .5em;
+        box-shadow: $site-box-shadow-top-reduced; // reduce top of box shadow on mobile view
+    }
 }
 
 @media screen and (max-width: 700px) {

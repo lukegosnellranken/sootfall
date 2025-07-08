@@ -62,6 +62,13 @@
 
 // Responsive styles
 
+@media screen and (max-width: 800px) {
+    #div-authorcard {
+        margin-top: .5em;
+        box-shadow: $site-box-shadow-top-reduced;
+    }
+}
+
 @media screen and (max-width: 700px) {
     #p-authorcard-name {
         font-size: 180%;
