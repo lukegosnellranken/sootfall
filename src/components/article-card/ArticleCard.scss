@@ -281,7 +281,7 @@
 
 @media screen and (max-width: 800px) {
     #div-articlecard-full-article-card {
-        margin-top: .5em;
+        margin-top: $card-vertical-margin-mobile;
         box-shadow: $site-box-shadow-top-reduced;
     }
 }

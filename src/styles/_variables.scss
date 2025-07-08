@@ -22,6 +22,7 @@ $fs-content: 200%;
 // Top margin and padding of all cards
 $card-vertical-margin: 2em;
 $card-vertical-padding: .2em;
+$card-vertical-margin-mobile: .5em;
 
 // CSS reset
 @mixin pm-reset {

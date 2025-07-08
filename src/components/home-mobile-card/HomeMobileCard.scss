@@ -71,6 +71,11 @@
 }
 
 @media screen and (max-width: 800px) {
+    #div-homemobilecard-container {
+        margin-top: $card-vertical-margin-mobile;
+        box-shadow: $site-box-shadow-top-reduced;
+    }
+
     #h1-homemobilecard-title {
         font-size: 200%;
     }

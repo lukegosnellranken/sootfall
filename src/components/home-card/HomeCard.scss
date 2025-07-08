@@ -145,7 +145,7 @@
     }
 
     #div-homecard-card {
-        margin-top: .5em;
+        margin-top: $card-vertical-margin-mobile;
         box-shadow: $site-box-shadow-top-reduced; // reduce top of box shadow on mobile view
     }
 }
