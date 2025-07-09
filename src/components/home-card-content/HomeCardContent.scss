@@ -23,7 +23,7 @@
     width: 25%;
     max-width: 200px;
     margin-left: .5em;
-    align-items: flex-start;
+    align-items: center;
     overflow: hidden;
 }
 
@@ -48,6 +48,7 @@
 }
 
 #p-homecardcontent-title {
+    width: 95%;
     margin: 0;
     margin-left: 2%;
     display: flex;
@@ -63,6 +64,7 @@
 }
 
 #p-homecardcontent-author-date {
+    width: 95%;
     text-align: left;
     margin: 0;
     margin-left: 2%;
@@ -95,23 +97,31 @@
 
 #div-homecardcontent-tags {
     display: flex;
-    flex-wrap: wrap;
-    text-wrap: balance;
-    margin-left: 2%;
+    overflow: hidden;
     gap: 0 .2em;
+    width: 95%;
+}
+
+#tags-ellipsis-wrapper {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     width: 100%;
-    
+    margin-left: 2%;
+    text-align: left;
 }
 
 .p-homecardcontent-tags {
+    display: inline-block;
+    white-space: nowrap;
     font-size: 150%;
-    color: gray;
+    color: $site-text-color;
     text-shadow: .02em .02em .02em #494949;
     letter-spacing: .05em;
     padding: 0;
     margin: 0;
     padding-top: 0.5em;
-    /* margin-left: .5em; */
     margin-right: 1em;
     font-family: Bilbo, sans-serif;
     transition: all .2s ease-in-out; 
@@ -210,6 +220,6 @@
 
     #div-homecardcontent-tags {
         font-size: 60%;
-        margin-left: 4%;
+        margin-left: 2%;
     }
 }

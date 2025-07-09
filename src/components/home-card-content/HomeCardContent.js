@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './HomeCardContent.scss';
 import { useNavigate } from "react-router-dom";
 
@@ -9,6 +9,34 @@ function HomeCardContent(props) {
     const handleNavigation = (path) => {
         navigate(path);
     };
+
+    useEffect(() => {
+        const  wrapper = document.getElementById('tags-ellipsis-wrapper');
+        let total = 0;
+        let lastFullyVisibleIndex = -1;
+        let lastTag = "";
+        const children = Array.from(wrapper.children);
+
+        for (let i = 0; i < children.length; i++) {
+            const tag = children[i];
+            total += tag.offsetWidth;
+            if (total <= wrapper.clientWidth) {
+                lastFullyVisibleIndex = i;
+                lastTag = children[lastFullyVisibleIndex + 1];
+            } else {
+                break;
+            }
+        }
+
+        if (lastTag) {
+            lastTag.textContent = "...";
+            for (let i = 2; i < children.length; i++) {
+                if (children[lastFullyVisibleIndex + i]) {
+                    children[lastFullyVisibleIndex + i].remove();
+                }
+            }
+        }
+    })
     
     return (
         <div className="article-link" onClick={() => handleNavigation(props.sub)}>
@@ -37,23 +65,25 @@ function HomeCardContent(props) {
                             }
                         </div>
                         <div id="div-homecardcontent-tags">
-                            {
-                                props.tags ?
-                                props.tags.map((item => (
-                                    <p
-                                        key={item}
-                                        className="p-homecardcontent-tags"
-                                        onClick={(e) => {
-                                            e.stopPropagation(); // Prevent parent div click event
-                                            handleNavigation(`/tags/${item}`);
-                                        }}
-                                    >
-                                        {item}
-                                    </p>
-                                )))
-                                // invisible text to keep height consistent
-                                : <p className="p-homecardcontent-tags" style={{ visibility: "hidden" }}>|</p>
-                            }
+                            <div id="tags-ellipsis-wrapper">
+                                {
+                                    props.tags ?
+                                    props.tags.map((item => (
+                                        <p
+                                            key={item}
+                                            className="p-homecardcontent-tags"
+                                            onClick={(e) => {
+                                                e.stopPropagation(); // Prevent parent div click event
+                                                handleNavigation(`/tags/${item}`);
+                                            }}
+                                        >
+                                            {item}
+                                        </p>
+                                    )))
+                                    // invisible text to keep height consistent
+                                    : <p className="p-homecardcontent-tags" style={{ visibility: "hidden" }}>|</p>
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
