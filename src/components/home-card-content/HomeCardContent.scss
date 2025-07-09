@@ -99,7 +99,7 @@
     display: flex;
     overflow: hidden;
     gap: 0 .2em;
-    width: 95%;
+    width: 90%;
 }
 
 #tags-ellipsis-wrapper {
@@ -123,6 +123,7 @@
     margin: 0;
     padding-top: 0.5em;
     margin-right: 1em;
+    margin-left: 3px; // So that text does not get cut off
     font-family: Bilbo, sans-serif;
     transition: all .2s ease-in-out; 
     cursor: pointer;

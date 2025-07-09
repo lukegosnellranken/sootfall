@@ -1,42 +1,47 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import './HomeCardContent.scss';
 import { useNavigate } from "react-router-dom";
 
 function HomeCardContent(props) {
     // The solution for a Link inside a Link (nested <a> tags)
     const navigate = useNavigate();
+    const wrapperRef = useRef();
+    const [visibleCount, setVisibleCount] = useState(props.tags ? props.tags.length : 0);
 
     const handleNavigation = (path) => {
         navigate(path);
     };
 
+    // Get the number correllating to the last visible tag before overflow
     useEffect(() => {
-        const  wrapper = document.getElementById('tags-ellipsis-wrapper');
+        if (!props.tags) return;
+        const wrapper = wrapperRef.current;
+        if (!wrapper) return;
+
         let total = 0;
         let lastFullyVisibleIndex = -1;
-        let lastTag = "";
-        const children = Array.from(wrapper.children);
+        // Create a temporary element to measure tag width
+        const temp = document.createElement('span');
+        temp.style.visibility = 'hidden';
+        temp.style.position = 'absolute';
+        temp.style.whiteSpace = 'nowrap';
+        temp.className = 'p-homecardcontent-tags';
+        document.body.appendChild(temp);
 
-        for (let i = 0; i < children.length; i++) {
-            const tag = children[i];
-            total += tag.offsetWidth;
-            if (total <= wrapper.clientWidth) {
+        for (let i = 0; i < props.tags.length; i++) {
+            temp.textContent = props.tags[i];
+            const tagWidth = temp.offsetWidth + 16; // adjust for margin/padding
+            if (total + tagWidth <= wrapper.offsetWidth) {
+                total += tagWidth;
                 lastFullyVisibleIndex = i;
-                lastTag = children[lastFullyVisibleIndex + 1];
             } else {
                 break;
             }
         }
+        document.body.removeChild(temp);
 
-        if (lastTag) {
-            lastTag.textContent = "...";
-            for (let i = 2; i < children.length; i++) {
-                if (children[lastFullyVisibleIndex + i]) {
-                    children[lastFullyVisibleIndex + i].remove();
-                }
-            }
-        }
-    })
+        setVisibleCount(lastFullyVisibleIndex + 2); // Changed to 2. Seems to fit the correct number of tags better
+    }, [props.tags]);
     
     return (
         <div className="article-link" onClick={() => handleNavigation(props.sub)}>
@@ -64,7 +69,7 @@ function HomeCardContent(props) {
                                 </p>
                             }
                         </div>
-                        <div id="div-homecardcontent-tags">
+                        {/* <div id="div-homecardcontent-tags">
                             <div id="tags-ellipsis-wrapper">
                                 {
                                     props.tags ?
@@ -83,6 +88,42 @@ function HomeCardContent(props) {
                                     // invisible text to keep height consistent
                                     : <p className="p-homecardcontent-tags" style={{ visibility: "hidden" }}>|</p>
                                 }
+                            </div>
+                        </div> */}
+                        <div id="div-homecardcontent-tags">
+                            <div id="tags-ellipsis-wrapper" ref={wrapperRef}>
+                                {props.tags && (() => {
+                                    const showEllipsis = visibleCount < props.tags.length;
+                                    const tagsToShow = showEllipsis
+                                        ? props.tags.slice(0, visibleCount - 1)
+                                        : props.tags.slice(0, visibleCount);
+
+                                    return (
+                                        <>
+                                            {tagsToShow.map(item => (
+                                                <p
+                                                    key={item}
+                                                    className="p-homecardcontent-tags"
+                                                    onClick={e => {
+                                                        e.stopPropagation();
+                                                        handleNavigation(`/tags/${item}`);
+                                                    }}
+                                                >
+                                                    {item}
+                                                </p>
+                                            ))}
+                                            {showEllipsis && (
+                                                <span
+                                                    key="ellipsis"
+                                                    className="p-homecardcontent-tags tags-ellipsis"
+                                                    style={{ cursor: "default", pointerEvents: "none" }}
+                                                >
+                                                    …
+                                                </span>
+                                            )}
+                                        </>
+                                    );
+                                })()}
                             </div>
                         </div>
                     </div>
