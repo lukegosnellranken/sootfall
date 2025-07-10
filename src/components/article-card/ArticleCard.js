@@ -132,7 +132,6 @@ function ArticleCard() {
         if (readButton.innerText === "play_arrow") {
             let synth = window.speechSynthesis;
             let allVoices = synth.getVoices();
-            console.log(voices);
             if (voices.length > 0) {
                 let speech = new SpeechSynthesisUtterance();
                 let voice = allVoices.find(v => v.name === selectedVoice);
@@ -154,6 +153,25 @@ function ArticleCard() {
             pauseButton.innerText = "pause_circle_outline";
         }
         setVoiceStyles();
+    }
+
+    // We do not want to read allowed the image data in an article
+    // Images and links in strapi data always start with "[" and end with ")"
+    // Also account for "!" which appears before "[" for images
+    function removeImagesAndLinks(content) {
+        console.log(content);
+        // While there still exists both of the offending characters (and ")" comes after "["), remove said characters
+        while (content.indexOf('[') > -1 && (content.indexOf(')') > -1 && content.indexOf(')') > content.indexOf('['))) {
+            let startIndex = content.indexOf('[');
+            let endIndex = content.indexOf(')');
+            let imageIndex = content.indexOf('!');
+            if (imageIndex > -1 && imageIndex === startIndex - 1) {
+                content = content.slice(0, imageIndex) + content.slice(endIndex + 1);
+            } else {
+                content = content.slice(0, startIndex) + content.slice(endIndex + 1);
+            }
+        }
+        return content;
     }
 
     function pauseArticle() {
@@ -253,13 +271,13 @@ function ArticleCard() {
                             value={selectedVoice}
                             onChange={e => setSelectedVoice(e.target.value)}
                         >
-                            {voices.map(voice => (
+                            {voices.map((voice, index) => (
                                 <option key={voice.name} className="option-voice" value={voice.name}>
-                                    {voice.name} ({voice.lang})
+                                    Read Aloud with Voice #{index + 1}
                                 </option>
                             ))}
                         </select>
-                        <button id="btn-read" onClick={() => readArticle(articleDataArray[0][3])}>
+                        <button id="btn-read" onClick={() => readArticle(removeImagesAndLinks(articleDataArray[0][3]))}>
                             <i id="i-btn-read" className="material-icons">play_arrow</i>
                         </button>
                         <button id="btn-pause" onClick={() => pauseArticle()}>
