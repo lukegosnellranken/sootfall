@@ -38,6 +38,7 @@ function HomeCardContent(props) {
                 break;
             }
         }
+        // Now that we know the value of visibleCount, delete the temporary element
         document.body.removeChild(temp);
 
         setVisibleCount(lastFullyVisibleIndex + 2); // Changed to 2. Seems to fit the correct number of tags better
@@ -69,35 +70,17 @@ function HomeCardContent(props) {
                                 </p>
                             }
                         </div>
-                        {/* <div id="div-homecardcontent-tags">
-                            <div id="tags-ellipsis-wrapper">
-                                {
-                                    props.tags ?
-                                    props.tags.map((item => (
-                                        <p
-                                            key={item}
-                                            className="p-homecardcontent-tags"
-                                            onClick={(e) => {
-                                                e.stopPropagation(); // Prevent parent div click event
-                                                handleNavigation(`/tags/${item}`);
-                                            }}
-                                        >
-                                            {item}
-                                        </p>
-                                    )))
-                                    // invisible text to keep height consistent
-                                    : <p className="p-homecardcontent-tags" style={{ visibility: "hidden" }}>|</p>
-                                }
-                            </div>
-                        </div> */}
                         <div id="div-homecardcontent-tags">
                             <div id="tags-ellipsis-wrapper" ref={wrapperRef}>
+                                {/* Only render tags if props.tags exists */}
                                 {props.tags && (() => {
+                                    // Only show elipses if the number of visible tags is lesser than the total number of tags
                                     const showEllipsis = visibleCount < props.tags.length;
                                     const tagsToShow = showEllipsis
+                                        // If true, bind a new array containing only tags up to, but not including visibleCount minus 1
                                         ? props.tags.slice(0, visibleCount - 1)
+                                        // If false, bind a new array containing only tags up to, but not including visibleCount, leaving room for the elipses span below
                                         : props.tags.slice(0, visibleCount);
-
                                     return (
                                         <>
                                             {tagsToShow.map(item => (
@@ -105,13 +88,14 @@ function HomeCardContent(props) {
                                                     key={item}
                                                     className="p-homecardcontent-tags"
                                                     onClick={e => {
-                                                        e.stopPropagation();
+                                                        e.stopPropagation(); // Prevent parent div click event
                                                         handleNavigation(`/tags/${item}`);
                                                     }}
                                                 >
                                                     {item}
                                                 </p>
                                             ))}
+                                            {/* If showElipses is true, fill the space (see tagsToShow assignment above) with an elipses */}
                                             {showEllipsis && (
                                                 <span
                                                     key="ellipsis"
