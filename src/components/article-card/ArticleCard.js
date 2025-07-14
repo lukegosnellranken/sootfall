@@ -1,13 +1,15 @@
 import React from "react";
+import { useSettings } from '../../Settings';
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import ReactMarkdown from 'react-markdown'
 import './ArticleCard.scss';
-// import lantern from '../../images/lantern2.png';
 
 function ArticleCard() {
     let [initDataArray, setInitDataArray] = useState([]);
     let [articleDataArray, setArticleDataArray] = useState([[]]);
+    const { readAloud, setReadAloud } = useSettings();
+    console.log(readAloud);
     const [voices, setVoices] = useState([]);
     const [selectedVoice, setSelectedVoice] = useState("");
     let { id } = useParams();
@@ -84,22 +86,24 @@ function ArticleCard() {
     }, [initDataArray, id, API_URL]);
 
     useEffect(() => {
-        setVoiceStyles();
-        function loadVoices() {
-            const allVoices = window.speechSynthesis.getVoices();
-            setVoices(allVoices);
-            if (allVoices.length > 0 && !selectedVoice) {
-                setSelectedVoice(allVoices[0].name);
+        if (readAloud) {
+            setVoiceStyles();
+            function loadVoices() {
+                const allVoices = window.speechSynthesis.getVoices();
+                setVoices(allVoices);
+                if (allVoices.length > 0 && !selectedVoice) {
+                    setSelectedVoice(allVoices[0].name);
+                }
+            }
+            loadVoices();
+            // Rerun loadVoices if voice data changes
+            window.speechSynthesis.onvoiceschanged = loadVoices;
+            // Reset to null on unmount to prevent event triggers
+            return () => {
+                window.speechSynthesis.onvoiceschanged = null;
             }
         }
-        loadVoices();
-        // Rerun loadVoices if voice data changes
-        window.speechSynthesis.onvoiceschanged = loadVoices;
-        // Reset to null on unmount to prevent event triggers
-        return () => {
-            window.speechSynthesis.onvoiceschanged = null;
-        }
-    }, [selectedVoice]);
+    }, [readAloud, selectedVoice]);
 
     function setVoiceStyles() {
         const readButton = document.getElementById("i-btn-read");
@@ -159,7 +163,6 @@ function ArticleCard() {
     // Images and links in strapi data always start with "[" and end with ")"
     // Also account for "!" which appears before "[" for images
     function removeImagesAndLinks(content) {
-        console.log(content);
         // While there still exists both of the offending characters (and ")" comes after "["), remove said characters
         while (content.indexOf('[') > -1 && (content.indexOf(')') > -1 && content.indexOf(')') > content.indexOf('['))) {
             let startIndex = content.indexOf('[');
@@ -190,23 +193,27 @@ function ArticleCard() {
     }
 
     useEffect(() => {
-        // Cleanup: stop speech when unmounting or navigating away
-        setTimeout(100);
-        return () => {
-            window.speechSynthesis.cancel();
-        };
-    }, []);
+        if (readAloud) {
+            // Cleanup: stop speech when unmounting or navigating away
+            setTimeout(100);
+            return () => {
+                window.speechSynthesis.cancel();
+            };
+        }
+    }, [readAloud]);
 
     useEffect(() => {
-        // Stop speechSynthesis when the user refreshes the page
-        const handleUnload = () => {
-            window.speechSynthesis.cancel();
-        };
-        window.addEventListener("beforeunload", handleUnload);
-        return () => {
-            window.removeEventListener("beforeunload", handleUnload);
-        };
-    }, []);
+        if (readAloud) {
+            // Stop speechSynthesis when the user refreshes the page
+            const handleUnload = () => {
+                window.speechSynthesis.cancel();
+            };
+            window.addEventListener("beforeunload", handleUnload);
+            return () => {
+                window.removeEventListener("beforeunload", handleUnload);
+            };
+        }
+    }, [readAloud]);
 
     return (
         <div id="div-articlecard-full-article-card">
@@ -260,31 +267,32 @@ function ArticleCard() {
                             }
                         </div>
                     </div>
-                    {/* <div id="div-articlecard-lantern">
-                        <img src={lantern} alt="" id="p-articlecard-lantern" />
-                    </div> */}
                 </div>
                 <div className="separator"></div>
-                    <div id="div-articlecard-voicesynthesis">
-                        <select
-                            id="select-voice"
-                            value={selectedVoice}
-                            onChange={e => setSelectedVoice(e.target.value)}
-                        >
-                            {voices.map((voice, index) => (
-                                <option key={voice.name} className="option-voice" value={voice.name}>
-                                    Read Aloud with Voice #{index + 1}
-                                </option>
-                            ))}
-                        </select>
-                        <button id="btn-read" onClick={() => readArticle(removeImagesAndLinks(articleDataArray[0][3]))}>
-                            <i id="i-btn-read" className="material-icons">play_arrow</i>
-                        </button>
-                        <button id="btn-pause" onClick={() => pauseArticle()}>
-                            <i id="i-btn-pause" className="material-icons">pause_circle_outline</i>
-                        </button>
+                {readAloud &&
+                    <div id="div-readAloud">
+                        <div id="div-articlecard-voicesynthesis">
+                            <select
+                                id="select-voice"
+                                value={selectedVoice}
+                                onChange={e => setSelectedVoice(e.target.value)}
+                            >
+                                {voices.map((voice, index) => (
+                                    <option key={voice.name} className="option-voice" value={voice.name}>
+                                        Read Aloud with Voice #{index + 1}
+                                    </option>
+                                ))}
+                            </select>
+                            <button id="btn-read" onClick={() => readArticle(removeImagesAndLinks(articleDataArray[0][3]))}>
+                                <i id="i-btn-read" className="material-icons">play_arrow</i>
+                            </button>
+                            <button id="btn-pause" onClick={() => pauseArticle()}>
+                                <i id="i-btn-pause" className="material-icons">pause_circle_outline</i>
+                            </button>
+                        </div>
+                        <div className="separator"></div>
                     </div>
-                <div className="separator"></div>
+                }
                 <div id="div-articlecard-main-content">
                     <div id="p-articlecard-main-content"><ReactMarkdown>{articleDataArray[0][3]}</ReactMarkdown></div>
                 </div>
