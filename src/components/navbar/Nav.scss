@@ -1,17 +1,24 @@
 @import '../../styles/variables';
 
 #div-nav-container {
-    background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.25)); 
+    background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.25));
 }
 
-#nav-nav {
+// #nav-nav {
+
+// }
+
+#nav-list-desktop {
     @include flex-center;
+    flex-direction: column;
+    align-items: center;
 }
 
 #div-nav-list {
     width: 100%;
     max-width: 1950px;
     display: flex;
+    justify-content: space-around;
 }
 
 #ul-nav-list {
@@ -43,7 +50,7 @@
     font-size: 150%;
     letter-spacing: .05em;
     padding-left: .5em;
-    width: 80%;
+    width: 90%;
 }
 
 #input-search:focus {
@@ -52,7 +59,26 @@
     border-color: $site-text-color;
 }
 
+#ul-settings {
+    @include pm-reset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.2s cubic-bezier(0.4,0,0.2,1), opacity 0.2s; // Text fades before menu closes
+}
+
+#ul-settings.open {
+    max-height: 1000px; // Must be larger than menu's height for transition on open/close
+    opacity: 1;
+}
+
 // Input search shared styles
+
 #input-search,
 #input-search-mobile {
     background-repeat: no-repeat;
@@ -62,10 +88,7 @@
     padding-top: .1em;
 }
 
-#input-search {
-    background-image: url('data:image/svg+xml;utf8,<svg fill="rgb(129,129,129)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99a1 1 0 001.41-1.41l-4.99-5zm-6 0C8.01 14 6 11.99 6 9.5S8.01 5 10.5 5 15 7.01 15 9.5 12.99 14 10.5 14z"/></svg>');
-}
-
+#input-search,
 #input-search-mobile {
     background-image: url('data:image/svg+xml;utf8,<svg fill="rgb(65,65,65)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99a1 1 0 001.41-1.41l-4.99-5zm-6 0C8.01 14 6 11.99 6 9.5S8.01 5 10.5 5 15 7.01 15 9.5 12.99 14 10.5 14z"/></svg>');
 }
@@ -83,6 +106,42 @@
 #input-search:focus::placeholder,
 #input-search-mobile:focus::placeholder {
     color: $site-text-color;
+}
+
+// Settings (plus mobile) styles
+
+#div-settings,
+#div-settings-mobile {
+    display: flex;
+    align-items: center;
+    margin-right: .5em;
+}
+
+#btn-settings,
+#btn-settings-mobile {
+    background-color: transparent;
+    border: none;
+}
+
+#span-gear,
+#span-gear-mobile {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="rgb(65,65,65)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.43 12.98c.04-.32.07-.65.07-.98s-.03-.66-.07-.98l2.11-1.65a.5.5 0 00.12-.64l-2-3.46a.5.5 0 00-.6-.22l-2.49 1a7.007 7.007 0 00-1.7-.98l-.38-2.65A.5.5 0 0014 2h-4a.5.5 0 00-.5.42l-.38 2.65c-.63.24-1.21.56-1.7.98l-2.49-1a.5.5 0 00-.6.22l-2 3.46a.5.5 0 00.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65a.5.5 0 00-.12.64l2 3.46c.14.24.44.33.7.22l2.49-1c.49.42 1.07.74 1.7.98l.38 2.65c.04.26.26.42.5.42h4c.24 0 .46-.16.5-.42l.38-2.65c.63-.24 1.21-.56 1.7-.98l2.49 1c.26.11.56.02.7-.22l2-3.46a.5.5 0 00-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5S10.07 8.5 12 8.5s3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>');
+    display: block;
+    width: 38px;
+    height: 38px;
+}
+
+#span-gear.close,
+#span-gear-mobile.close {
+    transition: transform .4s ease-in-out;
+    transform: rotate(-60deg);
+}
+
+#span-gear.open,
+#span-gear-mobile.open {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="rgb(129,129,129)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.43 12.98c.04-.32.07-.65.07-.98s-.03-.66-.07-.98l2.11-1.65a.5.5 0 00.12-.64l-2-3.46a.5.5 0 00-.6-.22l-2.49 1a7.007 7.007 0 00-1.7-.98l-.38-2.65A.5.5 0 0014 2h-4a.5.5 0 00-.5.42l-.38 2.65c-.63.24-1.21.56-1.7.98l-2.49-1a.5.5 0 00-.6.22l-2 3.46a.5.5 0 00.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65a.5.5 0 00-.12.64l2 3.46c.14.24.44.33.7.22l2.49-1c.49.42 1.07.74 1.7.98l.38 2.65c.04.26.26.42.5.42h4c.24 0 .46-.16.5-.42l.38-2.65c.63-.24 1.21-.56 1.7-.98l2.49 1c.26.11.56.02.7-.22l2-3.46a.5.5 0 00-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5S10.07 8.5 12 8.5s3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>');
+    transition: transform .4s ease-in-out;
+    transform: rotate(60deg);
 }
 
 // Mobile styles
@@ -116,7 +175,7 @@
     font-size: 120%;
     letter-spacing: .05em;
     padding-left: 2.2em;
-    margin-right: 1em;
+    margin-right: .25em;
     width: 100%;
 }
 
@@ -157,7 +216,7 @@
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.2s; // Text fades before menu closes
+    transition: max-height 0.2s cubic-bezier(0.4,0,0.2,1), opacity 0.2s; // Text fades before menu closes
 }
 
 #ul-nav-list-mobile.open {
@@ -175,6 +234,5 @@
     #nav-list-mobile {
         display: block;
         max-height: fit-content;
-        overflow: auto;
     }
 }

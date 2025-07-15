@@ -8,8 +8,7 @@ import './ArticleCard.scss';
 function ArticleCard() {
     let [initDataArray, setInitDataArray] = useState([]);
     let [articleDataArray, setArticleDataArray] = useState([[]]);
-    const { readAloud, setReadAloud } = useSettings();
-    console.log(readAloud);
+    const { readAloud } = useSettings();
     const [voices, setVoices] = useState([]);
     const [selectedVoice, setSelectedVoice] = useState("");
     let { id } = useParams();
