@@ -93,11 +93,24 @@ function Nav() {
                     </ul>
                 </div>
             </nav>
-            <ul id="ul-settings" className={settingsOpen ? "open" : ""}>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-            </ul>
+            <div id="div-settings-content">
+                <ul id="ul-settings" className={settingsOpen ? "open" : ""}>
+                    <div className="switch-item">
+                        <span className="switch-item-text">Font</span>
+                        <label className="switch">
+                            <input type="checkbox"/>
+                            <span className="slider"></span>
+                        </label>
+                    </div>
+                    <div className="switch-item">
+                        <span className="switch-item-text">Read-Aloud</span>
+                        <label className="switch">
+                            <input type="checkbox"/>
+                            <span className="slider"></span>
+                        </label>
+                    </div>
+                </ul>
+            </div>
         </div>
     );
 }

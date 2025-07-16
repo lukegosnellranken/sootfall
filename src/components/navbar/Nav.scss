@@ -59,12 +59,18 @@
     border-color: $site-text-color;
 }
 
+#div-settings-content {
+    @include flex-center;
+    margin-bottom: .5em;
+}
+
 #ul-settings {
     @include pm-reset;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-center;
+    max-width: 1000px;
     width: 100%;
+    display: flex;
+    align-items: center;
     list-style: none;
     max-height: 0;
     opacity: 0;
@@ -142,6 +148,60 @@
     background-image: url('data:image/svg+xml;utf8,<svg fill="rgb(129,129,129)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.43 12.98c.04-.32.07-.65.07-.98s-.03-.66-.07-.98l2.11-1.65a.5.5 0 00.12-.64l-2-3.46a.5.5 0 00-.6-.22l-2.49 1a7.007 7.007 0 00-1.7-.98l-.38-2.65A.5.5 0 0014 2h-4a.5.5 0 00-.5.42l-.38 2.65c-.63.24-1.21.56-1.7.98l-2.49-1a.5.5 0 00-.6.22l-2 3.46a.5.5 0 00.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65a.5.5 0 00-.12.64l2 3.46c.14.24.44.33.7.22l2.49-1c.49.42 1.07.74 1.7.98l.38 2.65c.04.26.26.42.5.42h4c.24 0 .46-.16.5-.42l.38-2.65c.63-.24 1.21-.56 1.7-.98l2.49 1c.26.11.56.02.7-.22l2-3.46a.5.5 0 00-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5S10.07 8.5 12 8.5s3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>');
     transition: transform .4s ease-in-out;
     transform: rotate(60deg);
+}
+
+// Switch styles
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-left: 2em;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: $site-disabled-background-color;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 26px; width: 26px;
+  left: 4px; bottom: 4px;
+  background-color: $site-text-color;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: $site-text-color;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background-color: $site-disabled-background-color;
+}
+
+.switch-item {
+    @include flex-center;
+    width: 100%;
+}
+
+.switch-item-text {
+    @include common-text;
+    font-size: $fs-description;
 }
 
 // Mobile styles
@@ -234,5 +294,9 @@
     #nav-list-mobile {
         display: block;
         max-height: fit-content;
+    }
+
+    .switch-item-text {
+        font-size: 140%;
     }
 }
