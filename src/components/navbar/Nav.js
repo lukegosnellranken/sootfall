@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import './Nav.scss';
 import NavItem from "./NavItem";
 import { useNavigate } from "react-router-dom";
+import { useSettings } from "../../Settings";
  
 function Nav() {
     const [search, setSearch] = useState("");
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
     const [settingsOpen, setSettingsOpen] = useState(false);
     const navigate = useNavigate();
+    const { setReadAloud } = useSettings();
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -22,6 +24,10 @@ function Nav() {
         setHamburgerOpen(false);
         setSettingsOpen(false);
     }, [navigate]);
+
+    function toggleReadAloud() {
+        setReadAloud(prev => !prev);
+    }
 
     return(
         <div id="div-nav-container">
@@ -117,7 +123,7 @@ function Nav() {
                     <div className="switch-item">
                         <span className="switch-item-text">Read-Aloud</span>
                         <label className="switch">
-                            <input type="checkbox"/>
+                            <input type="checkbox" onClick={toggleReadAloud}/>
                             <span className="slider"></span>
                         </label>
                     </div>
