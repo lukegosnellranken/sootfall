@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './Nav.scss';
 import NavItem from "./NavItem";
 import { useNavigate } from "react-router-dom";
@@ -16,6 +16,12 @@ function Nav() {
             setSearch("");
         }
     }
+
+    // Close menus when the user navigates away from the current page
+    useEffect(() => {
+        setHamburgerOpen(false);
+        setSettingsOpen(false);
+    }, [navigate]);
 
     return(
         <div id="div-nav-container">
@@ -40,7 +46,7 @@ function Nav() {
                         <div id="div-settings">
                             <button
                                 id="btn-settings"
-                                className={hamburgerOpen ? "open" : ""}
+                                className={hamburgerOpen && !settingsOpen ? "open" : "close"}
                                 aria-label="Open menu"
                                 onClick={() => setSettingsOpen(!settingsOpen)}
                             >
@@ -55,14 +61,17 @@ function Nav() {
                     <div id="div-mobile-hamburger-search">
                         <button
                             id="btn-hamburger"
-                            className={hamburgerOpen ? "open" : ""}
+                            className={hamburgerOpen && !settingsOpen ? "open" : "close"}
                             aria-label="Open menu"
-                            onClick={() => setHamburgerOpen(!hamburgerOpen)}
+                            onClick={() => {
+                                setHamburgerOpen(!hamburgerOpen);
+                                settingsOpen && setSettingsOpen(!settingsOpen);
+                            }}
                         >
                             <div id="div-hamburger">
-                                <span className={hamburgerOpen ? "open" : ""} style={{display: "block", width: "25px", height: "3px", margin: "5px 0"}}></span>
-                                <span className={hamburgerOpen ? "open" : ""} style={{display: "block", width: "25px", height: "3px", margin: "5px 0"}}></span>
-                                <span className={hamburgerOpen ? "open" : ""} style={{display: "block", width: "25px", height: "3px", margin: "5px 0"}}></span>
+                                <span className={hamburgerOpen && !settingsOpen ? "open" : "close"} style={{display: "block", width: "25px", height: "3px", margin: "5px 0"}}></span>
+                                <span className={hamburgerOpen && !settingsOpen ? "open" : "close"} style={{display: "block", width: "25px", height: "3px", margin: "5px 0"}}></span>
+                                <span className={hamburgerOpen && !settingsOpen ? "open" : "close"} style={{display: "block", width: "25px", height: "3px", margin: "5px 0"}}></span>
                             </div>
                         </button>
                         <form id="form-search-mobile" onSubmit={handleSearch}>
@@ -77,15 +86,18 @@ function Nav() {
                         <div id="div-settings-mobile">
                             <button
                                 id="btn-settings-mobile"
-                                className={hamburgerOpen ? "open" : ""}
+                                className={hamburgerOpen && !settingsOpen ? "open" : "close"}
                                 aria-label="Open menu"
-                                onClick={() => setSettingsOpen(!settingsOpen)}
+                                onClick={() => {
+                                    setSettingsOpen(!settingsOpen)
+                                    hamburgerOpen && setHamburgerOpen(!hamburgerOpen);
+                                }}
                             >
-                                <span id="span-gear-mobile" className={settingsOpen ? "open" : "close"}></span>
+                                <span id="span-gear-mobile" className={settingsOpen && !hamburgerOpen ? "open" : "close"}></span>
                             </button>
                         </div>
                     </div>
-                    <ul id="ul-nav-list-mobile" className={hamburgerOpen ? "open" : ""}>
+                    <ul id="ul-nav-list-mobile" className={hamburgerOpen && !settingsOpen ? "open" : "close"}>
                         <NavItem name="Home" href="#"/>
                         <NavItem name="Authors" href="authors"/>
                         <NavItem name="Tags" href="tags"/>
@@ -94,7 +106,7 @@ function Nav() {
                 </div>
             </nav>
             <div id="div-settings-content">
-                <ul id="ul-settings" className={settingsOpen ? "open" : ""}>
+                <ul id="ul-settings" className={settingsOpen && !hamburgerOpen ? "open" : "close"}>
                     <div className="switch-item">
                         <span className="switch-item-text">Font</span>
                         <label className="switch">

@@ -61,7 +61,6 @@
 
 #div-settings-content {
     @include flex-center;
-    margin-bottom: .5em;
 }
 
 #ul-settings {
@@ -197,6 +196,7 @@ input:checked + .slider:before {
 .switch-item {
     @include flex-center;
     width: 100%;
+    margin-bottom: .5em;
 }
 
 .switch-item-text {
