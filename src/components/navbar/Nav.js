@@ -115,10 +115,11 @@ function Nav() {
                 <ul id="ul-settings" className={settingsOpen && !hamburgerOpen ? "open" : "close"}>
                     <div className="switch-item">
                         <span className="switch-item-text">Font</span>
-                        <label className="switch">
-                            <input type="checkbox"/>
-                            <span className="slider"></span>
-                        </label>
+                        <select name="font" id="select-font">
+                            <option>Font 1</option>
+                            <option>Font 2</option>
+                            <option>Font 3</option>
+                        </select>
                     </div>
                     <div className="switch-item">
                         <span className="switch-item-text">Read-Aloud</span>
