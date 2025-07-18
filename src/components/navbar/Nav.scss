@@ -177,7 +177,8 @@
 .slider:before {
   content: "";
   position: absolute;
-  height: 26px; width: 26px;
+  height: 26px;
+  width: 26px;
   left: 4px; bottom: 4px;
   background-color: $site-text-color;
   transition: 0.4s;
@@ -298,5 +299,20 @@ input:checked + .slider:before {
 
     .switch-item-text {
         font-size: 140%;
+    }
+
+    .switch {
+        width: 60px;
+        height: 26px;
+    }
+
+    .slider:before {
+        height: 22px;
+        width: 22px;
+        left: 4px; bottom: 2px;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(30px);
     }
 }
