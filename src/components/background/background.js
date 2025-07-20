@@ -5,13 +5,15 @@ import logo from '../../images/sootfall-logo7.png';
 // import bmc from '../../images/bmc-logo.png'; 
 import wutheringman from '../../images/wutheringman2.png';
 
+const homeLink = process.env.REACT_APP_HOME;
+
 function Background() {
     return (
         <div>
             <div id="div-background-container">
                 <div id="div-background-logo">
-                    <a href="http://localhost:3000/">
-                        {<img src={logo} alt="logo" id="image-background-logo" href="http://localhost:3000/"/>}
+                    <a href={homeLink}>
+                        {<img src={logo} alt="logo" id="image-background-logo" href={homeLink}/>}
                     </a>
                 </div>
                 {/* <div id="div-background-bmc">

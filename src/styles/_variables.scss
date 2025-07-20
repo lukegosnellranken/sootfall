@@ -1,5 +1,8 @@
 // Various site styles
 $site-font: Bilbo, sans-serif;
+html {
+  --site-font: #{$site-font};
+}
 $site-text-color: #818181;
 $site-active-background-color: #818181;
 $site-disabled-background-color: #414141;

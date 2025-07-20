@@ -9,7 +9,7 @@ function Nav() {
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
     const [settingsOpen, setSettingsOpen] = useState(false);
     const navigate = useNavigate();
-    const { setReadAloud } = useSettings();
+    const { setFont, setReadAloud } = useSettings();
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -18,6 +18,34 @@ function Nav() {
             setSearch("");
         }
     }
+
+    // Font choice
+    useEffect(() => {
+        const selectFont = document.getElementById('select-font');
+        if (selectFont) {
+            selectFont.addEventListener('change', () => {
+                // Get the selected font value
+                let selectedFontValue = selectFont.value;
+                console.log(selectedFontValue);
+                // Assign font values to font names
+                switch (selectedFontValue) {
+                    case "SootType":
+                        selectedFontValue = "Bilbo, sans-serif"
+                        break;
+                    case "Arial":
+                        selectedFontValue = "Arial, sans-serif"
+                        break;
+                    case "Verdana":
+                        selectedFontValue = "Verdana, sans-serif"
+                        break;
+                    default:
+                        selectedFontValue = "Bilbo, sans-serif"
+                }
+                // Update the CSS variable with the new font value
+                setFont(selectedFontValue);
+            });
+        }
+    }, [setFont])
 
     // Close menus when the user navigates away from the current page
     useEffect(() => {
@@ -116,9 +144,9 @@ function Nav() {
                     <div className="switch-item">
                         <span className="switch-item-text">Font</span>
                         <select name="font" id="select-font">
-                            <option>Font 1</option>
-                            <option>Font 2</option>
-                            <option>Font 3</option>
+                            <option>SootType</option>
+                            <option>Arial</option>
+                            <option>Verdana</option>
                         </select>
                     </div>
                     <div className="switch-item">

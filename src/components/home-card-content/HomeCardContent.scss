@@ -55,7 +55,7 @@
     justify-content: left;
     text-align: left;
     font-weight: bold;
-    font-family: Bilbo, sans-serif;
+    font-family: var(--site-font);
     color: #818181;
     text-shadow: .05em .05em .05em #494949;
     text-wrap: balance;
@@ -72,7 +72,7 @@
     color: gray;
     text-shadow: .02em .02em .02em #494949;
     letter-spacing: .05em;
-    font-family: Bilbo, sans-serif;
+    font-family: $site-font;
     cursor: default;
 }
 
@@ -124,7 +124,7 @@
     padding-top: 0.5em;
     margin-right: 1em;
     margin-left: 3px; // So that text does not get cut off
-    font-family: Bilbo, sans-serif;
+    font-family: $site-font;
     transition: all .2s ease-in-out; 
     cursor: pointer;
 }
