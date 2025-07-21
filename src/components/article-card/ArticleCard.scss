@@ -161,7 +161,7 @@
 #select-voice {
     margin-right: .5em;
     background-color: $site-active-background-color;
-    font-family: $site-font;
+    font-family: var(--site-font);
     font-size: 150%;
 }
 

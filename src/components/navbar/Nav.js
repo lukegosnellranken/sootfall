@@ -9,7 +9,7 @@ function Nav() {
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
     const [settingsOpen, setSettingsOpen] = useState(false);
     const navigate = useNavigate();
-    const { setFont, setReadAloud } = useSettings();
+    const { font, setFont, readAloud, setReadAloud } = useSettings();
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -144,15 +144,15 @@ function Nav() {
                     <div className="switch-item">
                         <span className="switch-item-text">Font</span>
                         <select name="font" id="select-font">
-                            <option>SootType</option>
-                            <option>Arial</option>
-                            <option>Verdana</option>
+                            <option checked={font === "Bilbo, sans-serif" ? true : false}>SootType</option>
+                            <option checked={font === "Arial, sans-serif" ? true : false}>Arial</option>
+                            <option checked={font === "Verdana, sans-serif" ? true : false}>Verdana</option>
                         </select>
                     </div>
                     <div className="switch-item">
                         <span className="switch-item-text">Read-Aloud</span>
                         <label className="switch">
-                            <input type="checkbox" onClick={toggleReadAloud}/>
+                            <input type="checkbox" onClick={toggleReadAloud} checked={readAloud}/>
                             <span className="slider"></span>
                         </label>
                     </div>

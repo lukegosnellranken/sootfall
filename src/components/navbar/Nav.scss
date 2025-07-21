@@ -209,7 +209,7 @@ input:checked + .slider:before {
     margin-left: 2em;
     min-width: 5em;
     background-color: $site-active-background-color;
-    font-family: $site-font;
+    font-family: var(--site-font);
     font-size: 150%;
     border-radius: 34px;
     text-align: center;

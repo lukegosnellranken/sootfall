@@ -42,7 +42,7 @@ $card-vertical-margin-mobile: .5em;
 @mixin common-text {
     color: $site-text-color;
     text-shadow: $site-text-shadow;
-    font-family: $site-font;
+    font-family: var(--site-font);
 }
 
 // Common image styles

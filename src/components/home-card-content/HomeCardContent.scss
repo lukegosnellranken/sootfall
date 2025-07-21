@@ -72,7 +72,7 @@
     color: gray;
     text-shadow: .02em .02em .02em #494949;
     letter-spacing: .05em;
-    font-family: $site-font;
+    font-family: var(--site-font);
     cursor: default;
 }
 
@@ -124,7 +124,7 @@
     padding-top: 0.5em;
     margin-right: 1em;
     margin-left: 3px; // So that text does not get cut off
-    font-family: $site-font;
+    font-family: var(--site-font);
     transition: all .2s ease-in-out; 
     cursor: pointer;
 }
