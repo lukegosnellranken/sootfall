@@ -13,7 +13,7 @@ function Background() {
             <div id="div-background-container">
                 <div id="div-background-logo">
                     <a href={homeLink}>
-                        {<img src={logo} alt="logo" id="image-background-logo" href={homeLink}/>}
+                        {<img src={logo} alt="logo" id="image-background-logo" href={homeLink} draggable="false"/>}
                     </a>
                 </div>
                 {/* <div id="div-background-bmc">

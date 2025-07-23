@@ -15,7 +15,7 @@ function AuthorCard(props) {
             <div id="div-authorcard-stitch">
                 <div id='div-authorcard-content'>
                     <div id="div-authorcard-image">
-                        <img id="img-authorcard" src={props.authorImage} alt="author"/>
+                        <img id="img-authorcard" src={props.authorImage} alt="author" draggable="false"/>
                     </div>
                     <div id="div-author-name-description">
                         <p id='p-authorcard-name'>{props.authorName}</p>

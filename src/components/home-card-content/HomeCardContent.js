@@ -48,7 +48,7 @@ function HomeCardContent(props) {
         <div className="article-link" onClick={() => handleNavigation(props.sub)}>
             <div id="div-homecardcontent-container">
                 <div id="div-homecardcontent-image">
-                    <img src={props.image} alt="" id="image-homecardcontent-image" />
+                    <img src={props.image} alt="" id="image-homecardcontent-image" draggable="false"/>
                 </div>
                 <div id="div-homecardcontent-article-info">
                     <div id="div-homecardcontent-title-date-tags">
