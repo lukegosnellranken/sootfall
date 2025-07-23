@@ -6,7 +6,11 @@ export const Settings = ({ children }) => {
     // Get font from localStorage, otherwise set to SootType by default
     const [font, setFont] = useState(() => {
         const stored = localStorage.getItem('font');
-        return stored ? JSON.parse(stored) : "Bilbo";
+        return stored ? JSON.parse(stored) :
+         {
+            "title": "SootType",
+            "value": "Bilbo, sans-serif"
+        };
     });
 
     useEffect(() => {
@@ -23,7 +27,7 @@ export const Settings = ({ children }) => {
         localStorage.setItem('readAloud', JSON.stringify(readAloud));
     }, [readAloud]);
 
-    document.documentElement.style.setProperty('--site-font', font);
+    document.documentElement.style.setProperty('--site-font', font.value);
     return (
         <SettingsContext.Provider value= {{ font, setFont, readAloud, setReadAloud }}>
             {children}

@@ -19,33 +19,26 @@ function Nav() {
         }
     }
 
-    // Font choice
-    useEffect(() => {
-        const selectFont = document.getElementById('select-font');
-        if (selectFont) {
-            selectFont.addEventListener('change', () => {
-                // Get the selected font value
-                let selectedFontValue = selectFont.value;
-                console.log(selectedFontValue);
-                // Assign font values to font names
-                switch (selectedFontValue) {
-                    case "SootType":
-                        selectedFontValue = "Bilbo, sans-serif"
-                        break;
-                    case "Arial":
-                        selectedFontValue = "Arial, sans-serif"
-                        break;
-                    case "Verdana":
-                        selectedFontValue = "Verdana, sans-serif"
-                        break;
-                    default:
-                        selectedFontValue = "Bilbo, sans-serif"
+    // Format font as JSON given the selected font from the dropdown
+    function formatFont(value) {
+        switch (value) {
+            case "SootType":
+                return {
+                    "title": "SootType",
+                    "value": "Bilbo, sans-serif"
                 }
-                // Update the CSS variable with the new font value
-                setFont(selectedFontValue);
-            });
+            case "Arial":
+                return {
+                    "title": "Arial",
+                    "value": "Arial, sans-serif"
+                }
+            default:
+                return {
+                    "title": "SootType",
+                    "value": "Bilbo, sans-serif"
+                }
         }
-    }, [setFont])
+    } 
 
     // Close menus when the user navigates away from the current page
     useEffect(() => {
@@ -143,16 +136,22 @@ function Nav() {
                 <ul id="ul-settings" className={settingsOpen && !hamburgerOpen ? "open" : "close"}>
                     <div className="switch-item">
                         <span className="switch-item-text">Font</span>
-                        <select name="font" id="select-font">
-                            <option checked={font === "Bilbo, sans-serif" ? true : false}>SootType</option>
-                            <option checked={font === "Arial, sans-serif" ? true : false}>Arial</option>
-                            <option checked={font === "Verdana, sans-serif" ? true : false}>Verdana</option>
+                        <select 
+                            name="font" 
+                            id="select-font"
+                            value={font.title}
+                            // Update the CSS variable with the new font value
+                            onChange={e => setFont(formatFont(e.target.value))}
+                        >
+                            <option>SootType</option>
+                            <option>Arial</option>
+                            <option>Verdana</option>
                         </select>
                     </div>
                     <div className="switch-item">
                         <span className="switch-item-text">Read-Aloud</span>
                         <label className="switch">
-                            <input type="checkbox" onClick={toggleReadAloud} checked={readAloud}/>
+                            <input type="checkbox" onClick={toggleReadAloud} defaultChecked={readAloud}/>
                             <span className="slider"></span>
                         </label>
                     </div>
