@@ -50,6 +50,30 @@ function Nav() {
         setReadAloud(prev => !prev);
     }
 
+    // Classy menu opening/closing
+    function menuAction(menu) {
+        if (menu === "hamburger") {
+            if (settingsOpen) {
+                setSettingsOpen(!settingsOpen);
+                setTimeout(() => {
+                    setHamburgerOpen(!hamburgerOpen);
+                }, 350);
+            } else {
+                setHamburgerOpen(!hamburgerOpen);
+            }
+        }
+        if (menu === "settings") {
+            if (hamburgerOpen) {
+                setHamburgerOpen(!hamburgerOpen);
+                setTimeout(() => {
+                    setSettingsOpen(!settingsOpen);
+                }, 350);
+            } else {
+                setSettingsOpen(!settingsOpen);
+            }
+        }
+    }
+
     return(
         <div id="div-nav-container">
             <nav id="nav-nav">
@@ -75,7 +99,7 @@ function Nav() {
                                 id="btn-settings"
                                 className={hamburgerOpen && !settingsOpen ? "open" : "close"}
                                 aria-label="Open menu"
-                                onClick={() => setSettingsOpen(!settingsOpen)}
+                                onClick={() => menuAction("settings")}
                             >
                                 <span id="span-gear" className={settingsOpen ? "open" : "close"}></span>
                             </button>
@@ -91,8 +115,7 @@ function Nav() {
                             className={hamburgerOpen && !settingsOpen ? "open" : "close"}
                             aria-label="Open menu"
                             onClick={() => {
-                                setHamburgerOpen(!hamburgerOpen);
-                                settingsOpen && setSettingsOpen(!settingsOpen);
+                                menuAction("hamburger")
                             }}
                         >
                             <div id="div-hamburger">
@@ -116,8 +139,7 @@ function Nav() {
                                 className={hamburgerOpen && !settingsOpen ? "open" : "close"}
                                 aria-label="Open menu"
                                 onClick={() => {
-                                    setSettingsOpen(!settingsOpen)
-                                    hamburgerOpen && setHamburgerOpen(!hamburgerOpen);
+                                    menuAction("settings")
                                 }}
                             >
                                 <span id="span-gear-mobile" className={settingsOpen && !hamburgerOpen ? "open" : "close"}></span>
