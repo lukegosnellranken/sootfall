@@ -56,11 +56,12 @@
     text-align: left;
     font-weight: bold;
     font-family: var(--site-font);
+    letter-spacing: var(--site-letter-spacing);
+    font-size-adjust: var(--site-font-size-adjust);
     color: #818181;
     text-shadow: .05em .05em .05em #494949;
     text-wrap: balance;
     cursor: default;
-    letter-spacing: 0.03em;
 }
 
 #p-homecardcontent-author-date {

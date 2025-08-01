@@ -9,7 +9,9 @@ export const Settings = ({ children }) => {
         return stored ? JSON.parse(stored) :
          {
             "title": "SootType",
-            "value": "Bilbo, sans-serif"
+            "value": "Bilbo, sans-serif",
+            "letterSpacing": "0.03em",
+            "fontSizeAdjust": "cap-height 1"
         };
     });
 
@@ -27,7 +29,10 @@ export const Settings = ({ children }) => {
         localStorage.setItem('readAloud', JSON.stringify(readAloud));
     }, [readAloud]);
 
+    console.log(font.letterSpacing);
     document.documentElement.style.setProperty('--site-font', font.value);
+    document.documentElement.style.setProperty('--site-letter-spacing', font.letterSpacing);
+    document.documentElement.style.setProperty('--site-font-size-adjust', font.fontSizeAdjust);
     return (
         <SettingsContext.Provider value= {{ font, setFont, readAloud, setReadAloud }}>
             {children}

@@ -25,17 +25,37 @@ function Nav() {
             case "SootType":
                 return {
                     "title": "SootType",
-                    "value": "Bilbo, sans-serif"
+                    "value": "Bilbo, sans-serif",
+                    "letterSpacing": "0.03em",
+                    "fontSizeAdjust": "cap-height 0.7"
                 }
             case "Arial":
                 return {
                     "title": "Arial",
-                    "value": "Arial, sans-serif"
+                    "value": "Arial, sans-serif",
+                    "letterSpacing": "-0.03em",
+                    "fontSizeAdjust": "cap-height 0.55"
+                }
+            case "Georgia":
+                return {
+                    "title": "Georgia",
+                    "value": "Georgia, sans-serif",
+                    "letterSpacing": "-0.03em",
+                    "fontSizeAdjust": "cap-height 0.5"
+                }
+            case "Bucket":
+                return {
+                    "title": "Bucket",
+                    "value": "Trebuchet MS, sans-serif",
+                    "letterSpacing": "-0.03em",
+                    "fontSizeAdjust": "cap-height 0.57"
                 }
             default:
                 return {
                     "title": "SootType",
-                    "value": "Bilbo, sans-serif"
+                    "value": "Bilbo, sans-serif",
+                    "letterSpacing": "0.03em",
+                    "fontSizeAdjust": "cap-height 0.7"
                 }
         }
     } 
@@ -167,7 +187,8 @@ function Nav() {
                         >
                             <option>SootType</option>
                             <option>Arial</option>
-                            <option>Verdana</option>
+                            <option>Georgia</option>
+                            <option>Bucket</option>
                         </select>
                     </div>
                     <div className="switch-item">

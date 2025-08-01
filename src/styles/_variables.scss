@@ -1,7 +1,11 @@
 // Various site styles
 $site-font: Bilbo, sans-serif;
+$site-letter-spacing: 0.03em;
+$site-font-size-adjust: cap-height 1;
 html {
   --site-font: #{$site-font};
+  --site-letter-spacing: #{$site-letter-spacing};
+  --site-font-size-adjust: #{$site-font-size-adjust};
 }
 $site-text-color: #818181;
 $site-active-background-color: #818181;

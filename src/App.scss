@@ -10,6 +10,9 @@ body {
 
 body, html {
     @include pm-reset;
+    font-family: var(--site-font);
+    letter-spacing: var(--site-letter-spacing);
+    font-size-adjust: var(--site-font-size-adjust);
 }
 
 #appDiv {
