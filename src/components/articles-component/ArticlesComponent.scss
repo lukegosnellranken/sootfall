@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+
+#articlescomponent-container {
+    @include flex-center;
+    width: 100%;
+    max-width: $site-container-max-width;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+#div-articlescomponent-card {
+    display: block;
+    width: 100%;
+}

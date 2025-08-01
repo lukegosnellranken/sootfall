@@ -81,8 +81,8 @@ function Nav() {
                     <div id="div-nav-list">
                         <ul id="ul-nav-list">
                             <NavItem name="Home" href="#"/>
+                            <NavItem name="Writings" href="articles"/>
                             <NavItem name="Authors" href="authors"/>
-                            <NavItem name="Tags" href="tags"/>
                             <NavItem name="Donate" href="#"/>
                         </ul>
                         <form id="form-search" onSubmit={handleSearch}>
@@ -148,8 +148,8 @@ function Nav() {
                     </div>
                     <ul id="ul-nav-list-mobile" className={hamburgerOpen && !settingsOpen ? "open" : "close"}>
                         <NavItem name="Home" href="#"/>
+                        <NavItem name="Writings" href="articles"/>
                         <NavItem name="Authors" href="authors"/>
-                        <NavItem name="Tags" href="tags"/>
                         <NavItem name="Donate" href="#"/>
                     </ul>
                 </div>

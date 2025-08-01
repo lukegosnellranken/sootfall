@@ -6,6 +6,7 @@ import './App.scss';
 import Footer from './components/footer/Footer';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
+import Articles from './pages/Articles';
 import Article from './pages/Article';
 import Search from './pages/Search';
 import NotFound from './pages/NotFound';
@@ -22,6 +23,7 @@ function App() {
         <div id='div-content-and-footer'>
           <Routes>
             <Route index element={<Home/>}/>
+            <Route path='/articles' element={<Articles/>}/>
             <Route path='/articles/:id' element={<Article/>}/>
             <Route path='*' element={<NotFound/>}/>
             <Route path='/tags/:tagName' element={<Tag/>}/>
