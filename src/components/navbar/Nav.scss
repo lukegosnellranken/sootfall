@@ -29,6 +29,7 @@
     margin-top: .2%;
     padding-left: 0%;
     margin-left: 0%;
+    margin-bottom: .5em;
 }
 
 #form-search {
@@ -61,22 +62,34 @@
     @include flex-center;
 }
 
-#ul-settings {
+#ul-settings, #ul-nav-list-mobile {
     @include pm-reset;
     @include flex-center;
-    max-width: 1000px;
-    width: 100%;
-    display: flex;
     align-items: center;
+    flex-direction: column;
+    width: 100%;
     list-style: none;
     max-height: 0;
     opacity: 0;
     transition: max-height 0.2s cubic-bezier(0.4,0,0.2,1), opacity 0.2s; // Text fades before menu closes
 }
 
+#div-switch-items, #div-ul-nav-list-mobile-items {
+    @include flex-center;
+    max-width: 1000px;
+    width: 100%;
+    margin-bottom: .25em;
+}
+
 #ul-settings.open {
     max-height: 1000px; // Must be larger than menu's height for transition on open/close
     opacity: 1;
+}
+
+.settings-stitch {
+    @include stitch;
+    width: 100%;
+    margin-bottom: .75em;
 }
 
 // Input search shared styles
@@ -305,6 +318,14 @@ input:checked + .slider:before {
     #nav-list-mobile {
         display: block;
         max-height: fit-content;
+    }
+
+    .settings-stitch {
+        margin-bottom: .4em;
+    }
+
+    #div-switch-items {
+        margin-bottom: 0em;
     }
 
     .switch-item-text {

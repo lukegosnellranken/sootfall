@@ -167,36 +167,42 @@ function Nav() {
                         </div>
                     </div>
                     <ul id="ul-nav-list-mobile" className={hamburgerOpen && !settingsOpen ? "open" : "close"}>
-                        <NavItem name="Home" href="#"/>
-                        <NavItem name="Writings" href="articles"/>
-                        <NavItem name="Authors" href="authors"/>
-                        <NavItem name="Donate" href="#"/>
+                        <div className="settings-stitch"></div>
+                        <div id="div-ul-nav-list-mobile-items">
+                            <NavItem name="Home" href="#"/>
+                            <NavItem name="Writings" href="articles"/>
+                            <NavItem name="Authors" href="authors"/>
+                            <NavItem name="Donate" href="#"/>
+                        </div>
                     </ul>
                 </div>
             </nav>
             <div id="div-settings-content">
                 <ul id="ul-settings" className={settingsOpen && !hamburgerOpen ? "open" : "close"}>
-                    <div className="switch-item">
-                        <span className="switch-item-text">Font</span>
-                        <select 
-                            name="font" 
-                            id="select-font"
-                            value={font.title}
-                            // Update the CSS variable with the new font value
-                            onChange={e => setFont(formatFont(e.target.value))}
-                        >
-                            <option>SootType</option>
-                            <option>Arial</option>
-                            <option>Georgia</option>
-                            <option>Bucket</option>
-                        </select>
-                    </div>
-                    <div className="switch-item">
-                        <span className="switch-item-text">Read-Aloud</span>
-                        <label className="switch">
-                            <input type="checkbox" onClick={toggleReadAloud} defaultChecked={readAloud}/>
-                            <span className="slider"></span>
-                        </label>
+                    <div className="settings-stitch"></div>
+                    <div id="div-switch-items">
+                        <div className="switch-item">
+                            <span className="switch-item-text">Font</span>
+                            <select 
+                                name="font" 
+                                id="select-font"
+                                value={font.title}
+                                // Update the CSS variable with the new font value
+                                onChange={e => setFont(formatFont(e.target.value))}
+                            >
+                                <option>SootType</option>
+                                <option>Arial</option>
+                                <option>Georgia</option>
+                                <option>Bucket</option>
+                            </select>
+                        </div>
+                        <div className="switch-item">
+                            <span className="switch-item-text">Read-Aloud</span>
+                            <label className="switch">
+                                <input type="checkbox" onClick={toggleReadAloud} defaultChecked={readAloud}/>
+                                <span className="slider"></span>
+                            </label>
+                        </div>
                     </div>
                 </ul>
             </div>
