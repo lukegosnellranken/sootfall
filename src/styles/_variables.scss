@@ -27,6 +27,13 @@ $card-vertical-margin: 2em;
 $card-vertical-padding: .2em;
 $card-vertical-margin-mobile: .5em;
 
+// Unset base element styles (use for overriding mobile browser-enforced styling)
+@mixin unset {
+    all: unset;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
 // CSS reset
 @mixin pm-reset {
     padding: 0;

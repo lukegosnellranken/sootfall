@@ -161,24 +161,39 @@
 #select-voice {
     margin-right: .5em;
     background-color: $site-active-background-color;
+    color: black !important;
     font-family: var(--site-font);
     font-size: 150%;
+    border-radius: .25em;
+    cursor: pointer;
 }
 
 .material-icons {
     vertical-align: bottom; // Aligns play, stop, and pause symbols
 }
 
-#btn-read, #btn-pause {
+#btn-read,
+#btn-pause {
+    @include unset;
     background-color: $site-active-background-color;
+    min-width: 35px;
+    text-align: center;
+    border-radius: .25em;
 }
 
-#btn-read:active:hover, #btn-pause:active:hover {
+#btn-read:active:hover,
+#btn-pause:active:hover {
     background-color: $site-disabled-background-color;
 }
 
-.btn-disable {
+#btn-pause {
+    margin-left: .25em;
+}
+
+.btn-disable,
+.select-disable {
     background-color: $site-disabled-background-color !important;
+    cursor: default !important;
 }
 
 // Main content styles

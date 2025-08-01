@@ -1,6 +1,6 @@
 import React from "react";
 import { useSettings } from '../../Settings';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import ReactMarkdown from 'react-markdown'
 import './ArticleCard.scss';
@@ -11,6 +11,7 @@ function ArticleCard() {
     const { readAloud } = useSettings();
     const [voices, setVoices] = useState([]);
     const [selectedVoice, setSelectedVoice] = useState("");
+    let speechMethodSupport = useRef(false);
     let { id } = useParams();
     // Remove all special characters from the id
     id = id.replace(/[^a-zA-Z0-9-_]/g, "");
@@ -84,14 +85,43 @@ function ArticleCard() {
         }
     }, [initDataArray, id, API_URL]);
 
+    // Check for support of speechSynthesis methods and thus set speechMethodSupport.current
+    // Also always disable for Android
+    useEffect(() => {
+        const isAndroid = /Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent);
+        const pauseSupport =  typeof window.speechSynthesis?.pause;
+        const resumeSupport =  typeof window.speechSynthesis?.resume;
+        if (pauseSupport === 'function' && resumeSupport === 'function' && !isAndroid) {
+            speechMethodSupport.current = true;
+        } else {
+            speechMethodSupport.current = false;
+        }
+    }, []);
+
+    // get all voices from speech synthesis and set the selected voice
     useEffect(() => {
         if (readAloud) {
             setVoiceStyles();
             function loadVoices() {
                 const allVoices = window.speechSynthesis.getVoices();
-                setVoices(allVoices);
-                if (allVoices.length > 0 && !selectedVoice) {
-                    setSelectedVoice(allVoices[0].name);
+                const uniqueVoices = allVoices.reduce((acc, voice) => {
+                if (!acc.some(v => v.voiceURI === voice.voiceURI)) {
+                    acc.push(voice);
+                }
+                return acc;
+                }, []);
+                const englishVoices = uniqueVoices.filter(voice =>
+                    voice.lang.toLowerCase().startsWith('en') &&
+                    (
+                        voice.name.toLowerCase().includes('english') ||
+                        voice.name.toLowerCase().includes('English') ||
+                        voice.name.toLowerCase().includes('US') ||
+                        voice.name.toLowerCase().includes('United')
+                    )
+                );
+                setVoices(englishVoices);
+                if (englishVoices.length > 0 && !selectedVoice) {
+                    setSelectedVoice(englishVoices[0].name);
                 }
             }
             loadVoices();
@@ -108,22 +138,24 @@ function ArticleCard() {
         const readButton = document.getElementById("i-btn-read");
         const pauseButtonParent = document.getElementById("btn-pause");
         const selectDropdown = document.getElementById("select-voice");
-        if (readButton.innerText === "play_arrow") {
-            pauseButtonParent.classList.add("btn-disable");
-        } else {
-            if (pauseButtonParent.classList.contains("btn-disable")) {
-                pauseButtonParent.classList.remove("btn-disable");
+        if (pauseButtonParent) {
+            if (readButton.innerText === "play_arrow") {
+                pauseButtonParent.classList.add("btn-disable");
+            } else {
+                if (pauseButtonParent.classList.contains("btn-disable")) {
+                    pauseButtonParent.classList.remove("btn-disable");
+                }
             }
-        }
-        if (readButton.innerText === "stop") {
-            selectDropdown.classList.add("btn-disable");
-            selectDropdown.setAttribute("disabled", "")
-        } else {
-            if (selectDropdown.classList.contains("btn-disable")) {
-                selectDropdown.classList.remove("btn-disable");
-            }
-            if (selectDropdown.hasAttribute("disabled")) {
-                selectDropdown.removeAttribute("disabled");
+            if (readButton.innerText === "stop") {
+                selectDropdown.classList.add("select-disable");
+                selectDropdown.setAttribute("disabled", "")
+            } else {
+                if (selectDropdown.classList.contains("select-disable")) {
+                    selectDropdown.classList.remove("select-disable");
+                }
+                if (selectDropdown.hasAttribute("disabled")) {
+                    selectDropdown.removeAttribute("disabled");
+                }
             }
         }
     }
@@ -134,8 +166,8 @@ function ArticleCard() {
         const pauseButton = document.getElementById("i-btn-pause");
         if (readButton.innerText === "play_arrow") {
             let synth = window.speechSynthesis;
-            let allVoices = synth.getVoices();
-            if (voices.length > 0) {
+            const allVoices = synth.getVoices();
+            if (allVoices.length > 0) {
                 let speech = new SpeechSynthesisUtterance();
                 let voice = allVoices.find(v => v.name === selectedVoice);
                 if (voice) {
@@ -153,7 +185,9 @@ function ArticleCard() {
         } else if (readButton.innerText === "stop") {
             window.speechSynthesis.cancel();
             readButton.innerText = "play_arrow";
-            pauseButton.innerText = "pause_circle_outline";
+            if (pauseButton) {
+                pauseButton.innerText = "pause_circle_outline";
+            }
         }
         setVoiceStyles();
     }
@@ -285,9 +319,11 @@ function ArticleCard() {
                             <button id="btn-read" onClick={() => readArticle(removeImagesAndLinks(articleDataArray[0][3]))}>
                                 <i id="i-btn-read" className="material-icons">play_arrow</i>
                             </button>
-                            <button id="btn-pause" onClick={() => pauseArticle()}>
-                                <i id="i-btn-pause" className="material-icons">pause_circle_outline</i>
-                            </button>
+                            {speechMethodSupport.current &&
+                                <button id="btn-pause" onClick={() => pauseArticle()}>
+                                    <i id="i-btn-pause" className="material-icons">pause_circle_outline</i>
+                                </button>
+                            }
                         </div>
                         <div className="separator"></div>
                     </div>
