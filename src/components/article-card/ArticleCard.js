@@ -13,6 +13,7 @@ function ArticleCard() {
     const [selectedVoice, setSelectedVoice] = useState("");
     let speechMethodSupport = useRef(false);
     let { id } = useParams();
+    const idOriginal = id;
     // Remove all special characters from the id
     id = id.replace(/[^a-zA-Z0-9-_]/g, "");
     const API_URL = process.env.REACT_APP_API_URL; // Get domain from .env
@@ -22,6 +23,14 @@ function ArticleCard() {
     const handleNavigation = (path) => {
         navigate(path);
     };
+
+    // Redirect to "clean" URL if applicable
+    useEffect(() => {
+        if (idOriginal !== id) {
+            // Acts as change to URL as opposed to redirecting to a new page, like: handleNavigation(`/articles/${id}`);
+            window.history.replaceState({}, '', `/articles/${id}`);
+        }
+    });
     
     // Fetch data for all articles on mount and convert to JSON if res is ok
     useEffect(() => {
