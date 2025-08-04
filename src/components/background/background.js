@@ -6,6 +6,7 @@ import logo from '../../images/sootfall-logo9.png';
 import wutheringman from '../../images/wutheringman2.png';
 
 const homeLink = process.env.REACT_APP_HOME;
+const backendLink = process.env.REACT_APP_API_URL;
 
 function Background() {
     return (
@@ -28,6 +29,11 @@ function Background() {
                     <a id="social-links-instagram" href="https://gingernook.com/" className="fa fa-instagram social-link"> </a>
                     <a id="social-links-rss" href="https://gingernook.com/" className="fa fa-rss social-link"> </a>
                 </div> */}
+                <div id="div-background-social-links">
+                    <ul id="ul-background-social-links">
+                        <a id="social-links-rss" href={`${backendLink}/api/rss.xml`} target="_blank" rel="noreferrer" className="fa fa-rss social-link"> </a>
+                    </ul>
+                </div>
             </div>
         </div>
     )
