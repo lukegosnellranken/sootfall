@@ -11,6 +11,8 @@ function ArticleCard() {
     const { readAloud } = useSettings();
     const [voices, setVoices] = useState([]);
     const [selectedVoice, setSelectedVoice] = useState("");
+    const [isReading, setIsReading] = useState(false);
+    const [isPaused, setIsPaused] = useState(false);
     let speechMethodSupport = useRef(false);
     let { id } = useParams();
     const idOriginal = id;
@@ -110,7 +112,6 @@ function ArticleCard() {
     // get all voices from speech synthesis and set the selected voice
     useEffect(() => {
         if (readAloud) {
-            setVoiceStyles();
             function loadVoices() {
                 const allVoices = window.speechSynthesis.getVoices();
                 const uniqueVoices = allVoices.reduce((acc, voice) => {
@@ -143,37 +144,11 @@ function ArticleCard() {
         }
     }, [readAloud, selectedVoice]);
 
-    function setVoiceStyles() {
-        const readButton = document.getElementById("i-btn-read");
-        const pauseButtonParent = document.getElementById("btn-pause");
-        const selectDropdown = document.getElementById("select-voice");
-        if (pauseButtonParent) {
-            if (readButton.innerText === "play_arrow") {
-                pauseButtonParent.classList.add("btn-disable");
-            } else {
-                if (pauseButtonParent.classList.contains("btn-disable")) {
-                    pauseButtonParent.classList.remove("btn-disable");
-                }
-            }
-            if (readButton.innerText === "stop") {
-                selectDropdown.classList.add("select-disable");
-                selectDropdown.setAttribute("disabled", "")
-            } else {
-                if (selectDropdown.classList.contains("select-disable")) {
-                    selectDropdown.classList.remove("select-disable");
-                }
-                if (selectDropdown.hasAttribute("disabled")) {
-                    selectDropdown.removeAttribute("disabled");
-                }
-            }
-        }
-    }
-
     function readArticle(content) {
         // Uses Google fonts in header of index.html
-        const readButton = document.getElementById("i-btn-read");
-        const pauseButton = document.getElementById("i-btn-pause");
-        if (readButton.innerText === "play_arrow") {
+        // const readButton = document.getElementById("i-btn-read");
+        // const pauseButton = document.getElementById("i-btn-pause");
+        if (!isReading) {
             let synth = window.speechSynthesis;
             const allVoices = synth.getVoices();
             if (allVoices.length > 0) {
@@ -187,18 +162,16 @@ function ArticleCard() {
                 speech.rate = .75;
                 speech.pitch = 1;
                 synth.speak(speech);
-                readButton.innerText = "stop";
+                // readButton.innerText = "stop";
+                setIsReading(true);
             } else {
                 setTimeout(() => readArticle(content), 100);
             }
-        } else if (readButton.innerText === "stop") {
+        } else if (isReading) {
             window.speechSynthesis.cancel();
-            readButton.innerText = "play_arrow";
-            if (pauseButton) {
-                pauseButton.innerText = "pause_circle_outline";
-            }
+            setIsReading(false);
+            setIsPaused(false);
         }
-        setVoiceStyles();
     }
 
     // We do not want to read allowed the image data in an article
@@ -220,18 +193,13 @@ function ArticleCard() {
     }
 
     function pauseArticle() {
-        const readButton = document.getElementById("i-btn-read");
-        const pauseButton = document.getElementById("i-btn-pause");
-        if (pauseButton.innerText === "pause_circle_outline") {
-            if (readButton.innerText === "stop") {
-                window.speechSynthesis.pause();
-                pauseButton.innerText = "play_circle_outline";
-            }
-        } else if (pauseButton.innerText === "play_circle_outline") {
+        if (!isPaused) {
+            window.speechSynthesis.pause();
+            setIsPaused(true);
+        } else if (isPaused) {
             window.speechSynthesis.resume();
-            pauseButton.innerText = "pause_circle_outline";
+            setIsPaused(false);
         }
-        setVoiceStyles();
     }
 
     useEffect(() => {
@@ -316,6 +284,8 @@ function ArticleCard() {
                         <div id="div-articlecard-voicesynthesis">
                             <select
                                 id="select-voice"
+                                className={isReading ? "select-disable" : ""}
+                                disabled={isReading}
                                 value={selectedVoice}
                                 onChange={e => setSelectedVoice(e.target.value)}
                             >
@@ -326,11 +296,20 @@ function ArticleCard() {
                                 ))}
                             </select>
                             <button id="btn-read" onClick={() => readArticle(removeImagesAndLinks(articleDataArray[0][3]))}>
-                                <i id="i-btn-read" className="material-icons">play_arrow</i>
+                                <i id="i-btn-read" className="material-icons">
+                                    {isReading ? "stop" : "play_arrow"}
+                                </i>
                             </button>
                             {speechMethodSupport.current &&
-                                <button id="btn-pause" onClick={() => pauseArticle()}>
-                                    <i id="i-btn-pause" className="material-icons">pause_circle_outline</i>
+                                <button 
+                                    id="btn-pause"
+                                    className={isReading ? "" : "btn-disable"}
+                                    disabled={!isReading}
+                                    onClick={() => pauseArticle()}
+                                >
+                                    <i id="i-btn-pause" className="material-icons">
+                                        {isPaused ? "play_circle_outline" : "pause_circle_outline"}
+                                    </i>
                                 </button>
                             }
                         </div>
