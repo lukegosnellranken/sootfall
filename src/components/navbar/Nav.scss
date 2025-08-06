@@ -229,7 +229,7 @@ input:checked + .slider:before {
 
 // Dropdown styles
 
-#select-font {
+.select-settings {
     margin-left: 2em;
     min-width: 5em;
     background-color: $site-active-background-color;
@@ -354,7 +354,7 @@ input:checked + .slider:before {
         width: 50%;
     }
 
-    #select-font {
+    .select-settings {
         width: 60px;
         height: 26px;
         margin-left: 1em;

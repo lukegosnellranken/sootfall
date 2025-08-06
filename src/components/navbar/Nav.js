@@ -9,13 +9,31 @@ function Nav() {
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
     const [settingsOpen, setSettingsOpen] = useState(false);
     const navigate = useNavigate();
-    const { font, setFont, readAloud, setReadAloud } = useSettings();
+    const { theme, setTheme, font, setFont, readAloud, setReadAloud } = useSettings();
 
     const handleSearch = (e) => {
         e.preventDefault();
         if (search.trim()) {
             navigate(`/search/${encodeURIComponent(search.trim())}`);
             setSearch("");
+        }
+    }
+
+    // Format font as JSON given the selected font from the dropdown
+    function formatTheme(value) {
+        switch (value) {
+            case "Dark":
+                return {
+                    "title": "Dark"
+                }
+            case "Light":
+                return {
+                    "title": "Light"
+                }
+            default :
+                return {
+                    "title": "Dark"
+                }
         }
     }
 
@@ -206,12 +224,12 @@ function Nav() {
                         <div className="switch-item">
                             <span className="switch-item-text">Theme</span>
                             <select 
-                                name="font" 
-                                id="select-font"
-                                // value={font.title}
-                                // Update the CSS variable with the new font value
-                                // onChange={e => setFont(formatFont(e.target.value))}
-                                defaultValue={font.title}
+                                name="theme" 
+                                id="select-theme"
+                                className="select-settings"
+                                value={theme.title}
+                                // Update the CSS variable with the new theme value
+                                onChange={e => setTheme(formatTheme(e.target.value))}
                             >
                                 <option>Dark</option>
                                 <option>Light</option>
@@ -222,6 +240,7 @@ function Nav() {
                             <select 
                                 name="font" 
                                 id="select-font"
+                                className="select-settings"
                                 value={font.title}
                                 // Update the CSS variable with the new font value
                                 onChange={e => setFont(formatFont(e.target.value))}

@@ -3,11 +3,22 @@ import { createContext, useContext, useEffect, useState } from "react";
 const SettingsContext = createContext();
 
 export const Settings = ({ children }) => {
+    // Get theme from localStorage, otherwise set to Dark by default
+    const [theme, setTheme] = useState(() => {
+        const stored = localStorage.getItem('theme');
+        return stored ? JSON.parse(stored) : {
+            "title": "Dark",
+        };
+    });
+
+    useEffect(() => {
+        localStorage.setItem('theme', JSON.stringify(theme));
+    }, [theme]);
+    
     // Get font from localStorage, otherwise set to SootType by default
     const [font, setFont] = useState(() => {
         const stored = localStorage.getItem('font');
-        return stored ? JSON.parse(stored) :
-         {
+        return stored ? JSON.parse(stored) : {
             "title": "SootType",
             "value": "Bilbo, sans-serif",
             "letterSpacing": "0.03em",
@@ -33,7 +44,7 @@ export const Settings = ({ children }) => {
     document.documentElement.style.setProperty('--site-letter-spacing', font.letterSpacing);
     document.documentElement.style.setProperty('--site-font-size-adjust', font.fontSizeAdjust);
     return (
-        <SettingsContext.Provider value= {{ font, setFont, readAloud, setReadAloud }}>
+        <SettingsContext.Provider value= {{ font, setFont, readAloud, setReadAloud, theme, setTheme }}>
             {children}
         </SettingsContext.Provider>
     );
