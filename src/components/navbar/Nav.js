@@ -208,9 +208,10 @@ function Nav() {
                             <select 
                                 name="font" 
                                 id="select-font"
-                                value={font.title}
+                                // value={font.title}
                                 // Update the CSS variable with the new font value
                                 // onChange={e => setFont(formatFont(e.target.value))}
+                                defaultValue={font.title}
                             >
                                 <option>Dark</option>
                                 <option>Light</option>

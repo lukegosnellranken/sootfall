@@ -29,7 +29,6 @@ export const Settings = ({ children }) => {
         localStorage.setItem('readAloud', JSON.stringify(readAloud));
     }, [readAloud]);
 
-    console.log(font.letterSpacing);
     document.documentElement.style.setProperty('--site-font', font.value);
     document.documentElement.style.setProperty('--site-letter-spacing', font.letterSpacing);
     document.documentElement.style.setProperty('--site-font-size-adjust', font.fontSizeAdjust);
