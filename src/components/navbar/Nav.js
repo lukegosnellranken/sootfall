@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import './Nav.scss';
 import NavItem from "./NavItem";
 import { useNavigate } from "react-router-dom";
@@ -76,7 +76,7 @@ function Nav() {
             if (settingsOpen) {
                 setSettingsOpen(!settingsOpen);
                 setTimeout(() => {
-                    setHamburgerOpen(!hamburgerOpen);
+                    setHamburgerOpen(!hamburgerOpen);   
                 }, 350);
             } else {
                 setHamburgerOpen(!hamburgerOpen);
@@ -86,13 +86,35 @@ function Nav() {
             if (hamburgerOpen) {
                 setHamburgerOpen(!hamburgerOpen);
                 setTimeout(() => {
-                    setSettingsOpen(!settingsOpen);
+                    setSettingsOpen(!settingsOpen);   
                 }, 350);
             } else {
                 setSettingsOpen(!settingsOpen);
             }
         }
     }
+
+    // Show or hide hamburger/settings content by changing pointer-events
+    // This makes it so that the ul elements don't get in the way of the clickable elements beneath them
+    // Also, the user cannot accidently click on elements within the ul tags that are not currently visible
+    const hideContent = useCallback(() => {
+        const settingsTag = document.getElementById("ul-settings");
+        const hamburgerTag = document.getElementById("ul-nav-list-mobile");
+        if (!settingsOpen) {
+            settingsTag.style.pointerEvents = 'none';
+        } else {
+            settingsTag.style.pointerEvents = 'auto';
+        }
+        if (!hamburgerOpen) {
+            hamburgerTag.style.pointerEvents = 'none';
+        } else {
+            hamburgerTag.style.pointerEvents = 'auto';
+        }
+    }, [hamburgerOpen, settingsOpen]);
+
+    useEffect(() => {
+        hideContent();
+    }, [hamburgerOpen, settingsOpen, hideContent]);
 
     return(
         <div id="div-nav-container">
@@ -181,6 +203,19 @@ function Nav() {
                 <ul id="ul-settings" className={settingsOpen && !hamburgerOpen ? "open" : "close"}>
                     <div className="settings-stitch"></div>
                     <div id="div-switch-items">
+                        <div className="switch-item">
+                            <span className="switch-item-text">Theme</span>
+                            <select 
+                                name="font" 
+                                id="select-font"
+                                value={font.title}
+                                // Update the CSS variable with the new font value
+                                // onChange={e => setFont(formatFont(e.target.value))}
+                            >
+                                <option>Dark</option>
+                                <option>Light</option>
+                            </select>
+                        </div>
                         <div className="switch-item">
                             <span className="switch-item-text">Font</span>
                             <select 

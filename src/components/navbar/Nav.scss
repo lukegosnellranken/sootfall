@@ -65,6 +65,9 @@
 #ul-settings, #ul-nav-list-mobile {
     @include pm-reset;
     @include flex-center;
+    // Display is set to none initially, then gets set by hideContent function in Nav.js
+    // display: none;
+    pointer-events: none;
     align-items: center;
     flex-direction: column;
     width: 100%;
@@ -76,9 +79,17 @@
 
 #div-switch-items, #div-ul-nav-list-mobile-items {
     @include flex-center;
+    flex-wrap: wrap;
     max-width: 1000px;
     width: 100%;
     margin-bottom: .25em;
+}
+
+#div-ul-nav-list-mobile-items {
+    justify-content: space-evenly;
+    gap: 1em;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 #ul-settings.open {
@@ -206,7 +217,7 @@ input:checked + .slider:before {
 
 .switch-item {
     @include flex-center;
-    width: 100%;
+    width: 33%;
     margin-bottom: .5em;
     align-items: center;
 }
@@ -294,7 +305,6 @@ input:checked + .slider:before {
 
 #ul-nav-list-mobile {
     @include pm-reset;
-    display: flex;
     width: 100%;
     list-style: none;
     max-height: 0;
@@ -338,6 +348,10 @@ input:checked + .slider:before {
         width: 60px;
         height: 26px;
         margin-left: 1em;
+    }
+
+    .switch-item {
+        width: 50%;
     }
 
     #select-font {
