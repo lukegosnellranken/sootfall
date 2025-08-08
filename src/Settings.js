@@ -14,7 +14,8 @@ export const Settings = ({ children }) => {
             "backgroundImageBanner": "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6))",
             "backgroundColorInput": "rgba(10, 10, 10, 0.95)",
             "backgroundColorInputAlt": "rgba(50, 50, 50, 0.95)",
-            "backgroundColorSwitchItem": "rgba(130, 130, 130, 1)",
+            "backgroundColorSwitchItemToggle": "rgba(130, 130, 130, 0.95)",
+            "backgroundColorSwitchItemToggleAlt": "rgba(50, 50, 50, 1)",
             "boxShadow": "0em 0em .8em .15em rgba(255, 255, 255, 0.199)",
             "boxShadowTop": "0em 0.3em .8em .05em rgba(255, 255, 255, 0.199)",
             "textColor": "rgba(130, 130, 130, 1)"
@@ -58,6 +59,8 @@ export const Settings = ({ children }) => {
     document.documentElement.style.setProperty('--site-theme-background-color-input', theme.backgroundColorInput);
     document.documentElement.style.setProperty('--site-theme-background-color-input-alt', theme.backgroundColorInputAlt);
     document.documentElement.style.setProperty('--site-theme-background-color-switch-item', theme.backgroundColorSwitchItem);
+    document.documentElement.style.setProperty('--site-theme-background-color-switch-item-toggle', theme.backgroundColorSwitchItemToggle);
+    document.documentElement.style.setProperty('--site-theme-background-color-switch-item-toggle-alt', theme.backgroundColorSwitchItemToggleAlt);
     document.documentElement.style.setProperty('--site-theme-box-shadow', theme.boxShadow);
     document.documentElement.style.setProperty('--site-theme-box-shadow-top', theme.boxShadowTop);
     document.documentElement.style.setProperty('--site-theme-text-color', theme.textColor);

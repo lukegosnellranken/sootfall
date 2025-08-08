@@ -31,6 +31,8 @@ function Nav() {
                     "backgroundColorInput": "rgba(10, 10, 10, 0.95)",
                     "backgroundColorInputAlt": "rgba(50, 50, 50, 0.95)",
                     "backgroundColorSwitchItem": "rgba(130, 130, 130, 1)",
+                    "backgroundColorSwitchItemToggle": "rgba(130, 130, 130, 0.95)",
+                    "backgroundColorSwitchItemToggleAlt": "rgba(50, 50, 50, 1)",
                     "boxShadow": "0em 0em .8em .15em rgba(255, 255, 255, 0.199)",
                     "boxShadowTop": "0em 0.3em .8em .05em rgba(255, 255, 255, 0.199)",
                     "textColor": "rgba(130, 130, 130, 1)"
@@ -40,10 +42,12 @@ function Nav() {
                     "title": "Light",
                     "backgroundImage": "linear-gradient(to bottom, rgba(150, 150, 150, 0.95), rgba(90, 90, 90, 0.95))",
                     "backgroundImageGradient": "linear-gradient(to bottom, rgba(250, 250, 250, 0.4), rgba(200, 200, 200, 0.4))",
-                    "backgroundImageBanner": "linear-gradient(rgba(150, 150, 150, 0.6), rgba(50, 50, 50, 0.6))",
+                    "backgroundImageBanner": "linear-gradient(rgba(200, 200, 200, 0.6), rgba(150, 150, 150, 0.6))",
                     "backgroundColorInput": "rgba(200, 200, 200, 0.95)",
                     "backgroundColorInputAlt": "rgba(220, 220, 220, 0.95)",
                     "backgroundColorSwitchItem": "rgba(200, 200, 200, 0.95)",
+                    "backgroundColorSwitchItemToggle": "rgba(200, 200, 200, 0.95)",
+                    "backgroundColorSwitchItemToggleAlt": "rgba(130, 130, 130, 1)",
                     "boxShadow": "0em 0em .8em .15em rgba(0, 0, 0, 0.5)",
                     "boxShadowTop": "0em 0.3em .8em .05em rgba(0, 0, 0, 0.5)",
                     "textColor": "rgba(33, 33, 33, 1)"
@@ -57,6 +61,8 @@ function Nav() {
                     "backgroundColorInput": "rgba(10, 10, 10, 0.95)",
                     "backgroundColorInputAlt": "rgba(50, 50, 50, 0.95)",
                     "backgroundColorSwitchItem": "rgba(130, 130, 130, 1)",
+                    "backgroundColorSwitchItemToggle": "rgba(130, 130, 130, 0.95)",
+                    "backgroundColorSwitchItemToggleAlt": "rgba(50, 50, 50, 1)",
                     "boxShadow": "0em 0em .8em .15em rgba(255, 255, 255, 0.199)",
                     "boxShadowTop": "0em 0.3em .8em .05em rgba(255, 255, 255, 0.199)",
                     "textColor": "rgba(130, 130, 130, 1)"

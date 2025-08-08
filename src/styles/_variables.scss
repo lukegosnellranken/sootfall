@@ -11,6 +11,8 @@ $site-background-image-banner: var(--site-theme-background-image-banner);
 $site-background-color-input: var(--site-theme-background-color-input);
 $site-background-color-input-alt: var(--site-theme-background-color-input-alt);
 $site-background-color-switch-item: var(--site-theme-background-color-switch-item);
+$site-background-color-switch-item-toggle: var(--site-theme-background-color-switch-item-toggle);
+$site-background-color-switch-item-toggle-alt: var(--site-theme-background-color-switch-item-toggle-alt);
 $site-box-shadow: var(--site-theme-box-shadow);
 $site-box-shadow-top: var(--site-theme-box-shadow-top);
 
@@ -33,6 +35,8 @@ html {
     --site-background-color-input: #{$site-background-color-input};
     --site-background-color-input-alt: #{$site-background-color-input-alt};
     --site-background-color-switch-item: #{$site-background-color-switch-item};
+    --site-background-color-switch-item-toggle: #{$site-background-color-switch-item-toggle};
+    --site-background-color-switch-item-toggle-alt: #{$site-background-color-switch-item-toggle-alt};
     --site-box-shadow: #{$site-box-shadow};
     --site-box-shadow-top: #{$site-box-shadow-top};
     --site-text-color: #{$site-text-color};
