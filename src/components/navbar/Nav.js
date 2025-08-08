@@ -24,15 +24,27 @@ function Nav() {
         switch (value) {
             case "Dark":
                 return {
-                    "title": "Dark"
+                    "title": "Dark",
+                    "backgroundImage": "linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.95))",
+                    "backgroundImageGradient": "linear-gradient(to bottom, rgba(5, 5, 5, .7), rgba(0, 0, 0, .7))",
+                    "boxShadow": "0em 0em .8em .15em rgba(255, 255, 255, 0.199)",
+                    "textColor": "#818181"
                 }
             case "Light":
                 return {
-                    "title": "Light"
+                    "title": "Light",
+                    "backgroundImage": "linear-gradient(to bottom, rgba(120, 120, 120, 0.95), rgba(90, 90, 90, 0.95))",
+                    "backgroundImageGradient": "linear-gradient(to bottom, rgba(200, 200, 200, 0.7), rgba(175, 175, 175, .7))",
+                    "boxShadow": "0em 0em .8em .15em rgba(0, 0, 0, 0.5)",
+                    "textColor": "#212121"
                 }
             default :
                 return {
-                    "title": "Dark"
+                    "title": "Dark",
+                    "backgroundImage": "linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.95))",
+                    "backgroundImageGradient": "linear-gradient(to bottom, rgba(5, 5, 5, .7), rgba(0, 0, 0, .7))",
+                    "boxShadow": "0em 0em .8em .15em rgba(255, 255, 255, 0.199)",
+                    "textColor": "#818181"
                 }
         }
     }

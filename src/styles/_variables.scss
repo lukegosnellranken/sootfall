@@ -2,12 +2,13 @@
 $site-font: Bilbo, sans-serif;
 $site-letter-spacing: 0.03em;
 $site-font-size-adjust: cap-height 1;
-html {
-  --site-font: #{$site-font};
-  --site-letter-spacing: #{$site-letter-spacing};
-  --site-font-size-adjust: #{$site-font-size-adjust};
-}
-$site-text-color: #818181;
+
+// Set variables to custom properties defined in Settings.js
+$site-text-color: var(--site-theme-text-color);
+$site-background-image: var(--site-theme-background-image);
+$site-box-shadow: var(--site-theme-box-shadow);
+$site-background-image-gradient: var(--site-theme-background-image-gradient);
+
 $site-active-background-color: #818181;
 $site-disabled-background-color: #414141;
 $site-text-shadow: .05em .02em .05em #494949;
@@ -16,9 +17,19 @@ $site-letter-spacing: .03em;
 $site-transition: all .2s ease-in-out;
 $site-transform: scale(1.1);
 $site-container-max-width: 1920px;
-$site-box-shadow: 0em 0em .8em .15em rgba(255, 255, 255, 0.199);
+// $site-box-shadow: 0em 0em .8em .15em rgba(255, 255, 255, 0.199);
 $site-box-shadow-top-reduced: 0em 0.3em .8em .05em rgba(255, 255, 255, 0.199);
-$site-background-image-gradient: linear-gradient(to bottom, rgba(5, 5, 5, .7), rgba(0, 0, 0, .7));
+
+// Set custom properties to previously defined variables
+html {
+    --site-background-image: #{$site-background-image};
+    --site-background-image-gradient: #{$site-background-image-gradient};
+    --site-box-shadow: #{$site-box-shadow};
+    --site-text-color: #{$site-text-color};
+    --site-font: #{$site-font};
+    --site-letter-spacing: #{$site-letter-spacing};
+    --site-font-size-adjust: #{$site-font-size-adjust};
+}
 
 // Site-wide font sizes
 $fs-title: 250%;

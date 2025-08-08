@@ -58,7 +58,7 @@
     font-family: var(--site-font);
     letter-spacing: var(--site-letter-spacing);
     font-size-adjust: var(--site-font-size-adjust);
-    color: #818181;
+    color: var(--site-text-color);
     text-shadow: .05em .05em .05em #494949;
     text-wrap: balance;
     cursor: default;
@@ -70,7 +70,7 @@
     margin: 0;
     margin-left: 2%;
     font-size: 150%;
-    color: gray;
+    color: var(--site-text-color);
     text-shadow: .02em .02em .02em #494949;
     letter-spacing: .05em;
     font-family: var(--site-font);

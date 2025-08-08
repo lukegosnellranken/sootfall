@@ -13,9 +13,10 @@ body, html {
     font-family: var(--site-font);
     letter-spacing: var(--site-letter-spacing);
     font-size-adjust: var(--site-font-size-adjust);
+    // color: var(--site-text-color);
 }
 
 #appDiv {
-    background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.95));
+    background-image: var(--site-background-image);
     min-height: 100vh; // full height of viewport
 }
