@@ -1,10 +1,10 @@
 @import '../../styles/variables';
 
 #div-homecard-card {
-    background-image: $site-background-image-gradient;
+    background-image: var(--site-background-image-gradient);
     border-radius: .5%;
     border-width: .5em;
-    box-shadow: $site-box-shadow;
+    box-shadow: var(--site-box-shadow);
     margin-top: $card-vertical-margin;
     padding-top: $card-vertical-padding;
     padding-bottom: $card-vertical-padding;
@@ -146,7 +146,7 @@
 
     #div-homecard-card {
         margin-top: $card-vertical-margin-mobile;
-        box-shadow: $site-box-shadow-top-reduced; // reduce top of box shadow on mobile view
+        box-shadow: var(--site-box-shadow-top); // reduce top of box shadow on mobile view
     }
 }
 

@@ -1,8 +1,8 @@
 @import '../../styles/variables';
 
 #div-authorcard {
-    background-image: $site-background-image-gradient;
-    box-shadow: $site-box-shadow;
+    background-image: var(--site-background-image);
+    box-shadow: var(--site-box-shadow);
     margin-top: $card-vertical-margin;
     padding-top: $card-vertical-padding;
     padding-bottom: $card-vertical-padding;
@@ -65,7 +65,7 @@
 @media screen and (max-width: 800px) {
     #div-authorcard {
         margin-top: $card-vertical-margin-mobile;
-        box-shadow: $site-box-shadow-top-reduced;
+        box-shadow: var(--site-box-shadow-top);
     }
 }
 

@@ -21,10 +21,10 @@
     position: relative;
     width: 100%;
     height: 12em;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../images/sootfall-background.png);   
+    background-image: var(--site-background-image-banner), url(../../images/sootfall-background.png);   
     background-position: center;
     background-size: cover;
-    box-shadow: $site-box-shadow;
+    box-shadow: var(--site-box-shadow);
 }
 
 #div-background-bmc {
@@ -66,7 +66,7 @@
 .social-link {
     border-color: $site-disabled-background-color;
     color: $site-text-color;
-    background-color: $site-background-image-gradient;
+    background-color: var(--site-background-image-gradient);
     transition: all .2s ease-in-out;
     font-size: 150%;
 }

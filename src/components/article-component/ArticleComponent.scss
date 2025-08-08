@@ -8,7 +8,7 @@
 }
 
 #div-articlecomponent-full-article-side-card {
-    box-shadow: $site-box-shadow;
+    box-shadow: var(--site-box-shadow);
 }
 
 @media screen and (max-width: 700px) {

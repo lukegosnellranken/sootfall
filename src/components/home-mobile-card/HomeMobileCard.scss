@@ -2,8 +2,8 @@
 
 #div-homemobilecard-container {
     @include common-text;
-    background-image: $site-background-image-gradient;
-    box-shadow: $site-box-shadow;
+    background-image: var(--site-background-image-gradient);
+    box-shadow: var(--site-box-shadow);
     border-radius: .5%;
     border-width: .5em;
     margin-top: .75em;
@@ -73,7 +73,7 @@
 @media screen and (max-width: 800px) {
     #div-homemobilecard-container {
         margin-top: $card-vertical-margin-mobile;
-        box-shadow: $site-box-shadow-top-reduced;
+        box-shadow: var(--site-box-shadow-top);
     }
 
     #h1-homemobilecard-title {

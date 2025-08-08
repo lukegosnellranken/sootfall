@@ -2,10 +2,10 @@
 
 #div-homesidecard-container {
     @include common-text;
-    background-image: $site-background-image-gradient;
+    background-image: var(--site-background-image-gradient);
     border-radius: .5%;
     border-width: .5em;
-    box-shadow: $site-box-shadow;
+    box-shadow: var(--site-box-shadow);
     margin-top: $card-vertical-margin;
     padding-top: $card-vertical-padding;
     padding-bottom: $card-vertical-padding;

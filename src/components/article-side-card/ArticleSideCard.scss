@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 
 #div-articlesidecard-card {
-    background-image: $site-background-image-gradient;
+    background-image: var(--site-background-image);
     margin-top: $card-vertical-margin;
     padding-top: $card-vertical-padding;
     padding-bottom: $card-vertical-padding;

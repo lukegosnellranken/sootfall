@@ -6,8 +6,10 @@ $site-font-size-adjust: cap-height 1;
 // Set variables to custom properties defined in Settings.js
 $site-text-color: var(--site-theme-text-color);
 $site-background-image: var(--site-theme-background-image);
-$site-box-shadow: var(--site-theme-box-shadow);
 $site-background-image-gradient: var(--site-theme-background-image-gradient);
+$site-background-image-banner: var(--site-theme-background-image-banner);
+$site-box-shadow: var(--site-theme-box-shadow);
+$site-box-shadow-top: var(--site-theme-box-shadow-top);
 
 $site-active-background-color: #818181;
 $site-disabled-background-color: #414141;
@@ -24,7 +26,9 @@ $site-box-shadow-top-reduced: 0em 0.3em .8em .05em rgba(255, 255, 255, 0.199);
 html {
     --site-background-image: #{$site-background-image};
     --site-background-image-gradient: #{$site-background-image-gradient};
+    --site-background-image-banner: #{$site-background-image-banner};
     --site-box-shadow: #{$site-box-shadow};
+    --site-box-shadow-top: #{$site-box-shadow-top};
     --site-text-color: #{$site-text-color};
     --site-font: #{$site-font};
     --site-letter-spacing: #{$site-letter-spacing};

@@ -27,15 +27,19 @@ function Nav() {
                     "title": "Dark",
                     "backgroundImage": "linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.95))",
                     "backgroundImageGradient": "linear-gradient(to bottom, rgba(5, 5, 5, .7), rgba(0, 0, 0, .7))",
+                    "backgroundImageBanner": "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6))",
                     "boxShadow": "0em 0em .8em .15em rgba(255, 255, 255, 0.199)",
+                    "boxShadowTop": "0em 0.3em .8em .05em rgba(255, 255, 255, 0.199)",
                     "textColor": "#818181"
                 }
             case "Light":
                 return {
                     "title": "Light",
-                    "backgroundImage": "linear-gradient(to bottom, rgba(120, 120, 120, 0.95), rgba(90, 90, 90, 0.95))",
-                    "backgroundImageGradient": "linear-gradient(to bottom, rgba(200, 200, 200, 0.7), rgba(175, 175, 175, .7))",
+                    "backgroundImage": "linear-gradient(to bottom, rgba(150, 150, 150, 0.95), rgba(90, 90, 90, 0.95))",
+                    "backgroundImageGradient": "linear-gradient(to bottom, rgba(250, 250, 250, 0.2), rgba(200, 200, 200, 0.2))",
+                    "backgroundImageBanner": "linear-gradient(rgba(150, 150, 150, 0.6), rgba(50, 50, 50, 0.6))",
                     "boxShadow": "0em 0em .8em .15em rgba(0, 0, 0, 0.5)",
+                    "boxShadowTop": "0em 0.3em .8em .05em rgba(0, 0, 0, 0.5)",
                     "textColor": "#212121"
                 }
             default :
@@ -43,7 +47,9 @@ function Nav() {
                     "title": "Dark",
                     "backgroundImage": "linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.95))",
                     "backgroundImageGradient": "linear-gradient(to bottom, rgba(5, 5, 5, .7), rgba(0, 0, 0, .7))",
+                    "backgroundImageBanner": "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6))",
                     "boxShadow": "0em 0em .8em .15em rgba(255, 255, 255, 0.199)",
+                    "boxShadowTop": "0em 0.3em .8em .05em rgba(255, 255, 255, 0.199)",
                     "textColor": "#818181"
                 }
         }
