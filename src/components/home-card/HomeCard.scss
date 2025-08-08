@@ -90,13 +90,13 @@
 }
 
 .page-item.active .page-link {
-    background-color: #212121;
+    background-color: var(--site-background-color-input);
     border-color: #818181;
     color: #818181;
 }
 
 .page-item.disabled .page-link {
-    background-color: #414141;
+    background-color: var(--site-background-color-input-alt);
     border-color: #818181;
     color: #818181;
 }

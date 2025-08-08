@@ -41,7 +41,7 @@
 
 #input-search {
     @include common-text;
-    background-color: rgba(10, 10, 10, 0.95);
+    background-color: var(--site-background-color-input);
     border-radius: .5em;
     border-width: 1px;
     border-style: solid;
@@ -101,6 +101,7 @@
     @include stitch;
     width: 100%;
     margin-bottom: .75em;
+    border-bottom: 0;
 }
 
 // Input search shared styles
@@ -232,7 +233,7 @@ input:checked + .slider:before {
 .select-settings {
     margin-left: 2em;
     min-width: 5em;
-    background-color: $site-active-background-color;
+    background-color: var(--site-background-color-switch-item);
     font-family: var(--site-font);
     font-size: 150%;
     border-radius: 34px;
@@ -262,7 +263,7 @@ input:checked + .slider:before {
 
 #input-search-mobile {
     @include common-text;
-    background-color: rgba(10, 10, 10, 0.95);
+    background-color: var(--site-background-color-input);
     border-radius: .5em;
     border-width: 2px;
     border-style: solid;
@@ -281,7 +282,7 @@ input:checked + .slider:before {
 }
 
 #btn-hamburger {
-    background-color: rgba(10, 10, 10, 0.95);
+    background-color: var(--site-background-color-input);
     border-radius: .5em;
     border-width: 2px;
     border-style: solid;

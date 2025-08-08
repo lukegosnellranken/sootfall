@@ -8,11 +8,14 @@ $site-text-color: var(--site-theme-text-color);
 $site-background-image: var(--site-theme-background-image);
 $site-background-image-gradient: var(--site-theme-background-image-gradient);
 $site-background-image-banner: var(--site-theme-background-image-banner);
+$site-background-color-input: var(--site-theme-background-color-input);
+$site-background-color-input-alt: var(--site-theme-background-color-input-alt);
+$site-background-color-switch-item: var(--site-theme-background-color-switch-item);
 $site-box-shadow: var(--site-theme-box-shadow);
 $site-box-shadow-top: var(--site-theme-box-shadow-top);
 
-$site-active-background-color: #818181;
-$site-disabled-background-color: #414141;
+$site-active-background-color: #818181; // switch item
+$site-disabled-background-color: #414141; // pagination
 $site-text-shadow: .05em .02em .05em #494949;
 $site-hover-color: rgba(17, 17, 17, 0.5);
 $site-letter-spacing: .03em;
@@ -27,6 +30,9 @@ html {
     --site-background-image: #{$site-background-image};
     --site-background-image-gradient: #{$site-background-image-gradient};
     --site-background-image-banner: #{$site-background-image-banner};
+    --site-background-color-input: #{$site-background-color-input};
+    --site-background-color-input-alt: #{$site-background-color-input-alt};
+    --site-background-color-switch-item: #{$site-background-color-switch-item};
     --site-box-shadow: #{$site-box-shadow};
     --site-box-shadow-top: #{$site-box-shadow-top};
     --site-text-color: #{$site-text-color};

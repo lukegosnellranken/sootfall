@@ -12,6 +12,9 @@ export const Settings = ({ children }) => {
             "backgroundImage": "linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.95))",
             "backgroundImageGradient": "linear-gradient(to bottom, rgba(5, 5, 5, .7), rgba(0, 0, 0, .7)",
             "backgroundImageBanner": "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6))",
+            "backgroundColorInput": "rgba(10, 10, 10, 0.95)",
+            "backgroundColorInputAlt": "rgba(50, 50, 50, 0.95)",
+            "backgroundColorSwitchItem": "#818181",
             "boxShadow": "0em 0em .8em .15em rgba(255, 255, 255, 0.199)",
             "textColor": "#818181"
         };
@@ -49,8 +52,11 @@ export const Settings = ({ children }) => {
     // Set CSS custom properties
     document.documentElement.style.setProperty('--site-theme', theme.title);
     document.documentElement.style.setProperty('--site-theme-background-image', theme.backgroundImage);
-    document.documentElement.style.setProperty('--site-theme-background-image-gradient', theme.backgroundImage);
+    document.documentElement.style.setProperty('--site-theme-background-image-gradient', theme.backgroundImageGradient);
     document.documentElement.style.setProperty('--site-theme-background-image-banner', theme.backgroundImageBanner);
+    document.documentElement.style.setProperty('--site-theme-background-color-input', theme.backgroundColorInput);
+    document.documentElement.style.setProperty('--site-theme-background-color-input-alt', theme.backgroundColorInputAlt);
+    document.documentElement.style.setProperty('--site-theme-background-color-switch-item', theme.backgroundColorSwitchItem);
     document.documentElement.style.setProperty('--site-theme-box-shadow', theme.boxShadow);
     document.documentElement.style.setProperty('--site-theme-box-shadow-top', theme.boxShadowTop);
     document.documentElement.style.setProperty('--site-theme-text-color', theme.textColor);
