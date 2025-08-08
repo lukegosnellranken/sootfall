@@ -10,13 +10,14 @@ export const Settings = ({ children }) => {
         return stored ? JSON.parse(stored) : {
             "title": "Dark",
             "backgroundImage": "linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.95))",
-            "backgroundImageGradient": "linear-gradient(to bottom, rgba(5, 5, 5, .7), rgba(0, 0, 0, .7)",
+            "backgroundImageGradient": "linear-gradient(to bottom, rgba(5, 5, 5, .7), rgba(0, 0, 0, .7))",
             "backgroundImageBanner": "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6))",
             "backgroundColorInput": "rgba(10, 10, 10, 0.95)",
             "backgroundColorInputAlt": "rgba(50, 50, 50, 0.95)",
-            "backgroundColorSwitchItem": "#818181",
+            "backgroundColorSwitchItem": "rgba(130, 130, 130, 1)",
             "boxShadow": "0em 0em .8em .15em rgba(255, 255, 255, 0.199)",
-            "textColor": "#818181"
+            "boxShadowTop": "0em 0.3em .8em .05em rgba(255, 255, 255, 0.199)",
+            "textColor": "rgba(130, 130, 130, 1)"
         };
     });
 
