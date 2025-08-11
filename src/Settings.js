@@ -16,9 +16,13 @@ export const Settings = ({ children }) => {
             "backgroundColorInputAlt": "rgba(50, 50, 50, 0.95)",
             "backgroundColorSwitchItemToggle": "rgba(130, 130, 130, 0.95)",
             "backgroundColorSwitchItemToggleAlt": "rgba(50, 50, 50, 1)",
+            "hoverColor": "rgba(17, 17, 17, 0.5)",
             "boxShadow": "0em 0em .8em .15em rgba(255, 255, 255, 0.199)",
             "boxShadowTop": "0em 0.3em .8em .05em rgba(255, 255, 255, 0.199)",
-            "textColor": "rgba(130, 130, 130, 1)"
+            "textColor": "rgba(130, 130, 130, 1)",
+            "textColorAlt": "rgba(200, 200, 200, 1)",
+            "textShadow": ".05em .05em .05em rgba(73, 73, 73, 1)",
+            "elementColorDormant": "rgba(50, 50, 50, 0.95)"
         };
     });
 
@@ -61,9 +65,13 @@ export const Settings = ({ children }) => {
     document.documentElement.style.setProperty('--site-theme-background-color-switch-item', theme.backgroundColorSwitchItem);
     document.documentElement.style.setProperty('--site-theme-background-color-switch-item-toggle', theme.backgroundColorSwitchItemToggle);
     document.documentElement.style.setProperty('--site-theme-background-color-switch-item-toggle-alt', theme.backgroundColorSwitchItemToggleAlt);
+    document.documentElement.style.setProperty('--site-theme-hover-color', theme.hoverColor);
     document.documentElement.style.setProperty('--site-theme-box-shadow', theme.boxShadow);
     document.documentElement.style.setProperty('--site-theme-box-shadow-top', theme.boxShadowTop);
     document.documentElement.style.setProperty('--site-theme-text-color', theme.textColor);
+    document.documentElement.style.setProperty('--site-theme-text-color-alt', theme.textColorAlt);
+    document.documentElement.style.setProperty('--site-theme-text-shadow', theme.textShadow);
+    document.documentElement.style.setProperty('--site-theme-element-color-dormant', theme.elementColorDormant);
     document.documentElement.style.setProperty('--site-font', font.value);
     document.documentElement.style.setProperty('--site-letter-spacing', font.letterSpacing);
     document.documentElement.style.setProperty('--site-font-size-adjust', font.fontSizeAdjust);

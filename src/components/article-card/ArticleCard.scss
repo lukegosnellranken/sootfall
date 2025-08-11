@@ -160,11 +160,13 @@
 
 #select-voice {
     margin-right: .5em;
-    background-color: $site-active-background-color;
+    background-color: var(--site-background-color-switch-item);
     color: black !important;
     font-family: var(--site-font);
     font-size: 150%;
     border-radius: .25em;
+    border-width: 1px;
+    border-color: gray;
     cursor: pointer;
 }
 
@@ -175,15 +177,18 @@
 #btn-read,
 #btn-pause {
     @include unset;
-    background-color: $site-active-background-color;
+    background-color: var(--site-background-color-switch-item);
     min-width: 35px;
     text-align: center;
     border-radius: .25em;
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px;
 }
 
 #btn-read:active:hover,
 #btn-pause:active:hover {
-    background-color: $site-disabled-background-color;
+    background-color: var(--site-background-color-switch-item-toggle-alt);
 }
 
 #btn-pause {
@@ -192,7 +197,7 @@
 
 .btn-disable,
 .select-disable {
-    background-color: $site-disabled-background-color !important;
+    background-color: var(--site-background-color-switch-item-toggle-alt) !important;
     cursor: default !important;
 }
 

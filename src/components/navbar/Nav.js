@@ -10,6 +10,11 @@ function Nav() {
     const [settingsOpen, setSettingsOpen] = useState(false);
     const navigate = useNavigate();
     const { theme, setTheme, font, setFont, readAloud, setReadAloud } = useSettings();
+    // Set vars to CSS custom properties
+    const svgColorDormant = getComputedStyle(document.documentElement).getPropertyValue('--site-theme-element-color-dormant');
+    const svgColorActive = getComputedStyle(document.documentElement).getPropertyValue('--site-theme-text-color');
+    // Track focus for the search input so that the above svg color vars can be used accordingly
+    const [isFocused, setIsFocused] = useState(false);
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -33,9 +38,13 @@ function Nav() {
                     "backgroundColorSwitchItem": "rgba(130, 130, 130, 1)",
                     "backgroundColorSwitchItemToggle": "rgba(130, 130, 130, 0.95)",
                     "backgroundColorSwitchItemToggleAlt": "rgba(50, 50, 50, 1)",
+                    "hoverColor": "rgba(17, 17, 17, 0.5)",
                     "boxShadow": "0em 0em .8em .15em rgba(255, 255, 255, 0.199)",
                     "boxShadowTop": "0em 0.3em .8em .05em rgba(255, 255, 255, 0.199)",
-                    "textColor": "rgba(130, 130, 130, 1)"
+                    "textColor": "rgba(130, 130, 130, 1)",
+                    "textColorAlt": "rgba(200, 200, 200, 1)",
+                    "textShadow": ".05em .05em .05em rgba(73, 73, 73, 1)",
+                    "elementColorDormant": "rgba(50, 50, 50, 0.95)"
                 }
             case "Light":
                 return {
@@ -44,13 +53,17 @@ function Nav() {
                     "backgroundImageGradient": "linear-gradient(to bottom, rgba(250, 250, 250, 0.4), rgba(200, 200, 200, 0.4))",
                     "backgroundImageBanner": "linear-gradient(rgba(200, 200, 200, 0.6), rgba(150, 150, 150, 0.6))",
                     "backgroundColorInput": "rgba(200, 200, 200, 0.95)",
-                    "backgroundColorInputAlt": "rgba(220, 220, 220, 0.95)",
+                    "backgroundColorInputAlt": "rgba(120, 120, 120, 0.95)",
                     "backgroundColorSwitchItem": "rgba(200, 200, 200, 0.95)",
                     "backgroundColorSwitchItemToggle": "rgba(200, 200, 200, 0.95)",
                     "backgroundColorSwitchItemToggleAlt": "rgba(130, 130, 130, 1)",
+                    "hoverColor": "rgba(125, 125, 125, 0.5)",
                     "boxShadow": "0em 0em .8em .15em rgba(0, 0, 0, 0.5)",
                     "boxShadowTop": "0em 0.3em .8em .05em rgba(0, 0, 0, 0.5)",
-                    "textColor": "rgba(33, 33, 33, 1)"
+                    "textColor": "rgba(33, 33, 33, 1)",
+                    "textColorAlt": "rgba(1, 1, 1, 1)",
+                    "textShadow": ".05em .05em .05em rgba(150, 150, 150, 1)",
+                    "elementColorDormant": "rgba(100, 100, 100, 0.95)"
                 }
             default :
                 return {
@@ -63,9 +76,13 @@ function Nav() {
                     "backgroundColorSwitchItem": "rgba(130, 130, 130, 1)",
                     "backgroundColorSwitchItemToggle": "rgba(130, 130, 130, 0.95)",
                     "backgroundColorSwitchItemToggleAlt": "rgba(50, 50, 50, 1)",
+                    "hoverColor": "rgba(17, 17, 17, 0.5)",
                     "boxShadow": "0em 0em .8em .15em rgba(255, 255, 255, 0.199)",
                     "boxShadowTop": "0em 0.3em .8em .05em rgba(255, 255, 255, 0.199)",
-                    "textColor": "rgba(130, 130, 130, 1)"
+                    "textColor": "rgba(130, 130, 130, 1)",
+                    "textColorAlt": "rgba(200, 200, 200, 1)",
+                    "textShadow": ".05em .05em .05em rgba(73, 73, 73, 1)",
+                    "elementColorDormant": "rgba(50, 50, 50, 0.95)"
                 }
         }
     }
@@ -185,6 +202,11 @@ function Nav() {
                                 placeholder="Search"
                                 value={search}
                                 onChange={e => setSearch(e.target.value)}
+                                onFocus={() => setIsFocused(true)}
+                                onBlur={() => setIsFocused(false)}
+                                style = {{
+                                    "backgroundImage":`url("data:image/svg+xml,%3Csvg%20fill='${isFocused ? svgColorActive : svgColorDormant}'%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Cpath%20d='M15.5%2014h-.79l-.28-.27A6.471%206.471%200%200016%209.5%206.5%206.5%200%20109.5%2016c1.61%200%203.09-.59%204.23-1.57l.27.28v.79l5%204.99a1%201%200%20001.41-1.41l-4.99-5zm-6%200C8.01%2014%206%2011.99%206%209.5S8.01%205%2010.5%205%2015%207.01%2015%209.5%2012.99%2014%2010.5%2014z'%3E%3C/path%3E%3C/svg%3E")`
+                                }}
                             />
                         </form>
                         <div id="div-settings">
@@ -224,6 +246,11 @@ function Nav() {
                                 placeholder="Search"
                                 value={search}
                                 onChange={e => setSearch(e.target.value)}
+                                onFocus={() => setIsFocused(true)}
+                                onBlur={() => setIsFocused(false)}
+                                style = {{
+                                    "backgroundImage":`url("data:image/svg+xml,%3Csvg%20fill='${isFocused ? svgColorActive : svgColorDormant}'%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Cpath%20d='M15.5%2014h-.79l-.28-.27A6.471%206.471%200%200016%209.5%206.5%206.5%200%20109.5%2016c1.61%200%203.09-.59%204.23-1.57l.27.28v.79l5%204.99a1%201%200%20001.41-1.41l-4.99-5zm-6%200C8.01%2014%206%2011.99%206%209.5S8.01%205%2010.5%205%2015%207.01%2015%209.5%2012.99%2014%2010.5%2014z'%3E%3C/path%3E%3C/svg%3E")`
+                                }}
                             />
                         </form>
                         <div id="div-settings-mobile">

@@ -4,28 +4,28 @@ $site-letter-spacing: 0.03em;
 $site-font-size-adjust: cap-height 1;
 
 // Set variables to custom properties defined in Settings.js
-$site-text-color: var(--site-theme-text-color);
+$site-text-color: var(--site-theme-text-color); // Used for main text color, gear (on), hamburger (on)
+$site-text-color-alt: var(--site-theme-text-color-alt);
+$site-text-shadow: var(--site-theme-text-shadow);
 $site-background-image: var(--site-theme-background-image);
 $site-background-image-gradient: var(--site-theme-background-image-gradient);
 $site-background-image-banner: var(--site-theme-background-image-banner);
-$site-background-color-input: var(--site-theme-background-color-input);
-$site-background-color-input-alt: var(--site-theme-background-color-input-alt);
+$site-background-color-input: var(--site-theme-background-color-input); // Used for enabled pagination buttons
+$site-background-color-input-alt: var(--site-theme-background-color-input-alt); // Used for disabled pagination buttons
 $site-background-color-switch-item: var(--site-theme-background-color-switch-item);
 $site-background-color-switch-item-toggle: var(--site-theme-background-color-switch-item-toggle);
 $site-background-color-switch-item-toggle-alt: var(--site-theme-background-color-switch-item-toggle-alt);
+$site-hover-color: var(--site-theme-hover-color);
 $site-box-shadow: var(--site-theme-box-shadow);
 $site-box-shadow-top: var(--site-theme-box-shadow-top);
+$site-element-color-dormant: var(--site-theme-element-color-dormant); // Used for gear (off), hamburger (off) plus border, input dormant border, input placeholders (search), input before (magnifying glass svg)
 
 $site-active-background-color: #818181; // switch item
 $site-disabled-background-color: #414141; // pagination
-$site-text-shadow: .05em .02em .05em #494949;
-$site-hover-color: rgba(17, 17, 17, 0.5);
 $site-letter-spacing: .03em;
 $site-transition: all .2s ease-in-out;
 $site-transform: scale(1.1);
 $site-container-max-width: 1920px;
-// $site-box-shadow: 0em 0em .8em .15em rgba(255, 255, 255, 0.199);
-$site-box-shadow-top-reduced: 0em 0.3em .8em .05em rgba(255, 255, 255, 0.199);
 
 // Set custom properties to previously defined variables
 html {
@@ -37,9 +37,13 @@ html {
     --site-background-color-switch-item: #{$site-background-color-switch-item};
     --site-background-color-switch-item-toggle: #{$site-background-color-switch-item-toggle};
     --site-background-color-switch-item-toggle-alt: #{$site-background-color-switch-item-toggle-alt};
+    --site-hover-color: #{$site-hover-color};
     --site-box-shadow: #{$site-box-shadow};
     --site-box-shadow-top: #{$site-box-shadow-top};
     --site-text-color: #{$site-text-color};
+    --site-text-color-alt: #{$site-text-color-alt};
+    --site-text-shadow: #{$site-text-shadow};
+    --site-element-color-dormant: #{$site-element-color-dormant};
     --site-font: #{$site-font};
     --site-letter-spacing: #{$site-letter-spacing};
     --site-font-size-adjust: #{$site-font-size-adjust};

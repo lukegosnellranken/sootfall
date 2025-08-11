@@ -65,7 +65,7 @@
 
 .social-link {
     border-color: $site-disabled-background-color;
-    color: $site-text-color;
+    color: var(--site-text-color);
     background-color: var(--site-background-image-gradient);
     transition: all .2s ease-in-out;
     font-size: 150%;
@@ -73,7 +73,7 @@
 
 .social-link:hover {
     opacity: 80%;
-    color: white;
+    color: var(--site-text-color-alt);
     transform: scale(1.1);
 }
 
