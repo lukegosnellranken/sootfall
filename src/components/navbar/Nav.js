@@ -14,6 +14,8 @@ function Nav() {
     // Dropdown variables
     const [themeDropdownOpen, setThemeDropdownOpen] = useState(false);
     const themeOptions = ["Dark", "Light"];
+    const [fontDropdownOpen, setFontDropdownOpen] = useState(false);
+    const fontOptions = ["SootType", "Arial", "Georgia", "Bucket"];
     // Set vars to CSS custom properties
     const svgColorDormant = getComputedStyle(document.documentElement).getPropertyValue('--site-theme-element-color-dormant');
     const svgColorActive = getComputedStyle(document.documentElement).getPropertyValue('--site-theme-text-color');
@@ -32,6 +34,11 @@ function Nav() {
     function handleThemeSelect(option) {
         setTheme(formatTheme(option));
         setThemeDropdownOpen(false);
+    }
+
+    function handleFontSelect(option) {
+        setFont(formatFont(option));
+        setFontDropdownOpen(false);
     }
 
     // Format font as JSON given the selected font from the dropdown
@@ -310,14 +317,16 @@ function Nav() {
                                 </div>
                                 {themeDropdownOpen && (
                                     <div className="custom-dropdown-options">
-                                        {themeOptions.map((option, index) => (
+                                        {themeOptions
+                                        .filter(option => option !== theme.title) // Filter out the currently selected option
+                                        .map((option, index) => (
                                             <div
                                                 key={option}
                                                 className={index === 0 ? "custom-dropdown-option first-option" : "custom-dropdown-option"}
                                                 id={themeOptions.length < 3 ? "only-option" : ""}
                                                 onClick={() => handleThemeSelect(option)}
                                             >
-                                                {option !== theme.title && option}
+                                                {option}
                                             </div>
                                         ))}
                                     </div>
@@ -326,19 +335,38 @@ function Nav() {
                         </div>
                         <div className="switch-item">
                             <span className="switch-item-text">Font</span>
-                            <select 
-                                name="font" 
-                                id="select-font"
-                                className="select-settings"
-                                value={font.title}
-                                // Update the CSS variable with the new font value
-                                onChange={e => setFont(formatFont(e.target.value))}
+                            {/* Custom dropdown for Font */}
+                            <div 
+                                className="custom-dropdown"
+                                tabIndex={0}
+                                onBlur={() => setFontDropdownOpen(false)}
                             >
-                                <option>SootType</option>
-                                <option>Arial</option>
-                                <option>Georgia</option>
-                                <option>Bucket</option>
-                            </select>
+                                <div
+                                    className="custom-dropdown-selected"
+                                    onClick={() => setFontDropdownOpen(open => !open)}
+                                    style = {{
+                                        "backgroundImage":`url("data:image/svg+xml;utf8,<svg fill='${svgColorDormant}' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>")`
+                                    }}
+                                >
+                                    {font.title}
+                                </div>
+                                {fontDropdownOpen && (
+                                    <div className="custom-dropdown-options">
+                                        {fontOptions
+                                        .filter(option => option !== font.title) // Filter out the currently selected option
+                                        .map((option, index) => (
+                                            <div
+                                                key={option}
+                                                className={index === 0 ? "custom-dropdown-option first-option" : "custom-dropdown-option"}
+                                                id={fontOptions.length < 3 ? "only-option" : ""}
+                                                onClick={() => handleFontSelect(option)}
+                                            >
+                                                {option}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
                         </div>
                         <div className="switch-item">
                             <span className="switch-item-text">Read-Aloud</span>

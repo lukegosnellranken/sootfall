@@ -3,7 +3,7 @@
 .custom-dropdown {
     position: relative;
     display: inline-block;
-    min-width: 5em;
+    min-width: 5.5em;
     font-family: var(--site-font);
     font-size: 150%;
     border-radius: 34px;
@@ -39,8 +39,8 @@
 
 .custom-dropdown-option {
     cursor: pointer;
-    transition: background 0.2s;
     border-top-style: solid;
+    border-top-width: 1px;
     border-top-color: var(--site-background-color-switch-item-toggle-alt);
 }
 
@@ -56,7 +56,7 @@
 
 @media screen and (max-width: 800px) {
     .custom-dropdown {
-        min-width: 4.5em;
+        min-width: 5em;
         font-size: 120%;
     }
 
