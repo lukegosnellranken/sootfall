@@ -1,15 +1,19 @@
 import React, { useState, useEffect, useCallback } from "react";
 import './Nav.scss';
+import './CustomDropdown.scss';
 import NavItem from "./NavItem";
 import { useNavigate } from "react-router-dom";
 import { useSettings } from "../../Settings";
  
 function Nav() {
+    const navigate = useNavigate();
     const [search, setSearch] = useState("");
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
     const [settingsOpen, setSettingsOpen] = useState(false);
-    const navigate = useNavigate();
     const { theme, setTheme, font, setFont, readAloud, setReadAloud } = useSettings();
+    // Dropdown variables
+    const [themeDropdownOpen, setThemeDropdownOpen] = useState(false);
+    const themeOptions = ["Dark", "Light"];
     // Set vars to CSS custom properties
     const svgColorDormant = getComputedStyle(document.documentElement).getPropertyValue('--site-theme-element-color-dormant');
     const svgColorActive = getComputedStyle(document.documentElement).getPropertyValue('--site-theme-text-color');
@@ -22,6 +26,12 @@ function Nav() {
             navigate(`/search/${encodeURIComponent(search.trim())}`);
             setSearch("");
         }
+    }
+
+    // Dropdown functions
+    function handleThemeSelect(option) {
+        setTheme(formatTheme(option));
+        setThemeDropdownOpen(false);
     }
 
     // Format font as JSON given the selected font from the dropdown
@@ -283,17 +293,36 @@ function Nav() {
                     <div id="div-switch-items">
                         <div className="switch-item">
                             <span className="switch-item-text">Theme</span>
-                            <select 
-                                name="theme" 
-                                id="select-theme"
-                                className="select-settings"
-                                value={theme.title}
-                                // Update the CSS variable with the new theme value
-                                onChange={e => setTheme(formatTheme(e.target.value))}
+                            {/* Custom dropdown for Theme */}
+                            <div 
+                                className="custom-dropdown"
+                                tabIndex={0}
+                                onBlur={() => setThemeDropdownOpen(false)}
                             >
-                                <option>Dark</option>
-                                <option>Light</option>
-                            </select>
+                                <div
+                                    className="custom-dropdown-selected"
+                                    onClick={() => setThemeDropdownOpen(open => !open)}
+                                    style = {{
+                                        "backgroundImage":`url("data:image/svg+xml;utf8,<svg fill='${svgColorDormant}' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>")`
+                                    }}
+                                >
+                                    {theme.title}
+                                </div>
+                                {themeDropdownOpen && (
+                                    <div className="custom-dropdown-options">
+                                        {themeOptions.map((option, index) => (
+                                            <div
+                                                key={option}
+                                                className={index === 0 ? "custom-dropdown-option first-option" : "custom-dropdown-option"}
+                                                id={themeOptions.length < 3 ? "only-option" : ""}
+                                                onClick={() => handleThemeSelect(option)}
+                                            >
+                                                {option !== theme.title && option}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
                         </div>
                         <div className="switch-item">
                             <span className="switch-item-text">Font</span>
