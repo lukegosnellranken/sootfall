@@ -118,6 +118,7 @@
 #input-search::placeholder,
 #input-search-mobile::placeholder {
     color: var(--site-element-color-dormant);
+    text-shadow: none;
 }
 
 #input-search:focus::placeholder,

@@ -2,21 +2,35 @@
 
 #div-articlecomponent-full-article-container {
     @include container-padding;
-    display: inline-block;
-    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
     max-width: $site-container-max-width;
 }
 
-#div-articlecomponent-full-article-side-card {
-    box-shadow: var(--site-box-shadow);
+#div-articlecomponent-full-article {
+    width: 70%;
+    margin-right: .75%;
 }
 
-@media screen and (max-width: 700px) {
+#div-articlecomponent-full-article-side-card {
+    width: 30%;
+    margin-left: .75%;
+}
+
+@media screen and (max-width: 1200px) {
+    #div-articlecomponent-full-article-container {
+        justify-content: center;
+        flex-direction: column;
+    }
+
     #div-articlecomponent-full-article {
         width: 100%;
+        margin-right: 0;
     }
     
     #div-articlecomponent-full-article-side-card {
         width: 100%;
+        margin-left: 0;
     }
 }
