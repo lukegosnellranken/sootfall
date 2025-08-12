@@ -28,10 +28,11 @@ function ArticleSideCard(props) {
                 let iArray = [];
                 for (let i = 0; i < data.data.length; i++) {
                     let title = data.data[i].title;
+                    let author = data.data[i].author.name;
                     let dateString = data.data[i].date.replaceAll("-","/");
                     dateString = dateString.slice(5) + "/" + dateString.slice(0,4);
                     let image = API_URL + data.data[i].image.formats.medium.url;
-                    iArray.push([title, dateString, image]);
+                    iArray.push([title, author, dateString, image]);
                 }
                 setInitDataArray(iArray.slice(0,8).reverse());
             })
@@ -50,12 +51,13 @@ function ArticleSideCard(props) {
         }
         return (
             <div id="div-articlesidecard-one-item">      
-                {currentItems.reverse().map((article, i) => (
+                {currentItems.slice().reverse().map((article, i) => (
                     <div key={i}>
                         <ArticleSideCardContent
-                            sub = {`/articles/${(currentItems[currentItems.length-(i+1)][0]).replace(/\s+/g, '-').toLowerCase()}`}
-                            title = {currentItems[currentItems.length-(i+1)][0]}
-                            image = {currentItems[currentItems.length-(i+1)][2]}
+                            sub={`/articles/${article[0].replace(/\s+/g, '-').toLowerCase()}`}
+                            title={article[0]}
+                            author={article[1]}
+                            image={article[3]}
                         />
                     </div>
                 ))}

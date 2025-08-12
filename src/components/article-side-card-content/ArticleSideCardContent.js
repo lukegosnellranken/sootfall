@@ -12,6 +12,7 @@ function ArticleSideCardContent(props) {
                 </div>
                 <div id="div-articlesidecardcontent-title">
                     <p id="p-articlesidecardcontent-title">{props.title}</p>
+                    <p id="p-articlesidecardcontent-author">By {props.author}</p>
                 </div>
             </div>
         </Link>

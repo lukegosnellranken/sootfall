@@ -52,6 +52,15 @@
     justify-content: left;
     font-weight: bold;
     font-size: 150%;
+    text-wrap: balance;
+}
+
+#p-articlesidecardcontent-author {
+    @include common-text;
+    @include pm-reset;
+    display: flex;
+    justify-content: left;
+    font-size: 120%;
 }
 
 
@@ -97,20 +106,9 @@
 @media screen and (max-width: 600px) {
     #p-articlesidecardcontent-title {
         font-size: 100%;
-        width: 50%;
     }
 
-    .date {
-        font-size: 60%;
-    }
-}
-
-@media screen and (max-width: 440px) {
-    .description {
-        font-size: 65%;
-    }
-
-    .date {
-        font-size: 55%;
+    #p-articlesidecardcontent-author {
+        font-size: 85%;
     }
 }
