@@ -50,7 +50,7 @@ function Nav() {
                 return {
                     "title": "Light",
                     "backgroundImage": "linear-gradient(to bottom, rgba(150, 150, 150, 0.95), rgba(90, 90, 90, 0.95))",
-                    "backgroundImageGradient": "linear-gradient(to bottom, rgba(250, 250, 250, 0.4), rgba(200, 200, 200, 0.4))",
+                    "backgroundImageGradient": "linear-gradient(to bottom, rgba(250, 250, 250, 0.4), rgba(230, 230, 230, 0.4))",
                     "backgroundImageBanner": "linear-gradient(rgba(200, 200, 200, 0.6), rgba(150, 150, 150, 0.6))",
                     "backgroundColorInput": "rgba(200, 200, 200, 0.95)",
                     "backgroundColorInputAlt": "rgba(120, 120, 120, 0.95)",
@@ -60,8 +60,8 @@ function Nav() {
                     "hoverColor": "rgba(125, 125, 125, 0.5)",
                     "boxShadow": "0em 0em .8em .15em rgba(0, 0, 0, 0.5)",
                     "boxShadowTop": "0em 0.3em .8em .05em rgba(0, 0, 0, 0.5)",
-                    "textColor": "rgba(33, 33, 33, 1)",
-                    "textColorAlt": "rgba(1, 1, 1, 1)",
+                    "textColor": "rgba(50, 50, 50, 1)",
+                    "textColorAlt": "rgba(100, 100, 100, 1)",
                     "textShadow": ".05em .05em .05em rgba(150, 150, 150, 1)",
                     "elementColorDormant": "rgba(100, 100, 100, 0.95)"
                 }

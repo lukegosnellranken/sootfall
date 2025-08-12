@@ -13,6 +13,14 @@
     background-color: var(--site-hover-color);
 }
 
+#div-authorcard.pointer {
+    cursor: pointer;
+}
+
+#div-authorcard.default {
+    cursor: default;
+}
+
 #div-authorcard-stitch {
     @include stitch;
 }

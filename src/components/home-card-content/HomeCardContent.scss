@@ -10,8 +10,9 @@
     transition: $site-transition;
 }
 
-.article-link {
+.article-link * {
     text-decoration: none;
+    cursor: pointer;
 }
 
 #div-homecardcontent-container:hover {
@@ -61,7 +62,6 @@
     color: var(--site-text-color);
     text-shadow: var(--site-text-shadow);
     text-wrap: balance;
-    cursor: default;
 }
 
 #p-homecardcontent-author-date {
@@ -74,7 +74,6 @@
     text-shadow: .02em .02em .02em #494949;
     letter-spacing: .05em;
     font-family: var(--site-font);
-    cursor: default;
 }
 
 #span-homecardcontent-date, #span-homecardcontent-author {
