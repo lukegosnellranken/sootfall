@@ -1,27 +1,32 @@
-import React from "react";
+import React, { useMemo } from "react";
 import './background.scss';
-import logo from '../../images/sootfall-logo9.png';
-// import tagline from '../../images/sootfall-tagline.png';
-// import bmc from '../../images/bmc-logo.png'; 
-import wutheringman from '../../images/wutheringman2.png';
+import logoDark from '../../images/sootfall-logo-dark.png';
+import logoLight from '../../images/sootfall-logo-light.png';
+import { useSettings } from "../../Settings";
+import wutheringManDark from '../../images/wuthering-man-dark.png';
+import wutheringManLight from '../../images/wuthering-man-light.png';
 
 const homeLink = process.env.REACT_APP_HOME;
 const backendLink = process.env.REACT_APP_API_URL;
 
 function Background() {
+    const { theme } = useSettings(); // Instantiate theme object from Settings.js
+    // Since lightTheme is computed from other reactive data (theme.title), only recalcualte it when theme changes
+    const lightTheme = useMemo(() => theme.title === "Light", [theme]);;
+
     return (
         <div>
             <div id="div-background-container">
                 <div id="div-background-logo">
                     <a href={homeLink}>
-                        {<img src={logo} alt="logo" id="image-background-logo" href={homeLink} draggable="false"/>}
+                        {<img src={lightTheme ? logoLight : logoDark} alt="logo" id="image-background-logo" href={homeLink} draggable="false"/>}
                     </a>
                 </div>
                 {/* <div id="div-background-bmc">
                     <a href="http://localhost:3000/" target="_blank" rel="noreferrer"><img id="image-background-bmc" src={bmc} alt="" /> </a>
                 </div> */}
                 <div id="div-wutheringman">
-                    <img id="img-wutheringman" src={wutheringman} alt="wutheringman"/>
+                    <img id="img-wutheringman" src={lightTheme ? wutheringManLight : wutheringManDark} alt="wutheringman"/>
                 </div>
                 {/* <div id="div-background-social-links">
                     <a id="social-links-facebook" href="https://gingernook.com/" className="fa fa-facebook social-link"> </a>

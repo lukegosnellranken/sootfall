@@ -7,6 +7,8 @@
 #p-footer-text {
     text-align: center;
     color: rgb(65, 65, 65);
+    letter-spacing: 0.03em !important;
+    font-size-adjust: none !important;
 }
 
 @media screen and (max-width: 800px) {
