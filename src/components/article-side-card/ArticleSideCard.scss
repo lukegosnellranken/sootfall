@@ -2,9 +2,10 @@
 
 #div-articlesidecard-card {
     background-image: var(--site-background-image-gradient);
-    margin-top: $card-vertical-margin;
-    padding-top: $card-vertical-padding;
-    padding-bottom: $card-vertical-padding;
+    margin-top: .5em;
+    padding-top: .1em;
+    padding-bottom: .1em;
+    border-radius: 15px;
     box-shadow: var(--site-box-shadow);
 }
 

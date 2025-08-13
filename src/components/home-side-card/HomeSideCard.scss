@@ -3,12 +3,12 @@
 #div-homesidecard-container {
     @include common-text;
     background-image: var(--site-background-image-gradient);
-    border-radius: .5%;
+    border-radius: 15px;
     border-width: .5em;
     box-shadow: var(--site-box-shadow);
     margin-top: $card-vertical-margin;
-    padding-top: $card-vertical-padding;
-    padding-bottom: $card-vertical-padding;
+    padding-top: .1em;
+    padding-bottom: .1em;
 }
 
 #div-homesidecard-stitch {

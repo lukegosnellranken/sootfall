@@ -4,11 +4,11 @@
     @include common-text;
     background-image: var(--site-background-image-gradient);
     box-shadow: var(--site-box-shadow);
-    border-radius: .5%;
+    border-radius: 15px;
     border-width: .5em;
     margin-top: .75em;
-    padding-top: .2em;
-    padding-bottom: .2em;
+    padding-top: .1em;
+    padding-bottom: .1em;
 }
 
 #div-homemobilecard-stitch {
