@@ -21,6 +21,7 @@ export const Settings = ({ children }) => {
             "boxShadowTop": "0em 0.3em .8em .05em rgba(255, 255, 255, 0.199)",
             "textColor": "rgba(130, 130, 130, 1)",
             "textColorAlt": "rgba(200, 200, 200, 1)",
+            "textColorTitleGradient": "linear-gradient(to bottom, rgba(200, 200, 200, 0.95), rgba(10, 10, 10, 0.1))",
             "textShadow": ".05em .05em .05em rgba(73, 73, 73, 1)",
             "elementColorDormant": "rgba(50, 50, 50, 0.95)"
         };
@@ -70,6 +71,7 @@ export const Settings = ({ children }) => {
     document.documentElement.style.setProperty('--site-theme-box-shadow-top', theme.boxShadowTop);
     document.documentElement.style.setProperty('--site-theme-text-color', theme.textColor);
     document.documentElement.style.setProperty('--site-theme-text-color-alt', theme.textColorAlt);
+    document.documentElement.style.setProperty('--site-theme-text-color-title-gradient', theme.textColorTitleGradient);
     document.documentElement.style.setProperty('--site-theme-text-shadow', theme.textShadow);
     document.documentElement.style.setProperty('--site-theme-element-color-dormant', theme.elementColorDormant);
     document.documentElement.style.setProperty('--site-font', font.value);

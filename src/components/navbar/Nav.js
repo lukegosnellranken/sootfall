@@ -60,6 +60,7 @@ function Nav() {
                     "boxShadowTop": "0em 0.3em .8em .05em rgba(255, 255, 255, 0.199)",
                     "textColor": "rgba(130, 130, 130, 1)",
                     "textColorAlt": "rgba(200, 200, 200, 1)",
+                    "textColorTitleGradient": "linear-gradient(to bottom, rgba(200, 200, 200, 0.95), rgba(50, 50, 50, 0.5))",
                     "textShadow": ".05em .05em .05em rgba(73, 73, 73, 1)",
                     "elementColorDormant": "rgba(50, 50, 50, 0.95)"
                 }
@@ -79,6 +80,7 @@ function Nav() {
                     "boxShadowTop": "0em 0.3em .8em .05em rgba(0, 0, 0, 0.5)",
                     "textColor": "rgba(50, 50, 50, 1)",
                     "textColorAlt": "rgba(100, 100, 100, 1)",
+                    "textColorTitleGradient": "linear-gradient(to bottom, rgba(50, 50, 50, 0.95), rgba(120, 120, 120, 0.95))",
                     "textShadow": ".05em .05em .05em rgba(150, 150, 150, 1)",
                     "elementColorDormant": "rgba(100, 100, 100, 0.95)"
                 }
@@ -98,6 +100,7 @@ function Nav() {
                     "boxShadowTop": "0em 0.3em .8em .05em rgba(255, 255, 255, 0.199)",
                     "textColor": "rgba(130, 130, 130, 1)",
                     "textColorAlt": "rgba(200, 200, 200, 1)",
+                    "textColorTitleGradient": "linear-gradient(to bottom, rgba(200, 200, 200, 0.95), rgba(50, 50, 50, 0.5))",
                     "textShadow": ".05em .05em .05em rgba(73, 73, 73, 1)",
                     "elementColorDormant": "rgba(50, 50, 50, 0.95)"
                 }

@@ -6,6 +6,7 @@ $site-font-size-adjust: cap-height 1;
 // Set variables to custom properties defined in Settings.js
 $site-text-color: var(--site-theme-text-color); // Used for main text color, gear (on), hamburger (on)
 $site-text-color-alt: var(--site-theme-text-color-alt);
+$site-text-color-title-gradient: var(--site-theme-text-color-title-gradient);
 $site-text-shadow: var(--site-theme-text-shadow);
 $site-background-image: var(--site-theme-background-image);
 $site-background-image-gradient: var(--site-theme-background-image-gradient);
@@ -42,6 +43,7 @@ html {
     --site-box-shadow-top: #{$site-box-shadow-top};
     --site-text-color: #{$site-text-color};
     --site-text-color-alt: #{$site-text-color-alt};
+    --site-text-color-title-gradient: #{$site-text-color-title-gradient};
     --site-text-shadow: #{$site-text-shadow};
     --site-element-color-dormant: #{$site-element-color-dormant};
     --site-font: #{$site-font};

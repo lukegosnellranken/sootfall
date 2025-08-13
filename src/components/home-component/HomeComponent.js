@@ -17,7 +17,7 @@ function HomeComponent() {
         <div id="homecomponent-container">
             <div id="div-homecomponent-card">
                 <HomeCard
-                    title = "Ruminations"
+                    title = "Reveries & Ruminations"
                     pageType = "home"
                 />
             </div>

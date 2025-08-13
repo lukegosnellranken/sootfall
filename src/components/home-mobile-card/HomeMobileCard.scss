@@ -46,7 +46,7 @@
     @include common-text;
     text-align: left;
     padding-top: .5em;
-    padding-left: .25em;
+    padding-left: .5em;
     font-size: 300%;
     font-weight: lighter;
     text-decoration: underline dashed gray 1px;
@@ -55,7 +55,7 @@
 #p-homemobilecard-content {
     @include common-text;
     font-size: $fs-description;
-    padding-left: .5em;
+    padding-left: 1em;
 }
 
 // Responsive styles

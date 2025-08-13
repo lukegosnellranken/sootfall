@@ -36,19 +36,25 @@
 
 #div-homecard-title {
     @include unselectable;
-    @include flex-center;
+    // @include flex-center;
     width: 100%;
 }
 
 #h1-homecard-title {
     @include common-text;
-    font-weight: lighter;
     font-size: 300%;
     letter-spacing: $site-letter-spacing;
-    text-align: center;
+    text-align: left;
     padding-top: .5em;
+    padding-left: .5em;
     max-width: 10em;
-    text-decoration: underline dashed gray 1px;
+    // text-decoration: underline dashed var(--site-text-color) 1px;
+    // Properties for gradient text
+    background-image: var(--site-text-color-title-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
 }
 
 #div-homecard-article-card {
@@ -144,7 +150,7 @@
 @media screen and (max-width: 700px) {
     #h1-homecard-title {
         font-size: 200%;
-        padding-top: .1em;
+        padding-top: .25em;
         margin-bottom: 0em;
     }
 
