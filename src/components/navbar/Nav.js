@@ -305,70 +305,72 @@ function Nav() {
                             <span className="switch-item-text">Theme</span>
                             {/* Custom dropdown for Theme */}
                             <div 
-                                className="custom-dropdown"
+                                className={`custom-dropdown${themeDropdownOpen ? " open" : ""}`}
                                 tabIndex={0}
                                 onBlur={() => setThemeDropdownOpen(false)}
                             >
                                 <div
                                     className="custom-dropdown-selected"
                                     onClick={() => setThemeDropdownOpen(open => !open)}
-                                    style = {{
-                                        "backgroundImage":`url("data:image/svg+xml;utf8,<svg fill='${svgColorDormant}' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>")`
+                                    style={{
+                                        backgroundImage: `url("data:image/svg+xml;utf8,<svg fill='${svgColorDormant}' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>")`
                                     }}
                                 >
                                     {theme.title}
                                 </div>
-                                {themeDropdownOpen && (
-                                    <div className="custom-dropdown-options">
-                                        {themeOptions
-                                        .filter(option => option !== theme.title) // Filter out the currently selected option
-                                        .map((option, index) => (
-                                            <div
-                                                key={option}
-                                                className={index === 0 ? "custom-dropdown-option first-option" : "custom-dropdown-option"}
-                                                id={themeOptions.length < 3 ? "only-option" : ""}
-                                                onClick={() => handleThemeSelect(option)}
-                                            >
-                                                {option}
-                                            </div>
-                                        ))}
-                                    </div>
-                                )}
+                                <div className="custom-dropdown-options">
+                                    {/* Only render options when the dropdown is open for the sake of animation */}
+                                    {themeDropdownOpen &&
+                                        themeOptions
+                                            .filter(option => option !== theme.title)
+                                            .map((option, index) => (
+                                                <div
+                                                    key={option}
+                                                    className={index === 0 ? "custom-dropdown-option first-option" : "custom-dropdown-option"}
+                                                    id={themeOptions.length < 3 ? "only-option" : ""}
+                                                    onClick={() => handleThemeSelect(option)}
+                                                >
+                                                    {option}
+                                                </div>
+                                            ))
+                                    }
+                                </div>
                             </div>
                         </div>
                         <div className="switch-item">
                             <span className="switch-item-text">Font</span>
                             {/* Custom dropdown for Font */}
                             <div 
-                                className="custom-dropdown"
+                                className={`custom-dropdown${fontDropdownOpen ? " open" : ""}`}
                                 tabIndex={0}
                                 onBlur={() => setFontDropdownOpen(false)}
                             >
                                 <div
                                     className="custom-dropdown-selected"
                                     onClick={() => setFontDropdownOpen(open => !open)}
-                                    style = {{
-                                        "backgroundImage":`url("data:image/svg+xml;utf8,<svg fill='${svgColorDormant}' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>")`
+                                    style={{
+                                        backgroundImage: `url("data:image/svg+xml;utf8,<svg fill='${svgColorDormant}' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>")`
                                     }}
                                 >
                                     {font.title}
                                 </div>
-                                {fontDropdownOpen && (
-                                    <div className="custom-dropdown-options">
-                                        {fontOptions
-                                        .filter(option => option !== font.title) // Filter out the currently selected option
-                                        .map((option, index) => (
-                                            <div
-                                                key={option}
-                                                className={index === 0 ? "custom-dropdown-option first-option" : "custom-dropdown-option"}
-                                                id={fontOptions.length < 3 ? "only-option" : ""}
-                                                onClick={() => handleFontSelect(option)}
-                                            >
-                                                {option}
-                                            </div>
-                                        ))}
-                                    </div>
-                                )}
+                                <div className="custom-dropdown-options">
+                                    {/* Only render options when the dropdown is open for the sake of animation */}
+                                    {fontDropdownOpen &&
+                                        fontOptions
+                                            .filter(option => option !== font.title)
+                                            .map((option, index) => (
+                                                <div
+                                                    key={option}
+                                                    className={index === 0 ? "custom-dropdown-option first-option" : "custom-dropdown-option"}
+                                                    id={fontOptions.length < 3 ? "only-option" : ""}
+                                                    onClick={() => handleFontSelect(option)}
+                                                >
+                                                    {option}
+                                                </div>
+                                            ))
+                                    }
+                                </div>
                             </div>
                         </div>
                         <div className="switch-item">

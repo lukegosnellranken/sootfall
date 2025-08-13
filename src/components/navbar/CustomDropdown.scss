@@ -35,6 +35,24 @@
     background-color: var(--site-background-color-switch-item);
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    // animation
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: 
+        max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.2s,
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+// For animation
+.custom-dropdown.open .custom-dropdown-options {
+    max-height: 500px; // Large enough for all options
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 .custom-dropdown-option {
