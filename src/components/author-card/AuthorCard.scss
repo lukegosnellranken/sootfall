@@ -108,7 +108,28 @@
 }
 
 @media screen and (max-width: 550px) {
+    #div-authorcard-image {
+        width: 35%;
+    }
+
+    #div-author-name-description {
+        width: 65%;
+        margin-left: .5em;
+    }
+
     #img-authorcard {
         height: 8em;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #img-authorcard {
+        height: 7em;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #img-authorcard {
+        height: 6em;
     }
 }
