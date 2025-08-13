@@ -78,6 +78,7 @@
 }
 
 #div-switch-items, #div-ul-nav-list-mobile-items {
+    @include unselectable;
     @include flex-center;
     flex-wrap: wrap;
     max-width: 1000px;

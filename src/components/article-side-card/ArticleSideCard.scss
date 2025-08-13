@@ -2,7 +2,7 @@
 
 #div-articlesidecard-card {
     background-image: var(--site-background-image-gradient);
-    margin-top: .5em;
+    margin-top: 2em;
     padding-top: .1em;
     padding-bottom: .1em;
     border-radius: 15px;
@@ -11,4 +11,10 @@
 
 #div-articlesidecard-stitch {
     @include stitch;
+}
+
+@media screen and (max-width: 1200px) {
+    #div-articlesidecard-card {
+        margin-top: .5em;
+    }
 }

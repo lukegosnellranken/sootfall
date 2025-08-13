@@ -1,8 +1,8 @@
 @import '../../styles/variables';
 
 .li-nav-item {
+    @include unselectable;
     transition: $site-transition;
-    // width: 100%;
     text-align: center;
     padding-top: .5em;
 }

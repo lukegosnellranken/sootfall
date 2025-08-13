@@ -35,6 +35,7 @@
 }
 
 #div-homecard-title {
+    @include unselectable;
     @include flex-center;
     width: 100%;
 }

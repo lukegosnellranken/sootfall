@@ -6,7 +6,12 @@
     filter: brightness(50%);
 }
 
+#div-background-logo {
+    @include unselectable;
+}
+
 #image-background-logo {
+    @include unselectable;
     position: absolute;
     left: 0;
     top: 0;
