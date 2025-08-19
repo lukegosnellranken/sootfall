@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
 import './HomeCard.scss';
 import HomeCardContent from "../home-card-content/HomeCardContent";
 import ReactPaginate from 'react-paginate';
@@ -10,8 +9,6 @@ function HomeCard(props) {
     const paginationRef = useRef(null);
     const API_URL = process.env.REACT_APP_API_URL; // Get domain from .env
     const token = 'ff75d12ddbfa3b18817eacba0f70b6fc3ef76c0d2e13da25468bfa16a6deaffd1f071ccc5ef1cff42ce2d2618ec6f457da47f6eceede245b00c59711b268482613864751271af51baf71109535b1bb87eff397e4193ffef7d08300aaa4e685792c019da43d928a18fff82ed34920c0aabfbdfc0fa2b22bd7379fb264eaebf0f4';
-
-    const navigate = useNavigate();
     
     useEffect(() => {
         const fetchData = async () => {
@@ -153,15 +150,6 @@ function HomeCard(props) {
     return (
         <div id="div-homecard-card">
             <div id="div-homecard-stitch">
-                {
-                    props.pageType === "tag" || props.pageType === "author" ?
-                    <div id="div-homecard-back-link">
-                        <p id="p-homecard-back-link" onClick={() => navigate(-1)}>
-                            Return
-                        </p>
-                    </div>
-                    : null
-                }
                 <div id="div-homecard-title">
                     <h1 id="h1-homecard-title">{props.title}</h1>
                 </div>
