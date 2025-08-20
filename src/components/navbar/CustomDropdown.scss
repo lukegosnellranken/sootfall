@@ -31,11 +31,11 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: 115%;
+    top: 105%;
     z-index: 10;
     background-color: var(--site-background-color-switch-item);
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.815);
     // animation
     max-height: 0;
     opacity: 0;
@@ -58,6 +58,7 @@
 
 .custom-dropdown-option {
     cursor: pointer;
+    background-color: var(--site-background-color);
     border-top-style: solid;
     border-top-width: 1px;
     border-top-color: var(--site-background-color-switch-item-toggle-alt);
