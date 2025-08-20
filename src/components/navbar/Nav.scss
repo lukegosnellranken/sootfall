@@ -79,11 +79,12 @@
 
 #div-switch-items, #div-ul-nav-list-mobile-items {
     @include unselectable;
-    @include flex-center;
-    flex-wrap: wrap;
-    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); // 2 items per row
+    max-width: 1500px;
     width: 100%;
     margin-bottom: .25em;
+    place-items: center;
 }
 
 #div-ul-nav-list-mobile-items {
@@ -187,15 +188,16 @@
 }
 
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: var(--site-background-color-switch-item-toggle-alt); // off background
-  transition: 0.4s;
-  border-radius: 34px;
-  border-width: 1px;
-  border-color: gray;
-  border-style: solid;
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: var(--site-background-color-switch-item-toggle-alt); // off background
+    transition: 0.4s;
+    border-radius: 34px;
+    border-width: 1px;
+    border-color: gray;
+    border-style: solid;
+    min-width: 3.5em;
 }
 
 .slider:before {
@@ -220,14 +222,14 @@ input:checked + .slider:before {
 
 .switch-item {
     @include flex-center;
-    width: 33%;
-    margin-bottom: .5em;
     align-items: center;
+    margin-bottom: .5em;
 }
 
 .switch-item-text {
     @include common-text;
     font-size: $fs-description;
+    text-wrap: nowrap;
 }
 
 // Mobile styles
@@ -311,6 +313,16 @@ input:checked + .slider:before {
 }
 
 // Responsive styles
+@media (max-width: 1000px) {
+    #div-switch-items {
+        grid-template-columns: repeat(2, 1fr);  
+    }
+
+    .switch-item-text {
+        min-width: 60px;
+        text-align: right;
+    }
+}
 
 @media screen and (max-width: 800px) {
     #div-nav-list {
@@ -354,5 +366,15 @@ input:checked + .slider:before {
 
     input:checked + .slider:before {
         transform: translateX(33px);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #div-switch-items > :nth-child(odd) {
+        margin-left: -5%;
+    }
+
+    #div-switch-items > :nth-child(even) {
+        margin-right: 2.5%;
     }
 }

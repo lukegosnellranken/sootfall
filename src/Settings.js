@@ -46,6 +46,18 @@ export const Settings = ({ children }) => {
         localStorage.setItem('font', JSON.stringify(font));
     }, [font]);
 
+    // Get size from localStorage, otherwise set to Medium by default
+    const [size, setSize] = useState(() => {
+        const stored = localStorage.getItem('size');
+        return stored ? JSON.parse(stored) : {
+            "title": "Medium"
+        };
+    });
+
+    useEffect(() => {
+        localStorage.setItem('size', JSON.stringify(size));
+    }, [size]);
+
     // Get readAloud from localStorage, otherwise set to false by default
     const [readAloud, setReadAloud] = useState(() => {
         const stored = localStorage.getItem('readAloud');
@@ -79,7 +91,7 @@ export const Settings = ({ children }) => {
     document.documentElement.style.setProperty('--site-font-size-adjust', font.fontSizeAdjust);
 
     return (
-        <SettingsContext.Provider value= {{ font, setFont, readAloud, setReadAloud, theme, setTheme }}>
+        <SettingsContext.Provider value= {{ font, setFont, readAloud, setReadAloud, theme, setTheme, size, setSize }}>
             {children}
         </SettingsContext.Provider>
     );

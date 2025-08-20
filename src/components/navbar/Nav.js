@@ -10,12 +10,14 @@ function Nav() {
     const [search, setSearch] = useState("");
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
     const [settingsOpen, setSettingsOpen] = useState(false);
-    const { theme, setTheme, font, setFont, readAloud, setReadAloud } = useSettings();
+    const { theme, setTheme, font, setFont, size, setSize, readAloud, setReadAloud } = useSettings();
     // Dropdown variables
     const [themeDropdownOpen, setThemeDropdownOpen] = useState(false);
     const themeOptions = ["Dark", "Light"];
     const [fontDropdownOpen, setFontDropdownOpen] = useState(false);
     const fontOptions = ["SootType", "Arial", "Georgia", "Bucket"];
+    const [sizeDropdownOpen, setSizeDropdownOpen] = useState(false);
+    const sizeOptions = ["Small", "Medium", "Large"];
     // Set vars to CSS custom properties
     const svgColorDormant = getComputedStyle(document.documentElement).getPropertyValue('--site-theme-element-color-dormant');
     const svgColorActive = getComputedStyle(document.documentElement).getPropertyValue('--site-theme-text-color');
@@ -39,6 +41,11 @@ function Nav() {
     function handleFontSelect(option) {
         setFont(formatFont(option));
         setFontDropdownOpen(false);
+    }
+
+    function handleSizeSelect(option) {
+        setSize(formatSize(option));
+        setSizeDropdownOpen(false);
     }
 
     // Format font as JSON given the selected font from the dropdown
@@ -144,6 +151,28 @@ function Nav() {
                     "value": "Bilbo, sans-serif",
                     "letterSpacing": "0.03em",
                     "fontSizeAdjust": "cap-height 0.7"
+                }
+        }
+    }
+
+    // Format font as JSON given the selected font from the dropdown
+    function formatSize(value) {
+        switch (value) {
+            case "Medium":
+                return {
+                    "title": "Medium"
+                }
+            case "Small":
+                return {
+                    "title": "Small"
+                }
+            case "Medium":
+                return {
+                    "title": "Large"
+                }
+            default:
+                return {
+                    "title": "Medium"
                 }
         }
     } 
@@ -338,6 +367,42 @@ function Nav() {
                             </div>
                         </div>
                         <div className="switch-item">
+                            <span className="switch-item-text">Text Size</span>
+                            {/* Custom dropdown for Text Size */}
+                            <div 
+                                className={`custom-dropdown${sizeDropdownOpen ? " open" : ""}`}
+                                tabIndex={0}
+                                onBlur={() => setSizeDropdownOpen(false)}
+                            >
+                                <div
+                                    className="custom-dropdown-selected"
+                                    onClick={() => setSizeDropdownOpen(open => !open)}
+                                    style={{
+                                        backgroundImage: `url("data:image/svg+xml;utf8,<svg fill='${svgColorDormant}' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>")`
+                                    }}
+                                >
+                                    {size.title}
+                                </div>
+                                <div className="custom-dropdown-options">
+                                    {/* Only render options when the dropdown is open for the sake of animation */}
+                                    {sizeDropdownOpen &&
+                                        sizeOptions
+                                            .filter(option => option !== size.title)
+                                            .map((option, index) => (
+                                                <div
+                                                    key={option}
+                                                    className={index === 0 ? "custom-dropdown-option first-option" : "custom-dropdown-option"}
+                                                    id={sizeOptions.length < 3 ? "only-option" : ""}
+                                                    onClick={() => handleSizeSelect(option)}
+                                                >
+                                                    {option}
+                                                </div>
+                                            ))
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div className="switch-item">
                             <span className="switch-item-text">Font</span>
                             {/* Custom dropdown for Font */}
                             <div 
@@ -377,7 +442,9 @@ function Nav() {
                             <span className="switch-item-text">Read-Aloud</span>
                             <label className="switch">
                                 <input type="checkbox" onClick={toggleReadAloud} defaultChecked={readAloud}/>
-                                <span className="slider"></span>
+                                <span className="slider">
+                                    {/* <span className="slider-knob"></span> */}
+                                </span>
                             </label>
                         </div>
                     </div>
