@@ -440,12 +440,14 @@ function Nav() {
                         </div>
                         <div className="switch-item">
                             <span className="switch-item-text">Read-Aloud</span>
-                            <label className="switch">
-                                <input type="checkbox" onClick={toggleReadAloud} defaultChecked={readAloud}/>
-                                <span className="slider">
-                                    {/* <span className="slider-knob"></span> */}
-                                </span>
-                            </label>
+                            <div className="div-switch">
+                                <label className="switch">
+                                    <input type="checkbox" onClick={toggleReadAloud} defaultChecked={readAloud}/>
+                                    <span className="slider">
+                                        <span className="slider-knob"></span>
+                                    </span>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </ul>

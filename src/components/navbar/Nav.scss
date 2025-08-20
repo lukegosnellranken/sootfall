@@ -173,12 +173,17 @@
 
 // Switch styles
 
+.div-switch {
+    @include flex-center;
+    min-width: 8em;
+}
+
 .switch {
-  position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
   width: 70px;
   height: 34px;
-  margin-left: 2em;
+//   margin-left: 2em;
 }
 
 .switch input {
@@ -188,36 +193,36 @@
 }
 
 .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: var(--site-background-color-switch-item-toggle-alt); // off background
-    transition: 0.4s;
-    border-radius: 34px;
-    border-width: 1px;
-    border-color: gray;
-    border-style: solid;
-    min-width: 3.5em;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--site-background-color-switch-item-toggle-alt);
+  border-radius: 34px;
+  border: 1px solid gray;
+  min-width: 3.5em;
+  transition: background 0.4s;
+  position: relative; // Remove absolute
+  box-sizing: border-box;
+  padding: 0 4px;
 }
 
-.slider:before {
-  content: "";
-  position: absolute;
-  height: 26px;
+.slider-knob {
   width: 26px;
-  left: 3px; bottom: 4px; top: 3px;
-  background-color: var(--site-background-color-switch-item-toggle); // off circle
-  transition: 0.4s;
+  height: 26px;
   border-radius: 50%;
+  background-color: var(--site-background-color-switch-item-toggle);
+  transition: transform 0.4s, background 0.4s;
+  transform: translateX(0);
+}
+
+input:checked + .slider .slider-knob {
+  transform: translateX(36px);
+  background-color: var(--site-background-color-switch-item-toggle-alt);
 }
 
 input:checked + .slider {
-  background-color: var(--site-background-color-switch-item-toggle); // on background
-}
-
-input:checked + .slider:before {
-  transform: translateX(36px);
-  background-color: var(--site-background-color-switch-item-toggle-alt); // on circle
+  background-color: var(--site-background-color-switch-item-toggle);
 }
 
 .switch-item {
@@ -338,6 +343,11 @@ input:checked + .slider:before {
         margin-bottom: .4em;
     }
 
+    .div-switch {
+        min-width: 7em;
+        justify-content: right;
+    }
+
     #div-switch-items {
         margin-bottom: 0em;
     }
@@ -349,7 +359,7 @@ input:checked + .slider:before {
     }
 
     .switch {
-        width: 60px;
+        width: 4em;
         height: 26px;
         margin-left: 1em;
     }
@@ -358,13 +368,12 @@ input:checked + .slider:before {
         width: 50%;
     }
 
-    .slider:before {
+    .slider-knob {
         height: 23px;
         width: 23px;
-        left: 2px; bottom: 2px; top: 1px;
     }
 
-    input:checked + .slider:before {
+    input:checked + .slider .slider-knob {
         transform: translateX(33px);
     }
 }
