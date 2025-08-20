@@ -166,7 +166,7 @@ function Nav() {
                 return {
                     "title": "Small"
                 }
-            case "Medium":
+            case "Large":
                 return {
                     "title": "Large"
                 }
@@ -439,7 +439,7 @@ function Nav() {
                             </div>
                         </div>
                         <div className="switch-item">
-                            <span className="switch-item-text">Read-Aloud</span>
+                            <span className="switch-item-text">Read-Along</span>
                             <div className="div-switch">
                                 <label className="switch">
                                     <input type="checkbox" onClick={toggleReadAloud} defaultChecked={readAloud}/>
