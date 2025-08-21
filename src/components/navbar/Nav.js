@@ -223,122 +223,130 @@ function Nav() {
                     <div className="settings-stitch"></div>
                     <div id="div-switch-items">
                         <div className="switch-item">
-                            <span className="switch-item-text">Theme</span>
-                            {/* Custom dropdown for Theme */}
-                            <div 
-                                className={`custom-dropdown${themeDropdownOpen ? " open" : ""}`}
-                                tabIndex={0}
-                                onBlur={() => setThemeDropdownOpen(false)}
-                            >
-                                <div
-                                    className="custom-dropdown-selected"
-                                    onClick={() => setThemeDropdownOpen(open => !open)}
-                                    style={{
-                                        backgroundImage: `url("data:image/svg+xml;utf8,<svg fill='${svgColorDormant}' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>")`
-                                    }}
+                            <div className="switch-item-text">Theme</div>
+                            <div className="switch-item-selection">
+                                {/* Custom dropdown for Theme */}
+                                <div 
+                                    className={`custom-dropdown${themeDropdownOpen ? " open" : ""}`}
+                                    tabIndex={0}
+                                    onBlur={() => setThemeDropdownOpen(false)}
                                 >
-                                    {theme.title}
-                                </div>
-                                <div className="custom-dropdown-options">
-                                    {/* Only render options when the dropdown is open for the sake of animation */}
-                                    {themeDropdownOpen &&
-                                        themeOptions
-                                            .filter(option => option !== theme.title)
-                                            .map((option, index) => (
-                                                <div
-                                                    key={option}
-                                                    className={index === 0 ? "custom-dropdown-option first-option" : "custom-dropdown-option"}
-                                                    id={themeOptions.length < 3 ? "only-option" : ""}
-                                                    onClick={() => handleThemeSelect(option)}
-                                                >
-                                                    {option}
-                                                </div>
-                                            ))
-                                    }
+                                    <div
+                                        className="custom-dropdown-selected"
+                                        onClick={() => setThemeDropdownOpen(open => !open)}
+                                        style={{
+                                            backgroundImage: `url("data:image/svg+xml;utf8,<svg fill='${svgColorDormant}' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>")`
+                                        }}
+                                    >
+                                        {theme.title}
+                                    </div>
+                                    <div className="custom-dropdown-options">
+                                        {/* Only render options when the dropdown is open for the sake of animation */}
+                                        {themeDropdownOpen &&
+                                            themeOptions
+                                                .filter(option => option !== theme.title)
+                                                .map((option, index) => (
+                                                    <div
+                                                        key={option}
+                                                        className={index === 0 ? "custom-dropdown-option first-option" : "custom-dropdown-option"}
+                                                        id={themeOptions.length < 3 ? "only-option" : ""}
+                                                        onClick={() => handleThemeSelect(option)}
+                                                    >
+                                                        {option}
+                                                    </div>
+                                                ))
+                                        }
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div className="switch-item">
-                            <span className="switch-item-text">Text Size</span>
-                            {/* Custom dropdown for Text Size */}
-                            <div 
-                                className={`custom-dropdown${sizeDropdownOpen ? " open" : ""}`}
-                                tabIndex={0}
-                                onBlur={() => setSizeDropdownOpen(false)}
-                            >
-                                <div
-                                    className="custom-dropdown-selected"
-                                    onClick={() => setSizeDropdownOpen(open => !open)}
-                                    style={{
-                                        backgroundImage: `url("data:image/svg+xml;utf8,<svg fill='${svgColorDormant}' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>")`
-                                    }}
+                            <div className="switch-item-text">Text Size</div>
+                            <div className="switch-item-selection">
+                                {/* Custom dropdown for Text Size */}
+                                <div 
+                                    className={`custom-dropdown${sizeDropdownOpen ? " open" : ""}`}
+                                    tabIndex={0}
+                                    onBlur={() => setSizeDropdownOpen(false)}
                                 >
-                                    {size.title}
-                                </div>
-                                <div className="custom-dropdown-options">
-                                    {/* Only render options when the dropdown is open for the sake of animation */}
-                                    {sizeDropdownOpen &&
-                                        sizeOptions
-                                            .filter(option => option !== size.title)
-                                            .map((option, index) => (
-                                                <div
-                                                    key={option}
-                                                    className={index === 0 ? "custom-dropdown-option first-option" : "custom-dropdown-option"}
-                                                    id={sizeOptions.length < 3 ? "only-option" : ""}
-                                                    onClick={() => handleSizeSelect(option)}
-                                                >
-                                                    {option}
-                                                </div>
-                                            ))
-                                    }
+                                    <div
+                                        className="custom-dropdown-selected"
+                                        onClick={() => setSizeDropdownOpen(open => !open)}
+                                        style={{
+                                            backgroundImage: `url("data:image/svg+xml;utf8,<svg fill='${svgColorDormant}' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>")`
+                                        }}
+                                    >
+                                        {size.title}
+                                    </div>
+                                    <div className="custom-dropdown-options">
+                                        {/* Only render options when the dropdown is open for the sake of animation */}
+                                        {sizeDropdownOpen &&
+                                            sizeOptions
+                                                .filter(option => option !== size.title)
+                                                .map((option, index) => (
+                                                    <div
+                                                        key={option}
+                                                        className={index === 0 ? "custom-dropdown-option first-option" : "custom-dropdown-option"}
+                                                        id={sizeOptions.length < 3 ? "only-option" : ""}
+                                                        onClick={() => handleSizeSelect(option)}
+                                                    >
+                                                        {option}
+                                                    </div>
+                                                ))
+                                        }
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div className="switch-item">
-                            <span className="switch-item-text">Font</span>
-                            {/* Custom dropdown for Font */}
-                            <div 
-                                className={`custom-dropdown${fontDropdownOpen ? " open" : ""}`}
-                                tabIndex={0}
-                                onBlur={() => setFontDropdownOpen(false)}
-                            >
-                                <div
-                                    className="custom-dropdown-selected"
-                                    onClick={() => setFontDropdownOpen(open => !open)}
-                                    style={{
-                                        backgroundImage: `url("data:image/svg+xml;utf8,<svg fill='${svgColorDormant}' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>")`
-                                    }}
+                            <div className="switch-item-text">Font</div>
+                            <div className="switch-item-selection">
+                                {/* Custom dropdown for Font */}
+                                <div 
+                                    className={`custom-dropdown${fontDropdownOpen ? " open" : ""}`}
+                                    tabIndex={0}
+                                    onBlur={() => setFontDropdownOpen(false)}
                                 >
-                                    {font.title}
-                                </div>
-                                <div className="custom-dropdown-options">
-                                    {/* Only render options when the dropdown is open for the sake of animation */}
-                                    {fontDropdownOpen &&
-                                        fontOptions
-                                            .filter(option => option !== font.title)
-                                            .map((option, index) => (
-                                                <div
-                                                    key={option}
-                                                    className={index === 0 ? "custom-dropdown-option first-option" : "custom-dropdown-option"}
-                                                    id={fontOptions.length < 3 ? "only-option" : ""}
-                                                    onClick={() => handleFontSelect(option)}
-                                                >
-                                                    {option}
-                                                </div>
-                                            ))
-                                    }
+                                    <div
+                                        className="custom-dropdown-selected"
+                                        onClick={() => setFontDropdownOpen(open => !open)}
+                                        style={{
+                                            backgroundImage: `url("data:image/svg+xml;utf8,<svg fill='${svgColorDormant}' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>")`
+                                        }}
+                                    >
+                                        {font.title}
+                                    </div>
+                                    <div className="custom-dropdown-options">
+                                        {/* Only render options when the dropdown is open for the sake of animation */}
+                                        {fontDropdownOpen &&
+                                            fontOptions
+                                                .filter(option => option !== font.title)
+                                                .map((option, index) => (
+                                                    <div
+                                                        key={option}
+                                                        className={index === 0 ? "custom-dropdown-option first-option" : "custom-dropdown-option"}
+                                                        id={fontOptions.length < 3 ? "only-option" : ""}
+                                                        onClick={() => handleFontSelect(option)}
+                                                    >
+                                                        {option}
+                                                    </div>
+                                                ))
+                                        }
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div className="switch-item">
-                            <span className="switch-item-text">Read-Along</span>
-                            <div className="div-switch">
-                                <label className="switch">
-                                    <input type="checkbox" onClick={toggleReadAloud} defaultChecked={readAloud}/>
-                                    <span className="slider">
-                                        <span className="slider-knob"></span>
-                                    </span>
-                                </label>
+                            <div className="switch-item-text">Read-Along</div>
+                            <div className="switch-item-selection">
+                                <div className="div-switch">
+                                    <label className="switch">
+                                        <input type="checkbox" onClick={toggleReadAloud} defaultChecked={readAloud}/>
+                                        <span className="slider">
+                                            <span className="slider-knob"></span>
+                                        </span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>

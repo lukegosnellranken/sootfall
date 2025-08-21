@@ -104,6 +104,18 @@ $card-vertical-margin-mobile: .5em;
     justify-content: center;
 }
 
+// Flex and right
+@mixin flex-right {
+    display: flex;
+    justify-content: right;
+}
+
+// Flex and left
+@mixin flex-left {
+    display: flex;
+    justify-content: left;
+}
+
 // All same-origin site links
 @mixin origin-link {
     text-decoration: underline dashed;

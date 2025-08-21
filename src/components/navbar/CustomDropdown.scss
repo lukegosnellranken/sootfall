@@ -2,13 +2,12 @@
 
 .custom-dropdown {
     position: relative;
-    display: inline-block;
     min-width: 5.5em;
     font-family: var(--site-font);
     font-size: 150%;
     border-radius: 34px;
     text-align: center;
-    margin-left: 1em;
+    // margin-left: 1em;
     background-color: var(--site-background-color-switch-item);
     cursor: pointer;
     outline: none;
@@ -85,5 +84,11 @@
         line-height: 1.5;
         background-position: right 2px center;
         background-size: 16px 16px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .custom-dropdown {
+        font-size: 100%;
     }
 }
