@@ -323,19 +323,19 @@ input:checked + .slider {
 }
 
 // Responsive styles
-@media (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
     #div-switch-items {
-        grid-template-columns: repeat(2, 1fr);  
+        grid-template-columns: repeat(2, 1fr);
     }
 
     #div-switch-items > :nth-child(odd) {
         justify-content: right;
-        margin-left: -10%;
+        padding-right: 5em;
     }
 
     #div-switch-items > :nth-child(even) {
         justify-content: left;
-        margin-left: 10%;
+        padding-left: 5em;
     }
 }
 
@@ -376,22 +376,29 @@ input:checked + .slider {
     input:checked + .slider .slider-knob {
         transform: translateX(25px);
     }
+
+    #div-switch-items > :nth-child(odd) {
+        padding-right: 2.5em;
+    }
+
+    #div-switch-items > :nth-child(even) {
+        padding-left: 2.5em;
+    }
 }
 
 @media screen and (max-width: 500px) {
-    #div-switch-items > :nth-child(even) {
-        margin-left: 2.5%;
+    #div-switch-items > :nth-child(odd) {
+        padding-right: 2em;
     }
 
+    #div-switch-items > :nth-child(even) {
+        padding-left: 1em;
+    }
 }
 
 @media screen and (max-width: 400px) {
     .switch-item-text {
         font-size: 100%;
-    }
-
-    #div-switch-items > :nth-child(even) {
-        margin-left: 2.5%;
     }
 
     .switch {
@@ -411,5 +418,13 @@ input:checked + .slider {
 
     input:checked + .slider .slider-knob {
         transform: translateX(21px);
+    }
+
+    #div-switch-items > :nth-child(odd) {
+        padding-right: 2em;
+    }
+
+    #div-switch-items > :nth-child(even) {
+        padding-left: .5em;
     }
 }
