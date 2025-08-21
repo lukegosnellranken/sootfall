@@ -4,6 +4,9 @@ import './CustomDropdown.scss';
 import NavItem from "./NavItem";
 import { useNavigate } from "react-router-dom";
 import { useSettings } from "../../Settings";
+import themes from '../../config/themes.json'
+import fonts from '../../config/fonts.json';
+import sizes from '../../config/sizes.json';
  
 function Nav() {
     const navigate = useNavigate();
@@ -13,11 +16,11 @@ function Nav() {
     const { theme, setTheme, font, setFont, size, setSize, readAloud, setReadAloud } = useSettings();
     // Dropdown variables
     const [themeDropdownOpen, setThemeDropdownOpen] = useState(false);
-    const themeOptions = ["Dark", "Light"];
+    const themeOptions = themes.map(t => t.title);
     const [fontDropdownOpen, setFontDropdownOpen] = useState(false);
-    const fontOptions = ["SootType", "Arial", "Georgia", "Bucket"];
+    const fontOptions = fonts.map(f => f.title);
     const [sizeDropdownOpen, setSizeDropdownOpen] = useState(false);
-    const sizeOptions = ["Small", "Medium", "Large"];
+    const sizeOptions = sizes.map(s => s.title);
     // Set vars to CSS custom properties
     const svgColorDormant = getComputedStyle(document.documentElement).getPropertyValue('--site-theme-element-color-dormant');
     const svgColorActive = getComputedStyle(document.documentElement).getPropertyValue('--site-theme-text-color');
@@ -50,131 +53,20 @@ function Nav() {
 
     // Format font as JSON given the selected font from the dropdown
     function formatTheme(value) {
-        switch (value) {
-            case "Dark":
-                return {
-                    "title": "Dark",
-                    "backgroundImage": "linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.95))",
-                    "backgroundImageGradient": "linear-gradient(to bottom, rgba(5, 5, 5, .7), rgba(0, 0, 0, .7))",
-                    "backgroundImageBanner": "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6))",
-                    "backgroundColorInput": "rgba(10, 10, 10, 0.95)",
-                    "backgroundColorInputAlt": "rgba(50, 50, 50, 0.95)",
-                    "backgroundColorSwitchItem": "rgba(130, 130, 130, 1)",
-                    "backgroundColorSwitchItemToggle": "rgba(130, 130, 130, 0.95)",
-                    "backgroundColorSwitchItemToggleAlt": "rgba(50, 50, 50, 1)",
-                    "hoverColor": "rgba(17, 17, 17, 0.5)",
-                    "boxShadow": "0em 0em .8em .15em rgba(255, 255, 255, 0.199)",
-                    "boxShadowTop": "0em 0.3em .8em .05em rgba(255, 255, 255, 0.199)",
-                    "textColor": "rgba(130, 130, 130, 1)",
-                    "textColorAlt": "rgba(200, 200, 200, 1)",
-                    "textColorTitleGradient": "linear-gradient(to bottom, rgba(200, 200, 200, 0.95), rgba(50, 50, 50, 0.5))",
-                    "textShadow": ".05em .05em .05em rgba(73, 73, 73, 1)",
-                    "elementColorDormant": "rgba(50, 50, 50, 0.95)"
-                }
-            case "Light":
-                return {
-                    "title": "Light",
-                    "backgroundImage": "linear-gradient(to bottom, rgba(150, 150, 150, 0.95), rgba(90, 90, 90, 0.95))",
-                    "backgroundImageGradient": "linear-gradient(to bottom, rgba(250, 250, 250, 0.4), rgba(230, 230, 230, 0.4))",
-                    "backgroundImageBanner": "linear-gradient(rgba(200, 200, 200, 0.6), rgba(150, 150, 150, 0.6))",
-                    "backgroundColorInput": "rgba(200, 200, 200, 0.95)",
-                    "backgroundColorInputAlt": "rgba(120, 120, 120, 0.95)",
-                    "backgroundColorSwitchItem": "rgba(200, 200, 200, 0.95)",
-                    "backgroundColorSwitchItemToggle": "rgba(200, 200, 200, 0.95)",
-                    "backgroundColorSwitchItemToggleAlt": "rgba(130, 130, 130, 1)",
-                    "hoverColor": "rgba(125, 125, 125, 0.5)",
-                    "boxShadow": "0em 0em .8em .15em rgba(0, 0, 0, 0.5)",
-                    "boxShadowTop": "0em 0.3em .8em .05em rgba(0, 0, 0, 0.5)",
-                    "textColor": "rgba(50, 50, 50, 1)",
-                    "textColorAlt": "rgba(100, 100, 100, 1)",
-                    "textColorTitleGradient": "linear-gradient(to bottom, rgba(50, 50, 50, 0.95), rgba(120, 120, 120, 0.95))",
-                    "textShadow": ".05em .05em .05em rgba(150, 150, 150, 1)",
-                    "elementColorDormant": "rgba(100, 100, 100, 0.95)"
-                }
-            default :
-                return {
-                    "title": "Dark",
-                    "backgroundImage": "linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.95))",
-                    "backgroundImageGradient": "linear-gradient(to bottom, rgba(5, 5, 5, .7), rgba(0, 0, 0, .7))",
-                    "backgroundImageBanner": "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6))",
-                    "backgroundColorInput": "rgba(10, 10, 10, 0.95)",
-                    "backgroundColorInputAlt": "rgba(50, 50, 50, 0.95)",
-                    "backgroundColorSwitchItem": "rgba(130, 130, 130, 1)",
-                    "backgroundColorSwitchItemToggle": "rgba(130, 130, 130, 0.95)",
-                    "backgroundColorSwitchItemToggleAlt": "rgba(50, 50, 50, 1)",
-                    "hoverColor": "rgba(17, 17, 17, 0.5)",
-                    "boxShadow": "0em 0em .8em .15em rgba(255, 255, 255, 0.199)",
-                    "boxShadowTop": "0em 0.3em .8em .05em rgba(255, 255, 255, 0.199)",
-                    "textColor": "rgba(130, 130, 130, 1)",
-                    "textColorAlt": "rgba(200, 200, 200, 1)",
-                    "textColorTitleGradient": "linear-gradient(to bottom, rgba(200, 200, 200, 0.95), rgba(50, 50, 50, 0.5))",
-                    "textShadow": ".05em .05em .05em rgba(73, 73, 73, 1)",
-                    "elementColorDormant": "rgba(50, 50, 50, 0.95)"
-                }
-        }
+        // Find the theme object by title, otherwise set to object with id of 1
+        return themes.find(t => t.title === value) || themes.find(t => t.id === 1);  
     }
 
     // Format font as JSON given the selected font from the dropdown
     function formatFont(value) {
-        switch (value) {
-            case "SootType":
-                return {
-                    "title": "SootType",
-                    "value": "Bilbo, sans-serif",
-                    "letterSpacing": "0.03em",
-                    "fontSizeAdjust": "cap-height 0.7"
-                }
-            case "Arial":
-                return {
-                    "title": "Arial",
-                    "value": "Arial, sans-serif",
-                    "letterSpacing": "-0.03em",
-                    "fontSizeAdjust": "cap-height 0.55"
-                }
-            case "Georgia":
-                return {
-                    "title": "Georgia",
-                    "value": "Georgia, sans-serif",
-                    "letterSpacing": "-0.03em",
-                    "fontSizeAdjust": "cap-height 0.5"
-                }
-            case "Bucket":
-                return {
-                    "title": "Bucket",
-                    "value": "Trebuchet MS, sans-serif",
-                    "letterSpacing": "-0.03em",
-                    "fontSizeAdjust": "cap-height 0.57"
-                }
-            default:
-                return {
-                    "title": "SootType",
-                    "value": "Bilbo, sans-serif",
-                    "letterSpacing": "0.03em",
-                    "fontSizeAdjust": "cap-height 0.7"
-                }
-        }
+        // Find the font object by title, otherwise set to object with id of 1
+        return fonts.find(f => f.title === value) || fonts.find(f => f.id === 1); 
     }
 
     // Format font as JSON given the selected font from the dropdown
     function formatSize(value) {
-        switch (value) {
-            case "Medium":
-                return {
-                    "title": "Medium"
-                }
-            case "Small":
-                return {
-                    "title": "Small"
-                }
-            case "Large":
-                return {
-                    "title": "Large"
-                }
-            default:
-                return {
-                    "title": "Medium"
-                }
-        }
+        // Find the sizes object by title, otherwise set to object with id of 1
+        return sizes.find(s => s.title === value) || sizes.find(s => s.id === 1); 
     } 
 
     // Close menus when the user navigates away from the current page

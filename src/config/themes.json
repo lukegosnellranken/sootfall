@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Dark",
+    "backgroundImage": "linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.95))",
+    "backgroundImageGradient": "linear-gradient(to bottom, rgba(5, 5, 5, .7), rgba(0, 0, 0, .7))",
+    "backgroundImageBanner": "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6))",
+    "backgroundColorInput": "rgba(10, 10, 10, 0.95)",
+    "backgroundColorInputAlt": "rgba(50, 50, 50, 0.95)",
+    "backgroundColorSwitchItem": "rgba(130, 130, 130, 1)",
+    "backgroundColorSwitchItemToggle": "rgba(130, 130, 130, 0.95)",
+    "backgroundColorSwitchItemToggleAlt": "rgba(50, 50, 50, 1)",
+    "hoverColor": "rgba(17, 17, 17, 0.5)",
+    "boxShadow": "0em 0em .8em .15em rgba(255, 255, 255, 0.199)",
+    "boxShadowTop": "0em 0.3em .8em .05em rgba(255, 255, 255, 0.199)",
+    "textColor": "rgba(130, 130, 130, 1)",
+    "textColorAlt": "rgba(200, 200, 200, 1)",
+    "textColorTitleGradient": "linear-gradient(to bottom, rgba(200, 200, 200, 0.95), rgba(50, 50, 50, 0.5))",
+    "textShadow": ".05em .05em .05em rgba(73, 73, 73, 1)",
+    "elementColorDormant": "rgba(50, 50, 50, 0.95)"
+  },
+  {
+    "id": 2,
+    "title": "Light",
+    "backgroundImage": "linear-gradient(to bottom, rgba(150, 150, 150, 0.95), rgba(90, 90, 90, 0.95))",
+    "backgroundImageGradient": "linear-gradient(to bottom, rgba(250, 250, 250, 0.4), rgba(230, 230, 230, 0.4))",
+    "backgroundImageBanner": "linear-gradient(rgba(200, 200, 200, 0.6), rgba(150, 150, 150, 0.6))",
+    "backgroundColorInput": "rgba(200, 200, 200, 0.95)",
+    "backgroundColorInputAlt": "rgba(120, 120, 120, 0.95)",
+    "backgroundColorSwitchItem": "rgba(200, 200, 200, 0.95)",
+    "backgroundColorSwitchItemToggle": "rgba(200, 200, 200, 0.95)",
+    "backgroundColorSwitchItemToggleAlt": "rgba(130, 130, 130, 1)",
+    "hoverColor": "rgba(125, 125, 125, 0.5)",
+    "boxShadow": "0em 0em .8em .15em rgba(0, 0, 0, 0.5)",
+    "boxShadowTop": "0em 0.3em .8em .05em rgba(0, 0, 0, 0.5)",
+    "textColor": "rgba(50, 50, 50, 1)",
+    "textColorAlt": "rgba(100, 100, 100, 1)",
+    "textColorTitleGradient": "linear-gradient(to bottom, rgba(50, 50, 50, 0.95), rgba(120, 120, 120, 0.95))",
+    "textShadow": ".05em .05em .05em rgba(150, 150, 150, 1)",
+    "elementColorDormant": "rgba(100, 100, 100, 0.95)"
+  }
+]

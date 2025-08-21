@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "title": "SootType",
+        "value": "Bilbo, sans-serif",
+        "letterSpacing": "0.03em",
+        "fontSizeAdjust": "cap-height 0.7"
+    },
+    {
+        "id": 2,
+        "title": "Arial",
+        "value": "Arial, sans-serif",
+        "letterSpacing": "-0.03em",
+        "fontSizeAdjust": "cap-height 0.55"
+    },
+    {
+        "id": 3,
+        "title": "Georgia",
+        "value": "Georgia, sans-serif",
+        "letterSpacing": "-0.03em",
+        "fontSizeAdjust": "cap-height 0.5"
+    },
+    {
+        "id": 4,
+        "title": "Bucket",
+        "value": "Trebuchet MS, sans-serif",
+        "letterSpacing": "-0.03em",
+        "fontSizeAdjust": "cap-height 0.57"
+    }
+]

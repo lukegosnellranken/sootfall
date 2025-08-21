@@ -1,4 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import themes from './config/themes.json';
+import fonts from './config/fonts.json';
+import sizes from './config/sizes.json';
 
 const SettingsContext = createContext();
 
@@ -6,25 +9,11 @@ export const Settings = ({ children }) => {
     // localStorage.clear();
     // Get theme from localStorage, otherwise set to Dark by default
     const [theme, setTheme] = useState(() => {
+        // For testing, nuke localStorage
+        // localStorage.clear();
         const stored = localStorage.getItem('theme');
-        return stored ? JSON.parse(stored) : {
-            "title": "Dark",
-            "backgroundImage": "linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.95))",
-            "backgroundImageGradient": "linear-gradient(to bottom, rgba(5, 5, 5, .7), rgba(0, 0, 0, .7))",
-            "backgroundImageBanner": "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6))",
-            "backgroundColorInput": "rgba(10, 10, 10, 0.95)",
-            "backgroundColorInputAlt": "rgba(50, 50, 50, 0.95)",
-            "backgroundColorSwitchItemToggle": "rgba(130, 130, 130, 0.95)",
-            "backgroundColorSwitchItemToggleAlt": "rgba(50, 50, 50, 1)",
-            "hoverColor": "rgba(17, 17, 17, 0.5)",
-            "boxShadow": "0em 0em .8em .15em rgba(255, 255, 255, 0.199)",
-            "boxShadowTop": "0em 0.3em .8em .05em rgba(255, 255, 255, 0.199)",
-            "textColor": "rgba(130, 130, 130, 1)",
-            "textColorAlt": "rgba(200, 200, 200, 1)",
-            "textColorTitleGradient": "linear-gradient(to bottom, rgba(200, 200, 200, 0.95), rgba(10, 10, 10, 0.1))",
-            "textShadow": ".05em .05em .05em rgba(73, 73, 73, 1)",
-            "elementColorDormant": "rgba(50, 50, 50, 0.95)"
-        };
+        // Return stored JSON if it exists, otherwise return themes object with an id of 1
+        return stored ? JSON.parse(stored) : themes.find(t => t.id === 1);
     });
 
     useEffect(() => {
@@ -33,13 +22,11 @@ export const Settings = ({ children }) => {
 
     // Get font from localStorage, otherwise set to SootType by default
     const [font, setFont] = useState(() => {
+        // For testing, nuke localStorage
+        // localStorage.clear();
         const stored = localStorage.getItem('font');
-        return stored ? JSON.parse(stored) : {
-            "title": "SootType",
-            "value": "Bilbo, sans-serif",
-            "letterSpacing": "0.03em",
-            "fontSizeAdjust": "cap-height 1"
-        };
+        // Return stored JSON if it exists, otherwise return fonts object with an id of 1
+        return stored ? JSON.parse(stored) : fonts.find(f => f.id === 1);
     });
 
     useEffect(() => {
@@ -48,10 +35,11 @@ export const Settings = ({ children }) => {
 
     // Get size from localStorage, otherwise set to Medium by default
     const [size, setSize] = useState(() => {
+        // For testing, nuke localStorage
+        // localStorage.clear();
         const stored = localStorage.getItem('size');
-        return stored ? JSON.parse(stored) : {
-            "title": "Medium"
-        };
+        // Return stored JSON if it exists, otherwise return sizes object with an id of 1
+        return stored ? JSON.parse(stored) : sizes.find(s => s.id === 1);
     });
 
     useEffect(() => {
@@ -68,7 +56,7 @@ export const Settings = ({ children }) => {
         localStorage.setItem('readAloud', JSON.stringify(readAloud));
     }, [readAloud]);
 
-    // Set CSS custom properties
+    // Set CSS custom properties: Theme
     document.documentElement.style.setProperty('--site-theme', theme.title);
     document.documentElement.style.setProperty('--site-theme-background-image', theme.backgroundImage);
     document.documentElement.style.setProperty('--site-theme-background-image-gradient', theme.backgroundImageGradient);
@@ -86,6 +74,8 @@ export const Settings = ({ children }) => {
     document.documentElement.style.setProperty('--site-theme-text-color-title-gradient', theme.textColorTitleGradient);
     document.documentElement.style.setProperty('--site-theme-text-shadow', theme.textShadow);
     document.documentElement.style.setProperty('--site-theme-element-color-dormant', theme.elementColorDormant);
+    
+    // Set CSS custom properties: Font
     document.documentElement.style.setProperty('--site-font', font.value);
     document.documentElement.style.setProperty('--site-letter-spacing', font.letterSpacing);
     document.documentElement.style.setProperty('--site-font-size-adjust', font.fontSizeAdjust);
