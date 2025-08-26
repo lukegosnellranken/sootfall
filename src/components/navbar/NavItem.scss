@@ -13,8 +13,8 @@
 
 .li-nav-item a {
     @include common-text;
+    font-size: var(--site-size-nav-full);
     text-decoration: none;
-    font-size: 200%;
     white-space: nowrap;
 }
 
@@ -22,20 +22,19 @@
     color: $site-text-color; // Otherwise text turns blue
 }
 
-@media screen and (max-width: 800px) {
-    .li-nav-item {
-        padding: 0;
-        text-align: center;
-    }
-    
+@media screen and (max-width: 1400px) {
     .li-nav-item a {
-        font-size: 140%;
+        font-size: var(--site-size-nav-1400);
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     .li-nav-item a {
-        font-family: var(--site-font);
-        font-size: 150%;
+        font-size: var(--site-size-nav-800);
+    }
+
+    .li-nav-item {
+        padding: 0;
+        text-align: center;
     }
 }

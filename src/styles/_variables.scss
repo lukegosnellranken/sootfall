@@ -3,7 +3,7 @@ $site-font: Bilbo, sans-serif;
 $site-letter-spacing: 0.03em;
 $site-font-size-adjust: cap-height 1;
 
-// Set variables to custom properties defined in Settings.js
+// Set variables to custom properties defined in Settings.js: Theme
 $site-text-color: var(--site-theme-text-color); // Used for main text color, gear (on), hamburger (on)
 $site-text-color-alt: var(--site-theme-text-color-alt);
 $site-text-color-title-gradient: var(--site-theme-text-color-title-gradient);
@@ -21,6 +21,57 @@ $site-box-shadow: var(--site-theme-box-shadow);
 $site-box-shadow-top: var(--site-theme-box-shadow-top);
 $site-element-color-dormant: var(--site-theme-element-color-dormant); // Used for gear (off), hamburger (off) plus border, input dormant border, input placeholders (search), input before (magnifying glass svg)
 
+// Set variables to custom properties defined in Settings.js: Font
+
+// Set variables to custom properties defined in Settings.js: Size
+$site-header-full: var(--site-size-header-full);
+$site-header-1400: var(--site-size-header-1400);
+$site-header-800: var(--site-size-header-800);
+$site-nav-full: var(--site-size-nav-full);
+$site-nav-1400: var(--site-size-nav-1400);
+$site-nav-800: var(--site-size-nav-800);
+$site-dropdown-full: var(--site-size-dropdown-full);
+$site-dropdown-1400: var(--site-size-dropdown-1400);
+$site-dropdown-800: var(--site-size-dropdown-800);
+$site-search-desktop: var(--site-size-search-desktop);
+$site-search-mobile: var(--site-size-search-mobile);
+$site-hccTitle-full: var(--site-size-hccTitle-full);
+$site-hccTitle-1400: var(--site-size-hccTitle-1400);
+$site-hccTitle-800: var(--site-size-hccTitle-800);
+$site-hccDate-full: var(--site-size-hccDate-full);
+$site-hccDate-1400: var(--site-size-hccDate-1400);
+$site-hccDate-800: var(--site-size-hccDate-800);
+$site-hccTags-full: var(--site-size-hccTags-full);
+$site-hccTags-1400: var(--site-size-hccTags-1400);
+$site-hccTags-800: var(--site-size-hccTags-800);
+$site-hscContent-full: var(--site-size-hscContent-full);
+$site-hscContent-1400: var(--site-size-hscContent-1400);
+$site-hscContent-800: var(--site-size-hscContent-800);
+$site-acName-full: var(--site-size-acName-full);
+$site-acName-1400: var(--site-size-acName-1400);
+$site-acName-800: var(--site-size-acName-800);
+$site-acDesc-full: var(--site-size-acDesc-full);
+$site-acDesc-1400: var(--site-size-acDesc-1400);
+$site-acDesc-800: var(--site-size-acDesc-800);
+$site-artTitle-full: var(--site-size-artTitle-full);
+$site-artTitle-1400: var(--site-size-artTitle-1400);
+$site-artTitle-800: var(--site-size-artTitle-800);
+$site-artAuthDate-full: var(--site-size-artAuthDate-full);
+$site-artAuthDate-1400: var(--site-size-artAuthDate-1400);
+$site-artAuthDate-800: var(--site-size-artAuthDate-800);
+$site-artTags-full: var(--site-size-artTags-full);
+$site-artTags-1400: var(--site-size-artTags-1400);
+$site-artTags-800: var(--site-size-artTags-800);
+$site-artContent-full: var(--site-size-artContent-full);
+$site-artContent-1400: var(--site-size-artContent-1400);
+$site-artContent-800: var(--site-size-artContent-800);
+$site-ascTitle-full: var(--site-size-ascTitle-full);
+$site-ascTitle-1400: var(--site-size-ascTitle-1400);
+$site-ascTitle-800: var(--site-size-ascTitle-800);
+$site-ascAuth-full: var(--site-size-ascAuth-full);
+$site-ascAuth-1400: var(--site-size-ascAuth-1400);
+$site-ascAuth-800: var(--site-size-ascAuth-800);
+
 $site-active-background-color: #818181; // switch item
 $site-disabled-background-color: #414141; // pagination
 $site-letter-spacing: .03em;
@@ -30,6 +81,7 @@ $site-container-max-width: 1920px;
 
 // Set custom properties to previously defined variables
 html {
+    // Theme
     --site-background-image: #{$site-background-image};
     --site-background-image-gradient: #{$site-background-image-gradient};
     --site-background-image-banner: #{$site-background-image-banner};
@@ -49,6 +101,55 @@ html {
     --site-font: #{$site-font};
     --site-letter-spacing: #{$site-letter-spacing};
     --site-font-size-adjust: #{$site-font-size-adjust};
+    // Font
+    // Size
+    --site-size-header-full: #{$site-header-full};
+    --site-size-header-1400: #{$site-header-1400};
+    --site-size-header-800: #{$site-header-800};
+    --site-size-nav-full: #{$site-nav-full};
+    --site-size-nav-1400: #{$site-nav-1400};
+    --site-size-nav-800: #{$site-nav-800};
+    --site-size-dropdown-full: #{$site-dropdown-full};
+    --site-size-dropdown-1400: #{$site-dropdown-1400};
+    --site-size-dropdown-800: #{$site-dropdown-800};
+    --site-size-search-desktop: #{$site-search-desktop};
+    --site-size-search-mobile: #{$site-search-mobile};
+    --site-size-hccTitle-full: #{$site-hccTitle-full};
+    --site-size-hccTitle-1400: #{$site-hccTitle-1400};
+    --site-size-hccTitle-800: #{$site-hccTitle-800};
+    --site-size-hccDate-full: #{$site-hccDate-full};
+    --site-size-hccDate-1400: #{$site-hccDate-1400};
+    --site-size-hccDate-800: #{$site-hccDate-800};
+    --site-size-hccTags-full: #{$site-hccTags-full};
+    --site-size-hccTags-1400: #{$site-hccTags-1400};
+    --site-size-hccTags-800: #{$site-hccTags-800};
+    --site-size-hscContent-full: #{$site-hscContent-full};
+    --site-size-hscContent-1400: #{$site-hscContent-1400};
+    --site-size-hscContent-800: #{$site-hscContent-800};
+    --site-size-acName-full: #{$site-acName-full};
+    --site-size-acName-1400: #{$site-acName-1400};
+    --site-size-acName-800: #{$site-acName-800};
+    --site-size-acDesc-full: #{$site-acDesc-full};
+    --site-size-acDesc-1400: #{$site-acDesc-1400};
+    --site-size-acDesc-800: #{$site-acDesc-800};
+    --site-size-artTitle-full: #{$site-artTitle-full};
+    --site-size-artTitle-1400: #{$site-artTitle-1400};
+    --site-size-artTitle-800: #{$site-artTitle-800};
+    --site-size-artAuthDate-full: #{$site-artAuthDate-full};
+    --site-size-artAuthDate-1400: #{$site-artAuthDate-1400};
+    --site-size-artAuthDate-800: #{$site-artAuthDate-800};
+    --site-size-artTags-full: #{$site-artTags-full};
+    --site-size-artTags-1400: #{$site-artTags-1400};
+    --site-size-artTags-800: #{$site-artTags-800};
+    --site-size-artContent-full: #{$site-artContent-full};
+    --site-size-artContent-1400: #{$site-artContent-1400};
+    --site-size-artContent-800: #{$site-artContent-800};
+    --site-size-ascTitle-full: #{$site-ascTitle-full};
+    --site-size-ascTitle-1400: #{$site-ascTitle-1400};
+    --site-size-ascTitle-800: #{$site-ascTitle-800};
+    --site-size-ascAuth-full: #{$site-ascAuth-full};
+    --site-size-ascAuth-1400: #{$site-ascAuth-1400};
+    --site-size-ascAuth-800: #{$site-ascAuth-800};
 }
 
 // Site-wide font sizes

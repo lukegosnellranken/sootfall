@@ -41,12 +41,12 @@
 
 #input-search {
     @include common-text;
+    font-size: var(--site-size-search-desktop);
     background-color: var(--site-background-color-input);
     border-radius: .5em;
     border-width: 1px;
     border-style: solid;
     border-color: var(--site-element-color-dormant);
-    font-size: 150%;
     letter-spacing: .05em;
     padding-left: .5em;
     width: 90%;
@@ -113,7 +113,7 @@
     background-size: 1.2em 1.2em;
     background-position: 0.7em center;
     padding-left: 2.5em; // Make space for the icon
-    padding-top: .1em;
+    padding-top: .2em;
 }
 
 #input-search::placeholder,
@@ -229,14 +229,6 @@ input:checked + .slider {
     margin-bottom: .5em;
 }
 
-.switch-item-text {
-    @include flex-right;
-    @include common-text;
-    font-size: $fs-description;
-    text-wrap: nowrap;
-    margin-right: 2.5%;
-}
-
 .switch-item-selection {
     @include flex-left;
     margin-left: 2.5%;
@@ -265,12 +257,12 @@ input:checked + .slider {
 
 #input-search-mobile {
     @include common-text;
+    font-size: var(--site-size-search-mobile);
     background-color: var(--site-background-color-input);
     border-radius: .5em;
     border-width: 2px;
     border-style: solid;
     border-color: var(--site-element-color-dormant);
-    font-size: 120%;
     letter-spacing: .05em;
     padding-left: 2.2em;
     margin-right: .25em;
@@ -322,6 +314,22 @@ input:checked + .slider {
     opacity: 1;
 }
 
+// Text styles
+.switch-item-text {
+    @include flex-right;
+    @include common-text;
+    text-wrap: nowrap;
+    margin-right: 2.5%;
+    font-size: var(--site-size-dropdown-full);
+    @media screen and (max-width: 1400px) {
+        font-size: var(--site-size-dropdown-1400);
+    }
+    @media screen and (max-width: 800px) {
+        font-size: var(--site-size-dropdown-800);
+    }
+}
+
+
 // Responsive styles
 @media screen and (max-width: 1000px) {
     #div-switch-items {
@@ -336,6 +344,11 @@ input:checked + .slider {
     #div-switch-items > :nth-child(even) {
         justify-content: left;
         padding-left: 5em;
+    }
+
+    .switch-item-text {
+        line-height: 1.1;
+        margin-top: 5px;
     }
 }
 
@@ -355,12 +368,6 @@ input:checked + .slider {
 
     #div-switch-items {
         margin-bottom: 0em;
-    }
-
-    .switch-item-text {
-        font-size: 120%;
-        line-height: 1.1;
-        margin-top: 5px;
     }
 
     .switch {
@@ -396,11 +403,7 @@ input:checked + .slider {
     }
 }
 
-@media screen and (max-width: 400px) {
-    .switch-item-text {
-        font-size: 100%;
-    }
-
+@media screen and (max-width: 450px) {
     .switch {
         height: 22px;
     }
@@ -421,10 +424,10 @@ input:checked + .slider {
     }
 
     #div-switch-items > :nth-child(odd) {
-        padding-right: 2em;
+        padding-right: 1.7em;
     }
 
     #div-switch-items > :nth-child(even) {
-        padding-left: .5em;
+        padding-left: .25em;
     }
 }

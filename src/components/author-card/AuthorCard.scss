@@ -55,19 +55,31 @@
     width: 75%;
 }
 
+// Text Styles
 #p-authorcard-name {
     @include common-text;
     margin-left: 2%;
     font-weight: bold;
-    font-size: $fs-title; 
+    font-size: var(--site-size-acName-full);
+    @media screen and (max-width: 1400px) {
+        font-size: var(--site-size-acName-1400);
+    }
+    @media screen and (max-width: 800px) {
+        font-size: var(--site-size-acName-800);
+    }
 }
 
 #p-authorcard-description {
     @include common-text;
     margin-left: 2%;
-    font-weight: bold;
-    font-size: $fs-description;
     letter-spacing: $site-letter-spacing;
+    font-size: var(--site-size-acDesc-full);
+    @media screen and (max-width: 1400px) {
+        font-size: var(--site-size-acDesc-1400);
+    }
+    @media screen and (max-width: 800px) {
+        font-size: var(--site-size-acDesc-800);
+    }
 }
 
 // Responsive styles
@@ -89,14 +101,6 @@
 }
 
 @media screen and (max-width: 700px) {
-    #p-authorcard-name {
-        font-size: 180%;
-    }
-
-    #p-authorcard-description {
-        font-size:  120%;
-    }
-
     #div-authorcard-image {
         width: 33.3%;
     }

@@ -80,6 +80,56 @@ export const Settings = ({ children }) => {
     document.documentElement.style.setProperty('--site-letter-spacing', font.letterSpacing);
     document.documentElement.style.setProperty('--site-font-size-adjust', font.fontSizeAdjust);
 
+    // Set CSS custom properties: Size
+    document.documentElement.style.setProperty('--site-size', size.title);
+    document.documentElement.style.setProperty('--site-size-header-full', size.headerFull);
+    document.documentElement.style.setProperty('--site-size-header-1400', size.header1400);
+    document.documentElement.style.setProperty('--site-size-header-800', size.header800);
+    document.documentElement.style.setProperty('--site-size-nav-full', size.navFull);
+    document.documentElement.style.setProperty('--site-size-nav-1400', size.nav1400);
+    document.documentElement.style.setProperty('--site-size-nav-800', size.nav800);
+    document.documentElement.style.setProperty('--site-size-dropdown-full', size.dropdownFull);
+    document.documentElement.style.setProperty('--site-size-dropdown-1400', size.dropdown1400);
+    document.documentElement.style.setProperty('--site-size-dropdown-800', size.dropdown800);
+    document.documentElement.style.setProperty('--site-size-search-desktop', size.searchDesktop);
+    document.documentElement.style.setProperty('--site-size-search-mobile', size.searchMobile);
+    document.documentElement.style.setProperty('--site-size-hccTitle-full', size.hccTitleFull);
+    document.documentElement.style.setProperty('--site-size-hccTitle-1400', size.hccTitle1400);
+    document.documentElement.style.setProperty('--site-size-hccTitle-800', size.hccTitle800);
+    document.documentElement.style.setProperty('--site-size-hccDate-full', size.hccDateFull);
+    document.documentElement.style.setProperty('--site-size-hccDate-1400', size.hccDate1400);
+    document.documentElement.style.setProperty('--site-size-hccDate-800', size.hccDate800);
+    document.documentElement.style.setProperty('--site-size-hccTags-full', size.hccTagsFull);
+    document.documentElement.style.setProperty('--site-size-hccTags-1400', size.hccTags1400);
+    document.documentElement.style.setProperty('--site-size-hccTags-800', size.hccTags800);
+    document.documentElement.style.setProperty('--site-size-hscContent-full', size.hscContentFull);
+    document.documentElement.style.setProperty('--site-size-hscContent-1400', size.hscContent1400);
+    document.documentElement.style.setProperty('--site-size-hscContent-800', size.hscContent800);
+    document.documentElement.style.setProperty('--site-size-acName-full', size.acNameFull);
+    document.documentElement.style.setProperty('--site-size-acName-1400', size.acName1400);
+    document.documentElement.style.setProperty('--site-size-acName-800', size.acName800);
+    document.documentElement.style.setProperty('--site-size-acDesc-full', size.acDescFull);
+    document.documentElement.style.setProperty('--site-size-acDesc-1400', size.acDesc1400);
+    document.documentElement.style.setProperty('--site-size-acDesc-800', size.acDesc800);
+    document.documentElement.style.setProperty('--site-size-artTitle-full', size.artTitleFull);
+    document.documentElement.style.setProperty('--site-size-artTitle-1400', size.artTitle1400);
+    document.documentElement.style.setProperty('--site-size-artTitle-800', size.artTitle800);
+    document.documentElement.style.setProperty('--site-size-artAuthDate-full', size.artAuthDateFull);
+    document.documentElement.style.setProperty('--site-size-artAuthDate-1400', size.artAuthDate1400);
+    document.documentElement.style.setProperty('--site-size-artAuthDate-800', size.artAuthDate800);
+    document.documentElement.style.setProperty('--site-size-artTags-full', size.artTagsFull);
+    document.documentElement.style.setProperty('--site-size-artTags-1400', size.artTags1400);
+    document.documentElement.style.setProperty('--site-size-artTags-800', size.artTags800);
+    document.documentElement.style.setProperty('--site-size-artContent-full', size.artContentFull);
+    document.documentElement.style.setProperty('--site-size-artContent-1400', size.artContent1400);
+    document.documentElement.style.setProperty('--site-size-artContent-800', size.artContent800);
+    document.documentElement.style.setProperty('--site-size-ascTitle-full', size.ascTitleFull);
+    document.documentElement.style.setProperty('--site-size-ascTitle-1400', size.ascTitle1400);
+    document.documentElement.style.setProperty('--site-size-ascTitle-800', size.ascTitle800);
+    document.documentElement.style.setProperty('--site-size-ascAuth-full', size.ascAuthFull);
+    document.documentElement.style.setProperty('--site-size-ascAuth-1400', size.ascAuth1400);
+    document.documentElement.style.setProperty('--site-size-ascAuth-800', size.ascAuth800);
+
     return (
         <SettingsContext.Provider value= {{ font, setFont, readAloud, setReadAloud, theme, setTheme, size, setSize }}>
             {children}

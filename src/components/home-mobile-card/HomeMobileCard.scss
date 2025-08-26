@@ -47,37 +47,29 @@
     text-align: left;
     padding-top: .5em;
     padding-left: .5em;
-    font-size: 300%;
-    font-weight: lighter;
     text-decoration: underline dashed gray 1px;
 }
 
+// Text styles
+
 #p-homemobilecard-content {
     @include common-text;
-    font-size: $fs-description;
+    font-size: var(--site-size-hscContent-full);
     padding-left: 1em;
-}
-
-// Responsive styles
-
-@media screen and (max-width: 1400px) {
-    #h1-homemobilecard-title {
-        font-size: 250%;
+    @media screen and (max-width: 1400px) {
+        font-size: var(--site-size-hscContent-1400);
+    }
+    @media screen and (max-width: 800px) {
+        font-size: var(--site-size-hscContent-800);
     }
 }
 
-@media screen and (max-width: 1200px) {
-    
-}
+// Responsive styles
 
 @media screen and (max-width: 800px) {
     #div-homemobilecard-container {
         margin-top: $card-vertical-margin-mobile;
         box-shadow: var(--site-box-shadow-top);
-    }
-
-    #h1-homemobilecard-title {
-        font-size: 200%;
     }
 
     #div-homemobilecard-image {

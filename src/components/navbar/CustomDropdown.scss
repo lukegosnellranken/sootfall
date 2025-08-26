@@ -1,20 +1,5 @@
 @import '../../styles/variables';
 
-.custom-dropdown {
-    position: relative;
-    min-width: 5.5em;
-    font-family: var(--site-font);
-    font-size: 150%;
-    border-radius: 34px;
-    text-align: center;
-    // margin-left: 1em;
-    background-color: var(--site-background-color-switch-item);
-    cursor: pointer;
-    outline: none;
-    margin-top: .1em;
-    margin-bottom: 2.5%;
-}
-
 .custom-dropdown-selected {
     border-radius: 34px;
     background-color: var(--site-background-color-switch-item);
@@ -72,6 +57,30 @@
     // background-color: var(--site-background-color-switch-item-toggle-alt);
     color: var(--site-text-color-alt);
 }
+
+// Text styles
+.custom-dropdown {
+    position: relative;
+    min-width: 5.5em;
+    font-family: var(--site-font);
+    border-radius: 34px;
+    text-align: center;
+    background-color: var(--site-background-color-switch-item);
+    cursor: pointer;
+    outline: none;
+    margin-top: .1em;
+    margin-bottom: 2.5%;
+    font-size: var(--site-size-dropdown-full);
+    @media screen and (max-width: 1400px) {
+        font-size: var(--site-size-dropdown-1400);
+    }
+
+    @media screen and (max-width: 800px) {
+        font-size: var(--site-size-dropdown-800);
+    }
+}
+
+// Responsive styles
 
 @media screen and (max-width: 800px) {
     .custom-dropdown {

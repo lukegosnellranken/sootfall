@@ -151,7 +151,7 @@ function HomeCard(props) {
         <div id="div-homecard-card">
             <div id="div-homecard-stitch">
                 <div id="div-homecard-title">
-                    <h1 id="h1-homecard-title">{props.title}</h1>
+                    <h1 id="h1-homecard-title" className="section-title">{props.title}</h1>
                 </div>
                 <div id="div-stitchBottom"></div>
                 <PaginatedItems itemsPerPage={3} />
