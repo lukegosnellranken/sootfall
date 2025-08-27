@@ -1,16 +1,5 @@
 @import '../../styles/variables';
 
-.custom-dropdown-selected {
-    border-radius: 34px;
-    background-color: var(--site-background-color-switch-item);
-    height: 1.4em;
-    // background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
-    background-repeat: no-repeat;
-    background-position: right 5px center;
-    background-size: 20px 20px;
-    margin-right: 5px;
-}
-
 .custom-dropdown-options {
     position: absolute;
     left: 0;
@@ -61,7 +50,7 @@
 // Text styles
 .custom-dropdown {
     position: relative;
-    min-width: 5.5em;
+    min-width: 8.5em;
     font-family: var(--site-font);
     border-radius: 34px;
     text-align: center;
@@ -70,34 +59,38 @@
     outline: none;
     margin-top: .1em;
     margin-bottom: 2.5%;
+    @media screen and (max-width: 1400px) {
+        min-width: 8.5em;
+    }
+    @media screen and (max-width: 800px) {
+        min-width: 5.5em;
+    }
+    @media screen and (max-width: 400px) {
+        min-width: 5.5em;
+    }
+}
+
+.custom-dropdown-selected {
+    border-radius: 34px;
+    background-color: var(--site-background-color-switch-item);
+    height: 1.4em;
+    // background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 5px center;
+    background-size: 20px 20px;
+    margin-right: 5px;
     font-size: var(--site-size-dropdown-full);
     @media screen and (max-width: 1400px) {
         font-size: var(--site-size-dropdown-1400);
     }
-
     @media screen and (max-width: 800px) {
         font-size: var(--site-size-dropdown-800);
-    }
-}
-
-// Responsive styles
-
-@media screen and (max-width: 800px) {
-    .custom-dropdown {
-        min-width: 5em;
-        font-size: 120%;
-    }
-
-    .custom-dropdown-selected {
         height: 1.35em;
         line-height: 1.5;
         background-position: right 2px center;
         background-size: 16px 16px;
     }
-}
-
-@media screen and (max-width: 400px) {
-    .custom-dropdown {
-        font-size: 100%;
+    @media screen and (max-width: 400px) {
+        font-size: var(--site-size-dropdown-400);
     }
 }

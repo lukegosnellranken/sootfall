@@ -11,8 +11,13 @@
     font-size-adjust: none !important;
 }
 
-@media screen and (max-width: 800px) {
-    #p-footer-text {
-        font-size: 70%;
+// Text styles
+#p-footer-text {
+    font-size: var(--site-size-footer-full);
+    @media screen and (max-width: 1400px) {
+        font-size: var(--site-size-footer-1400);
+    }
+    @media screen and (max-width: 800px) {
+        font-size: var(--site-size-footer-800);
     }
 }

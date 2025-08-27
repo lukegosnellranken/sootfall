@@ -85,12 +85,17 @@ export const Settings = ({ children }) => {
     document.documentElement.style.setProperty('--site-size-header-full', size.headerFull);
     document.documentElement.style.setProperty('--site-size-header-1400', size.header1400);
     document.documentElement.style.setProperty('--site-size-header-800', size.header800);
+    document.documentElement.style.setProperty('--site-size-footer-full', size.footerFull);
+    document.documentElement.style.setProperty('--site-size-footer-1400', size.footer1400);
+    document.documentElement.style.setProperty('--site-size-footer-800', size.footer800);
     document.documentElement.style.setProperty('--site-size-nav-full', size.navFull);
     document.documentElement.style.setProperty('--site-size-nav-1400', size.nav1400);
     document.documentElement.style.setProperty('--site-size-nav-800', size.nav800);
+    document.documentElement.style.setProperty('--site-size-nav-400', size.nav400);
     document.documentElement.style.setProperty('--site-size-dropdown-full', size.dropdownFull);
     document.documentElement.style.setProperty('--site-size-dropdown-1400', size.dropdown1400);
     document.documentElement.style.setProperty('--site-size-dropdown-800', size.dropdown800);
+    document.documentElement.style.setProperty('--site-size-dropdown-400', size.dropdown400);
     document.documentElement.style.setProperty('--site-size-search-desktop', size.searchDesktop);
     document.documentElement.style.setProperty('--site-size-search-mobile', size.searchMobile);
     document.documentElement.style.setProperty('--site-size-hccTitle-full', size.hccTitleFull);

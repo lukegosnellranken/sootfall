@@ -327,6 +327,9 @@ input:checked + .slider {
     @media screen and (max-width: 800px) {
         font-size: var(--site-size-dropdown-800);
     }
+    @media screen and (max-width: 400px) {
+        font-size: var(--site-size-dropdown-400);
+    }
 }
 
 
@@ -405,29 +408,29 @@ input:checked + .slider {
 
 @media screen and (max-width: 450px) {
     .switch {
-        height: 22px;
+        // height: 22px;
     }
 
     .slider {
-        min-width: 2.75em;
+        // min-width: 2.75em;
     }
 
     .slider-knob {
-        height: 19px;
-        width: 19px;
+        // height: 19px;
+        // width: 19px;
         margin-top: 0px;
         margin-left: -2px;
     }
 
     input:checked + .slider .slider-knob {
-        transform: translateX(21px);
+        // transform: translateX(21px);
     }
 
     #div-switch-items > :nth-child(odd) {
-        padding-right: 1.7em;
+        padding-right: 1.25em;
     }
 
     #div-switch-items > :nth-child(even) {
-        padding-left: .25em;
+        padding-left: 0em;
     }
 }
