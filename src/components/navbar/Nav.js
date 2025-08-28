@@ -341,7 +341,7 @@ function Nav() {
                             <div className="switch-item-selection">
                                 <div className="div-switch">
                                     <label className="switch">
-                                        <input type="checkbox" onClick={toggleReadAloud} defaultChecked={readAloud}/>
+                                        <input id="switch-input" type="checkbox" onClick={toggleReadAloud} defaultChecked={readAloud}/>
                                         <span className="slider">
                                             <span className="slider-knob"></span>
                                         </span>
