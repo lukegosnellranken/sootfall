@@ -62,12 +62,11 @@
 
 #div-homecard-article-card {
     flex-direction: column;
-    padding-bottom: 2em;
+    padding-bottom: 1em;
 }
 
 #div-homecard-pagination {
     @include flex-center;
-    padding-bottom: 1em;
 }
 
 #div-homecard-items-pagination {
@@ -119,7 +118,7 @@
 
 .page-link:hover {
     background-color: var(--site-background-color-input-alt);
-    border-color: var(--site-background-color-input-alt);
+    border-color: var(--site-text-color);
     color: var(--site-text-color);
 }
 
@@ -143,11 +142,6 @@
 @media screen and (max-width: 800px) {
     .pagination {
         line-height: 1.1;
-    }
-
-    #div-homecard-pagination {
-        margin-top: -1.5em;
-        margin-bottom: -1.5em;
     }
 
     #div-homecard-card {
