@@ -2,9 +2,19 @@
 
 #homecomponent-container {
     @include flex-center;
-    max-width: $site-container-max-width;
     padding-left: 3%;
     padding-right: 3%;
+    max-width: $site-container-max-width;
+    // Styles needed for consistent width on iOS
+    box-sizing: border-box;
+    width: 100vw;
+}
+
+// Styles needed for consistent width on iOS
+#div-homecomponent-card,
+#div-homecomponent-side-card,
+#div-homecomponent-mobile-card {
+    box-sizing: border-box;
 }
 
 #div-homecomponent-card {
@@ -22,8 +32,6 @@
 #div-homecomponent-mobile-card {
     display: none;
 }
-
-
 
 
 @media screen and (max-width: 1200px) {
