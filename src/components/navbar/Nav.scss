@@ -78,13 +78,16 @@
     transition: max-height 0.2s cubic-bezier(0.4,0,0.2,1), opacity 0.2s; // Text fades before menu closes
 }
 
+#div-switch-items {
+    margin-bottom: .25em;
+}
+
 #div-switch-items, #div-ul-nav-list-mobile-items {
     @include unselectable;
     display: grid;
     grid-template-columns: repeat(4, 1fr); // 2 items per row
     max-width: 1500px;
     width: 100%;
-    // margin-bottom: .25em;
 }
 
 #div-ul-nav-list-mobile-items {
@@ -421,10 +424,6 @@ input:checked + .slider {
     .switch-item {
         margin-bottom: .5em;
         margin-top: .5em;
-    }
-
-    #div-switch-items {
-        margin-bottom: 0em;
     }
 
     #div-switch-items > :nth-child(odd) {
