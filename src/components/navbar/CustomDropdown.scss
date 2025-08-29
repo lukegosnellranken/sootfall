@@ -84,6 +84,10 @@
     }
 }
 
+.span-custom-dropdown-selected {
+    height: 90%; // Lowers line height of text inside dropdown -- Shared value with switch-item-text
+}
+
 .custom-dropdown-option {
     cursor: pointer;
     background-color: var(--site-background-color);

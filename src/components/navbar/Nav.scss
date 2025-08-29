@@ -29,7 +29,7 @@
     margin-top: .2%;
     padding-left: 0%;
     margin-left: 0%;
-    margin-bottom: .5em;
+    margin-bottom: .75em;
 }
 
 #form-search {
@@ -173,10 +173,9 @@
 // Switch styles
 
 .div-switch {
+    @include flex-left;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
 }
 
 .switch {
@@ -261,19 +260,6 @@ input:checked + .slider {
   border: 1px solid var(--site-background-color-switch-item-toggle-alt);
 }
 
-.switch-item {
-    @include flex-center;
-    align-items: center;
-    width: 100%;
-    min-width: 120px;
-    margin-bottom: .75em;
-}
-
-.switch-item-selection {
-    @include flex-left;
-    margin-left: 2.5%;
-}
-
 // Mobile styles
 
 #nav-list-mobile {
@@ -355,20 +341,51 @@ input:checked + .slider {
 }
 
 // Text styles
+.switch-item {
+    @include flex-center;
+    align-items: center;
+    width: 100%;
+    min-width: 120px;
+    margin-bottom: .75em;
+}
+
 .switch-item-text {
     @include flex-right;
     @include common-text;
     text-wrap: nowrap;
     margin-right: 2.5%;
+    // padding-top: 4px;
+    height: 90%; // Shared value with custom-dropdown-selected
     font-size: var(--site-size-dropdown-full);
+    width: calc(var(--site-size-ddWidth-full)/2); // Make all the same width so that dropdowns/sliders align.
     @media screen and (max-width: 1400px) {
         font-size: var(--site-size-dropdown-1400);
     }
+    @media screen and (max-width: 1000px) {
+        justify-content: center;
+        width: calc(var(--site-size-ddWidth-1400)/2); // Make all the same width so that dropdowns/sliders align.
+    }
     @media screen and (max-width: 800px) {
         font-size: var(--site-size-dropdown-800);
+        width: calc(var(--site-size-ddWidth-800)/2); // Make all the same width so that dropdowns/sliders align.
     }
     @media screen and (max-width: 400px) {
         font-size: var(--site-size-dropdown-400);
+        width: calc(var(--site-size-ddWidth-400)/2); // Make all the same width so that dropdowns/sliders align.
+    }
+}
+
+.switch-item-selection {
+    @include flex-left;
+    margin-left: 2.5%;
+    @media screen and (max-width: 1000px) {
+        width: var(--site-size-ddWidth-1400); // Make all the same width so that dropdowns/sliders align.
+    }
+    @media screen and (max-width: 800px) {
+        width: var(--site-size-ddWidth-800); // Make all the same width so that dropdowns/sliders align.
+    }
+    @media screen and (max-width: 400px) {
+        width: var(--site-size-ddWidth-400); // Make all the same width so that dropdowns/sliders align.
     }
 }
 
@@ -381,12 +398,12 @@ input:checked + .slider {
 
     #div-switch-items > :nth-child(odd) {
         justify-content: right;
-        padding-right: 5em;
+        padding-right: 10%;
     }
 
     #div-switch-items > :nth-child(even) {
         justify-content: left;
-        padding-left: 5em;
+        padding-left: 10%;
     }
 }
 
@@ -409,30 +426,20 @@ input:checked + .slider {
     }
 
     #div-switch-items > :nth-child(odd) {
-        padding-right: 2.5em;
+        padding-right: 5%;
     }
 
     #div-switch-items > :nth-child(even) {
-        padding-left: 2.5em;
+        padding-left: 5%;
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 400px) {
     #div-switch-items > :nth-child(odd) {
-        padding-right: 2em;
+        padding-right: 2.5%;
     }
 
     #div-switch-items > :nth-child(even) {
-        padding-left: 1em;
-    }
-}
-
-@media screen and (max-width: 450px) {
-    #div-switch-items > :nth-child(odd) {
-        padding-right: 1.25em;
-    }
-
-    #div-switch-items > :nth-child(even) {
-        padding-left: 0em;
+        padding-left: 2.5%;
     }
 }

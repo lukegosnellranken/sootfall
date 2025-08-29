@@ -238,7 +238,7 @@ function Nav() {
                                             backgroundImage: `url("data:image/svg+xml;utf8,<svg fill='${svgColorDormant}' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>")`
                                         }}
                                     >
-                                        {theme.title}
+                                        <span className="span-custom-dropdown-selected">{theme.title}</span>
                                     </div>
                                     <div className="custom-dropdown-options">
                                         {/* Only render options when the dropdown is open for the sake of animation */}
@@ -276,7 +276,7 @@ function Nav() {
                                             backgroundImage: `url("data:image/svg+xml;utf8,<svg fill='${svgColorDormant}' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>")`
                                         }}
                                     >
-                                        {size.title}
+                                        <span className="span-custom-dropdown-selected">{size.title}</span>
                                     </div>
                                     <div className="custom-dropdown-options">
                                         {/* Only render options when the dropdown is open for the sake of animation */}
@@ -314,7 +314,7 @@ function Nav() {
                                             backgroundImage: `url("data:image/svg+xml;utf8,<svg fill='${svgColorDormant}' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>")`
                                         }}
                                     >
-                                        {font.title}
+                                        <span className="span-custom-dropdown-selected">{font.title}</span>
                                     </div>
                                     <div className="custom-dropdown-options">
                                         {/* Only render options when the dropdown is open for the sake of animation */}
@@ -337,7 +337,7 @@ function Nav() {
                             </div>
                         </div>
                         <div className="switch-item">
-                            <div className="switch-item-text">Read-Along</div>
+                            <div className="switch-item-text">Audio</div>
                             <div className="switch-item-selection">
                                 <div className="div-switch">
                                     <label className="switch">
