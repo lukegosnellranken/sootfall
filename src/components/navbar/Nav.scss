@@ -30,6 +30,7 @@
     padding-left: 0%;
     margin-left: 0%;
     margin-bottom: .75em;
+    margin-top: .75em;
 }
 
 #form-search {
@@ -83,7 +84,7 @@
     grid-template-columns: repeat(4, 1fr); // 2 items per row
     max-width: 1500px;
     width: 100%;
-    margin-bottom: .25em;
+    // margin-bottom: .25em;
 }
 
 #div-ul-nav-list-mobile-items {
@@ -101,7 +102,6 @@
 .settings-stitch {
     @include stitch;
     width: 100%;
-    margin-bottom: .75em;
     border-bottom: 0;
 }
 
@@ -347,6 +347,7 @@ input:checked + .slider {
     width: 100%;
     min-width: 120px;
     margin-bottom: .75em;
+    margin-top: .75em;
 }
 
 .switch-item-text {
@@ -417,8 +418,9 @@ input:checked + .slider {
         max-height: fit-content;
     }
 
-    .settings-stitch {
-        margin-bottom: .4em;
+    .switch-item {
+        margin-bottom: .5em;
+        margin-top: .5em;
     }
 
     #div-switch-items {
