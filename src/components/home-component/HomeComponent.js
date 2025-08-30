@@ -25,14 +25,14 @@ function HomeComponent() {
                 <HomeMobileCard
                     title1 = "Burning the Night"
                     image1 = {lightTheme ? wutheringLight : wutheringDark}
-                    description1 = "Sootfall is a collective of prose and poetry writers seeking to understand and put to order the unending enigma of being through the God-given craft of thoughtful expression."
+                    description1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel convallis ipsum. Mauris viverra, nisl vel mattis fringilla, ex quam faucibus felis, vitae bibendum risus quam sit amet purus. Quisque fringilla vehicula justo sed egestas. Nam pharetra neque quis erat laoreet, eu fermentum lacus ullamcorper."
                 />
             </div>
             <div id="div-homecomponent-side-card">
                 <HomeSideCard
                     title1 = "Burning the Night"
                     image1 = {lightTheme ? wutheringLight : wutheringDark}
-                    description1 = "Sootfall is a collective of prose and poetry writers seeking to understand and put to order the unending enigma of being through the God-given craft of thoughtful expression."
+                    description1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel convallis ipsum. Mauris viverra, nisl vel mattis fringilla, ex quam faucibus felis, vitae bibendum risus quam sit amet purus. Quisque fringilla vehicula justo sed egestas. Nam pharetra neque quis erat laoreet, eu fermentum lacus ullamcorper."
                     title2 = "Buy Us a Coffee"
                     image2 = {beans}
                     description2 = "Sootfall is ran completely independently, so in order for us to continue covering site costs, please consider buying us a coffee. All donations are greatly appreciated."
