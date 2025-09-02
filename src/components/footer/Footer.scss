@@ -8,11 +8,7 @@
     text-align: center;
     color: rgb(65, 65, 65);
     letter-spacing: 0.03em !important;
-    font-size-adjust: none !important;
-}
-
-// Text styles
-#p-footer-text {
+    font-family: var(--site-font);
     font-size: var(--site-size-footer-full);
     @media screen and (max-width: 1400px) {
         font-size: var(--site-size-footer-1400);
