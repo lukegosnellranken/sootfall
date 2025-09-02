@@ -6,8 +6,18 @@ import { useSettings } from "../../Settings";
 import wutheringManDark from '../../images/wuthering-man-dark.png';
 import wutheringManLight from '../../images/wuthering-man-light.png';
 
-const homeLink = process.env.REACT_APP_HOME;
-const backendLink = process.env.REACT_APP_API_URL;
+// Get data from ~/.env, set API_URL and token
+const env = process.env.REACT_APP_ENV;
+let homeLink;
+let backendLink;
+if (env === 'local') {
+    homeLink = process.env.REACT_APP_HOME_LOCAL;
+    backendLink = process.env.REACT_APP_API_URL_LOCAL;
+}
+else if (env === 'cloud') {
+    homeLink = process.env.REACT_APP_HOME_CLOUD;
+    backendLink = process.env.REACT_APP_API_URL_CLOUD;
+}
 
 function Background() {
     const { theme } = useSettings(); // Instantiate theme object from Settings.js

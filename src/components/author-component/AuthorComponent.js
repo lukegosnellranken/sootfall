@@ -8,9 +8,20 @@ function AuthorComponent() {
     let pathname = window.location.pathname.split("/").pop();
     pathname = decodeURIComponent(pathname);
     let [authorArray, setAuthorArray] = useState([]);
-    const API_URL = process.env.REACT_APP_API_URL; // Get domain from .env
-    // Set the token for accessing the Strapi API
-    const token = 'ff75d12ddbfa3b18817eacba0f70b6fc3ef76c0d2e13da25468bfa16a6deaffd1f071ccc5ef1cff42ce2d2618ec6f457da47f6eceede245b00c59711b268482613864751271af51baf71109535b1bb87eff397e4193ffef7d08300aaa4e685792c019da43d928a18fff82ed34920c0aabfbdfc0fa2b22bd7379fb264eaebf0f4';
+    
+    // Get data from ~/.env, set API_URL and token
+    const env = process.env.REACT_APP_ENV;
+    let API_URL;
+    let token;
+    if (env === 'local') {
+        API_URL = process.env.REACT_APP_API_URL_LOCAL;
+        token = process.env.REACT_APP_API_TOKEN_LOCAL;
+    }
+    else if (env === 'cloud') {
+        API_URL = process.env.REACT_APP_API_URL_CLOUD;
+        token = process.env.REACT_APP_API_TOKEN_CLOUD;
+    }
+
     // Used for capitalizing author name for both display and data comparison
     function capitalizeWords(str) {
         return str
@@ -38,7 +49,15 @@ function AuthorComponent() {
                 for (let i = 0; i < data.length; i++) { 
                     if (data[i].name === capitalizeWords(pathname)) {
                         let name = data[i].name
-                        let image = API_URL + data[i].image.formats.small.url;
+                        let image;
+                        if (env === 'local') {
+                            // Does not contain the API URL, need to concatenate
+                            image = API_URL + data[i].image.formats.small.url;
+                        }
+                        else if (env === 'cloud') {
+                            // Already contains the API URL, no concatenation necessary
+                            image = data[i].image.formats.small.url;
+                        }
                         let description = data[i].description;
                         iArray.push([name, image, description]);
                     }
@@ -50,7 +69,7 @@ function AuthorComponent() {
         }
         // Immediately run fetchData at mount
         fetchData();
-    }, [pathname, API_URL]);
+    }, [pathname, API_URL, token, env]);
     
     // Check for data in authorArray before attempting to render components
     return(

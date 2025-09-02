@@ -10,9 +10,19 @@ function ArticleSideCard(props) {
     let currentArticle = ['filler'];
     let { id } = useParams();
     id = id.replace(/[^a-zA-Z0-9-_]/g, "");
-    const API_URL = process.env.REACT_APP_API_URL; // Get domain from .env
-    const token = 'ff75d12ddbfa3b18817eacba0f70b6fc3ef76c0d2e13da25468bfa16a6deaffd1f071ccc5ef1cff42ce2d2618ec6f457da47f6eceede245b00c59711b268482613864751271af51baf71109535b1bb87eff397e4193ffef7d08300aaa4e685792c019da43d928a18fff82ed34920c0aabfbdfc0fa2b22bd7379fb264eaebf0f4';
-
+    
+    // Get data from ~/.env, set API_URL and token
+    const env = process.env.REACT_APP_ENV;
+    let API_URL;
+    let token;
+    if (env === 'local') {
+        API_URL = process.env.REACT_APP_API_URL_LOCAL;
+        token = process.env.REACT_APP_API_TOKEN_LOCAL;
+    }
+    else if (env === 'cloud') {
+        API_URL = process.env.REACT_APP_API_URL_CLOUD;
+        token = process.env.REACT_APP_API_TOKEN_CLOUD;
+    }
 
     useEffect(() => {
         const fetchData = async () => {
@@ -31,7 +41,15 @@ function ArticleSideCard(props) {
                     let author = data.data[i].author.name;
                     let dateString = data.data[i].date.replaceAll("-","/");
                     dateString = dateString.slice(5) + "/" + dateString.slice(0,4);
-                    let image = API_URL + data.data[i].image.formats.medium.url;
+                    let image;
+                    if (env === 'local') {
+                        // Does not contain the API URL, need to concatenate
+                        image = API_URL + data.data[i].image.formats.medium.url;
+                    }
+                    else if (env === 'cloud') {
+                        // Already contains the API URL, no concatenation necessary
+                        image = data.data[i].image.formats.medium.url;
+                    }
                     iArray.push([title, author, dateString, image]);
                 }
                 setInitDataArray(iArray.slice(0,8).reverse());
@@ -39,7 +57,7 @@ function ArticleSideCard(props) {
             .catch(error => {console.log(error)});
         }
         fetchData();
-    }, [API_URL]);
+    }, [API_URL, token, env]);
 
     function items() {
         // Remove current article from array
