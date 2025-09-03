@@ -1,21 +1,31 @@
 @import '../../styles/variables';
 
 #div-articlecomponent-full-article-container {
-    @include container-padding;
+    @include container-margin;
     display: flex;
     flex-direction: row;
     justify-content:space-between;
     max-width: $site-container-max-width;
     // Styles needed for consistent width on iOS
     box-sizing: border-box;
+    // width: 100vw;
+}
+
+// Styles needed for consistent width on iOS
+#div-articlecomponent-full-article,
+#div-articlecomponent-full-article-side-card
+{
+    box-sizing: border-box;
 }
 
 #div-articlecomponent-full-article {
+    display: block;
     width: 70%;
     margin-right: .75%;
 }
 
 #div-articlecomponent-full-article-side-card {
+    display: block;
     width: 30%;
     margin-left: .75%;
 }

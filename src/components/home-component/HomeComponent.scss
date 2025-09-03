@@ -2,8 +2,7 @@
 
 #homecomponent-container {
     @include flex-center;
-    padding-left: 3%;
-    padding-right: 3%;
+    @include container-margin;
     max-width: $site-container-max-width;
     // Styles needed for consistent width on iOS
     box-sizing: border-box;

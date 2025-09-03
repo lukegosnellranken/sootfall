@@ -15,6 +15,12 @@ import Author from './pages/Author';
 import Authors from './pages/Authors';
 
 function App() {
+  // Defunct function to set height of viewport dynamically (iOS bug calls for this)
+  // function setFullHeight() {
+  //   document.documentElement.style.setProperty('--vh', `${window.innerHeight + 20}px`);
+  // }
+  // window.addEventListener('resize', setFullHeight);
+  // setFullHeight();
   return (
     <Settings>
       <div id='appDiv'>

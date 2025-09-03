@@ -13,6 +13,7 @@ body, html {
     font-family: var(--site-font);
     letter-spacing: var(--site-letter-spacing);
     font-size-adjust: var(--site-font-size-adjust);
+    overflow-x: hidden; // Should "fix" width overflow of home-card and author-card
 }
 
 #appDiv {

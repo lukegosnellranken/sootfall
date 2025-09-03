@@ -228,9 +228,9 @@ $card-vertical-margin-mobile: .5em;
     margin: 0;
 }
 
-@mixin container-padding {
-    padding-left: 3%;
-    padding-right: 3%;
+@mixin container-margin {
+    margin-left: 3%;
+    margin-right: 3%;
 }
 
 // Common text styles
