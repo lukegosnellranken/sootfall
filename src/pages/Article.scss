@@ -1,0 +1,6 @@
+@import '../styles/variables';
+
+#div-article-component {
+    @include flex-center;
+    width: 100%;
+}

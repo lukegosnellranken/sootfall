@@ -8,6 +8,8 @@
     padding-bottom: .1em;
     border-radius: 15px;
     border-width: .5em;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 #div-articlecard-stitch {
@@ -159,6 +161,7 @@
     padding-top: 2em;
     padding-right: 5%;
     padding-left: 5%;
+    box-sizing: border-box;
 }
 
 #p-articlecard-main-content p:has(img) {
@@ -246,6 +249,7 @@
 #p-articlecard-main-content {
     @include common-text;
     letter-spacing: 0.03em;
+    box-sizing: border-box;
     font-size: var(--site-size-artContent-full);
     @media screen and (max-width: 1400px) {
         font-size: var(--site-size-artContent-1400);
@@ -280,13 +284,8 @@
     }
 
     #div-articlecard-main-content {
-        padding-right: 2.5%;
-        padding-left: 2.5%;
-    }
-
-    #p-articlecard-main-content {
-        // font-size: 150%;
-        width: 90%;
+        padding-right: 5%;
+        padding-left: 5%;
     }
 
     #select-voice {
@@ -299,16 +298,4 @@
         margin-top: $card-vertical-margin-mobile;
         box-shadow: var(--site-box-shadow-top);
     }
-}
-
-
-@media screen and (max-width: 600px) {
-    #div-articlecard-main-content {
-        padding-right: .5%;
-        padding-left: .5%;
-    }
-
-    // #p-articlecard-main-content {
-    //     font-size: 125%;
-    // }
 }
