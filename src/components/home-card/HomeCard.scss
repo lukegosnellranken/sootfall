@@ -43,21 +43,15 @@
 .section-title {
     @include common-text;
     font-size: var(--site-size-header-full);
-
 }
 
 #h1-homecard-title {
-    
+    @include gradient-title;
     letter-spacing: $site-letter-spacing;
     text-align: left;
     padding-top: .5em;
     padding-left: .5em;
     max-width: 10em;
-    background-image: var(--site-text-color-title-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: none;
 }
 
 #div-homecard-article-card {

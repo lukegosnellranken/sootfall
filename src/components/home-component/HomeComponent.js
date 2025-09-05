@@ -23,19 +23,19 @@ function HomeComponent() {
             </div>
             <div id="div-homecomponent-mobile-card">
                 <HomeMobileCard
-                    title1 = "Burning the Night"
+                    title1 = "Settle in the dust..."
                     image1 = {lightTheme ? wutheringLight : wutheringDark}
-                    description1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel convallis ipsum. Mauris viverra, nisl vel mattis fringilla, ex quam faucibus felis, vitae bibendum risus quam sit amet purus. Quisque fringilla vehicula justo sed egestas. Nam pharetra neque quis erat laoreet, eu fermentum lacus ullamcorper."
+                    description1 = "for a moment's rest. What surrounds and drifts from above is the fervor of life. Fill your lungs and may your breath stain the world as a blaze in shadow."
                 />
             </div>
             <div id="div-homecomponent-side-card">
                 <HomeSideCard
-                    title1 = "Burning the Night"
+                    title1 = "Settle in the dust..."
                     image1 = {lightTheme ? wutheringLight : wutheringDark}
-                    description1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel convallis ipsum. Mauris viverra, nisl vel mattis fringilla, ex quam faucibus felis, vitae bibendum risus quam sit amet purus. Quisque fringilla vehicula justo sed egestas. Nam pharetra neque quis erat laoreet, eu fermentum lacus ullamcorper."
+                    description1 = "for a moment's rest. What surrounds and drifts from above is the fervor of life. Fill your lungs and may your breath stain the world as a blaze in shadow."
                     title2 = "Buy Us a Coffee"
                     image2 = {beans}
-                    description2 = "Sootfall is ran completely independently, so in order for us to continue covering site costs, please consider buying us a coffee. All donations are greatly appreciated."
+                    description2 = "Sootfall is ran completely independently. To help continue covering site costs, please consider donating. All gifts are greatly appreciated."
                 />
             </div>
         </div>

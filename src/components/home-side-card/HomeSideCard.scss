@@ -85,12 +85,9 @@
 
 #p-section-1-title,
 #p-section-2-title {
+    @include gradient-title;
     text-align: center;
     padding-top: .5em;
     font-weight: lighter;
     letter-spacing: $site-letter-spacing;
-    text-decoration: underline dashed gray 1px;
 }
-
-// Responsive styles
-

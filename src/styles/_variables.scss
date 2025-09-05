@@ -228,6 +228,7 @@ $card-vertical-margin-mobile: .5em;
     margin: 0;
 }
 
+// Container margin
 @mixin container-margin {
     margin-left: 3%;
     margin-right: 3%;
@@ -238,6 +239,14 @@ $card-vertical-margin-mobile: .5em;
     color: $site-text-color;
     text-shadow: $site-text-shadow;
     font-family: var(--site-font);
+}
+
+@mixin gradient-title {
+    background-image: var(--site-text-color-title-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
 }
 
 // Common image styles

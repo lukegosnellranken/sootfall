@@ -44,10 +44,10 @@
 
 #h1-homemobilecard-title {
     @include common-text;
+    @include gradient-title;
     text-align: left;
     padding-top: .5em;
-    padding-left: .5em;
-    text-decoration: underline dashed gray 1px;
+    padding-left: 1rem;
 }
 
 // Text styles
@@ -55,7 +55,7 @@
 #p-homemobilecard-content {
     @include common-text;
     font-size: var(--site-size-hscContent-full);
-    padding-left: 1em;
+    padding-left: 1rem;
     @media screen and (max-width: 1400px) {
         font-size: var(--site-size-hscContent-1400);
     }
