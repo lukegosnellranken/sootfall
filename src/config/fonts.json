@@ -8,23 +8,37 @@
     },
     {
         "id": 2,
-        "title": "Arial",
-        "value": "Arial, sans-serif",
-        "letterSpacing": "-0.03em",
-        "fontSizeAdjust": "cap-height 0.55"
+        "title": "Print",
+        "value": "Georgia, sans-serif",
+        "letterSpacing": "0em",
+        "fontSizeAdjust": "cap-height 0.47"
     },
     {
         "id": 3,
-        "title": "Georgia",
-        "value": "Georgia, sans-serif",
-        "letterSpacing": "-0.03em",
-        "fontSizeAdjust": "cap-height 0.5"
+        "title": "Slate",
+        "value": "Open Sans, sans-serif",
+        "letterSpacing": "0em",
+        "fontSizeAdjust": "cap-height 0.44"
     },
     {
         "id": 4,
-        "title": "Bucket",
-        "value": "Trebuchet MS, sans-serif",
-        "letterSpacing": "-0.03em",
-        "fontSizeAdjust": "cap-height 0.57"
+        "title": "Pavilion",
+        "value": "Merriweather, sans-serif",
+        "letterSpacing": "0em",
+        "fontSizeAdjust": "cap-height 0.46"
+    },
+    {
+        "id": 5,
+        "title": "Reel",
+        "value": "Arial, sans-serif",
+        "letterSpacing": "0em",
+        "fontSizeAdjust": "cap-height 0.46"
+    },
+    {
+        "id": 6,
+        "title": "Robot",
+        "value": "Roboto, sans-serif",
+        "letterSpacing": "0em",
+        "fontSizeAdjust": "cap-height 0.45"
     }
 ]
