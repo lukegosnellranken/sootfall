@@ -8,6 +8,7 @@
     margin-top: $card-vertical-margin;
     padding-top: .1em;
     padding-bottom: .1em;
+    width: 100%;
 }
 
 #div-homecard-stitch {
@@ -57,6 +58,7 @@
 #div-homecard-article-card {
     flex-direction: column;
     padding-bottom: 1em;
+    width: 100%;
 }
 
 #div-homecard-pagination {
@@ -65,6 +67,7 @@
 
 #div-homecard-items-pagination {
     display: block;
+    width: 100%;
 }
 
 .pagination {

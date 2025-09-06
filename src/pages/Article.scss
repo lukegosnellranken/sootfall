@@ -2,5 +2,7 @@
 
 #div-article-component {
     @include flex-center;
+    @include container-margin;
     width: 100%;
+    max-width: $site-container-max-width;
 }

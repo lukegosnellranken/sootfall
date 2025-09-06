@@ -3,6 +3,7 @@
 #homecomponent-container {
     @include flex-center;
     @include container-margin;
+    width: 100%;
     max-width: $site-container-max-width;
     // Styles needed for consistent width on iOS
     box-sizing: border-box;
@@ -17,13 +18,13 @@
 
 #div-homecomponent-card {
     display: block;
-    width: 70%;
+    width: 75%;
     margin-right: .75%;
 }
 
 #div-homecomponent-side-card {
     display: block;
-    width: 30%;
+    width: 25%;
     margin-left: .75%;
 }
 
