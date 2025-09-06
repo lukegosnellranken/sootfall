@@ -25,14 +25,14 @@ function HomeComponent() {
                 <HomeMobileCard
                     title1 = "Settle in the dust..."
                     image1 = {lightTheme ? wutheringLight : wutheringDark}
-                    description1 = "for a moment's rest. What surrounds and drifts from above is the fervor of life. Fill your lungs and may your breath stain the world as a blaze in shadow."
+                    description1 = "for a moment's rest. Watch how it drifts about endlessly, stirred up in the day and descending at night. Fill your lungs and illuminate this place with the soft blaze of your breath."
                 />
             </div>
             <div id="div-homecomponent-side-card">
                 <HomeSideCard
                     title1 = "Settle in the dust..."
                     image1 = {lightTheme ? wutheringLight : wutheringDark}
-                    description1 = "for a moment's rest. What surrounds and drifts from above is the fervor of life. Fill your lungs and may your breath stain the world as a blaze in shadow."
+                    description1 = "for a moment's rest. Watch how it drifts about endlessly, stirred up in the day and descending at night. Fill your lungs and illuminate this place with the soft blaze of your breath."
                     title2 = "Buy Us a Coffee"
                     image2 = {beans}
                     description2 = "Sootfall is ran completely independently. To help continue covering site costs, please consider donating. All gifts are greatly appreciated."
