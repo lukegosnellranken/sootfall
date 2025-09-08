@@ -12,6 +12,7 @@
 
 #div-nav-list {
     width: 100%;
+    height: 4.5rem;
     max-width: 1950px;
     padding-left: 1em;
     padding-right: 1em;
@@ -20,17 +21,15 @@
 }
 
 #ul-nav-list {
+    @include pm-reset;
     width: 100%;
     display: flex;
     list-style-type: none;
     text-decoration: none;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: .2%;
     padding-left: 0%;
     margin-left: 0%;
-    margin-bottom: .75em;
-    margin-top: .75em;
 }
 
 #form-search {
@@ -42,7 +41,6 @@
 
 #input-search {
     @include common-text;
-    font-size: var(--site-size-search-desktop);
     background-color: var(--site-background-color-input);
     border-radius: .5em;
     border-width: 1px;
@@ -51,6 +49,7 @@
     letter-spacing: .05em;
     padding-left: .5em;
     width: 90%;
+    height: 50%;
 }
 
 #input-search:focus {
@@ -117,6 +116,10 @@
     background-position: 0.7em center;
     padding-left: 2.5em; // Make space for the icon
     padding-top: .2em;
+    font-size: $site-search-desktop;
+    @media screen and (max-width: 800px) {
+        font-size: $site-search-mobile;
+    }
 }
 
 #input-search::placeholder,
@@ -134,7 +137,7 @@
 
 #div-settings,
 #div-settings-mobile {
-    display: flex;
+    @include flex-center;
     align-items: center;
     margin-right: .5em;
 }
@@ -143,6 +146,7 @@
 #btn-settings-mobile {
     background-color: transparent;
     border: none;
+    height: 40px;
 }
 
 #span-gear,
@@ -273,20 +277,22 @@ input:checked + .slider {
 }
 
 #div-mobile-hamburger-search {
-    display: flex;
+    @include flex-center;
+    align-items: center;
+    margin-top: .25rem;
+    margin-bottom: .25rem;
 }
 
 #form-search-mobile {
     width: 100%;
-    display: flex;
-    justify-content: left;
-    align-items: center;
+    height: 100%;
     margin-left: 1em;
+    @include flex-center;
+    align-items: center;
 }
 
 #input-search-mobile {
     @include common-text;
-    font-size: var(--site-size-search-mobile);
     background-color: var(--site-background-color-input);
     border-radius: .5em;
     border-width: 2px;
@@ -312,8 +318,9 @@ input:checked + .slider {
     border-style: solid;
     border-color: var(--site-element-color-dormant);
     margin-left: 1em;
-    margin-top: .5em;
-    margin-bottom: .5em;
+    // margin-top: .5em;
+    // margin-bottom: .5em;
+    height: 75%;
 }
 
 #btn-hamburger.open {

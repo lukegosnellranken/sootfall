@@ -1,8 +1,7 @@
 @import '../../styles/variables';
 
 #tagcomponent-container {
-    max-width: $site-container-max-width;
-    width: 100%;
+    @include container-width;
 }
 
 #div-tagcomponent-card {

@@ -98,6 +98,10 @@ $site-ascAuth-full: var(--site-size-ascAuth-full);
 $site-ascAuth-1400: var(--site-size-ascAuth-1400);
 $site-ascAuth-800: var(--site-size-ascAuth-800);
 
+// Search bar variables
+$site-search-desktop: 150%;
+$site-search-mobile: 100%;
+
 $site-active-background-color: #818181; // switch item
 $site-disabled-background-color: #414141; // pagination
 $site-letter-spacing: .03em;
@@ -226,6 +230,12 @@ $card-vertical-margin-mobile: .5em;
 @mixin pm-reset {
     padding: 0;
     margin: 0;
+}
+
+// Container width
+@mixin container-width {
+    width: 100%;
+    max-width: $site-container-max-width;
 }
 
 // Container margin

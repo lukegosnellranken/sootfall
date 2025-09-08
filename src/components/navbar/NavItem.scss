@@ -2,8 +2,9 @@
 
 .li-nav-item {
     @include unselectable;
+    @include flex-center;
+    align-items: center;
     transition: $site-transition;
-    text-align: center;
     padding-top: .5em;
 }
 
