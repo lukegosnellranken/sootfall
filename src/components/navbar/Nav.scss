@@ -318,11 +318,11 @@
                     grid-template-columns: repeat(2, 1fr);
 
                     > :nth-child(odd) {
-                        justify-content: right;
+                        justify-content: right !important;
                         padding-right: 10%;
                     }
                     > :nth-child(even) {
-                        justify-content: left;
+                        justify-content: left !important;
                         padding-left: 10%;
                     }
                 }
