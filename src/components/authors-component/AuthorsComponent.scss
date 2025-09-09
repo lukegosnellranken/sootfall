@@ -3,8 +3,8 @@
 #authorscomponent-container {
     @include container-width;
     @include container-margin;
-}
 
-#div-authorscomponent-card {
-    width: 100%;
+    #div-authorscomponent-card {
+        width: 100%;
+    }
 }

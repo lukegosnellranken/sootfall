@@ -1,276 +1,210 @@
 @import '../../styles/variables';
 
-#div-homecardcontent-container {
-    @include flex-center;
-    @include stitch-bottom;
-    width: 100%;
-    text-align: center;
-    padding-bottom: 1em;
-    padding-top: 1em;
-    transition: $site-transition;
-}
+.article-link {
+    * {
+        text-decoration: none;
+        cursor: pointer;
+    }
 
-.article-link * {
-    text-decoration: none;
-    cursor: pointer;
-}
+    #div-homecardcontent-container {
+        @include flex-center;
+        @include stitch-bottom;
+        width: 100%;
+        text-align: center;
+        padding-bottom: 1em;
+        padding-top: 1em;
+        transition: $site-transition;
 
-#div-homecardcontent-container:hover {
-    background-color: var(--site-hover-color);
-}
+        &:hover {
+            background-color: var(--site-hover-color);
+        }
 
-#div-homecardcontent-image {
-    @include flex-center;
-    width: 25%;
-    max-width: 300px;
-    align-items: center;
-    padding-left: 1em;
-    box-sizing: border-box;
-}
+        #div-homecardcontent-image {
+            @include flex-center;
+            width: 25%;
+            max-width: 300px;
+            align-items: center;
+            padding-left: 1em;
+            box-sizing: border-box;
 
-#div-homecardcontent-article-info {
-    @include flex-center;
-    width: 75%;
-}
+            @media screen and (max-width: 800px) {
+                width: 33.33%;
+            }
 
-#div-homecardcontent-title-date-tags {
-    @include flex-center;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-}
+            #image-homecardcontent-image {
+                @include common-image;
+                overflow: hidden;
+                width: 100%;
+                height: 15em;
+                object-fit: cover;
+                opacity: .75;
+                display: block;
 
-#image-homecardcontent-image {
-    @include common-image;
-    overflow: hidden;
-    width: 100%;
-    height: 15em;
-    object-fit:cover;
-    opacity: .75;
-    display: block;
-}
+                @media screen and (max-width: 1600px) {
+                    height: 12em;
+                }
+                @media screen and (max-width: 1000px) {
+                    height: 10em;
+                }
+                @media screen and (max-width: 800px) {
+                    height: 9em;
+                }
+                @media screen and (max-width: 700px) {
+                    height: 8em;
+                }
+                @media screen and (max-width: 450px) {
+                    height: 6.5em;
+                }
+            }
+        }
 
-#p-homecardcontent-title {
-    width: 95%;
-    margin: 0;
-    margin-left: 2%;
-    display: flex;
-    justify-content: left;
-    text-align: left;
-    font-weight: bold;
-    font-family: var(--site-font);
-    letter-spacing: var(--site-letter-spacing);
-    font-size-adjust: var(--site-font-size-adjust);
-    color: var(--site-text-color);
-    text-shadow: var(--site-text-shadow);
-    text-wrap: balance;
-}
+        #div-homecardcontent-article-info {
+            @include flex-center;
+            width: 75%;
 
-#p-homecardcontent-author-date {
-    width: 95%;
-    text-align: left;
-    margin: 0;
-    margin-left: 2%;
-    font-size: 150%;
-    color: var(--site-text-color);
-    text-shadow: .02em .02em .02em #494949;
-    letter-spacing: .05em;
-    font-family: var(--site-font);
-}
+            @media screen and (max-width: 700px) {
+                width: 66.66%;
+            }
 
-#span-homecardcontent-date, #span-homecardcontent-author {
-    margin-left: .3em;
-    margin-right: .3em;
-}
+            #div-homecardcontent-title-date-tags {
+                @include flex-center;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
 
-#span-homecardcontent-author {
-    transition: all .2s ease-in-out; 
-    cursor: pointer;
-    text-align: end;
-    display: inline-block; /*Necessary for transform to work*/
-    text-decoration: underline dashed;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
-}
+                #p-homecardcontent-title {
+                    width: 95%;
+                    margin: 0;
+                    margin-left: 2%;
+                    display: flex;
+                    justify-content: left;
+                    text-align: left;
+                    font-weight: bold;
+                    font-family: var(--site-font);
+                    letter-spacing: var(--site-letter-spacing);
+                    font-size-adjust: var(--site-font-size-adjust);
+                    color: var(--site-text-color);
+                    text-shadow: var(--site-text-shadow);
+                    text-wrap: balance;
+                    font-size: var(--site-size-hccTitle-full);
+                    @media screen and (max-width: 1400px) {
+                        font-size: var(--site-size-hccTitle-1400);
+                    }
+                    @media screen and (max-width: 800px) {
+                        font-size: var(--site-size-hccTitle-800);
+                    }
+                    @media screen and (max-width: 500px) {
+                        margin-left: 4%;
+                    }
+                }
 
-#span-homecardcontent-date {
-    text-align: start;
-}
+                #div-homecardcontent-author-date {
+                    width: 95%;
+                    text-align: left;
+                    margin: 0;
 
-#div-homecardcontent-tags {
-    display: flex;
-    overflow: hidden;
-    gap: 0 .2em;
-    width: 90%;
-}
+                    #p-homecardcontent-author-date {
+                        @include pm-reset;
+                        margin-left: 2%;
+                        font-size: var(--site-size-hccDate-full);
+                        color: var(--site-text-color);
+                        text-shadow: .02em .02em .02em #494949;
+                        letter-spacing: .05em;
+                        font-family: var(--site-font);
+                        @media screen and (max-width: 1400px) {
+                            font-size: var(--site-size-hccDate-1400);
+                        }
+                        @media screen and (max-width: 800px) {
+                            font-size: var(--site-size-hccDate-800);
+                        }
+                        @media screen and (max-width: 500px) {
+                            margin-left: 4%;
+                        }
 
-#tags-ellipsis-wrapper {
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 100%;
-    margin-left: 2%;
-    text-align: left;
-}
+                        #span-homecardcontent-author,
+                        #span-homecardcontent-date {
+                            margin-left: .3em;
+                            margin-right: .3em;
+                        }
 
-.p-homecardcontent-tags {
-    display: inline-block;
-    white-space: nowrap;
-    // font-size: 150%;
-    color: $site-text-color;
-    text-shadow: .02em .02em .02em #494949;
-    letter-spacing: .05em;
-    padding: 0;
-    margin: 0;
-    padding-top: 0.5em;
-    margin-right: 1em;
-    margin-left: 3px; // So that text does not get cut off
-    font-family: var(--site-font);
-    transition: all .2s ease-in-out; 
-    cursor: pointer;
-}
+                        #span-homecardcontent-author {
+                            transition: all .2s ease-in-out;
+                            cursor: pointer;
+                            text-align: end;
+                            display: inline-block;
+                            text-decoration: underline dashed;
+                            text-decoration-thickness: 1px;
+                            text-underline-offset: 2px;
 
-.p-homecardcontent-tags:hover, #span-homecardcontent-author:hover {
-    transform: scale(1.1);
+                            &:hover {
+                                transform: scale(1.1);
+                            }
+                        }
+
+                        #span-homecardcontent-date {
+                            text-align: start;
+                        }
+                    }
+                }
+
+                #div-homecardcontent-tags {
+                    display: flex;
+                    overflow: hidden;
+                    gap: 0 .2em;
+                    width: 90%;
+
+                    @media screen and (max-width: 500px) {
+                        margin-left: 2%;
+                    }
+
+                    #tags-ellipsis-wrapper {
+                        display: block;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        width: 100%;
+                        margin-left: 2%;
+                        text-align: left;
+
+                        .p-homecardcontent-tags {
+                            display: inline-block;
+                            white-space: nowrap;
+                            color: $site-text-color;
+                            text-shadow: .02em .02em .02em #494949;
+                            letter-spacing: .05em;
+                            padding: 0;
+                            margin: 0;
+                            padding-top: 0.5em;
+                            margin-right: 1em;
+                            margin-left: 3px;
+                            font-family: var(--site-font);
+                            transition: all .2s ease-in-out;
+                            cursor: pointer;
+                            font-size: var(--site-size-hccTags-full);
+
+                            @media screen and (max-width: 1400px) {
+                                font-size: var(--site-size-hccTags-1400);
+                            }
+                            @media screen and (max-width: 800px) {
+                                font-size: var(--site-size-hccTags-800);
+                            }
+
+                            &:hover {
+                                transform: scale(1.1);
+                            }
+                        }
+
+                        .tags-ellipsis {
+                            cursor: default;
+                            pointer-events: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 #article-card-link {
     text-decoration: none;
-}
-
-// Page text styles
-#p-homecardcontent-title {
-    font-size: var(--site-size-hccTitle-full);
-    @media screen and (max-width: 1400px) {
-        font-size: var(--site-size-hccTitle-1400);
-    }
-    @media screen and (max-width: 800px) {
-        font-size: var(--site-size-hccTitle-800);
-    }
-}
-
-#p-homecardcontent-author-date {
-    font-size: var(--site-size-hccDate-full);
-    @media screen and (max-width: 1400px) {
-        font-size: var(--site-size-hccDate-1400);
-    }
-    @media screen and (max-width: 800px) {
-        font-size: var(--site-size-hccDate-800);
-    }
-}
-
-.p-homecardcontent-tags {
-    font-size: var(--site-size-hccTags-full);
-    @media screen and (max-width: 1400px) {
-        font-size: var(--site-size-hccTags-1400);
-    }
-    @media screen and (max-width: 800px) {
-        font-size: var(--site-size-hccTags-800);
-    }
-}
-
-// Responsive styles
-
-@media screen and (max-width: 1600px) {
-    // Text styles
-    // #p-homecardcontent-title {
-    //     font-size: 200%;
-    // }
-
-    // #p-homecardcontent-author-date {
-    //     font-size: 140%;
-    // }
-
-    // #div-homecardcontent-tags {
-    //     font-size: 80%;
-    // }
-
-    #image-homecardcontent-image {
-        height: 12em;
-    }
-}
-
-@media screen and (max-width: 1000px) {
-    #image-homecardcontent-image {
-        height: 10em;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    #image-homecardcontent-image {
-        height: 9em;
-    }
-
-    #div-homecardcontent-image {
-        width: 33.33%;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    // Text styles
-    // #p-homecardcontent-title {
-    //     font-size: 180%;
-    // }
-
-    // #p-homecardcontent-author-date {
-    //     font-size: 125%;
-    // }
-
-    // #div-homecardcontent-tags {
-    //     font-size: 75%;
-    // }
-
-    // Div styles
-    
-
-    #div-homecardcontent-article-info {
-        width: 66.66%;
-    }
-
-    #image-homecardcontent-image {
-        height: 8em;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    // Text styles
-    // #p-homecardcontent-title {
-    //     font-size: 160%;
-    // }
-
-    // #p-homecardcontent-author-date {
-    //     font-size: 110%;
-    // }
-
-    // #div-homecardcontent-tags {
-    //     font-size: 70%;
-    // }
-}
-
-@media screen and (max-width: 500px) {
-    // Text styles
-    #p-homecardcontent-title {
-        margin-left: 4%;
-    }
-
-    #p-homecardcontent-author-date {
-        margin-left: 4%;
-    }
-
-    #div-homecardcontent-tags {
-        // font-size: 60%;
-        margin-left: 2%;
-    }
-}
-
-@media screen and (max-width: 450px) {
-    // #div-homecardcontent-tags {
-    //     // font-size: 60%;
-    //     margin-left: 2%;
-    // }
-
-    #image-homecardcontent-image {
-        height: 6.5em;
-    }
 }

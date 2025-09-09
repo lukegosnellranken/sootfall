@@ -4,50 +4,42 @@
     @include flex-center;
     @include container-width;
     @include container-margin;
-    // Styles needed for consistent width on iOS
     box-sizing: border-box;
-}
 
-// Styles needed for consistent width on iOS
-#div-homecomponent-card,
-#div-homecomponent-side-card,
-#div-homecomponent-mobile-card {
-    box-sizing: border-box;
-}
-
-#div-homecomponent-card {
-    display: block;
-    width: 75%;
-    margin-right: .75%;
-}
-
-#div-homecomponent-side-card {
-    display: block;
-    width: 25%;
-    margin-left: .75%;
-}
-
-#div-homecomponent-mobile-card {
-    display: none;
-}
-
-
-@media screen and (max-width: 1200px) {
-    #div-homecomponent-card {
-        width: 100%;
+    @media screen and (max-width: 1200px) {
+        display: flex;
+        flex-direction: column;
     }
 
-    #div-homecomponent-side-card {
-        display: none;
+    #div-homecomponent-card {
+        display: block;
+        width: 75%;
+        margin-right: .75%;
+        box-sizing: border-box;
+
+        @media screen and (max-width: 1200px) {
+            width: 100%;
+        }
     }
 
     #div-homecomponent-mobile-card {
-        display: block;
-        width: 100%;
+        display: none;
+        box-sizing: border-box;
+
+        @media screen and (max-width: 1200px) {
+            display: block;
+            width: 100%;
+        }
     }
 
-    #homecomponent-container {
-        display: flex;
-        flex-direction: column;
+    #div-homecomponent-side-card {
+        display: block;
+        width: 25%;
+        margin-left: .75%;
+        box-sizing: border-box;
+
+        @media screen and (max-width: 1200px) {
+            display: none;
+        }
     }
 }

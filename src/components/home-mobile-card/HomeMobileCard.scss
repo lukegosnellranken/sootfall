@@ -9,70 +9,65 @@
     margin-top: .75em;
     padding-top: .1em;
     padding-bottom: .1em;
-}
 
-#div-homemobilecard-stitch {
-    @include stitch;
-}
-
-#div-homemobilecard-content-container {
-    display: flex;
-}
-
-#div-homemobilecard-image {
-    @include flex-center;
-    align-items: center;
-    width: 25%;
-    margin-left: 3%;
-    padding-top: $card-vertical-padding;
-    padding-bottom: $card-vertical-padding;
-}
-
-#image-homemobilecard-image {
-    width: 100%;
-    border-width: 3px 3px 5px 5px;
-    border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
-    transform: rotate(-.8deg);
-    border: solid rgb(50, 50, 50);
-}
-
-#div-homemobilecard-title-content {
-    width: 75%;
-    margin-right: 1em;
-    margin-left: 1em; 
-}
-
-#h1-homemobilecard-title {
-    @include common-text;
-    @include gradient-title;
-    text-align: left;
-    padding-top: .5em;
-    padding-left: 1rem;
-}
-
-// Text styles
-
-#p-homemobilecard-content {
-    @include common-text;
-    font-size: var(--site-size-hscContent-full);
-    padding-left: 1rem;
-    @media screen and (max-width: 1400px) {
-        font-size: var(--site-size-hscContent-1400);
-    }
     @media screen and (max-width: 800px) {
-        font-size: var(--site-size-hscContent-800);
-    }
-}
-
-// Responsive styles
-
-@media screen and (max-width: 800px) {
-    #div-homemobilecard-container {
         margin-top: $card-vertical-margin-mobile;
         box-shadow: var(--site-box-shadow-top);
     }
 
-    #div-homemobilecard-image {
-        display: none;
+    #div-homemobilecard-stitch {
+        @include stitch;
+
+        #div-homemobilecard-content-container {
+            display: flex;
+
+            #div-homemobilecard-image {
+                @include flex-center;
+                align-items: center;
+                width: 25%;
+                margin-left: 3%;
+                padding-top: $card-vertical-padding;
+                padding-bottom: $card-vertical-padding;
+
+                @media screen and (max-width: 800px) {
+                    display: none;
+                }
+
+                #image-homemobilecard-image {
+                    width: 100%;
+                    border-width: 3px 3px 5px 5px;
+                    border-radius: 4% 95% 6% 95% / 95% 4% 92% 5%;
+                    transform: rotate(-.8deg);
+                    border: solid rgb(50, 50, 50);
+                }
+            }
+
+            #div-homemobilecard-title-content {
+                width: 75%;
+                margin-right: 1em;
+                margin-left: 1em;
+
+                #h1-homemobilecard-title {
+                    @include common-text;
+                    @include gradient-title;
+                    text-align: left;
+                    padding-top: .5em;
+                    padding-left: 1rem;
+                }
+
+                #p-homemobilecard-content {
+                    @include common-text;
+                    font-size: var(--site-size-hscContent-full);
+                    padding-left: 1rem;
+
+                    @media screen and (max-width: 1400px) {
+                        font-size: var(--site-size-hscContent-1400);
+                    }
+                    @media screen and (max-width: 800px) {
+                        font-size: var(--site-size-hscContent-800);
+                    }
+                }
+            }
+        }
     }
 }

@@ -3,9 +3,9 @@
 #articlescomponent-container {
     @include flex-center;
     width: 100%;
-}
 
-#div-articlescomponent-card {
-    display: block;
-    width: 100%;
+    #div-articlescomponent-card {
+        display: block;
+        width: 100%;
+    }
 }

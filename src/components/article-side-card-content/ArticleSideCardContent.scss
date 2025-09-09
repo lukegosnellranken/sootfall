@@ -1,145 +1,129 @@
 @import '../../styles/variables';
 
-#div-articlesidecardcontent-container {
-    @include stitch-bottom;
-    display: flex;
-    transition: $site-transition;
-    padding-bottom: 1em;
-    padding-top: 1em;
-}
-
 .article-link {
     text-decoration: none;
     width: 100%;
-}
-
-#div-articlesidecardcontent-container:hover {
-    background-color: var(--site-hover-color);
-}
-
-#div-articlesidecardcontent-image {
-    @include flex-center;
-    width: 50%;
-    align-items: center;
-    margin-left: .5em;
-    align-items: center;
-    padding-left: 1em;
-    box-sizing: border-box;
-}
-
-#div-articlesidecardcontent-title {
-    @include flex-center;
-    width: 50%;
-    margin-top: 1.5%;
-    flex-direction: column;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
-}
-
-#image-articlesidecardcontent {
-    @include common-image;
-    overflow: hidden;
-    width: 100%;
-    height: 12em;
-    object-fit:cover;
-    opacity: .75;
-    display: block;
-}
-
-// Text styles
-
-#p-articlesidecardcontent-title {
-    @include common-text;
-    @include pm-reset;
-    display: flex;
-    justify-content: left;
-    font-weight: bold;
-    text-wrap: balance;
-    font-size: var(--site-size-ascTitle-full);
-    @media screen and (max-width: 1400px) {
-        font-size: var(--site-size-ascTitle-1400);
-    }
-    @media screen and (max-width: 800px) {
-        font-size: var(--site-size-ascTitle-800);
-    }
-}
-
-#p-articlesidecardcontent-author {
-    @include common-text;
-    @include pm-reset;
-    display: flex;
-    justify-content: left;
-    font-size: var(--site-size-ascAuth-full);
-    @media screen and (max-width: 1400px) {
-        font-size: var(--site-size-ascAuth-1400);
-    }
-    @media screen and (max-width: 800px) {
-        font-size: var(--site-size-ascAuth-800);
-    }
-}
-
-// Responsive styles
-
-@media screen and (max-width: 1500px) {
-    #image-articlesidecardcontent {
-        height: 8em;
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    .description {
-        width: 100%;
-    }
-
-    #div-articlesidecardcontent-image {
-        width: 25%;
-    }
-
-    #image-articlesidecardcontent {
-        height: 12em;
-    }
-}
-
-@media screen and (max-width: 1000px) {
-    #div-articlesidecardcontent-image {
-        width: 25%;
-    }
-
-    #image-articlesidecardcontent {
-        height: 8em;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    .description {
-        width: 100%;
-    }
-
-    .date {
-        padding-top: 0.25em;
-    }
 
     #div-articlesidecardcontent-container {
-        height: 5%;
-    }
+        @include stitch-bottom;
+        display: flex;
+        transition: $site-transition;
+        padding-bottom: 1em;
+        padding-top: 1em;
 
-    #div-articlesidecardcontent-image {
-        width: 30%;
-    }
+        &:hover {
+            background-color: var(--site-hover-color);
+        }
 
-    #div-articlesidecardcontent-title {
-        width: 70%;
+        @media screen and (max-width: 700px) {
+            height: 5%;
+        }
+
+        #div-articlesidecardcontent-image {
+            @include flex-center;
+            width: 50%;
+            align-items: center;
+            margin-left: .5em;
+            padding-left: 1em;
+            box-sizing: border-box;
+
+            @media screen and (max-width: 1200px) {
+                width: 25%;
+            }
+            @media screen and (max-width: 1000px) {
+                width: 25%;
+            }
+            @media screen and (max-width: 700px) {
+                width: 30%;
+            }
+
+            #image-articlesidecardcontent {
+                @include common-image;
+                overflow: hidden;
+                width: 100%;
+                height: 12em;
+                object-fit: cover;
+                opacity: .75;
+                display: block;
+
+                @media screen and (max-width: 1500px) {
+                    height: 8em;
+                }
+                @media screen and (max-width: 1200px) {
+                    height: 12em;
+                }
+                @media screen and (max-width: 1000px) {
+                    height: 8em;
+                }
+                @media screen and (max-width: 600px) {
+                    height: 7em;
+                }
+                @media screen and (max-width: 500px) {
+                    height: 5em;
+                }
+            }
+        }
+
+        #div-articlesidecardcontent-title {
+            @include flex-center;
+            width: 50%;
+            margin-top: 1.5%;
+            flex-direction: column;
+            margin-left: 2.5%;
+            margin-right: 2.5%;
+
+            @media screen and (max-width: 700px) {
+                width: 70%;
+            }
+
+            #p-articlesidecardcontent-title {
+                @include common-text;
+                @include pm-reset;
+                display: flex;
+                justify-content: left;
+                font-weight: bold;
+                text-wrap: balance;
+                font-size: var(--site-size-ascTitle-full);
+
+                @media screen and (max-width: 1400px) {
+                    font-size: var(--site-size-ascTitle-1400);
+                }
+                @media screen and (max-width: 800px) {
+                    font-size: var(--site-size-ascTitle-800);
+                }
+            }
+
+            #p-articlesidecardcontent-author {
+                @include common-text;
+                @include pm-reset;
+                display: flex;
+                justify-content: left;
+                font-size: var(--site-size-ascAuth-full);
+
+                @media screen and (max-width: 1400px) {
+                    font-size: var(--site-size-ascAuth-1400);
+                }
+                @media screen and (max-width: 800px) {
+                    font-size: var(--site-size-ascAuth-800);
+                }
+            }
+        }
     }
 }
 
-@media screen and (max-width: 600px) {
-    #image-articlesidecardcontent {
-        height: 7em;
+.description {
+    width: 100%;
+
+    @media screen and (max-width: 1200px) {
+        width: 100%;
+    }
+    @media screen and (max-width: 700px) {
+        width: 100%;
     }
 }
 
-@media screen and (max-width: 500px) {
-    #image-articlesidecardcontent {
-        height: 5em;
+.date {
+    @media screen and (max-width: 700px) {
+        padding-top: 0.25em;
     }
 }

@@ -4,43 +4,32 @@
     display: flex;
     flex-direction: row;
     justify-content:space-between;
-    // Styles needed for consistent width on iOS
-    box-sizing: border-box;
-    width: 100%;
-}
-
-// Styles needed for consistent width on iOS
-#div-articlecomponent-full-article,
-#div-articlecomponent-full-article-side-card
-{
-    box-sizing: border-box;
-}
-
-#div-articlecomponent-full-article {
-    display: block;
-    width: 75%;
-    margin-right: .75%;
-}
-
-#div-articlecomponent-full-article-side-card {
-    display: block;
-    width: 25%;
-    margin-left: .75%;
-}
-
-@media screen and (max-width: 1200px) {
-    #div-articlecomponent-full-article-container {
+    box-sizing: border-box; // Needed for consistent width on iOS
+    width: 100%; // Needed for consistent width on iOS
+    @media screen and (max-width: 1200px) {
         justify-content: center;
         flex-direction: column;
     }
 
     #div-articlecomponent-full-article {
-        width: 100%;
-        margin-right: 0;
+        display: block;
+        width: 75%;
+        margin-right: .75%;
+        box-sizing: border-box; // Needed for consistent width on iOS
+        @media screen and (max-width: 1200px) {
+            width: 100%;
+            margin-right: 0;
+        }
     }
-    
+
     #div-articlecomponent-full-article-side-card {
-        width: 100%;
-        margin-left: 0;
+        display: block;
+        width: 25%;
+        margin-left: .75%;
+        box-sizing: border-box; // Needed for consistent width on iOS
+        @media screen and (max-width: 1200px) {
+            width: 100%;
+            margin-left: 0;
+        }
     }
 }
