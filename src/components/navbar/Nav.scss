@@ -396,12 +396,6 @@
                             width: var(--site-size-ddWidth-400);
                         }
 
-                        // Theme, Text Size, Font dropdowns
-                        .custom-dropdown {
-                            // CustomDropdown.scss styles will be imported here
-                        }
-
-                        // Audio switch
                         .div-switch {
                             @include flex-left;
                             width: 100%;
