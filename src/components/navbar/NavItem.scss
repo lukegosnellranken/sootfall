@@ -5,7 +5,6 @@
     @include flex-center;
     align-items: center;
     transition: $site-transition;
-    padding-top: .5em;
 
     &:hover {
         transform: $site-transform;

@@ -183,7 +183,7 @@
                         border-width: 2px;
                         border-style: solid;
                         border-color: var(--site-element-color-dormant);
-                        letter-spacing: .05em;
+                        letter-spacing: var(--site-letter-spacing);
                         padding-left: 2.2em;
                         margin-right: .25em;
                         width: 100%;
@@ -194,7 +194,7 @@
                         background-size: 1.2em 1.2em;
                         background-position: 0.7em center;
                         padding-left: 2.5em; // Make space for the icon
-                        padding-top: .2em;
+                        // padding-top: .2em;
                         font-size: $site-search-desktop;
 
                         @media screen and (max-width: 800px) {
