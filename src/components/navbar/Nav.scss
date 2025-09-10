@@ -136,7 +136,7 @@
                 align-items: center;
                 margin-top: .25rem;
                 margin-bottom: .25rem;
-                height: 3rem;
+                height: 2.5rem;
             
                 #btn-hamburger {
                     background-color: var(--site-background-color-input);
@@ -146,6 +146,7 @@
                     border-color: var(--site-element-color-dormant);
                     margin-left: 1em;
                     height: 80%;
+                    width: 2.8rem;
                     
 
                     &.open {
@@ -155,6 +156,10 @@
                     #div-hamburger {
                         span {
                             background-color: var(--site-element-color-dormant);
+                            display: block;
+                            width: 100%;
+                            height: 2px;
+                            margin: 4px 0;
 
                             &.open {
                                 background-color: var(--site-text-color);

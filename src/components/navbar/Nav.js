@@ -175,9 +175,9 @@ function Nav() {
                             }}
                         >
                             <div id="div-hamburger">
-                                <span className={hamburgerOpen && !settingsOpen ? "open" : "close"} style={{display: "block", width: "25px", height: "3px", margin: "5px 0"}}></span>
-                                <span className={hamburgerOpen && !settingsOpen ? "open" : "close"} style={{display: "block", width: "25px", height: "3px", margin: "5px 0"}}></span>
-                                <span className={hamburgerOpen && !settingsOpen ? "open" : "close"} style={{display: "block", width: "25px", height: "3px", margin: "5px 0"}}></span>
+                                <span className={hamburgerOpen && !settingsOpen ? "open" : "close"}></span>
+                                <span className={hamburgerOpen && !settingsOpen ? "open" : "close"}></span>
+                                <span className={hamburgerOpen && !settingsOpen ? "open" : "close"}></span>
                             </div>
                         </button>
                         <form id="form-search-mobile" onSubmit={handleSearch}>
