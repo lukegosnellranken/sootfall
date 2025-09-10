@@ -3,7 +3,7 @@
 #div-homemobilecard-container {
     @include common-text;
     background-image: var(--site-background-image-gradient);
-    box-shadow: var(--site-box-shadow);
+    box-shadow: var(--site-box-shadow-top);
     border-radius: 15px;
     border-width: .5em;
     margin-top: .75em;
