@@ -1,7 +1,7 @@
 import React from "react";
 import './HomeSideCard.scss';
 
-function SideCard(props) {
+function HomeSideCard(props) {
     return (
         <div id="div-homesidecard-container">
             <div id="div-homesidecard-stitch">
@@ -25,4 +25,4 @@ function SideCard(props) {
     )
 }
 
-export default SideCard;
+export default HomeSideCard;

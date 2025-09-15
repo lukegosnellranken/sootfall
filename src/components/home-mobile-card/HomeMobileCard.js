@@ -1,7 +1,7 @@
 import React from "react";
 import './HomeMobileCard.scss';
 
-function MobileCard(props) {
+function HomeMobileCard(props) {
     return (
         <div id="div-homemobilecard-container">
             <div id="div-homemobilecard-stitch">
@@ -19,4 +19,4 @@ function MobileCard(props) {
     )
 }
 
-export default MobileCard;
+export default HomeMobileCard;
