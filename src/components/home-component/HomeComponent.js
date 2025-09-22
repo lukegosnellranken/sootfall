@@ -1,6 +1,8 @@
+"use client";
+
 import React, { useMemo } from "react";
 import './HomeComponent.scss';
-import { useSettings } from "../../Settings";
+import { useSettings } from "../../config/Settings";
 import HomeCard from "../home-card/HomeCard";
 import HomeSideCard from "../home-side-card/HomeSideCard";
 import HomeMobileCard from "../home-mobile-card/HomeMobileCard";

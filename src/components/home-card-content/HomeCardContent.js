@@ -1,15 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import './HomeCardContent.scss';
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/navigation';
 
 function HomeCardContent(props) {
     // The solution for a Link inside a Link (nested <a> tags)
-    const navigate = useNavigate();
+    const navigate = useRouter();
     const wrapperRef = useRef();
     const [visibleCount, setVisibleCount] = useState(props.tags ? props.tags.length : 0);
 
     const handleNavigation = (path) => {
-        navigate(path);
+        navigate.push(path);
     };
 
     // Get the number correllating to the last visible tag before overflow

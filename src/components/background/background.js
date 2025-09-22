@@ -1,28 +1,37 @@
-import React, { useMemo } from "react";
+"use client";
+
+import React, { useMemo, useState, useEffect } from "react";
 import './background.scss';
 import logoDark from '../../images/sootfall-logo-dark.png';
 import logoLight from '../../images/sootfall-logo-light.png';
-import { useSettings } from "../../Settings";
+import { useSettings } from "../../config/Settings";
 import wutheringManDark from '../../images/wuthering-man-dark.png';
 import wutheringManLight from '../../images/wuthering-man-light.png';
 
 // Get data from ~/.env, set API_URL and token
-const env = process.env.REACT_APP_ENV;
+const env = process.env.NEXT_PUBLIC_ENV;
 let homeLink;
 let backendLink;
 if (env === 'local') {
-    homeLink = process.env.REACT_APP_HOME_LOCAL;
-    backendLink = process.env.REACT_APP_API_URL_LOCAL;
+    homeLink = process.env.NEXT_PUBLIC_HOME_LOCAL;
+    backendLink = process.env.NEXT_PUBLIC_API_URL_LOCAL;
 }
 else if (env === 'cloud') {
-    homeLink = process.env.REACT_APP_HOME_CLOUD;
-    backendLink = process.env.REACT_APP_API_URL_CLOUD;
+    homeLink = process.env.NEXT_PUBLIC_HOME_CLOUD;
+    backendLink = process.env.NEXT_PUBLIC_API_URL_CLOUD;
 }
 
 function Background() {
     const { theme } = useSettings(); // Instantiate theme object from Settings.js
     // Since lightTheme is computed from other reactive data (theme.title), only recalcualte it when theme changes
-    const lightTheme = useMemo(() => theme.title === "Light", [theme]);;
+    const lightTheme = useMemo(() => theme.title === "Light", [theme]);
+    // Mounting logic supporting lightTheme (do not load component until the client has loaded the DOM)
+    const [hasMounted, setHasMounted] = useState(false);
+    useEffect(() => {
+        setHasMounted(true);
+    }, []);
+    if (!hasMounted) return null;
+    
 
     return (
         <div>

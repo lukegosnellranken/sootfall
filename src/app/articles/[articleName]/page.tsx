@@ -1,5 +1,5 @@
-import ArticleComponent from '../components/article-component/ArticleComponent';
-import './Article.scss';
+import ArticleComponent from '../../../components/article-component/ArticleComponent';
+import './article.scss';
 
 function Article() {
     return(

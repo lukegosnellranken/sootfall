@@ -1,4 +1,4 @@
-import ArticlesComponent from '../components/articles-component/ArticlesComponent';
+import ArticlesComponent from '../../components/articles-component/ArticlesComponent';
 import './Articles.scss';
 
 function Article() {

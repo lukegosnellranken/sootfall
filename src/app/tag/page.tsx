@@ -1,6 +1,6 @@
 import React from "react";
-import './Tag.scss';
-import TagComponent from "../components/tag-component/TagComponent";
+import './tag.scss';
+import TagComponent from "../../components/tag-component/TagComponent";
 
 function Tag() {
     return (

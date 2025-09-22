@@ -1,15 +1,17 @@
+"use client";
+
 import React, { useState, useEffect, useCallback } from "react";
 import './Nav.scss';
 import './CustomDropdown.scss';
 import NavItem from "./NavItem";
-import { useNavigate } from "react-router-dom";
-import { useSettings } from "../../Settings";
+import { useRouter } from 'next/navigation';
+import { useSettings } from "../../config/Settings";
 import themes from '../../config/themes.json'
 import fonts from '../../config/fonts.json';
 import sizes from '../../config/sizes.json';
  
 function Nav() {
-    const navigate = useNavigate();
+    const navigate = useRouter();
     const [search, setSearch] = useState("");
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
     const [settingsOpen, setSettingsOpen] = useState(false);
@@ -21,16 +23,24 @@ function Nav() {
     const fontOptions = fonts.map(f => f.title);
     const [sizeDropdownOpen, setSizeDropdownOpen] = useState(false);
     const sizeOptions = sizes.map(s => s.title);
-    // Set vars to CSS custom properties
-    const svgColorDormant = getComputedStyle(document.documentElement).getPropertyValue('--site-theme-element-color-dormant');
-    const svgColorActive = getComputedStyle(document.documentElement).getPropertyValue('--site-theme-text-color');
+    // Set svg color on client after DOM load -- needs a fix.
+    const [svgColorDormant, setSvgColorDormant] = useState('');
+    const [svgColorActive, setSvgColorActive] = useState('');
+    useEffect(() => {
+        const colorDormant = getComputedStyle(document.documentElement).getPropertyValue('--site-theme-element-color-dormant');
+        const colorActive = getComputedStyle(document.documentElement).getPropertyValue('--site-theme-text-color');
+        setSvgColorDormant(colorDormant);
+        setSvgColorActive(colorActive);
+        console.log("svg " + svgColorDormant);
+    }, []);
+
     // Track focus for the search input so that the above svg color vars can be used accordingly
     const [isFocused, setIsFocused] = useState(false);
 
     const handleSearch = (e) => {
         e.preventDefault();
         if (search.trim()) {
-            navigate(`/search/${encodeURIComponent(search.trim())}`);
+            navigate.push(`/search/${encodeURIComponent(search.trim())}`);
             setSearch("");
         }
     }
@@ -54,7 +64,7 @@ function Nav() {
     // Format font as JSON given the selected font from the dropdown
     function formatTheme(value) {
         // Find the theme object by title, otherwise set to object with id of 1
-        return themes.find(t => t.title === value) || themes.find(t => t.id === 1);  
+        return themes.find(t => t.title === value) || themes.find(t => t.id === 1);
     }
 
     // Format font as JSON given the selected font from the dropdown

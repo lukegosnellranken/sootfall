@@ -1,11 +1,11 @@
 import React from "react";
+import Link from "next/link";
 import './NavItem.scss';
-import { Link } from "react-router-dom";
 
 function NavItem(props) {
     return (
         <li className="li-nav-item">
-            <Link to={`/${props.href}`}>{props.name}</Link>
+            <Link href={`/${props.href}`}>{props.name}</Link>
         </li>
     )
 }

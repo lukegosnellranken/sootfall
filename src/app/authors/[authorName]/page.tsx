@@ -1,6 +1,6 @@
 import React from "react";
-import './Author.scss';
-import AuthorComponent from "../components/author-component/AuthorComponent";
+import './author.scss';
+import AuthorComponent from "../../../components/author-component/AuthorComponent";
 
 function Author() {
     return (

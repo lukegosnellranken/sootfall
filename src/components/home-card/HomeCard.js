@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 import './HomeCard.scss';
@@ -9,16 +11,16 @@ function HomeCard(props) {
     const paginationRef = useRef(null);
 
     // Get data from ~/.env, set API_URL and token
-    const env = process.env.REACT_APP_ENV;
+    const env = process.env.NEXT_PUBLIC_ENV;
     let API_URL;
     let token;
     if (env === 'local') {
-        API_URL = process.env.REACT_APP_API_URL_LOCAL;
-        token = process.env.REACT_APP_API_TOKEN_LOCAL;
+        API_URL = process.env.NEXT_PUBLIC_API_URL_LOCAL;
+        token = process.env.NEXT_PUBLIC_API_TOKEN_LOCAL;
     }
     else if (env === 'cloud') {
-        API_URL = process.env.REACT_APP_API_URL_CLOUD;
-        token = process.env.REACT_APP_API_TOKEN_CLOUD;
+        API_URL = process.env.NEXT_PUBLIC_API_URL_CLOUD;
+        token = process.env.NEXT_PUBLIC_API_TOKEN_CLOUD;
     }
    
     useEffect(() => {

@@ -1,5 +1,5 @@
 import React from "react";
-import './NotFound.scss';
+import './notfound.scss';
 
 function NotFound() {
     return(
@@ -10,4 +10,4 @@ function NotFound() {
     );
 }
 
-export default NotFound;
+export default NotFound; 
