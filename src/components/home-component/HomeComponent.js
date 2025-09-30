@@ -6,9 +6,9 @@ import { useSettings } from "../../config/Settings";
 import HomeCard from "../home-card/HomeCard";
 import HomeSideCard from "../home-side-card/HomeSideCard";
 import HomeMobileCard from "../home-mobile-card/HomeMobileCard";
-import wutheringLight from '../../images/wuthering-side-light.jpg';
-import wutheringDark from '../../images/wuthering-side-dark.jpg';
-import beans from '../../images/coffee-beans.png';
+import wutheringLight from '../../app/public/images/wuthering-side-light.jpg';
+import wutheringDark from '../../app/public/images/wuthering-side-dark.jpg';
+import beans from '../../app/public/images/coffee-beans.png';
 
 function HomeComponent() {
     const { theme } = useSettings(); // Instantiate theme object from Settings.js
@@ -26,17 +26,17 @@ function HomeComponent() {
             <div id="div-homecomponent-mobile-card">
                 <HomeMobileCard
                     title1 = "Settle in the dust..."
-                    image1 = {lightTheme ? wutheringLight : wutheringDark}
+                    image1 = {lightTheme ? wutheringLight.src : wutheringDark.src}
                     description1 = "for a moment's rest among a heap of works stirred up from the blaze beneath the breath."
                 />
             </div>
             <div id="div-homecomponent-side-card">
                 <HomeSideCard
                     title1 = "Settle in the dust..."
-                    image1 = {lightTheme ? wutheringLight : wutheringDark}
+                    image1 = {lightTheme ? wutheringLight.src : wutheringDark.src}
                     description1 = "for a moment's rest among a heap of works stirred up from the blaze beneath the breath."
                     title2 = "Buy Us a Coffee"
-                    image2 = {beans}
+                    image2 = {beans.src}
                     description2 = "Sootfall is ran completely independently. To help continue covering site costs, please consider donating. All gifts are greatly appreciated."
                 />
             </div>

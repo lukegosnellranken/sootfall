@@ -70,12 +70,26 @@
 
             #div-homecard-pagination {
                 @include flex-center;
+                padding-bottom: 1em;
 
                 .pagination {
                     user-select: none;
                     -webkit-user-select: none;
                     -moz-user-select: none;
                     -ms-user-select: none;
+                    @include pm-reset;
+                    @include flex-center;
+
+                    .page-item:first-child .page-link {
+                        border-top-left-radius: 5px;
+                        border-bottom-left-radius: 5px;
+                    }
+
+                    .page-item:last-child .page-link {
+                        border-top-right-radius: 5px;
+                        border-bottom-right-radius: 5px;
+                    }
+                    
 
                     @media screen and (max-width: 800px) {
                         line-height: 1.1;
@@ -83,14 +97,16 @@
                 }
 
                 .page-item {
+                    list-style-type: none;
+                    min-height: 30px;
+                    min-width: 30px;
+
                     .page-link {
+                        @include flex-center;
                         color: var(--site-text-color);
                         border-color: var(--site-text-color);
                         font-family: var(--site-font);
                         font-weight: bold;
-                        min-height: 30px;
-                        display: flex;
-                        align-items: center;
                         font-size: var(--site-size-hccTags-full);
 
                         @media screen and (max-width: 800px) {

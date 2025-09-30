@@ -31,8 +31,7 @@ function Nav() {
         const colorActive = getComputedStyle(document.documentElement).getPropertyValue('--site-theme-text-color');
         setSvgColorDormant(colorDormant);
         setSvgColorActive(colorActive);
-        console.log("svg " + svgColorDormant);
-    }, []);
+    }, [theme]);
 
     // Track focus for the search input so that the above svg color vars can be used accordingly
     const [isFocused, setIsFocused] = useState(false);

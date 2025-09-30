@@ -2,11 +2,11 @@
 
 import React, { useMemo, useState, useEffect } from "react";
 import './background.scss';
-import logoDark from '../../images/sootfall-logo-dark.png';
-import logoLight from '../../images/sootfall-logo-light.png';
+import logoDark from '../../app/public/images/sootfall-logo-dark.png';
+import logoLight from '../../app/public/images/sootfall-logo-light.png';
 import { useSettings } from "../../config/Settings";
-import wutheringManDark from '../../images/wuthering-man-dark.png';
-import wutheringManLight from '../../images/wuthering-man-light.png';
+import wutheringManDark from '../../app/public/images/wuthering-man-dark.png';
+import wutheringManLight from '../../app/public/images/wuthering-man-light.png';
 
 // Get data from ~/.env, set API_URL and token
 const env = process.env.NEXT_PUBLIC_ENV;
@@ -38,14 +38,14 @@ function Background() {
             <div id="div-background-container">
                 <div id="div-background-logo">
                     <a href={homeLink}>
-                        {<img src={lightTheme ? logoLight : logoDark} alt="logo" id="image-background-logo" href={homeLink} draggable="false"/>}
+                        {<img src={lightTheme ? logoLight.src : logoDark.src} alt="logo" id="image-background-logo" draggable="false"/>}
                     </a>
                 </div>
                 {/* <div id="div-background-bmc">
                     <a href="http://localhost:3000/" target="_blank" rel="noreferrer"><img id="image-background-bmc" src={bmc} alt="" /> </a>
                 </div> */}
                 <div id="div-wutheringman">
-                    <img id="img-wutheringman" src={lightTheme ? wutheringManLight : wutheringManDark} alt="wutheringman"/>
+                    <img id="img-wutheringman" src={lightTheme ? wutheringManLight.src : wutheringManDark.src} alt="wutheringman"/>
                 </div>
                 {/* <div id="div-background-social-links">
                     <a id="social-links-facebook" href="https://gingernook.com/" className="fa fa-facebook social-link"> </a>

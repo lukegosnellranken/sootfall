@@ -2,7 +2,7 @@ import { Settings } from '../config/Settings';
 import Nav from '../components/navbar/Nav';
 import Background from '../components/background/background';
 import Footer from '../components/footer/Footer';
-import './layout.scss';
+import './layout.scss'
 
 export const metadata = {
   title: 'Sootfall',
