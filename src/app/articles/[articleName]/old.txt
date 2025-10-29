@@ -1,0 +1,72 @@
+// import ArticleComponent from '../../../components/article-component/ArticleComponent';
+// import './article.scss';
+
+// // This function tells Next.js which article pages to build at export time
+// export async function generateStaticParams() {
+//   // Get data from ~/.env, set API_URL and token
+//   const env = process.env.NEXT_PUBLIC_ENV;
+//   let backendLink;
+//   let token;
+//   if (env === 'local') {
+//       backendLink = process.env.NEXT_PUBLIC_API_URL_LOCAL;
+//       token = process.env.NEXT_PUBLIC_API_TOKEN_LOCAL;
+//   }
+//   else if (env === 'cloud') {
+//       backendLink = process.env.NEXT_PUBLIC_API_URL_CLOUD;
+//       token = process.env.NEXT_PUBLIC_API_TOKEN_CLOUD;
+//   }
+
+//   // Fetch the list of all articles from your API
+//   const res = await fetch(`${backendLink}/api/articles?populate=*`, {headers: {'Authorization': `Bearer ${token}`}});
+//   const articles = await res.json();
+//   console.log(articles);
+//   console.log("hello");
+ 
+//   // Return an array of objects, where each object has an `articleName` property
+//   // This should match the name of your dynamic segment folder: [articleName]
+//   return articles.data.map((article: any) => ({
+//     // Format and replace all special characters
+//     articleName: article.title.replace(/\s+/g, '-').toLowerCase().replace(/[^a-zA-Z0-9-_]/g, ""),
+//   }));
+// }
+
+// import { notFound } from 'next/navigation';
+
+// // ... (keep the generateStaticParams function as is) ...
+
+// // The props for your page will now include the params from the URL
+// async function Article({ params }: { params: { articleName: string } }) {
+//     // Get data from ~/.env, set API_URL and token
+//     const env = process.env.NEXT_PUBLIC_ENV;
+//     let backendLink;
+//     let token;
+//     if (env === 'local') {
+//         backendLink = process.env.NEXT_PUBLIC_API_URL_LOCAL;
+//         token = process.env.NEXT_PUBLIC_API_TOKEN_LOCAL;
+//     }
+//     else if (env === 'cloud') {
+//         backendLink = process.env.NEXT_PUBLIC_API_URL_CLOUD;
+//         token = process.env.NEXT_PUBLIC_API_TOKEN_CLOUD;
+//     }
+
+//     // Fetch the specific article from your API using a filter
+//     const res = await fetch(`${backendLink}/api/articles?filters[slug][$eq]=${params.articleName}&populate=*`, {headers: {'Authorization': `Bearer ${token}`}});
+//     const articles = await res.json();
+//     console.log(articles);
+
+//     // If no article is found, render the 404 page
+//     if (!articles.data || articles.data.length === 0) {
+//         notFound();
+//     }
+
+//     const article = articles.data[0];
+
+//     return(
+//         <div id='div-article-component'>
+//             {/* Pass the full article object to your component */}
+//             <ArticleComponent article={article} />
+//         </div>
+//     );
+// }
+
+// export default Article;

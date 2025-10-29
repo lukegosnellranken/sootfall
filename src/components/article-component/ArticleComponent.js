@@ -2,14 +2,14 @@ import ArticleCard from "../article-card/ArticleCard";
 import ArticleSideCard from "../article-side-card/ArticleSideCard";
 import './ArticleComponent.scss';
 
-function ArticleComponent() {
+function ArticleComponent({ article }) {
     return(
         <div id="div-articlecomponent-full-article-container">
             <div id="div-articlecomponent-full-article">
-                <ArticleCard/>
+                <ArticleCard article={article}/>
             </div>
             <div id="div-articlecomponent-full-article-side-card">
-                <ArticleSideCard/>
+                <ArticleSideCard currentArticleTitle={article.title} />
             </div>
         </div>
     );
