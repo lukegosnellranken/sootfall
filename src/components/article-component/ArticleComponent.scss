@@ -33,3 +33,9 @@
         }
     }
 }
+
+#div-article-component {
+    @include flex-center;
+    @include container-width;
+    @include container-margin;
+}

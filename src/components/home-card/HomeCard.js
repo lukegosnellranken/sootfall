@@ -149,13 +149,19 @@ function HomeCard(props) {
             }
         });
 
+        // Generate the slug for the article based on the title
+        // This removes special characters and replaces spaces with hyphens
+        const generateSlug = (title) => {
+            return title.replace(/\s+/g, '-').toLowerCase().replace(/[^a-zA-Z0-9-_]/g, "");
+        };
+
         return (
             <div id="div-homecard-article-card">      
                 {currentItems.reverse().map((article, i) => (
                     <div key={i}>
                         <HomeCardContent
                             key = {i}
-                            sub = {`/articles/${(currentItems[currentItems.length-(i+1)][0]).replace(/\s+/g, '-').toLowerCase()}`}
+                            sub={`/articles/${generateSlug(currentItems[currentItems.length-(i+1)][0])}`}
                             title = {currentItems[currentItems.length-(i+1)][0]}
                             date = {currentItems[currentItems.length-(i+1)][1]}
                             image = {currentItems[currentItems.length-(i+1)][2]}

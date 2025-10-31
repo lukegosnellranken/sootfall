@@ -1,5 +1,4 @@
 import ArticleComponent from '../../../components/article-component/ArticleComponent';
-import './article.scss';
 import { notFound } from 'next/navigation';
 
 // Centralized API configuration
@@ -30,17 +29,14 @@ export async function generateStaticParams() {
   // Return an array of objects, where each object has an `articleName` property
   // This should match the name of your dynamic segment folder: [articleName]
   return articles.data.map((article: any) => ({
-    articleName: article.title.replace(/\s+/g, '-').toLowerCase().replace(/[^a-zA-Z0-9-_]/g, ""),
+    articleName: article.slug,
   }));
 }
 
 // Fetches a single article by its slug
 async function getArticle(articleName: string) {
-    // Convert the URL slug back into a title format for querying (e.g., "lorem-ipsum" -> "lorem ipsum")
-    const titleFromSlug = articleName.replace(/-/g, ' ');
-
-    // Fetch the specific article from your API using a case-insensitive filter on the title
-    const res = await fetch(`${backendLink}/api/articles?filters[title][$eqi]=${titleFromSlug}&populate=*`, {
+    // Fetch the specific article from your API using a filter on the slug
+    const res = await fetch(`${backendLink}/api/articles?filters[slug][$eq]=${articleName}&populate=*`, {
         headers: {'Authorization': `Bearer ${token}`}
     });
     const articles = await res.json();
