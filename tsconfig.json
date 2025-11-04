@@ -44,7 +44,7 @@
     "noEmit": true,
     "incremental": true,
     "esModuleInterop": true,
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
     "resolveJsonModule": true,
     "plugins": [
       {
@@ -53,10 +53,11 @@
     ]
   },
   "include": [
-    "next-env.d.ts",
-    "build/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "build/types/**/*.ts",
+    "next-env.d.ts",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

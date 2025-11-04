@@ -1,7 +1,7 @@
-import { Settings } from '../config/Settings';
-import Nav from '../components/navbar/Nav';
-import Background from '../components/background/background';
-import Footer from '../components/footer/Footer';
+import { Settings } from '../config/Settings.js';
+import Nav from '../components/navbar/Nav.js';
+import Background from '../components/background/background.js';
+import Footer from '../components/footer/Footer.js';
 import './layout.scss'
 
 export const metadata = {

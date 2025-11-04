@@ -1,0 +1,10 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/articles/page": "/articles",
+  "/authors/page": "/authors",
+  "/page": "/",
+  "/articles/[articleName]/page": "/articles/[articleName]",
+  "/authors/[authorName]/page": "/authors/[authorName]",
+  "/search/page": "/search",
+  "/tag/page": "/tag"
+}

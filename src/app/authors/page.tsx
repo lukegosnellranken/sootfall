@@ -1,6 +1,5 @@
 import React from "react";
-import './authors.scss';
-import AuthorsComponent from "../../components/authors-component/AuthorsComponent";
+import AuthorsComponent from "../../components/authors-component/AuthorsComponent.js";
 
 function Authors() {
     return (

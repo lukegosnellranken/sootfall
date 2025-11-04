@@ -1,10 +1,13 @@
 "use client";
 
-import React from "react";
 import { useState, useEffect, useRef } from "react";
 import './HomeCard.scss';
 import HomeCardContent from "../home-card-content/HomeCardContent";
-import ReactPaginate from 'react-paginate';
+import dynamic from 'next/dynamic';
+const ReactPaginate = dynamic(
+    () => import('react-paginate').then((mod) => mod.default),
+    { ssr: false }
+);
 
 function HomeCard(props) {
     let [initDataArray, setInitDataArray] = useState([]);

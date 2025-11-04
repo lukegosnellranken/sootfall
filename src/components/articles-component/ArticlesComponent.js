@@ -4,12 +4,14 @@ import HomeCard from "../home-card/HomeCard";
 
 function ArticlesComponent() {
     return (
-        <div id="articlescomponent-container">
-            <div id="div-articlescomponent-card">
-                <HomeCard
-                    title = "All Writings"
-                    pageType = "home"
-                />
+        <div id="div-articles-component">
+            <div id="articlescomponent-container">
+                <div id="div-articlescomponent-card">
+                    <HomeCard
+                        title = "All Writings"
+                        pageType = "home"
+                    />
+                </div>
             </div>
         </div>
     )

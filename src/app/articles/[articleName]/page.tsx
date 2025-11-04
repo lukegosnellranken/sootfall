@@ -1,5 +1,5 @@
-import ArticleComponent from '../../../components/article-component/ArticleComponent';
-import { notFound } from 'next/navigation';
+import ArticleComponent from '../../../components/article-component/ArticleComponent.js';
+import { notFound } from 'next/navigation.js';
 
 // Centralized API configuration
 const env = process.env.NEXT_PUBLIC_ENV;
@@ -49,8 +49,15 @@ async function getArticle(articleName: string) {
     return articles.data[0];
 }
 
-async function Article({ params }: { params: { articleName: string } }) {
-    const article = await getArticle(params.articleName);
+
+type Props = {
+    params: Promise<{ articleName: string }>;
+};
+
+async function Article({ params }: Props) {
+    const { articleName } = await params;
+    const article = await getArticle(articleName);
+
 
     // If no article is found, render the 404 page
     if (!article) {

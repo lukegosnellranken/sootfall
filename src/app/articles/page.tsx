@@ -1,5 +1,4 @@
-import ArticlesComponent from '../../components/articles-component/ArticlesComponent';
-import './Articles.scss';
+import ArticlesComponent from '../../components/articles-component/ArticlesComponent.js';
 
 function Article() {
     return(
