@@ -1,0 +1,3 @@
+oneAuthor is the result of POST http://localhost:1337/api/authors?filters[name][$eqi]=fleecer&populate=*
+
+allAuthors is the result of POST http://localhost:1337/api/authors?populate=*

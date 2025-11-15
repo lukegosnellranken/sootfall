@@ -10,5 +10,11 @@
     "files": [
       "static/chunks/646.f342b7cffc01feb0.js"
     ]
+  },
+  "components\\home-card\\HomeCard.js -> react-paginate": {
+    "id": 5766,
+    "files": [
+      "static/chunks/766.086b4af3b4f1f8d6.js"
+    ]
   }
 }

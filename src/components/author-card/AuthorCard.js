@@ -1,24 +1,29 @@
-import { useNavigate } from 'react-router-dom';
 import './AuthorCard.scss';
 
 function AuthorCard(props) {
+    // Get data from ~/.env, set API_URL and token
+    const env = process.env.NEXT_PUBLIC_ENV;
+    let API_URL;
+    let token;
+    if (env === 'local') {
+        API_URL = process.env.NEXT_PUBLIC_API_URL_LOCAL;
+        token = process.env.NEXT_PUBLIC_API_TOKEN_LOCAL;
+    }
+    else if (env === 'cloud') {
+        API_URL = process.env.NEXT_PUBLIC_API_URL_CLOUD;
+        token = process.env.NEXT_PUBLIC_API_TOKEN_CLOUD;
+    }
     
-    const navigate = useNavigate();
-    
-    const handleNavigation = (path) => {
-        navigate(path);
-    };
-
     // Only navigate to author page if on authors page
     return (
         <div id="div-authorcard" 
-            className={window.location.pathname === "/authors" ? "pointer" : "default"}
-            onClick={props.pageType === "authors" ? () => handleNavigation(`/authors/${props.authorName.toLowerCase()}`) : undefined}
+            className={props.pageType === "authors" ? "pointer" : "default"}
+            onClick={props.pageType === "authors" ? () => window.location.href = `/authors/${props.authorName.toLowerCase()}` : undefined}
         >
             <div id="div-authorcard-stitch">
                 <div id='div-authorcard-content'>
                     <div id="div-authorcard-image">
-                        <img id="img-authorcard" src={props.authorImage} alt="author" draggable="false"/>
+                        {props.authorImage && <img id="img-authorcard" src={API_URL + props.authorImage.formats.small.url} alt="author" draggable="false"/>}
                     </div>
                     <div id="div-author-name-description">
                         <p id='p-authorcard-name'>{props.authorName}</p>

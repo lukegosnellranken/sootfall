@@ -1,0 +1,67 @@
+{
+    "data": [
+        {
+            "id": 6,
+            "documentId": "t17etwhyrfox4wp2r48eklnu",
+            "name": "Fleecer",
+            "createdAt": "2025-06-10T21:14:26.263Z",
+            "updatedAt": "2025-06-11T03:49:05.652Z",
+            "publishedAt": "2025-06-11T03:49:05.659Z",
+            "description": "I am Fleecer.\nWhaddup.",
+            "image": {
+                "id": 2,
+                "documentId": "j7svfbkvp788nzt732xohhep",
+                "name": "nikki2.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 641,
+                "height": 641,
+                "formats": {
+                    "thumbnail": {
+                        "name": "thumbnail_nikki2.jpg",
+                        "hash": "thumbnail_nikki2_0b8dbb6fe8",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 156,
+                        "height": 156,
+                        "size": 4.93,
+                        "sizeInBytes": 4931,
+                        "url": "/uploads/thumbnail_nikki2_0b8dbb6fe8.jpg"
+                    },
+                    "small": {
+                        "name": "small_nikki2.jpg",
+                        "hash": "small_nikki2_0b8dbb6fe8",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 500,
+                        "height": 500,
+                        "size": 37.99,
+                        "sizeInBytes": 37986,
+                        "url": "/uploads/small_nikki2_0b8dbb6fe8.jpg"
+                    }
+                },
+                "hash": "nikki2_0b8dbb6fe8",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 51.72,
+                "url": "/uploads/nikki2_0b8dbb6fe8.jpg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2025-06-11T03:47:08.217Z",
+                "updatedAt": "2025-06-11T03:49:04.765Z",
+                "publishedAt": "2025-06-11T03:47:08.219Z"
+            }
+        }
+    ],
+    "meta": {
+        "pagination": {
+            "page": 1,
+            "pageSize": 25,
+            "pageCount": 1,
+            "total": 1
+        }
+    }
+}

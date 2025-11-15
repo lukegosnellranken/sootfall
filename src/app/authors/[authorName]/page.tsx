@@ -1,24 +1,6 @@
 import AuthorComponent from '../../../components/author-component/AuthorComponent.js';
 import { notFound } from 'next/navigation.js';
-
-// Centralized API configuration
-const env = process.env.NEXT_PUBLIC_ENV;
-let backendLink: string;
-let token: string;
-
-if (env === 'local') {
-    backendLink = process.env.NEXT_PUBLIC_API_URL_LOCAL || '';
-    token = process.env.NEXT_PUBLIC_API_TOKEN_LOCAL || '';
-} else if (env === 'cloud') {
-    backendLink = process.env.NEXT_PUBLIC_API_URL_CLOUD || '';
-    token = process.env.NEXT_PUBLIC_API_TOKEN_CLOUD || '';
-} else {
-    throw new Error("NEXT_PUBLIC_ENV is not set or invalid. Check your .env file.");
-}
-
-if (!backendLink || !token) {
-    throw new Error("API URL or Token is not configured. Check your .env file.");
-}
+import { backendLink, token } from '../../../config/api.ts';
 
 // This function tells Next.js which author pages to build at export time
 export async function generateStaticParams() {
@@ -26,12 +8,11 @@ export async function generateStaticParams() {
     // Fetch the list of all authors from your API
     const res = await fetch(`${backendLink}/api/authors?populate=*`, {headers: {'Authorization': `Bearer ${token}`}});
     const authors = await res.json();
-    console.log('Authors data:', JSON.stringify(authors, null, 2));
    
     // Return an array of objects, where each object has an `authorName` property
     // This should match the name of your dynamic segment folder: [authorName]
     return authors.data.map((author: any) => ({
-      authorName: author.slug,
+      authorName: author.name.toLowerCase(),
     }));
   } catch (error) {
     console.error('Failed to fetch authors:', error);
@@ -42,7 +23,7 @@ export async function generateStaticParams() {
 // Fetches a single author by its slug
 async function getAuthor(authorName: string) {
     // Fetch the specific author from your API using a filter on the slug
-    const res = await fetch(`${backendLink}/api/authors?filters[slug][$eq]=${authorName}&populate=*`, {
+    const res = await fetch(`${backendLink}/api/authors?filters[name][$eqi]=${authorName}&populate=*`, {
         headers: {'Authorization': `Bearer ${token}`}
     });
     const authors = await res.json();
@@ -61,6 +42,7 @@ type Props = {
 
 async function Author({ params }: Props) {
     const { authorName } = await params;
+    console.log(authorName)
     const author = await getAuthor(authorName);
 
     // If no author is found, render the 404 page

@@ -1,0 +1,146 @@
+{
+    "data": [
+        {
+            "id": 6,
+            "documentId": "t17etwhyrfox4wp2r48eklnu",
+            "name": "Fleecer",
+            "createdAt": "2025-06-10T21:14:26.263Z",
+            "updatedAt": "2025-06-11T03:49:05.652Z",
+            "publishedAt": "2025-06-11T03:49:05.659Z",
+            "description": "I am Fleecer.\nWhaddup.",
+            "image": {
+                "id": 2,
+                "documentId": "j7svfbkvp788nzt732xohhep",
+                "name": "nikki2.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 641,
+                "height": 641,
+                "formats": {
+                    "thumbnail": {
+                        "name": "thumbnail_nikki2.jpg",
+                        "hash": "thumbnail_nikki2_0b8dbb6fe8",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 156,
+                        "height": 156,
+                        "size": 4.93,
+                        "sizeInBytes": 4931,
+                        "url": "/uploads/thumbnail_nikki2_0b8dbb6fe8.jpg"
+                    },
+                    "small": {
+                        "name": "small_nikki2.jpg",
+                        "hash": "small_nikki2_0b8dbb6fe8",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 500,
+                        "height": 500,
+                        "size": 37.99,
+                        "sizeInBytes": 37986,
+                        "url": "/uploads/small_nikki2_0b8dbb6fe8.jpg"
+                    }
+                },
+                "hash": "nikki2_0b8dbb6fe8",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 51.72,
+                "url": "/uploads/nikki2_0b8dbb6fe8.jpg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2025-06-11T03:47:08.217Z",
+                "updatedAt": "2025-06-11T03:49:04.765Z",
+                "publishedAt": "2025-06-11T03:47:08.219Z"
+            }
+        },
+        {
+            "id": 8,
+            "documentId": "wrumdgdufubmk4t9z12e3uay",
+            "name": "Poniko Monoe Monoko",
+            "createdAt": "2025-06-11T04:10:09.465Z",
+            "updatedAt": "2025-06-11T04:10:09.465Z",
+            "publishedAt": "2025-06-11T04:10:09.474Z",
+            "description": "Whaddup\nWhaddup\nWhaddup\nWhaddup",
+            "image": {
+                "id": 7,
+                "documentId": "gaycg5lilk1paa4xrlhph4po",
+                "name": "nikki9.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1024,
+                "height": 868,
+                "formats": {
+                    "thumbnail": {
+                        "name": "thumbnail_nikki9.jpg",
+                        "hash": "thumbnail_nikki9_e7e87fa7e9",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 184,
+                        "height": 156,
+                        "size": 8.14,
+                        "sizeInBytes": 8137,
+                        "url": "/uploads/thumbnail_nikki9_e7e87fa7e9.jpg"
+                    },
+                    "small": {
+                        "name": "small_nikki9.jpg",
+                        "hash": "small_nikki9_e7e87fa7e9",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 500,
+                        "height": 424,
+                        "size": 39.28,
+                        "sizeInBytes": 39283,
+                        "url": "/uploads/small_nikki9_e7e87fa7e9.jpg"
+                    },
+                    "medium": {
+                        "name": "medium_nikki9.jpg",
+                        "hash": "medium_nikki9_e7e87fa7e9",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 750,
+                        "height": 636,
+                        "size": 74.02,
+                        "sizeInBytes": 74016,
+                        "url": "/uploads/medium_nikki9_e7e87fa7e9.jpg"
+                    },
+                    "large": {
+                        "name": "large_nikki9.jpg",
+                        "hash": "large_nikki9_e7e87fa7e9",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 1000,
+                        "height": 848,
+                        "size": 113.38,
+                        "sizeInBytes": 113377,
+                        "url": "/uploads/large_nikki9_e7e87fa7e9.jpg"
+                    }
+                },
+                "hash": "nikki9_e7e87fa7e9",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 80.53,
+                "url": "/uploads/nikki9_e7e87fa7e9.jpg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2025-06-11T04:09:48.076Z",
+                "updatedAt": "2025-06-11T04:09:48.076Z",
+                "publishedAt": "2025-06-11T04:09:48.076Z"
+            }
+        }
+    ],
+    "meta": {
+        "pagination": {
+            "page": 1,
+            "pageSize": 25,
+            "pageCount": 1,
+            "total": 2
+        }
+    }
+}
