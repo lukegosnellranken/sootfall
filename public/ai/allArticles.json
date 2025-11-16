@@ -1,0 +1,352 @@
+{
+    "data": [
+        {
+            "id": 40,
+            "documentId": "l66b5fkydhuyaocd5eqrgwbo",
+            "title": "Lorem Ipsum",
+            "content": "![example.jpg](http://localhost:1337/uploads/example_04f3c346f0.jpg)\n\n![example.jpg](http://localhost:1337/uploads/example_04f3c346f0.jpg)\n\n[https://www.google.com/](link)\n\n![example.jpg](http://localhost:1337/uploads/example_04f3c346f0.jpg)\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel ullamcorper massa. Aliquam et lectus interdum, blandit quam quis, venenatis nulla. Donec et mi dolor. Quisque porta gravida gravida. Pellentesque faucibus purus non metus porta malesuada. Nam facilisis arcu vel posuere cursus. Donec luctus imperdiet nibh. Suspendisse gravida nulla sit amet arcu convallis fringilla. Maecenas dapibus mauris eu diam accumsan, in rhoncus diam dignissim. Aenean id condimentum felis, at eleifend mauris.",
+            "createdAt": "2025-04-05T03:52:45.564Z",
+            "updatedAt": "2025-10-30T23:33:35.056Z",
+            "publishedAt": "2025-10-30T23:33:35.064Z",
+            "date": "2025-04-05",
+            "tags": "prose",
+            "slug": "lorem-ipsum",
+            "image": {
+                "id": 4,
+                "documentId": "suen3dc0o4fnrk0u8v7lbd7j",
+                "name": "nikki4.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 2007,
+                "height": 1659,
+                "formats": {
+                    "thumbnail": {
+                        "name": "thumbnail_nikki4.jpg",
+                        "hash": "thumbnail_nikki4_f46811d83b",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 189,
+                        "height": 156,
+                        "size": 49.83,
+                        "sizeInBytes": 49825,
+                        "url": "/uploads/thumbnail_nikki4_f46811d83b.jpg"
+                    },
+                    "medium": {
+                        "name": "medium_nikki4.jpg",
+                        "hash": "medium_nikki4_f46811d83b",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 750,
+                        "height": 620,
+                        "size": 460.94,
+                        "sizeInBytes": 460938,
+                        "url": "/uploads/medium_nikki4_f46811d83b.jpg"
+                    },
+                    "small": {
+                        "name": "small_nikki4.jpg",
+                        "hash": "small_nikki4_f46811d83b",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 500,
+                        "height": 413,
+                        "size": 236.65,
+                        "sizeInBytes": 236647,
+                        "url": "/uploads/small_nikki4_f46811d83b.jpg"
+                    },
+                    "large": {
+                        "name": "large_nikki4.jpg",
+                        "hash": "large_nikki4_f46811d83b",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 1000,
+                        "height": 827,
+                        "size": 781.6,
+                        "sizeInBytes": 781595,
+                        "url": "/uploads/large_nikki4_f46811d83b.jpg"
+                    }
+                },
+                "hash": "nikki4_f46811d83b",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 545.73,
+                "url": "/uploads/nikki4_f46811d83b.jpg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2025-06-11T03:53:31.709Z",
+                "updatedAt": "2025-06-11T03:53:31.709Z",
+                "publishedAt": "2025-06-11T03:53:31.709Z"
+            },
+            "author": {
+                "id": 8,
+                "documentId": "wrumdgdufubmk4t9z12e3uay",
+                "name": "Poniko Monoe Monoko",
+                "createdAt": "2025-06-11T04:10:09.465Z",
+                "updatedAt": "2025-06-11T04:10:09.465Z",
+                "publishedAt": "2025-06-11T04:10:09.474Z",
+                "description": "Whaddup\nWhaddup\nWhaddup\nWhaddup"
+            }
+        },
+        {
+            "id": 41,
+            "documentId": "du85yojsaac5r8jh877kjgl1",
+            "title": "Reflections in the Midnight Oil",
+            "content": "When the golden hour has passed, the lesser light of the patient cosmos soon emerges in her course. Her magnificence is perched in her dark dominion, high in the heavens amidst scintillating halos. With a gentle touch, she begins her nightly conquest anew, loosening her milky satin glow upon the cold earth.\n\nThe fervor of restless men who burn up all on the inside drowses,\n\nFervor drowses as restless men burn up all on the inside, rising into the descending black. Like a babe hushed at his mother's breast, a still of the night is nurtured in the sibylline sootfall...\n\nRestless men burn, fervor dies without aim, and like a babe hushed at his mother's breast, a still of the night is nurtured in the sweet, sibylline sootfall...\n\nThe restless man tucked away in his quiet nook knows this well and as a matter of course is bemused little. What is it worth to pay any mind to what is sure and sure to follow? Pragmatism be damned if he were to heavily consider such things, allowing them to hamper his routine toil. The greatest of thinkers have long ago done their worthwhile work; a mountain looming shadow over his eyes, every day as his mind wanders, constantly sobering him to the mundane. Perhaps in more youthful days an air of romanticism was essential in his perception of the world around him. Could it be even supplemental now that he is grown and dignification is his cause? Well, upon reflection, the annals of his short history illustrate profusely that by the abstract means of this sole focus it shall not be truly fulfilled.\n\nIn large part this is due to the settled mindedness of the limits of his understanding. But a settled mindedness is not an entitlement, nor a virtue for men, but a sad illusion as they know nothing. The way by which this degradation has festered is irrelevant, only that expansion of his mind is halted and a self-inflicted stagnation is achieved in the stead of dignity. A continual failed mission of his own making. Little by little this has occurred, without concern for the moon or the sky or the wind or the trees. What now can be said of his soul?",
+            "createdAt": "2025-04-04T19:50:57.586Z",
+            "updatedAt": "2025-10-30T23:33:46.875Z",
+            "publishedAt": "2025-10-30T23:33:46.883Z",
+            "date": "2025-04-04",
+            "tags": "poetry, prose",
+            "slug": "reflections-in-the-midnight-oil",
+            "image": {
+                "id": 5,
+                "documentId": "n4529xkcso4788xft7250qyo",
+                "name": "nikki6.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 800,
+                "height": 800,
+                "formats": {
+                    "thumbnail": {
+                        "name": "thumbnail_nikki6.jpg",
+                        "hash": "thumbnail_nikki6_ac9917f0b9",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 156,
+                        "height": 156,
+                        "size": 6.67,
+                        "sizeInBytes": 6670,
+                        "url": "/uploads/thumbnail_nikki6_ac9917f0b9.jpg"
+                    },
+                    "small": {
+                        "name": "small_nikki6.jpg",
+                        "hash": "small_nikki6_ac9917f0b9",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 500,
+                        "height": 500,
+                        "size": 44.41,
+                        "sizeInBytes": 44407,
+                        "url": "/uploads/small_nikki6_ac9917f0b9.jpg"
+                    },
+                    "medium": {
+                        "name": "medium_nikki6.jpg",
+                        "hash": "medium_nikki6_ac9917f0b9",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 750,
+                        "height": 750,
+                        "size": 85.1,
+                        "sizeInBytes": 85102,
+                        "url": "/uploads/medium_nikki6_ac9917f0b9.jpg"
+                    }
+                },
+                "hash": "nikki6_ac9917f0b9",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 94.78,
+                "url": "/uploads/nikki6_ac9917f0b9.jpg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2025-06-11T03:53:39.911Z",
+                "updatedAt": "2025-06-11T03:53:39.911Z",
+                "publishedAt": "2025-06-11T03:53:39.911Z"
+            },
+            "author": {
+                "id": 6,
+                "documentId": "t17etwhyrfox4wp2r48eklnu",
+                "name": "Fleecer",
+                "createdAt": "2025-06-10T21:14:26.263Z",
+                "updatedAt": "2025-06-11T03:49:05.652Z",
+                "publishedAt": "2025-06-11T03:49:05.659Z",
+                "description": "I am Fleecer.\nWhaddup."
+            }
+        },
+        {
+            "id": 42,
+            "documentId": "b1yatbcdpk0f8x82kca9vf5p",
+            "title": "The Tragedy of Darth Plagueis the Wise?",
+            "content": "No? I thought not. It's No story the Jedi would tell you. It's a Sith legend. Darth Plagueis was a Dark Lord of the Sith. He was so powerful, Yet so wise. He could use the force to influence the medi chlorians to create, Life. He had such a knowledge of the Dark side, He could even keep the ones he cared about, From dying. The dark side of the force is a pathway to many abilities some consider to be unnatural. Well what happened to him? Darth Plagueis became so powerful that the only thing he feared was losing his power, Which eventually of course he did. Unfortunately, He taught his apprentice everything he knew. Then his apprentice killed him in his sleep. Ironic, He could save others from death, But not himself.",
+            "createdAt": "2025-06-10T02:38:27.087Z",
+            "updatedAt": "2025-10-30T23:34:02.357Z",
+            "publishedAt": "2025-10-30T23:34:02.368Z",
+            "date": "2025-06-10",
+            "tags": "star wars, test, test2, test3, test4, test5, test6, test7, test8, test9, test10, test11, test12",
+            "slug": "the-tragedy-of-darth-plagueis-the-wise",
+            "image": {
+                "id": 3,
+                "documentId": "smc29pxakzjim5qho67uxj2q",
+                "name": "nikki7.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1024,
+                "height": 768,
+                "formats": {
+                    "thumbnail": {
+                        "name": "thumbnail_nikki7.jpg",
+                        "hash": "thumbnail_nikki7_a484f352b7",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 208,
+                        "height": 156,
+                        "size": 7.69,
+                        "sizeInBytes": 7689,
+                        "url": "/uploads/thumbnail_nikki7_a484f352b7.jpg"
+                    },
+                    "small": {
+                        "name": "small_nikki7.jpg",
+                        "hash": "small_nikki7_a484f352b7",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 500,
+                        "height": 375,
+                        "size": 29.69,
+                        "sizeInBytes": 29691,
+                        "url": "/uploads/small_nikki7_a484f352b7.jpg"
+                    },
+                    "medium": {
+                        "name": "medium_nikki7.jpg",
+                        "hash": "medium_nikki7_a484f352b7",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 750,
+                        "height": 563,
+                        "size": 53.84,
+                        "sizeInBytes": 53835,
+                        "url": "/uploads/medium_nikki7_a484f352b7.jpg"
+                    },
+                    "large": {
+                        "name": "large_nikki7.jpg",
+                        "hash": "large_nikki7_a484f352b7",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 1000,
+                        "height": 750,
+                        "size": 81.32,
+                        "sizeInBytes": 81322,
+                        "url": "/uploads/large_nikki7_a484f352b7.jpg"
+                    }
+                },
+                "hash": "nikki7_a484f352b7",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 83.69,
+                "url": "/uploads/nikki7_a484f352b7.jpg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2025-06-11T03:52:45.188Z",
+                "updatedAt": "2025-06-11T03:52:45.188Z",
+                "publishedAt": "2025-06-11T03:52:45.188Z"
+            },
+            "author": {
+                "id": 6,
+                "documentId": "t17etwhyrfox4wp2r48eklnu",
+                "name": "Fleecer",
+                "createdAt": "2025-06-10T21:14:26.263Z",
+                "updatedAt": "2025-06-11T03:49:05.652Z",
+                "publishedAt": "2025-06-11T03:49:05.659Z",
+                "description": "I am Fleecer.\nWhaddup."
+            }
+        },
+        {
+            "id": 44,
+            "documentId": "qbpw3pj0dvlp3w6h0gprkj3b",
+            "title": "Magic's Gone, Party's Over, September's Forever",
+            "content": "I hold with extreme bias a fondness and fascination with the world wide web of my youth. Nestled between the dotcom bubble's burst and the degenerate blitzscaling of the modern corporate-enslaved internet was a sort of renaissance period following major advancements brought on by a newly-emergent Web 2.0. I myself grew within that golden age which was the creative explosion of an interactive internet. I spent many childhood and adolescent days enraptured by mono and sub-cultures which had formed and splintered from the expansion following the watershed mark in the evolution of broad and open interconnectivity. This was more than the tail-end of a wild west. It was a cavernous ether embedded with distinct ethea which could not be offered in any carnal manner; one which remained pure in large part insofar as the outside world had minimal bearing on the autonomy of its sodality's builders and initiates.\n\n![nikki.jpg](http://localhost:1337/uploads/nikki_d89867b01f.jpg)\n\nHowever, in the following decades, virtually every person became an internet user as the utilities and entertainment of an interconnected world enticed and patronized while the means of accessibility became standard and expected. Generally eroded by the centralization of all things into a continually diminishing handful of sources are certain virtues of individual and communal well-being which were a short time ago commonplace in a more meaningful regard among the people (is my little recollection and large conception). Obscured with them is any weighty distinction between the online and outside worlds as increasingly mundane aspects of life reinforce a false, programmed sense of implicity of an any moment gateway to the progressively schizophrenic online experience.",
+            "createdAt": "2025-06-25T00:13:39.585Z",
+            "updatedAt": "2025-10-30T23:43:13.888Z",
+            "publishedAt": "2025-10-30T23:43:13.896Z",
+            "date": "2025-06-25",
+            "tags": "internet, technology, blahblahblahblahblahblahblahblahblah, test1, test2",
+            "slug": "magics-gone-partys-over-septembers-forever",
+            "image": {
+                "id": 6,
+                "documentId": "dn970t1tld08e1erdilffqsa",
+                "name": "nikki.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 868,
+                "height": 868,
+                "formats": {
+                    "thumbnail": {
+                        "name": "thumbnail_nikki.jpg",
+                        "hash": "thumbnail_nikki_d89867b01f",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 156,
+                        "height": 156,
+                        "size": 4.28,
+                        "sizeInBytes": 4284,
+                        "url": "/uploads/thumbnail_nikki_d89867b01f.jpg"
+                    },
+                    "small": {
+                        "name": "small_nikki.jpg",
+                        "hash": "small_nikki_d89867b01f",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 500,
+                        "height": 500,
+                        "size": 20.08,
+                        "sizeInBytes": 20080,
+                        "url": "/uploads/small_nikki_d89867b01f.jpg"
+                    },
+                    "medium": {
+                        "name": "medium_nikki.jpg",
+                        "hash": "medium_nikki_d89867b01f",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 750,
+                        "height": 750,
+                        "size": 30.67,
+                        "sizeInBytes": 30668,
+                        "url": "/uploads/medium_nikki_d89867b01f.jpg"
+                    }
+                },
+                "hash": "nikki_d89867b01f",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 40.96,
+                "url": "/uploads/nikki_d89867b01f.jpg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2025-06-11T04:09:26.227Z",
+                "updatedAt": "2025-06-11T04:09:26.227Z",
+                "publishedAt": "2025-06-11T04:09:26.227Z"
+            },
+            "author": {
+                "id": 6,
+                "documentId": "t17etwhyrfox4wp2r48eklnu",
+                "name": "Fleecer",
+                "createdAt": "2025-06-10T21:14:26.263Z",
+                "updatedAt": "2025-06-11T03:49:05.652Z",
+                "publishedAt": "2025-06-11T03:49:05.659Z",
+                "description": "I am Fleecer.\nWhaddup."
+            }
+        }
+    ],
+    "meta": {
+        "pagination": {
+            "page": 1,
+            "pageSize": 25,
+            "pageCount": 1,
+            "total": 4
+        }
+    }
+}

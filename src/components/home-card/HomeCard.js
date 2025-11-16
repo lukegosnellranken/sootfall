@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { backendLink, token, envName } from '../../config/api.ts';
 import './HomeCard.scss';
 import HomeCardContent from "../home-card-content/HomeCardContent";
 import dynamic from 'next/dynamic';
@@ -12,23 +13,10 @@ const ReactPaginate = dynamic(
 function HomeCard(props) {
     let [initDataArray, setInitDataArray] = useState([]);
     const paginationRef = useRef(null);
-
-    // Get data from ~/.env, set API_URL and token
-    const env = process.env.NEXT_PUBLIC_ENV;
-    let API_URL;
-    let token;
-    if (env === 'local') {
-        API_URL = process.env.NEXT_PUBLIC_API_URL_LOCAL;
-        token = process.env.NEXT_PUBLIC_API_TOKEN_LOCAL;
-    }
-    else if (env === 'cloud') {
-        API_URL = process.env.NEXT_PUBLIC_API_URL_CLOUD;
-        token = process.env.NEXT_PUBLIC_API_TOKEN_CLOUD;
-    }
    
     useEffect(() => {
         const fetchData = async () => {
-            await fetch(`${API_URL}/api/articles?populate=*`, {headers: {'Authorization': `Bearer ${token}`}})
+            await fetch(`${backendLink}/api/articles?populate=*`, {headers: {'Authorization': `Bearer ${token}`}})
             .then(res => {
                 if (res.ok) {
                     return res.json()
@@ -43,11 +31,11 @@ function HomeCard(props) {
                     let dateString = data.data[i].date;
                     dateString = dateString.slice(5) + "-" + dateString.slice(2,4);
                     let image;
-                    if (env === 'local') {
+                    if (envName === 'local') {
                         // Does not contain the API URL, need to concatenate
-                        image = API_URL + data.data[i].image.formats.medium.url;
+                        image = backendLink + data.data[i].image.formats.medium.url;
                     }
-                    else if (env === 'cloud') {
+                    else if (envName === 'cloud') {
                         // Already contains the API URL, no concatenation necessary
                         image = data.data[i].image.formats.medium.url;
                     }
@@ -86,7 +74,7 @@ function HomeCard(props) {
             .catch(error => {console.log(error)});
         }
         fetchData();
-    }, [props.pageType, props.tag, props.author, props.search, API_URL, token, env]);
+    }, [props.pageType, props.tag, props.author, props.search, backendLink, token]);
     
     function PaginatedItems({ itemsPerPage }) {
         // We start with an empty list of items.

@@ -1,0 +1,182 @@
+{
+    "data": [
+        {
+            "id": 42,
+            "documentId": "b1yatbcdpk0f8x82kca9vf5p",
+            "title": "The Tragedy of Darth Plagueis the Wise?",
+            "content": "No? I thought not. It's No story the Jedi would tell you. It's a Sith legend. Darth Plagueis was a Dark Lord of the Sith. He was so powerful, Yet so wise. He could use the force to influence the medi chlorians to create, Life. He had such a knowledge of the Dark side, He could even keep the ones he cared about, From dying. The dark side of the force is a pathway to many abilities some consider to be unnatural. Well what happened to him? Darth Plagueis became so powerful that the only thing he feared was losing his power, Which eventually of course he did. Unfortunately, He taught his apprentice everything he knew. Then his apprentice killed him in his sleep. Ironic, He could save others from death, But not himself.",
+            "createdAt": "2025-06-10T02:38:27.087Z",
+            "updatedAt": "2025-10-30T23:34:02.357Z",
+            "publishedAt": "2025-10-30T23:34:02.368Z",
+            "date": "2025-06-10",
+            "tags": "star wars, test, test2, test3, test4, test5, test6, test7, test8, test9, test10, test11, test12",
+            "slug": "the-tragedy-of-darth-plagueis-the-wise",
+            "image": {
+                "id": 3,
+                "documentId": "smc29pxakzjim5qho67uxj2q",
+                "name": "nikki7.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1024,
+                "height": 768,
+                "formats": {
+                    "thumbnail": {
+                        "name": "thumbnail_nikki7.jpg",
+                        "hash": "thumbnail_nikki7_a484f352b7",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 208,
+                        "height": 156,
+                        "size": 7.69,
+                        "sizeInBytes": 7689,
+                        "url": "/uploads/thumbnail_nikki7_a484f352b7.jpg"
+                    },
+                    "small": {
+                        "name": "small_nikki7.jpg",
+                        "hash": "small_nikki7_a484f352b7",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 500,
+                        "height": 375,
+                        "size": 29.69,
+                        "sizeInBytes": 29691,
+                        "url": "/uploads/small_nikki7_a484f352b7.jpg"
+                    },
+                    "medium": {
+                        "name": "medium_nikki7.jpg",
+                        "hash": "medium_nikki7_a484f352b7",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 750,
+                        "height": 563,
+                        "size": 53.84,
+                        "sizeInBytes": 53835,
+                        "url": "/uploads/medium_nikki7_a484f352b7.jpg"
+                    },
+                    "large": {
+                        "name": "large_nikki7.jpg",
+                        "hash": "large_nikki7_a484f352b7",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 1000,
+                        "height": 750,
+                        "size": 81.32,
+                        "sizeInBytes": 81322,
+                        "url": "/uploads/large_nikki7_a484f352b7.jpg"
+                    }
+                },
+                "hash": "nikki7_a484f352b7",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 83.69,
+                "url": "/uploads/nikki7_a484f352b7.jpg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2025-06-11T03:52:45.188Z",
+                "updatedAt": "2025-06-11T03:52:45.188Z",
+                "publishedAt": "2025-06-11T03:52:45.188Z"
+            },
+            "author": {
+                "id": 6,
+                "documentId": "t17etwhyrfox4wp2r48eklnu",
+                "name": "Fleecer",
+                "createdAt": "2025-06-10T21:14:26.263Z",
+                "updatedAt": "2025-06-11T03:49:05.652Z",
+                "publishedAt": "2025-06-11T03:49:05.659Z",
+                "description": "I am Fleecer.\nWhaddup."
+            }
+        },
+        {
+            "id": 44,
+            "documentId": "qbpw3pj0dvlp3w6h0gprkj3b",
+            "title": "Magic's Gone, Party's Over, September's Forever",
+            "content": "I hold with extreme bias a fondness and fascination with the world wide web of my youth. Nestled between the dotcom bubble's burst and the degenerate blitzscaling of the modern corporate-enslaved internet was a sort of renaissance period following major advancements brought on by a newly-emergent Web 2.0. I myself grew within that golden age which was the creative explosion of an interactive internet. I spent many childhood and adolescent days enraptured by mono and sub-cultures which had formed and splintered from the expansion following the watershed mark in the evolution of broad and open interconnectivity. This was more than the tail-end of a wild west. It was a cavernous ether embedded with distinct ethea which could not be offered in any carnal manner; one which remained pure in large part insofar as the outside world had minimal bearing on the autonomy of its sodality's builders and initiates.\n\n![nikki.jpg](http://localhost:1337/uploads/nikki_d89867b01f.jpg)\n\nHowever, in the following decades, virtually every person became an internet user as the utilities and entertainment of an interconnected world enticed and patronized while the means of accessibility became standard and expected. Generally eroded by the centralization of all things into a continually diminishing handful of sources are certain virtues of individual and communal well-being which were a short time ago commonplace in a more meaningful regard among the people (is my little recollection and large conception). Obscured with them is any weighty distinction between the online and outside worlds as increasingly mundane aspects of life reinforce a false, programmed sense of implicity of an any moment gateway to the progressively schizophrenic online experience.",
+            "createdAt": "2025-06-25T00:13:39.585Z",
+            "updatedAt": "2025-10-30T23:43:13.888Z",
+            "publishedAt": "2025-10-30T23:43:13.896Z",
+            "date": "2025-06-25",
+            "tags": "internet, technology, blahblahblahblahblahblahblahblahblah, test1, test2",
+            "slug": "magics-gone-partys-over-septembers-forever",
+            "image": {
+                "id": 6,
+                "documentId": "dn970t1tld08e1erdilffqsa",
+                "name": "nikki.jpg",
+                "alternativeText": null,
+                "caption": null,
+                "width": 868,
+                "height": 868,
+                "formats": {
+                    "thumbnail": {
+                        "name": "thumbnail_nikki.jpg",
+                        "hash": "thumbnail_nikki_d89867b01f",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 156,
+                        "height": 156,
+                        "size": 4.28,
+                        "sizeInBytes": 4284,
+                        "url": "/uploads/thumbnail_nikki_d89867b01f.jpg"
+                    },
+                    "small": {
+                        "name": "small_nikki.jpg",
+                        "hash": "small_nikki_d89867b01f",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 500,
+                        "height": 500,
+                        "size": 20.08,
+                        "sizeInBytes": 20080,
+                        "url": "/uploads/small_nikki_d89867b01f.jpg"
+                    },
+                    "medium": {
+                        "name": "medium_nikki.jpg",
+                        "hash": "medium_nikki_d89867b01f",
+                        "ext": ".jpg",
+                        "mime": "image/jpeg",
+                        "path": null,
+                        "width": 750,
+                        "height": 750,
+                        "size": 30.67,
+                        "sizeInBytes": 30668,
+                        "url": "/uploads/medium_nikki_d89867b01f.jpg"
+                    }
+                },
+                "hash": "nikki_d89867b01f",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 40.96,
+                "url": "/uploads/nikki_d89867b01f.jpg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2025-06-11T04:09:26.227Z",
+                "updatedAt": "2025-06-11T04:09:26.227Z",
+                "publishedAt": "2025-06-11T04:09:26.227Z"
+            },
+            "author": {
+                "id": 6,
+                "documentId": "t17etwhyrfox4wp2r48eklnu",
+                "name": "Fleecer",
+                "createdAt": "2025-06-10T21:14:26.263Z",
+                "updatedAt": "2025-06-11T03:49:05.652Z",
+                "publishedAt": "2025-06-11T03:49:05.659Z",
+                "description": "I am Fleecer.\nWhaddup."
+            }
+        }
+    ],
+    "meta": {
+        "pagination": {
+            "page": 1,
+            "pageSize": 25,
+            "pageCount": 1,
+            "total": 2
+        }
+    }
+}
