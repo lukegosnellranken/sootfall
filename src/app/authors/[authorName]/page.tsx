@@ -12,7 +12,7 @@ export async function generateStaticParams() {
     // Return an array of objects, where each object has an `authorName` property
     // This should match the name of your dynamic segment folder: [authorName]
     return authors.data.map((author: any) => ({
-      authorName: author.name.toLowerCase(),
+      authorName: encodeURIComponent(author.name.toLowerCase()),
     }));
   } catch (error) {
     console.error('Failed to fetch authors:', error);
@@ -42,8 +42,8 @@ type Props = {
 
 async function Author({ params }: Props) {
     const { authorName } = await params;
-    console.log(authorName)
-    const author = await getAuthor(authorName);
+    const decodedAuthorName = decodeURIComponent(authorName);
+    const author = await getAuthor(decodedAuthorName);
 
     // If no author is found, render the 404 page
     if (!author) {

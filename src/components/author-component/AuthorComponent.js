@@ -11,7 +11,6 @@ function AuthorComponent({ author }) {
     let description = author.description;
     return(
         <div id="authorscomponent-container">
-            {console.log(author)}
             <div id="div-authorscomponent-card">
                 <AuthorCard 
                     authorName={name}

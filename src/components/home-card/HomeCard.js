@@ -15,8 +15,26 @@ function HomeCard(props) {
     const paginationRef = useRef(null);
    
     useEffect(() => {
+        let fetchEndpoint;
+        switch (props.pageType) {
+            case "home":
+                fetchEndpoint = backendLink + "/api/articles?populate=*&sort=date:desc";
+                break;
+            case "search":
+                fetchEndpoint = backendLink + "/api/articles?populate=*";
+                break;
+            case "author":
+                fetchEndpoint = backendLink + "/api/articles?filters[author][name][$eqi]=" + props.author + "&populate=*&sort=date:desc";
+                break;
+            case "tag":
+                fetchEndpoint = backendLink + "/api/articles?filters[tags][$contains]=" + props.tag + "&populate=*&sort=date:desc";
+                break;
+            default:
+                fetchEndpoint = backendLink + "/api/articles?populate=*&sort=date:desc";
+                break;
+        }
         const fetchData = async () => {
-            await fetch(`${backendLink}/api/articles?populate=*`, {headers: {'Authorization': `Bearer ${token}`}})
+            await fetch(fetchEndpoint, {headers: {'Authorization': `Bearer ${token}`}})
             .then(res => {
                 if (res.ok) {
                     return res.json()
@@ -48,17 +66,15 @@ function HomeCard(props) {
                 }
                 // If homepage, display all articles from most to least recent
                 if (props.pageType === "home") {
-                    iArray.sort((a, b) => new Date(b[1]) - new Date(a[1]));
+                    // No client-side sorting, display as fetched
                 }
-                // If tag page, display only articles that contain the specified tag from most to least recent
+                // If tag page, display only articles that contain the specified tag
                 else if (props.pageType === "tag") {
                     iArray = iArray.filter(arr => arr[3] && arr[3].includes(props.tag));
-                    iArray.sort((a, b) => new Date(b[1]) - new Date(a[1]));
                 }
-                // If author page, display only articles written by the specified author from most to least recent
+                // If author page, display only articles written by the specified author
                 else if (props.pageType === "author") {
                     iArray = iArray.filter(arr => arr[4] && arr[4].toLowerCase() === props.author.toLowerCase());
-                    iArray.sort((a, b) => new Date(b[1]) - new Date(a[1]));
                 }
                 // If search page, display only articles related to the search
                 else if (props.pageType === "search") {
@@ -147,17 +163,17 @@ function HomeCard(props) {
         };
 
         return (
-            <div id="div-homecard-article-card">      
-                {currentItems.reverse().map((article, i) => (
+            <div id="div-homecard-article-card">
+                {currentItems.map((article, i) => (
                     <div key={i}>
                         <HomeCardContent
-                            key = {i}
-                            sub={`/articles/${generateSlug(currentItems[currentItems.length-(i+1)][0])}`}
-                            title = {currentItems[currentItems.length-(i+1)][0]}
-                            date = {currentItems[currentItems.length-(i+1)][1]}
-                            image = {currentItems[currentItems.length-(i+1)][2]}
-                            tags = {currentItems[currentItems.length-(i+1)][3]}
-                            author = {currentItems[currentItems.length-(i+1)][4]}
+                            key={i}
+                            sub={`/articles/${generateSlug(article[0])}`}
+                            title={article[0]}
+                            date={article[1]}
+                            image={article[2]}
+                            tags={article[3]}
+                            author={article[4]}
                         />
                     </div>
                 ))}
