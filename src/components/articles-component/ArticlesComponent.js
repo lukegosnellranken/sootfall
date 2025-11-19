@@ -2,7 +2,7 @@ import React from "react";
 import './ArticlesComponent.scss';
 import HomeCard from "../home-card/HomeCard";
 
-function ArticlesComponent() {
+function ArticlesComponent(props) {
     return (
         <div id="div-articles-component">
             <div id="articlescomponent-container">
@@ -10,6 +10,7 @@ function ArticlesComponent() {
                     <HomeCard
                         title = "All Writings"
                         pageType = "home"
+                        articles = { props.articles }
                     />
                 </div>
             </div>

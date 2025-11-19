@@ -5,10 +5,11 @@ import './AuthorComponent.scss';
 import AuthorCard from "../author-card/AuthorCard";
 import HomeCard from "../home-card/HomeCard";
 
-function AuthorComponent({ author }) {
+function AuthorComponent({ author, articles }) {
     let name = author.name;
     let image = author.image;
     let description = author.description;
+    console.log(articles);
     return(
         <div id="authorscomponent-container">
             <div id="div-authorscomponent-card">
@@ -22,6 +23,7 @@ function AuthorComponent({ author }) {
                 pageType="author"
                 title = {"Writings by " + name}
                 author={name}
+                articles={articles}
             />
         </div>
     );

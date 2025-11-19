@@ -10,7 +10,7 @@ import wutheringLight from '../../app/public/images/wuthering-side-light.jpg';
 import wutheringDark from '../../app/public/images/wuthering-side-dark.jpg';
 import beans from '../../app/public/images/coffee-beans.png';
 
-function HomeComponent() {
+function HomeComponent(props) {
     const { theme } = useSettings(); // Instantiate theme object from Settings.js
     // Since lightTheme is computed from other reactive data (theme.title), only recalcualte it when theme changes
     const lightTheme = useMemo(() => theme.title === "Light", [theme]);;
@@ -21,6 +21,7 @@ function HomeComponent() {
                 <HomeCard
                     title = "Reveries & Ruminations"
                     pageType = "home"
+                    articles = {props.articles}
                 />
             </div>
             <div id="div-homecomponent-mobile-card">

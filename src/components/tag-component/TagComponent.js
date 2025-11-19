@@ -25,17 +25,29 @@ import HomeCard from "../home-card/HomeCard";
 
 function TagComponent({ tagName, articles }) {
     console.log("hello");
-    return (
-        <div>
-            <h1>{tagName}</h1>
-            {articles.map((article) => (
-                <div key={article.id}>
-                    <h2>{article.title}</h2>
-                    <p>{article.description}</p>
-                </div>
-            ))}
+    // return (
+    //     <div>
+    //         <h1>{tagName}</h1>
+    //         {articles.map((article) => (
+    //             <div key={article.id}>
+    //                 <h2>{article.title}</h2>
+    //                 <p>{article.description}</p>
+    //             </div>
+    //         ))}
+    //     </div>
+    // );
+    return(
+        <div id="tagcomponent-container">
+            <div id="div-tagcomponent-card">
+                <HomeCard
+                    title = {"Tag: " + tagName}
+                    pageType = "tag"
+                    tag = {tagName}
+                    articles = {articles}
+                />
+            </div>
         </div>
-    );
+    )
 }
 
 export default TagComponent;

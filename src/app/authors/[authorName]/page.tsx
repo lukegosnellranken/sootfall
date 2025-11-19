@@ -1,6 +1,7 @@
 import AuthorComponent from '../../../components/author-component/AuthorComponent.js';
 import { notFound } from 'next/navigation.js';
 import { backendLink, token } from '../../../config/api.ts';
+import { getArticles } from '../../../config/getArticles.ts';
 
 // This function tells Next.js which author pages to build at export time
 export async function generateStaticParams() {
@@ -50,10 +51,14 @@ async function Author({ params }: Props) {
         notFound();
     }
 
+    // If author exists, fetch all articles written by the author
+    const fetchEndpoint = `${backendLink}/api/articles?filters[author][name][$eqi]=${decodedAuthorName}&populate=*&sort=date:desc`;
+    const articles = await getArticles(fetchEndpoint);
+
     return(
         <div id='div-author-component'>
             {/* Pass the full author object to your component */}
-            <AuthorComponent author={author} />
+            <AuthorComponent author={author} articles={articles} />
         </div>
     );
 }
