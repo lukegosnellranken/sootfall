@@ -39,7 +39,7 @@ function Nav() {
     const handleSearch = (e) => {
         e.preventDefault();
         if (search.trim()) {
-            navigate.push(`/search/${encodeURIComponent(search.trim())}`);
+            navigate.push(`/search?q=${encodeURIComponent(search.trim())}`);
             setSearch("");
         }
     }
