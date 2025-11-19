@@ -1,39 +1,40 @@
 import TagComponent from '../../../components/tag-component/TagComponent.js';
 import { notFound } from 'next/navigation.js';
 import { backendLink, token } from '../../../config/api.ts';
+import { getArticles } from '../../../config/getArticles.ts';
 
 // This function tells Next.js which tag pages to build at export time
 export async function generateStaticParams() {
   try {
-    // Fetch the list of all tags from your API
-    const res = await fetch(`${backendLink}/api/tags?populate=*`, {headers: {'Authorization': `Bearer ${token}`}});
-    const tags = await res.json();
-   
-    // Return an array of objects, where each object has a `tagName` property
-    // This should match the name of your dynamic segment folder: [tagName]
-    return tags.data.map((tag: any) => ({
-      tagName: tag.name.toLowerCase(),
-    }));
-  } catch (error) {
-    console.error('Failed to fetch tags:', error);
-    return [];
-  }
-}
-
-// Fetches articles by tag name
-async function getArticlesByTag(tagName: string) {
-    // Fetch articles from your API using a filter on the tag name
-    const res = await fetch(`${backendLink}/api/articles?filters[tags][$contains]=${tagName}&populate=*`, {
-        headers: {'Authorization': `Bearer ${token}`}
+    // Fetch all articles to get the tags
+    const res = await fetch(`${backendLink}/api/articles?fields[0]=tags`, {
+      headers: { 'Authorization': `Bearer ${token}` }
     });
-    const articles = await res.json();
+    const articlesData = await res.json();
 
-    // If no articles are found for the tag, return null
-    if (!articles.data || articles.data.length === 0) {
-        return null;
+    if (!articlesData.data) {
+      return [];
     }
 
-    return articles.data;
+    // Use a Set to store unique tags
+    const uniqueTags = new Set<string>();
+
+    articlesData.data.forEach((article: any) => {
+      if (article.tags) {
+        const tags = article.tags.split(',').map((tag: string) => tag.trim().toLowerCase());
+        tags.forEach((tag: string) => uniqueTags.add(tag));
+      }
+    });
+
+    // Return an array of objects, where each object has a `tagName` property
+    // This should match the name of your dynamic segment folder: [tagName]
+    return Array.from(uniqueTags).map(tag => ({
+      tagName: encodeURIComponent(tag),
+    }));
+  } catch (error) {
+    console.error('Failed to fetch and process tags:', error);
+    return [];
+  }
 }
 
 type Props = {
@@ -42,11 +43,13 @@ type Props = {
 
 async function Tag({ params }: Props) {
     const { tagName } = await params;
-    console.log(tagName)
-    const articles = await getArticlesByTag(tagName);
+
+    // If articles exist, fetch them
+    const fetchEndpoint = `${backendLink}/api/articles?filters[tags][$contains]=${tagName}&populate=*&sort=date:desc`;
+    const articles = await getArticles(fetchEndpoint);
 
     // If no articles are found for the tag, render the 404 page
-    if (!articles) {
+    if (!articles || articles.length === 0) {
         notFound();
     }
 

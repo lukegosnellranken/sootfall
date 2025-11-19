@@ -9,7 +9,7 @@ async function Article() {
 
     return(
         <div id='div-articles-component'>
-            <ArticlesComponent articles = { articles}/>
+            <ArticlesComponent articles = { articles }/>
         </div>
     );
 }

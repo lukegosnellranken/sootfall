@@ -73,7 +73,7 @@ function HomeCardContent(props) {
                         <div id="div-homecardcontent-tags">
                             <div id="tags-ellipsis-wrapper" ref={wrapperRef}>
                                 {/* Only render tags if props.tags exists */}
-                                {props.tags && (() => {
+                                {props.tags && Array.isArray(props.tags) && (() => {
                                     // Only show elipses if the number of visible tags is lesser than the total number of tags
                                     const showEllipsis = visibleCount < props.tags.length;
                                     const tagsToShow = showEllipsis
