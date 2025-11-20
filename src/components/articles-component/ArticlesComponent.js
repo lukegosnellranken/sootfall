@@ -3,12 +3,16 @@ import './ArticlesComponent.scss';
 import HomeCard from "../home-card/HomeCard";
 
 function ArticlesComponent(props) {
+    let title = "All Writings";
+    if (props.searchValue) {
+        title = "Results for: " + props.searchValue;
+    }
     return (
         <div id="div-articles-component">
             <div id="articlescomponent-container">
                 <div id="div-articlescomponent-card">
                     <HomeCard
-                        title = "All Writings"
+                        title = { title }
                         pageType = "home"
                         articles = { props.articles }
                     />
