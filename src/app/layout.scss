@@ -19,6 +19,12 @@ body, html {
 #appDiv {
     background-image: var(--site-background-image);
     min-height: 100vh; // full height of viewport
+    transition: filter 0.5s ease-in-out;
+}
+
+body.loading-active #appDiv {
+    filter: blur(5px);
+    pointer-events: none; // Disable interactions while blurred
 }
 
 .loader-container {
@@ -26,7 +32,19 @@ body, html {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; // Ensure loader is on top
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.loader-container.hidden {
+    opacity: 0;
+    pointer-events: none; // Disable interactions when hidden
 }
 
 .loader {

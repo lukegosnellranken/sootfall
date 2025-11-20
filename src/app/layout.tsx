@@ -12,7 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 100);
+    }, 0);
 
     return () => clearTimeout(timer);
   }, []);
@@ -31,23 +31,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
       </head>
-      <body>
-        {loading ? (
-          <div className="loader-container">
-            <div className="loader"></div>
-          </div>
-        ) : (
-          <Settings>
-            <div id='appDiv'>
-              <Nav />
-              <Background />
-              <div id='div-content-and-footer'>
-                {children}
-              </div>
-              <Footer />
+      <body className={loading ? 'loading-active' : ''}>
+        <div className={`loader-container ${loading ? '' : 'hidden'}`}>
+          <div className="loader"></div>
+        </div>
+        <Settings>
+          <div id='appDiv'>
+            <Nav />
+            <Background />
+            <div id='div-content-and-footer'>
+              {children}
             </div>
-          </Settings>
-        )}
+            <Footer />
+          </div>
+        </Settings>
       </body>
     </html>
   );

@@ -1,5 +1,9 @@
 @import '../../config/variables';
 
+body.loading-active #homecomponent-container {
+    display: none;
+}
+
 #homecomponent-container {
     @include flex-center;
     @include container-width;
