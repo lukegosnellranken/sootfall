@@ -960,12 +960,14 @@ html {
   color: var(--site-theme-text-color);
   text-shadow: var(--site-theme-text-shadow);
   font-family: var(--site-font);
-  font-size: var(--site-size-nav-full);
   text-decoration: none;
   white-space: nowrap;
 }
 .li-nav-item a:hover {
   color: var(--site-theme-text-color);
+}
+.li-nav-item a {
+  font-size: var(--site-size-nav-full);
 }
 @media screen and (max-width: 1400px) {
   .li-nav-item a {

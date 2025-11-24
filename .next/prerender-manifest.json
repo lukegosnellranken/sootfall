@@ -1,1 +1,11 @@
-{"version":4,"routes":{"/articles/lorem-ipsum":{},"/articles/reflections-in-the-midnight-oil":{},"/articles/the-tragedy-of-darth-plagueis-the-wise":{},"/articles/magics-gone-partys-over-septembers-forever":{},"/tags/prose":{},"/tags/poetry":{},"/tags/star%20wars":{},"/tags/test":{},"/tags/test2":{},"/tags/test3":{},"/tags/test4":{},"/tags/test5":{},"/tags/test6":{},"/tags/test7":{},"/tags/test8":{},"/tags/test9":{},"/tags/test10":{},"/tags/test11":{},"/tags/test12":{},"/tags/internet":{},"/tags/technology":{},"/tags/blahblahblahblahblahblahblahblahblah":{},"/tags/test1":{},"/authors/fleecer":{},"/authors/poniko%20monoe%20monoko":{}},"dynamicRoutes":{"/articles/[articleName]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/articles/[articleName]","routeRegex":"^\\/articles\\/([^/]+?)(?:\\/)?$","allowHeader":[]},"/tags/[tagName]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/tags/[tagName]","routeRegex":"^\\/tags\\/([^/]+?)(?:\\/)?$","allowHeader":[]},"/authors/[authorName]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/authors/[authorName]","routeRegex":"^\\/authors\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"604fef5314e567cc2f8c7a27bcd8c476","previewModeSigningKey":"7a1589abdb4344f55cc8035d5be0f1efd1366e71661eef61c829b7cfbcb52feb","previewModeEncryptionKey":"8fdb07cc2a93dafab690419808927b38aa14795b71a7ee32f274b0f0533b1483"}}
+{
+  "version": 4,
+  "routes": {},
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "c80e2ebfd9e54b9564726139edac07d6",
+    "previewModeSigningKey": "1b289e0f7bc02d5d2999ad14fd0099ba733a43cd94b199acf3693b8bde99df8b",
+    "previewModeEncryptionKey": "632464f39d73467cba550d7e1ea80f61b662f89435001c0b7ebb639093b1d55d"
+  }
+}

@@ -12,7 +12,6 @@
 
     a {
         @include common-text;
-        font-size: var(--site-size-nav-full);
         text-decoration: none;
         white-space: nowrap;
 
@@ -20,6 +19,7 @@
             color: $site-text-color; // Otherwise text turns blue
         }
 
+        font-size: var(--site-size-nav-full);
         @media screen and (max-width: 1400px) {
             font-size: var(--site-size-nav-1400);
         }
