@@ -102,20 +102,17 @@
             #social-links-instagram,
             #social-links-rss {
                 text-decoration: none;
-                font-size: 120%;
                 margin-left: .5em;
                 border-radius: 50%;
                 border-style: solid;
                 border-width: .05em;
 
-                @media screen and (max-width: 800px) {
-                    font-size: 90%;
+                font-size: var(--site-size-artAuthDate-full);
+                @media screen and (max-width: 1400px) {
+                    font-size: var(--site-size-artAuthDate-1400);
                 }
-            }
-
-            #social-links-rss {
                 @media screen and (max-width: 800px) {
-                    font-size: 120%;
+                    font-size: var(--site-size-artAuthDate-800);
                 }
             }
 
@@ -137,6 +134,10 @@
                 position: relative;
                 bottom: -.20em;
                 right: -.05em;
+                @media screen and (max-width: 800px) {
+                    bottom: -.25em;
+                    right: -.05em;
+                }
             }
 
             .fa {

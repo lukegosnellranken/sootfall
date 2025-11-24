@@ -55,7 +55,6 @@ function ArticleSideCard({ currentArticleTitle }) {
 
     // Filter out the current article from the list
     const otherArticles = articles.filter(article => article.title !== currentArticleTitle);
-    console.log(otherArticles);
 
     return (
         <div id="div-articlesidecard-card">

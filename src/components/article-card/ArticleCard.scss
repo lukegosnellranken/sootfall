@@ -24,8 +24,8 @@
                 @include origin-link;
                 @include common-text;
                 text-decoration: none;
-                margin-left: 1%;
-                margin-top: .5%;
+                margin-left: .5em;
+                margin-top: .5em;
                 max-height: .75em;
                 position: absolute;
                 transition: $site-transition;
@@ -215,14 +215,17 @@
                     background-color: var(--site-background-color-switch-item);
                     color: black !important;
                     font-family: var(--site-font);
-                    font-size: 150%;
                     border-radius: .25em;
                     border-width: 1px;
                     border-color: gray;
                     cursor: pointer;
 
-                    @media screen and (max-width: 1000px) {
-                        font-size: 100%;
+                    font-size: var(--site-size-artAuthDate-full);
+                    @media screen and (max-width: 1400px) {
+                        font-size: var(--site-size-artAuthDate-1400);
+                    }
+                    @media screen and (max-width: 800px) {
+                        font-size: var(--site-size-artAuthDate-800);
                     }
                 }
 

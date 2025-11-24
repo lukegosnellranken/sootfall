@@ -277,8 +277,6 @@
                     @include unselectable;
                     justify-content: space-evenly;
                     gap: 1em;
-                    padding-left: 5%;
-                    padding-right: 5%;
                     display: grid;
                     grid-template-columns: repeat(4, 1fr);
                     max-width: 1500px;

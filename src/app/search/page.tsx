@@ -1,14 +1,14 @@
+export const dynamic = 'force-dynamic';
+
 import ArticlesComponent from '../../components/articles-component/ArticlesComponent.js';
 import NoResults from '../no-results.tsx';
 import { backendLink } from '../../config/api.ts';
 import { getArticles } from '../../config/getArticles.ts';
 
-type Props = {
-    searchParams: { q: string };
-};
-
-async function Search({ searchParams }: Props) {
-    const searchValue = searchParams.q || "";
+async function Search({ searchParams }: { searchParams?: Promise<{ q: string }> }) {
+    // Await searchParams before using it
+    const params = await searchParams;
+    const searchValue = params?.q || "";
     const decodedSearchValue = decodeURIComponent(searchValue);
 
     // If articles exist, fetch them

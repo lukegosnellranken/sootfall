@@ -9,7 +9,6 @@ function AuthorComponent({ author, articles }) {
     let name = author.name;
     let image = author.image;
     let description = author.description;
-    console.log(articles);
     return(
         <div id="authorscomponent-container">
             <div id="div-authorscomponent-card">

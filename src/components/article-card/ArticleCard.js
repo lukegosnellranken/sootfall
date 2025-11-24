@@ -34,16 +34,10 @@ function ArticleCard({ article }) {
     // Process the article data passed in as a prop
     const articleData = (() => {
         if (!article) return null;
-
         let title = article.title;
-
         let author = article.author.name;
-
         let dateString = article.date;
         dateString = dateString.slice(5) + "-" + dateString.slice(2,4);
-
-        console.log(article);
-        
         let image;
         if (env === 'local') {
             // Does not contain the API URL, need to concatenate
