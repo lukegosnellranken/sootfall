@@ -267,11 +267,16 @@
             @include flex-center;
             padding-top: 2em;
             padding-bottom: 1.5em;
-            padding-right: 5%;
-            padding-left: 5%;
+            padding-right: 10%;
+            padding-left: 10%;
             box-sizing: border-box;
 
             @media screen and (max-width: 1000px) {
+                padding-right: 8%;
+                padding-left: 8%;
+            }
+
+            @media screen and (max-width: 800px) {
                 padding-right: 5%;
                 padding-left: 5%;
             }
@@ -279,6 +284,7 @@
             #p-articlecard-main-content {
                 @include common-text;
                 letter-spacing: 0.03em;
+                line-height: 1.5;
                 box-sizing: border-box;
                 font-size: var(--site-size-artContent-full);
                 @media screen and (max-width: 1400px) {

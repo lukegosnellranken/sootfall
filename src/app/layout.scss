@@ -12,7 +12,7 @@ body, html {
     @include pm-reset;
     font-family: var(--site-font);
     letter-spacing: var(--site-letter-spacing);
-    font-size-adjust: var(--site-font-size-adjust);
+    // font-size-adjust: var(--site-font-size-adjust);
     overflow-x: hidden; // Should "fix" width overflow of home-card and author-card
 }
 
@@ -47,14 +47,14 @@ body.loading-active #appDiv {
     pointer-events: none; // Disable interactions when hidden
 }
 
-.loader {
-    border: 8px solid #818181;
-    border-top: 8px solid #414141;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 2s linear infinite;
-}
+// .loader {
+//     border: 8px solid #818181;
+//     border-top: 8px solid #414141;
+//     border-radius: 50%;
+//     width: 60px;
+//     height: 60px;
+//     animation: spin 2s linear infinite;
+// }
 
 @keyframes spin {
     0% { transform: rotate(0deg); }

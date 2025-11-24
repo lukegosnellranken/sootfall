@@ -369,7 +369,7 @@
                         @include common-text;
                         text-wrap: nowrap;
                         margin-right: 2.5%;
-                        height: 90%; // Shared value with custom-dropdown-selected
+                        // height: 90%; // Shared value with custom-dropdown-selected
                         font-size: var(--site-size-dropdown-full);
                         width: calc(var(--site-size-ddWidth-full)/2); // Make all the same width so that dropdowns/sliders align.
 

@@ -2,9 +2,9 @@
     {
         "id": 1,
         "title": "Sooty",
-        "value": "Bilbo, sans-serif",
-        "letterSpacing": "0.05em",
-        "fontSizeAdjust": "cap-height 0.7"
+        "value": "Source Serif 4, sans-serif",
+        "letterSpacing": "0em",
+        "fontSizeAdjust": "cap-height 0"
     },
     {
         "id": 2,

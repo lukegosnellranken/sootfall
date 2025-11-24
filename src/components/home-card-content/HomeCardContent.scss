@@ -76,13 +76,15 @@
                     width: 95%;
                     margin: 0;
                     margin-left: 2%;
+                    padding-top: 0.25em;
+                    padding-bottom: 0.25em;
                     display: flex;
                     justify-content: left;
                     text-align: left;
-                    font-weight: bold;
+                    // font-weight: bold;
                     font-family: var(--site-font);
                     letter-spacing: var(--site-letter-spacing);
-                    font-size-adjust: var(--site-font-size-adjust);
+                    // font-size-adjust: var(--site-font-size-adjust);
                     color: var(--site-text-color);
                     text-shadow: var(--site-text-shadow);
                     text-wrap: balance;
@@ -105,6 +107,8 @@
 
                     #p-homecardcontent-author-date {
                         @include pm-reset;
+                        padding-top: 0.25em;
+                        padding-bottom: 0.25em;
                         margin-left: 2%;
                         font-size: var(--site-size-hccDate-full);
                         color: var(--site-text-color);
@@ -163,6 +167,8 @@
                         overflow: hidden;
                         text-overflow: ellipsis;
                         width: 100%;
+                        padding-top: 1em;
+                        padding-bottom: 0.25em;
                         margin-left: 2%;
                         text-align: left;
 
@@ -174,7 +180,6 @@
                             letter-spacing: .05em;
                             padding: 0;
                             margin: 0;
-                            padding-top: 0.5em;
                             margin-right: 1em;
                             margin-left: 3px;
                             font-family: var(--site-font);

@@ -8,15 +8,13 @@ function ArticlesComponent(props) {
         title = "Results for: " + props.searchValue;
     }
     return (
-        <div id="div-articles-component">
-            <div id="articlescomponent-container">
-                <div id="div-articlescomponent-card">
-                    <HomeCard
-                        title = { title }
-                        pageType = "home"
-                        articles = { props.articles }
-                    />
-                </div>
+        <div id="articlescomponent-container">
+            <div id="div-articlescomponent-card">
+                <HomeCard
+                    title = { title }
+                    pageType = "home"
+                    articles = { props.articles }
+                />
             </div>
         </div>
     )

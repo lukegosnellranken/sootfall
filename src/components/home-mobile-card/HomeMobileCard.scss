@@ -25,9 +25,9 @@
                 @include flex-center;
                 align-items: center;
                 width: 25%;
-                margin-left: 3%;
-                padding-top: $card-vertical-padding;
-                padding-bottom: $card-vertical-padding;
+                padding-left: 1em;
+                padding-top: 1em;
+                padding-bottom: 1em;
 
                 @media screen and (max-width: 800px) {
                     display: none;
@@ -47,18 +47,38 @@
                 margin-right: 1em;
                 margin-left: 1em;
 
+                .section-title {
+                    font-family: var(--site-font);
+                    font-weight: lighter;
+                    font-size: var(--site-size-header-full);
+
+                    @media screen and (max-width: 1400px) {
+                        font-size: var(--site-size-header-1400);
+                    }
+                    @media screen and (max-width: 800px) {
+                        font-size: var(--site-size-header-800);
+                        margin-bottom: .5rem;
+                        margin-top: .5rem;
+                    }
+                }
+
                 #h1-homemobilecard-title {
                     @include common-text;
                     @include gradient-title;
                     text-align: left;
                     padding-top: .5em;
                     padding-left: 1rem;
+
+                    @media screen and (max-width: 800px) {
+                        @include pm-reset;
+                    }
                 }
 
                 #p-homemobilecard-content {
                     @include common-text;
                     font-size: var(--site-size-hscContent-full);
                     padding-left: 1rem;
+                    text-wrap: balance;
 
                     @media screen and (max-width: 1400px) {
                         font-size: var(--site-size-hscContent-1400);

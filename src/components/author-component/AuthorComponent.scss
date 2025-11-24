@@ -1,3 +1,10 @@
+@import '../../config/variables';
+
 body.loading-active #authorscomponent-container {
     display: none;
+}
+
+#div-author-component {
+    @include container-width;
+    @include container-margin;
 }

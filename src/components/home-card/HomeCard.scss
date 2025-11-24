@@ -39,6 +39,8 @@
             }
             @media screen and (max-width: 800px) {
                 font-size: var(--site-size-header-800);
+                margin-bottom: .5rem;
+                margin-top: .5rem;
             }
         }
 
@@ -47,12 +49,6 @@
             letter-spacing: $site-letter-spacing;
             text-align: left;
             padding-left: .5em;
-            max-width: 10em;
-
-            @media screen and (max-width: 800px) {
-                padding-top: .25em;
-                margin-bottom: 0em;
-            }
         }
     }
 
