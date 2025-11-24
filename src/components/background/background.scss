@@ -85,14 +85,14 @@
 
             .social-link {
                 border-color: $site-disabled-background-color;
-                color: var(--site-text-color);
+                color: $site-disabled-background-color;
                 background-color: var(--site-background-image-gradient);
                 transition: all .2s ease-in-out;
                 font-size: 150%;
 
                 &:hover {
                     opacity: 80%;
-                    color: var(--site-text-color-alt);
+                    color: var(--site-text-color);
                     transform: scale(1.1);
                 }
             }

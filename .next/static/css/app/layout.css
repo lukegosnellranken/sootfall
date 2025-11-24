@@ -1177,14 +1177,14 @@ html {
 }
 #div-background-container #div-background-social-links #ul-background-social-links .social-link {
   border-color: #414141;
-  color: var(--site-text-color);
+  color: #414141;
   background-color: var(--site-background-image-gradient);
   transition: all 0.2s ease-in-out;
   font-size: 150%;
 }
 #div-background-container #div-background-social-links #ul-background-social-links .social-link:hover {
   opacity: 80%;
-  color: var(--site-text-color-alt);
+  color: var(--site-text-color);
   transform: scale(1.1);
 }
 #div-background-container #div-background-social-links #ul-background-social-links #social-links-facebook,
