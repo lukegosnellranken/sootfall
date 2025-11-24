@@ -1,8 +1,8 @@
+@use '../../config/variables' as *;
+
 body.loading-active #div-articlecomponent-full-article-container {
     display: none;
 }
-
-@import '../../config/variables';
 
 #div-articlecomponent-full-article-container {
     display: flex;

@@ -1,4 +1,4 @@
-@import '../../config/variables';
+@use '../../config/variables' as *;
 
 #div-tag-component {
     @include container-width;

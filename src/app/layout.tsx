@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   }, []);
 
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <head>
         <title>Sootfall</title>
         <script src="https://kit.fontawesome.com/0ca3f21638.js" crossOrigin="anonymous"></script>

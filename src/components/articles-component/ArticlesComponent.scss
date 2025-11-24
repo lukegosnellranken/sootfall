@@ -1,8 +1,8 @@
+@use '../../config/variables' as *;
+
 body.loading-active #articlescomponent-container {
     display: none;
 }
-
-@import '../../config/variables';
 
 #div-articles-component {
     @include flex-center;

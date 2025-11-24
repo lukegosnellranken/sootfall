@@ -1,4 +1,4 @@
-@import '../../config/variables';
+@use '../../config/variables' as *;
 
 #div-nav-container {
     background-image: var(--site-background-image-gradient);
@@ -43,22 +43,32 @@
                     #input-search {
                         @include common-text;
                         background-color: var(--site-background-color-input);
-                        border-radius: .5em;
+                        border-radius: 1em;
                         border-width: 1px;
                         border-style: solid;
                         border-color: var(--site-element-color-dormant);
                         letter-spacing: .05em;
                         padding-left: .5em;
                         width: 90%;
-                        height: 50%;
+                        height: 45%;
 
                         // Shared styles for desktop and mobile search inputs
                         background-repeat: no-repeat;
                         background-size: 1.2em 1.2em;
                         background-position: 0.7em center;
                         padding-left: 2.5em; // Make space for the icon
-                        padding-top: .2em;
-                        font-size: $site-search-desktop;
+                        // padding-top: .2em;
+
+                        font-size: var(--site-size-nav-full);
+                        @media screen and (max-width: 1400px) {
+                            font-size: var(--site-size-nav-1400);
+                        }
+                        @media screen and (max-width: 800px) {
+                            font-size: var(--site-size-nav-800);
+                        }
+                        @media screen and (max-width: 400px) {
+                            font-size: var(--site-size-nav-400);
+                        }
 
                         @media screen and (max-width: 800px) {
                             font-size: $site-search-mobile;
@@ -140,8 +150,8 @@
             
                 #btn-hamburger {
                     background-color: var(--site-background-color-input);
-                    border-radius: .5em;
-                    border-width: 2px;
+                    border-radius: 1em;
+                    border-width: 1px;
                     border-style: solid;
                     border-color: var(--site-element-color-dormant);
                     margin-left: 1em;
@@ -179,8 +189,8 @@
                     #input-search-mobile {
                         @include common-text;
                         background-color: var(--site-background-color-input);
-                        border-radius: .5em;
-                        border-width: 2px;
+                        border-radius: 1em;
+                        border-width: 1px;
                         border-style: solid;
                         border-color: var(--site-element-color-dormant);
                         letter-spacing: var(--site-letter-spacing);
@@ -195,10 +205,16 @@
                         background-position: 0.7em center;
                         padding-left: 2.5em; // Make space for the icon
                         // padding-top: .2em;
-                        font-size: $site-search-desktop;
-
+                        
+                        font-size: var(--site-size-nav-full);
+                        @media screen and (max-width: 1400px) {
+                            font-size: var(--site-size-nav-1400);
+                        }
                         @media screen and (max-width: 800px) {
-                            font-size: $site-search-mobile;
+                            font-size: var(--site-size-nav-800);
+                        }
+                        @media screen and (max-width: 400px) {
+                            font-size: var(--site-size-nav-400);
                         }
 
                         &::placeholder {
