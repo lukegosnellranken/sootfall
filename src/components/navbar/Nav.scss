@@ -150,7 +150,7 @@
             
                 #btn-hamburger {
                     background-color: var(--site-background-color-input);
-                    border-radius: 1em;
+                    border-radius: .5em;
                     border-width: 1px;
                     border-style: solid;
                     border-color: var(--site-element-color-dormant);
@@ -338,30 +338,13 @@
 
                 @media screen and (max-width: 1000px) {
                     grid-template-columns: repeat(2, 1fr);
+                    column-gap: 15%;
 
                     > :nth-child(odd) {
-                        justify-content: right !important;
-                        padding-right: 10%;
+                        justify-content: flex-end !important;
                     }
                     > :nth-child(even) {
-                        justify-content: left !important;
-                        padding-left: 10%;
-                    }
-                }
-                @media screen and (max-width: 800px) {
-                    > :nth-child(odd) {
-                        padding-right: 5%;
-                    }
-                    > :nth-child(even) {
-                        padding-left: 5%;
-                    }
-                }
-                @media screen and (max-width: 400px) {
-                    > :nth-child(odd) {
-                        padding-right: 2.5%;
-                    }
-                    > :nth-child(even) {
-                        padding-left: 2.5%;
+                        justify-content: flex-start !important;
                     }
                 }
 
@@ -382,7 +365,7 @@
                         @include flex-right;
                         @include common-text;
                         text-wrap: nowrap;
-                        margin-right: 2.5%;
+                        margin-right: .5em;
                         // height: 90%; // Shared value with custom-dropdown-selected
                         font-size: var(--site-size-dropdown-full);
                         width: calc(var(--site-size-ddWidth-full)/2); // Make all the same width so that dropdowns/sliders align.
@@ -426,19 +409,19 @@
                             .switch {
                                 display: flex;
                                 align-items: center;
-                                width: var(--site-size-sliderWidth-full);
+                                // width: var(--site-size-sliderWidth-full);
                                 height: var(--site-size-ddHeight-full);
 
                                 @media screen and (max-width: 1400px) {
-                                    width: var(--site-size-sliderWidth-1400);
+                                    // width: var(--site-size-sliderWidth-1400);
                                     height: var(--site-size-ddHeight-1400);
                                 }
                                 @media screen and (max-width: 800px) {
-                                    width: var(--site-size-sliderWidth-800);
+                                    // width: var(--site-size-sliderWidth-800);
                                     height: var(--site-size-ddHeight-800);
                                 }
                                 @media screen and (max-width: 400px) {
-                                    width: var(--site-size-sliderWidth-400);
+                                    // width: var(--site-size-sliderWidth-400);
                                     height: var(--site-size-ddHeight-400);
                                 }
 
@@ -446,19 +429,34 @@
                                     opacity: 0;
                                     width: 0;
                                     height: 0;
+                                    @include pm-reset;
                                 }
 
                                 .slider {
                                     position: relative;
                                     flex: 1;
                                     background: var(--site-background-color-switch-item-toggle-alt);
-                                    border-radius: 34px;
+                                    border-radius: 2em;
                                     border: 1px solid var(--site-background-color-switch-item-toggle);
                                     display: flex;
                                     align-items: center;
                                     transition: background 0.4s;
                                     box-sizing: border-box;
                                     height: 100%;
+                                    min-width: var(--site-size-sliderWidth-full);
+
+                                    @media screen and (max-width: 1400px) {
+                                        min-width: var(--site-size-sliderWidth-1400);
+                                        // height: var(--site-size-ddHeight-1400);
+                                    }
+                                    @media screen and (max-width: 800px) {
+                                        min-width: var(--site-size-sliderWidth-800);
+                                        // height: var(--site-size-ddHeight-800);
+                                    }
+                                    @media screen and (max-width: 400px) {
+                                        min-width: var(--site-size-sliderWidth-400);
+                                        // height: var(--site-size-ddHeight-400);
+                                    }
 
                                     .slider-knob {
                                         position: absolute;
@@ -487,18 +485,17 @@
                                 }
 
                                 input:checked + .slider .slider-knob {
-                                    left: 0;
                                     background: var(--site-background-color-switch-item-toggle-alt);
-                                    transform: translateY(-50%) translateX(calc(var(--site-size-sliderWidth-full) - var(--site-size-sliderKnob-full) - calc(var(--site-size-sliderKnobOffset)*1.5)));
+                                    transform: translateY(-50%) translateX(calc(var(--site-size-sliderWidth-full) - var(--site-size-sliderKnob-full) - calc(var(--site-size-sliderKnobOffset) * 3)));
 
                                     @media screen and (max-width: 1400px) {
-                                        transform: translateY(-50%) translateX(calc(var(--site-size-sliderWidth-1400) - var(--site-size-sliderKnob-1400) - calc(var(--site-size-sliderKnobOffset)*1.5)));
+                                        transform: translateY(-50%) translateX(calc(var(--site-size-sliderWidth-1400) - var(--site-size-sliderKnob-1400) - calc(var(--site-size-sliderKnobOffset) * 3)));
                                     }
                                     @media screen and (max-width: 800px) {
-                                        transform: translateY(-50%) translateX(calc(var(--site-size-sliderWidth-800) - var(--site-size-sliderKnob-800) - calc(var(--site-size-sliderKnobOffset)*1.5)));
+                                        transform: translateY(-50%) translateX(calc(var(--site-size-sliderWidth-800) - var(--site-size-sliderKnob-800) - calc(var(--site-size-sliderKnobOffset) * 3)));
                                     }
                                     @media screen and (max-width: 400px) {
-                                        transform: translateY(-50%) translateX(calc(var(--site-size-sliderWidth-400) - var(--site-size-sliderKnob-400) - calc(var(--site-size-sliderKnobOffset)*1.5)));
+                                        transform: translateY(-50%) translateX(calc(var(--site-size-sliderWidth-400) - var(--site-size-sliderKnob-400) - calc(var(--site-size-sliderKnobOffset) * 3)));
                                     }
                                 }
 

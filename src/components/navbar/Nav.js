@@ -134,6 +134,8 @@ function Nav() {
         hideContent();
     }, [hamburgerOpen, settingsOpen, hideContent]);
 
+    console.log(readAloud);
+
     return(
         <div id="div-nav-container">
             <nav id="nav-nav">
@@ -350,7 +352,7 @@ function Nav() {
                             <div className="switch-item-selection">
                                 <div className="div-switch">
                                     <label className="switch">
-                                        <input id="switch-input" type="checkbox" onClick={toggleReadAloud} defaultChecked={readAloud}/>
+                                        <input id="switch-input" type="checkbox" onChange={toggleReadAloud} checked={readAloud}/>
                                         <span className="slider">
                                             <span className="slider-knob"></span>
                                         </span>

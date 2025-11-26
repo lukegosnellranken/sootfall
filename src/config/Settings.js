@@ -27,7 +27,7 @@ export const Settings = ({ children }) => {
         const initialFont = storedFont ? JSON.parse(storedFont) : themes.find(t => t.id === 1);
         const initialSize = storedSize ? JSON.parse(storedSize) : themes.find(t => t.id === 1);
         // Get readAloud from localStorage, otherwise set to false by default
-        const initialReadAloud = storedReadAloud ? JSON.parse(storedReadAloud) : false;
+        const initialReadAloud = storedReadAloud !== null ? JSON.parse(storedReadAloud) : false;
         setTheme(initialTheme);
         setFont(initialFont);
         setSize(initialSize);
@@ -45,7 +45,7 @@ export const Settings = ({ children }) => {
         if (size) {
             localStorage.setItem('size', JSON.stringify(size));
         }
-        if (readAloud) {
+        if (readAloud !== null) {
             localStorage.setItem('readAloud', JSON.stringify(readAloud));
         }
 

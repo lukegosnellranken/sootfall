@@ -42,7 +42,7 @@
 .custom-dropdown {
     position: relative;
     width: var(--site-size-ddWidth-full);
-    height: var(--site-size-sliderHeight-full);
+    height: var(--site-size-ddHeight-full);
     font-family: var(--site-font);
     border-radius: 34px;
     text-align: center;
@@ -51,12 +51,15 @@
     outline: none;
     @media screen and (max-width: 1400px) {
         width: var(--site-size-ddWidth-1400);
+        height: var(--site-size-ddHeight-1400);
     }
     @media screen and (max-width: 800px) {
         width: var(--site-size-ddWidth-800);
+        height: var(--site-size-ddHeight-800);
     }
     @media screen and (max-width: 400px) {
         width: var(--site-size-ddWidth-400);
+        height: var(--site-size-ddHeight-400);
     }
 }
 
@@ -84,24 +87,30 @@
 }
 
 .span-custom-dropdown-selected {
-    height: 95%; // Lowers line height of text inside dropdown -- Shared value with switch-item-text
+    // height: 95%; // Lowers line height of text inside dropdown -- Shared value with switch-item-text
 }
 
 .custom-dropdown-option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     background-color: var(--site-background-color);
     border-top-style: solid;
     border-top-width: 1px;
     border-top-color: var(--site-background-color-switch-item-toggle-alt);
-    padding-top: 2%;
+    height: var(--site-size-ddHeight-full);
     font-size: var(--site-size-dropdown-full);
     @media screen and (max-width: 1400px) {
         font-size: var(--site-size-dropdown-1400);
+        height: var(--site-size-ddHeight-1400);
     }
     @media screen and (max-width: 800px) {
         font-size: var(--site-size-dropdown-800);
+        height: var(--site-size-ddHeight-800);
     }
     @media screen and (max-width: 400px) {
         font-size: var(--site-size-dropdown-400);
+        height: var(--site-size-ddHeight-400);
     }
 }

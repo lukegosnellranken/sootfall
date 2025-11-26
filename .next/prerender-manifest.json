@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "c80e2ebfd9e54b9564726139edac07d6",
-    "previewModeSigningKey": "1b289e0f7bc02d5d2999ad14fd0099ba733a43cd94b199acf3693b8bde99df8b",
-    "previewModeEncryptionKey": "632464f39d73467cba550d7e1ea80f61b662f89435001c0b7ebb639093b1d55d"
-  }
-}
+{"version":4,"routes":{"/articles/lorem-ipsum":{},"/articles/reflections-in-the-midnight-oil":{},"/articles/the-tragedy-of-darth-plagueis-the-wise":{},"/articles/magics-gone-partys-over-septembers-forever":{}},"dynamicRoutes":{"/articles/[articleName]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/articles/[articleName]","routeRegex":"^\\/articles\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"c3b92c2f70212a5cd5142866c3354b48","previewModeSigningKey":"283543e38b1b237e5cad8e08b90a447192ee75b311a83e95394b396b0033b093","previewModeEncryptionKey":"2af7b42da48fca23111708a5e066f7edf7d513d7f1e1e65090d8d7a98d53dde9"}}
