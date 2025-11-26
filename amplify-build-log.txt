@@ -1,0 +1,429 @@
+0
+
+2025-11-26T19:16:37.643Z [INFO]: # Build environment configured with Standard build compute type: 8GiB Memory, 4vCPUs, 128GB Disk Space
+
+1
+
+2025-11-26T19:16:38.064Z [INFO]: # Cloning repository: git@github.com:lukegosnellranken/sootfall.git
+
+2
+
+2025-11-26T19:16:44.352Z [INFO]: 
+
+3
+
+2025-11-26T19:16:44.433Z [INFO]: Cloning into 'sootfall'...
+
+4
+
+2025-11-26T19:16:44.433Z [INFO]: # Switching to commit: f79c9b2e834ca3bd8f59a764b07b4b4bb9de70f7
+
+5
+
+2025-11-26T19:16:44.460Z [INFO]: Note: switching to 'f79c9b2e834ca3bd8f59a764b07b4b4bb9de70f7'.
+
+6
+
+                                 You are in 'detached HEAD' state. You can look around, make experimental
+
+7
+
+                                 changes and commit them, and you can discard any commits you make in this
+
+8
+
+                                 state without impacting any branches by switching back to a branch.
+
+9
+
+                                 If you want to create a new branch to retain commits you create, you may
+
+10
+
+                                 do so (now or later) by using -c with the switch command. Example:
+
+11
+
+                                 git switch -c <new-branch-name>
+
+12
+
+                                 Or undo this operation with:
+
+13
+
+                                 git switch -
+
+14
+
+                                 Turn off this advice by setting config variable advice.detachedHead to false
+
+15
+
+                                 HEAD is now at f79c9b2 API change to cloud, styling fixes
+
+16
+
+2025-11-26T19:16:44.496Z [INFO]: Successfully cleaned up Git credentials
+
+17
+
+2025-11-26T19:16:44.497Z [INFO]: # Checking for Git submodules at: /codebuild/output/src511059309/src/sootfall/.gitmodules
+
+18
+
+2025-11-26T19:16:44.502Z [INFO]: # Retrieving environment cache...
+
+19
+
+2025-11-26T19:16:44.587Z [INFO]: # Retrieved environment cache
+20
+
+2025-11-26T19:16:44.587Z [INFO]: ---- Setting Up SSM Secrets ----
+
+21
+
+2025-11-26T19:16:44.588Z [INFO]: SSM params {"Path":"/amplify/d3gwmlsjb9x0lt/next/","WithDecryption":true}
+
+22
+
+2025-11-26T19:16:44.619Z [WARNING]: !Failed to set up process.env.secrets
+
+23
+
+2025-11-26T19:16:45.373Z [INFO]: # No package override configuration found.
+
+24
+
+2025-11-26T19:16:45.376Z [INFO]: # Retrieving cache...
+
+25
+
+2025-11-26T19:16:47.440Z [INFO]: # Extracting cache...
+
+26
+
+2025-11-26T19:16:47.972Z [INFO]: # Extraction completed
+
+27
+
+2025-11-26T19:16:47.988Z [INFO]: # Retrieved cache
+
+28
+
+2025-11-26T19:16:51.908Z [INFO]: ## Starting Backend Build
+
+29
+
+                                 ## Checking for associated backend environment...
+
+30
+
+                                 ## No backend environment association found, continuing...
+
+31
+
+                                 ## Completed Backend Build
+
+32
+
+2025-11-26T19:16:51.914Z [INFO]: {"backendDuration": 0}
+
+33
+
+                                 ## Starting Frontend Build
+
+34
+
+                                 # Starting phase: preBuild
+
+35
+
+                                 # Executing command: npm ci --cache .npm --prefer-offline
+
+36
+
+2025-11-26T19:17:10.019Z [INFO]: added 337 packages, and audited 338 packages in 14s
+
+37
+
+2025-11-26T19:17:10.023Z [INFO]: 131 packages are looking for funding
+
+38
+
+                                 run `npm fund` for details
+
+39
+
+                                 found 0 vulnerabilities
+40
+
+2025-11-26T19:17:10.040Z [INFO]: # Completed phase: preBuild
+
+41
+
+                                 # Starting phase: build
+
+42
+
+                                 # Executing command: npm run build
+
+43
+
+2025-11-26T19:17:10.109Z [INFO]: > sootfall@0.1.0 build
+
+44
+
+                                 > next build
+
+45
+
+2025-11-26T19:17:10.722Z [INFO]: ⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+
+46
+
+2025-11-26T19:17:10.731Z [INFO]: Attention: Next.js now collects completely anonymous telemetry regarding usage.
+
+47
+
+2025-11-26T19:17:10.731Z [INFO]: This information is used to shape Next.js' roadmap and prioritize features.
+
+48
+
+                                 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+
+49
+
+                                 https://nextjs.org/telemetry
+
+50
+
+2025-11-26T19:17:10.771Z [INFO]: ▲ Next.js 15.5.3
+
+51
+
+2025-11-26T19:17:10.771Z [INFO]: - Environments: .env
+
+52
+
+2025-11-26T19:17:10.837Z [INFO]: Creating an optimized production build ...
+
+53
+
+2025-11-26T19:17:18.411Z [INFO]: ✓ Compiled successfully in 5.9s
+
+54
+
+2025-11-26T19:17:18.416Z [INFO]: Linting and checking validity of types ...
+
+55
+
+2025-11-26T19:17:18.582Z [WARNING]: ⨯ ESLint: Failed to load config "react-app" to extend from. Referenced from: /codebuild/output/src511059309/src/sootfall/package.json
+
+56
+
+2025-11-26T19:17:20.144Z [INFO]: Collecting page data ...
+
+57
+
+2025-11-26T19:17:21.823Z [INFO]: Generating static pages (0/32) ...
+
+58
+
+2025-11-26T19:17:22.826Z [INFO]: Generating static pages (8/32)
+
+59
+
+2025-11-26T19:17:23.310Z [INFO]: Generating static pages (16/32)
+
+60
+
+2025-11-26T19:17:23.769Z [INFO]: Generating static pages (24/32)
+
+61
+
+2025-11-26T19:17:24.394Z [INFO]: ✓ Generating static pages (32/32)
+
+62
+
+2025-11-26T19:17:24.594Z [INFO]: Finalizing page optimization ...
+
+63
+
+                                 Collecting build traces ...
+
+64
+
+2025-11-26T19:17:27.135Z [INFO]: 
+
+65
+
+2025-11-26T19:17:27.138Z [INFO]: Route (app)                                                Size  First Load JS
+
+66
+
+                                 ┌ ○ /                                                   3.45 kB         108 kB
+
+67
+
+                                 ├ ○ /_not-found                                           172 B         103 kB
+
+68
+
+                                 ├ ○ /articles                                             185 B         105 kB
+
+69
+
+                                 ├ ● /articles/[articleName]                               38 kB         144 kB
+
+70
+
+                                 ├   ├ /articles/the-tragedy-of-darth-plagueis-the-wise
+
+71
+
+                                 ├   ├ /articles/reflections-in-the-midnight-oil
+
+72
+
+                                 ├   ├ /articles/workday
+
+73
+
+                                 ├   └ [+2 more paths]
+
+74
+
+                                 ├ ○ /authors                                            1.14 kB         104 kB
+
+75
+
+                                 ├ ● /authors/[authorName]                                 675 B         106 kB
+
+76
+
+                                 ├   ├ /authors/fleecer
+
+77
+
+                                 ├   └ /authors/poniko%20monoe%20monoko
+
+78
+
+                                 ├ ƒ /search                                               194 B         105 kB
+
+79
+
+                                 ├ ƒ /search/[searchValue]                                 185 B         105 kB
+
+80
+
+                                 └ ● /tags/[tagName]                                       183 B         105 kB
+
+81
+
+                                 ├ /tags/star%20wars
+
+82
+
+                                 ├ /tags/test
+
+83
+
+                                 ├ /tags/test2
+
+84
+
+                                 └ [+16 more paths]
+
+85
+
+                                 + First Load JS shared by all                            102 kB
+
+86
+
+                                 ├ chunks/255-4921f83f864a685f.js                      46.2 kB
+
+87
+
+                                 ├ chunks/4bd1b696-c023c6e3521b1417.js                 54.2 kB
+
+88
+
+                                 └ other shared chunks (total)                         2.05 kB
+
+89
+
+                                 ○  (Static)   prerendered as static content
+
+90
+
+                                 ●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+
+91
+
+                                 ƒ  (Dynamic)  server-rendered on demand
+
+92
+
+2025-11-26T19:17:27.159Z [INFO]: # Completed phase: build
+
+93
+
+                                 ## Completed Frontend Build
+
+94
+
+2025-11-26T19:17:27.214Z [INFO]: ## Build completed successfully
+
+95
+
+2025-11-26T19:17:27.215Z [INFO]: # Starting caching...
+
+96
+
+2025-11-26T19:17:27.220Z [INFO]: # Creating cache artifact...
+
+97
+
+2025-11-26T19:17:27.648Z [INFO]: # Created cache artifact
+
+98
+
+2025-11-26T19:17:27.648Z [INFO]: # Uploading cache artifact...
+
+99
+
+2025-11-26T19:17:29.093Z [INFO]: # Uploaded cache artifact
+
+100
+
+2025-11-26T19:17:29.094Z [INFO]: # Caching completed
+
+101
+
+2025-11-26T19:17:29.113Z [INFO]: # Starting build artifact upload process...
+
+102
+
+2025-11-26T19:17:30.515Z [INFO]: # Uploading build artifact '__artifacts.zip'...
+
+103
+
+2025-11-26T19:17:31.018Z [INFO]: # Build artifact upload completed
+
+104
+
+2025-11-26T19:17:31.019Z [INFO]: # Starting environment caching...
+
+105
+
+2025-11-26T19:17:31.019Z [INFO]: # Uploading environment cache artifact...
+
+106
+
+2025-11-26T19:17:31.103Z [INFO]: # Uploaded environment cache artifact
+
+107
+
+2025-11-26T19:17:31.103Z [INFO]: # Environment caching completed

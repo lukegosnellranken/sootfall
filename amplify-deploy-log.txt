@@ -1,0 +1,11 @@
+0
+
+2025-11-26T19:17:47 [INFO]: Beginning deployment for application d3gwmlsjb9x0lt, branch:next, buildId 0000000004
+
+1
+
+2025-11-26T19:17:49 [INFO]: Due to optimizations in the CloudFront cache configuration, this deployment may take longer than usual. Subsequent builds will not face longer deploy times. View the caching documentation: https://docs.aws.amazon.com/amplify/latest/userguide/caching.html
+
+2
+
+2025-11-26T19:20:45 [INFO]: Deployment complete
