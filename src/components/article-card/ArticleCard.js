@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useSettings } from '../../config/Settings';
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import ReactMarkdown from 'react-markdown'
 import './ArticleCard.scss';
@@ -13,6 +13,7 @@ function ArticleCard({ article }) {
     const [selectedVoice, setSelectedVoice] = useState("");
     const [isReading, setIsReading] = useState(false);
     const [isPaused, setIsPaused] = useState(false);
+    const [authorDateAlignmentClass, setAuthorDateAlignmentClass] = useState('');
     let speechMethodSupport = useRef(false);
     
     // Get data from ~/.env, set API_URL
@@ -64,6 +65,20 @@ function ArticleCard({ article }) {
             author: author
         };
     })();
+
+    const calculateAlignment = useCallback(() => {
+        if (articleData && articleData.author) {
+            if (articleData.author.length < 12) {
+                setAuthorDateAlignmentClass('split-align-author-date');
+            } else {
+                setAuthorDateAlignmentClass('center-align-author-date');
+            }
+        }
+    }, [articleData]);
+
+    useEffect(() => {
+        calculateAlignment();
+    }, [calculateAlignment]);
 
     // Check for support of speechSynthesis methods
     useEffect(() => {
@@ -195,7 +210,7 @@ function ArticleCard({ article }) {
                         <div id="div-articlecard-title">
                             <p id="p-articlecard-title">{articleData.title}</p>
                         </div>
-                        <div id="div-articlecard-author-date">
+                        <div id="div-articlecard-author-date" className={authorDateAlignmentClass}>
                             <p id="p-articlecard-author"
                                 onClick={(e) => {
                                         e.stopPropagation();

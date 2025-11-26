@@ -104,9 +104,13 @@
                         @include flex-center;
                         color: var(--site-text-color);
                         border-color: var(--site-text-color);
+                        border-width: 1px;
+                        border-style: dashed;
                         font-family: var(--site-font);
                         font-weight: bold;
                         font-size: var(--site-size-hccTags-full);
+                        padding-top: .25em;
+                        padding-bottom: .25em;
 
                         @media screen and (max-width: 800px) {
                             font-size: var(--site-size-hccTags-1400);

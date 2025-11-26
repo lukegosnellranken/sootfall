@@ -204,6 +204,10 @@ html {
     width: 100%;
   }
 }
+#div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-title {
+  display: flex;
+  justify-content: center;
+}
 #div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-title #p-articlecard-title {
   padding: 0;
   margin: 0;
@@ -216,6 +220,7 @@ html {
   font-weight: bold;
   text-align: center;
   text-wrap: balance;
+  width: 100%;
   font-size: var(--site-size-artTitle-full);
 }
 @media screen and (max-width: 1400px) {
@@ -226,6 +231,7 @@ html {
 @media screen and (max-width: 1000px) {
   #div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-title #p-articlecard-title {
     padding-top: 0.25em;
+    width: 90%;
   }
 }
 @media screen and (max-width: 800px) {
@@ -263,7 +269,6 @@ html {
   text-underline-offset: 2px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  text-align: center;
   line-height: 1;
   flex: 1 1;
   margin: 0;
@@ -283,14 +288,24 @@ html {
   flex: 1 1;
   margin: 0;
   min-width: 0;
-  width: 50px;
 }
 #div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-author-date #p-articlecard-date {
-  text-align: center;
   line-height: 1;
   flex: 1 1;
   margin: 0;
   min-width: 0;
+}
+#div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags .split-align-author-date #p-articlecard-author {
+  text-align: right;
+}
+#div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags .split-align-author-date #p-articlecard-date {
+  text-align: left;
+}
+#div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags .center-align-author-date #p-articlecard-author {
+  text-align: center;
+}
+#div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags .center-align-author-date #p-articlecard-date {
+  text-align: center;
 }
 #div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-tag-stitch {
   border-bottom-width: 0.1em;

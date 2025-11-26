@@ -367,9 +367,13 @@ html {
   justify-content: center;
   color: var(--site-text-color);
   border-color: var(--site-text-color);
+  border-width: 1px;
+  border-style: dashed;
   font-family: var(--site-font);
   font-weight: bold;
   font-size: var(--site-size-hccTags-full);
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
 }
 @media screen and (max-width: 800px) {
   #div-homecard-card #div-homecard-items-pagination #div-homecard-items #div-homecard-pagination .page-item .page-link {

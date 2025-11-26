@@ -88,6 +88,8 @@
                 }
 
                 #div-articlecard-title {
+                    display: flex;
+                    justify-content: center;
                     #p-articlecard-title {
                         @include pm-reset;
                         @include common-text;
@@ -97,6 +99,7 @@
                         font-weight: bold;
                         text-align: center;
                         text-wrap: balance;
+                        width: 100%;
                         font-size: var(--site-size-artTitle-full);
 
                         @media screen and (max-width: 1400px) {
@@ -104,6 +107,7 @@
                         }
                         @media screen and (max-width: 1000px) {
                             padding-top: .25em;
+                            width: 90%;
                         }
                         @media screen and (max-width: 800px) {
                             font-size: var(--site-size-artTitle-800);
@@ -131,7 +135,6 @@
                     #p-articlecard-author {
                         @include origin-link;
                         transition: $site-transition;
-                        text-align: center;
                         line-height: 1;
                         flex: 1 1 0;
                         margin: 0;
@@ -150,15 +153,31 @@
                         flex: 1 1 0;
                         margin: 0;
                         min-width: 0;
-                        width: 50px;
                     }
 
                     #p-articlecard-date {
-                        text-align: center;
                         line-height: 1;
                         flex: 1 1 0;
                         margin: 0;
                         min-width: 0;
+                    }
+                }
+
+                .split-align-author-date {
+                    #p-articlecard-author {
+                        text-align: right;
+                    }
+                    #p-articlecard-date {
+                        text-align: left;
+                    }
+                }
+
+                .center-align-author-date {
+                    #p-articlecard-author {
+                        text-align: center;
+                    }
+                    #p-articlecard-date {
+                        text-align: center;
                     }
                 }
 
