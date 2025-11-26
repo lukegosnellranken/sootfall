@@ -211,6 +211,7 @@ html {
   text-shadow: var(--site-theme-text-shadow);
   font-family: var(--site-font);
   padding-top: 1em;
+  padding-bottom: 0.5em;
   letter-spacing: 0.03em;
   font-weight: bold;
   text-align: center;
@@ -262,11 +263,12 @@ html {
   text-underline-offset: 2px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  text-align: right;
-  flex: 1 1;
   text-align: center;
+  line-height: 1;
+  flex: 1 1;
   margin: 0;
   min-width: 0;
+  text-wrap: balance;
 }
 #div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-author-date #p-articlecard-author:hover {
   transform: scale(1.1);
@@ -281,11 +283,12 @@ html {
   flex: 1 1;
   margin: 0;
   min-width: 0;
+  width: 50px;
 }
 #div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-author-date #p-articlecard-date {
-  text-align: left;
-  flex: 1 1;
   text-align: center;
+  line-height: 1;
+  flex: 1 1;
   margin: 0;
   min-width: 0;
 }
@@ -295,7 +298,7 @@ html {
   border-color: rgb(50, 50, 50);
   margin-right: 20%;
   margin-left: 20%;
-  margin-top: 0.5em;
+  margin-top: 1em;
   opacity: 0.5;
 }
 #div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-tags {
@@ -305,6 +308,7 @@ html {
   text-wrap: balance;
   gap: 0 0.2em;
   width: 100%;
+  padding-top: 0.5em;
 }
 #div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-tags .p-articlecard-tags {
   padding: 0;

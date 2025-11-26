@@ -204,7 +204,7 @@ function ArticleCard({ article }) {
                             >
                                 {articleData.author}
                             </p>
-                            <p id="p-articlecard-separator">___ . ___</p>
+                            <p id="p-articlecard-separator">⋅─⊱༺♰༻⊰─⋅</p>
                             <p id="p-articlecard-date">{articleData.date}</p>
                         </div>
                         <div id="div-tag-stitch"></div>

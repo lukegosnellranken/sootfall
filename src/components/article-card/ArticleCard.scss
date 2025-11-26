@@ -92,6 +92,7 @@
                         @include pm-reset;
                         @include common-text;
                         padding-top: 1em;
+                        padding-bottom: .5em;
                         letter-spacing: 0.03em;
                         font-weight: bold;
                         text-align: center;
@@ -130,11 +131,13 @@
                     #p-articlecard-author {
                         @include origin-link;
                         transition: $site-transition;
-                        text-align: right;
-                        flex: 1 1 0;
                         text-align: center;
+                        line-height: 1;
+                        flex: 1 1 0;
                         margin: 0;
                         min-width: 0;
+                        text-wrap: balance;
+
 
                         &:hover {
                             transform: $site-transform;
@@ -147,12 +150,13 @@
                         flex: 1 1 0;
                         margin: 0;
                         min-width: 0;
+                        width: 50px;
                     }
 
                     #p-articlecard-date {
-                        text-align: left;
-                        flex: 1 1 0;
                         text-align: center;
+                        line-height: 1;
+                        flex: 1 1 0;
                         margin: 0;
                         min-width: 0;
                     }
@@ -164,7 +168,7 @@
                     border-color: rgb(50, 50, 50);
                     margin-right: 20%;
                     margin-left: 20%;
-                    margin-top: .5em;
+                    margin-top: 1em;
                     opacity: .5;
                 }
 
@@ -174,6 +178,7 @@
                     text-wrap: balance;
                     gap: 0 .2em;
                     width: 100%;
+                    padding-top: .5em;
 
                     .p-articlecard-tags {
                         @include pm-reset;
