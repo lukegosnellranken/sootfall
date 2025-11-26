@@ -244,6 +244,12 @@ $card-vertical-margin-mobile: .5em;
     margin-right: 3%;
 }
 
+// Container padding
+@mixin container-padding {
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
 // Common text styles
 @mixin common-text {
     color: $site-text-color;

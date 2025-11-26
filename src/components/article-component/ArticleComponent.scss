@@ -18,11 +18,11 @@ body.loading-active #div-articlecomponent-full-article-container {
     #div-articlecomponent-full-article {
         display: block;
         width: 75%;
-        margin-right: .75%;
         box-sizing: border-box; // Needed for consistent width on iOS
+        @include container-padding;
+
         @media screen and (max-width: 1200px) {
             width: 100%;
-            margin-right: 0;
         }
     }
 
@@ -31,6 +31,7 @@ body.loading-active #div-articlecomponent-full-article-container {
         width: 25%;
         margin-left: .75%;
         box-sizing: border-box; // Needed for consistent width on iOS
+        @include container-padding;
         @media screen and (max-width: 1200px) {
             width: 100%;
             margin-left: 0;

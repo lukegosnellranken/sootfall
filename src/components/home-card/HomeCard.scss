@@ -10,9 +10,6 @@
     padding-bottom: .1em;
     width: 100%;
 
-    @media screen and (max-width: 1200px) {
-        margin-top: 1em;
-    }
     @media screen and (max-width: 800px) {
         margin-top: $card-vertical-margin-mobile;
         box-shadow: var(--site-box-shadow-top);

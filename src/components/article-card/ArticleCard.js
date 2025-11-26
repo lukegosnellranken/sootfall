@@ -212,13 +212,15 @@ function ArticleCard({ article }) {
                         </div>
                         <div id="div-articlecard-author-date-container">
                             <div id="div-articlecard-author-date" className={authorDateAlignmentClass}>
-                                <p id="p-articlecard-author"
-                                    onClick={(e) => {
+                                <p id="p-articlecard-author">
+                                    <span
+                                        onClick={(e) => {
                                             e.stopPropagation();
                                             handleNavigation(`/authors/${articleData.author.toLowerCase()}`);
-                                    }}
-                                >
-                                    {articleData.author}
+                                        }}
+                                    >
+                                        {articleData.author}
+                                    </span>
                                 </p>
                                 <p id="p-articlecard-separator">⋅─⊱༺♰༻⊰─⋅</p>
                                 <p id="p-articlecard-date">{articleData.date}</p>

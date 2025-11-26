@@ -1430,3 +1430,16 @@ body.loading-active #appDiv {
     transform: rotate(360deg);
   }
 }
+html, body {
+  margin: 0;
+  background-color: #000000; /* or your site background */
+}
+
+.main-container {
+  min-height: 100%;
+  min-height: 100dvh;
+}
+
+html, body {
+  overscroll-behavior: none;
+}

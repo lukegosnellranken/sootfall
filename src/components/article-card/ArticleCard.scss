@@ -139,16 +139,20 @@
 
                         #p-articlecard-author {
                             @include origin-link;
-                            transition: $site-transition;
                             line-height: 1;
                             flex: 1 1 0;
                             margin: 0;
                             min-width: 0;
                             text-wrap: balance;
 
+                            span {
+                                transition: $site-transition;
+                                cursor: pointer;
+                                display: inline-block; /* Essential for transform to work */
 
-                            &:hover {
-                                transform: $site-transform;
+                                &:hover {
+                                    transform: $site-transform;
+                                }
                             }
                         }
 

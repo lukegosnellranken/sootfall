@@ -273,14 +273,18 @@ html {
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
   line-height: 1;
   flex: 1 1;
   margin: 0;
   min-width: 0;
   text-wrap: balance;
 }
-#div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-author-date-container #div-articlecard-author-date #p-articlecard-author:hover {
+#div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-author-date-container #div-articlecard-author-date #p-articlecard-author span {
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  display: inline-block; /* Essential for transform to work */
+}
+#div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-author-date-container #div-articlecard-author-date #p-articlecard-author span:hover {
   transform: scale(1.1);
 }
 #div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-author-date-container #div-articlecard-author-date #p-articlecard-separator {
@@ -598,13 +602,13 @@ body.loading-active #div-articlecomponent-full-article-container {
 #div-articlecomponent-full-article-container #div-articlecomponent-full-article {
   display: block;
   width: 75%;
-  margin-right: 0.75%;
   box-sizing: border-box;
+  padding-left: 3%;
+  padding-right: 3%;
 }
 @media screen and (max-width: 1200px) {
   #div-articlecomponent-full-article-container #div-articlecomponent-full-article {
     width: 100%;
-    margin-right: 0;
   }
 }
 #div-articlecomponent-full-article-container #div-articlecomponent-full-article-side-card {
@@ -612,6 +616,8 @@ body.loading-active #div-articlecomponent-full-article-container {
   width: 25%;
   margin-left: 0.75%;
   box-sizing: border-box;
+  padding-left: 3%;
+  padding-right: 3%;
 }
 @media screen and (max-width: 1200px) {
   #div-articlecomponent-full-article-container #div-articlecomponent-full-article-side-card {
@@ -871,7 +877,6 @@ html {
   justify-content: center;
   width: 50%;
   align-items: center;
-  margin-left: 0.5em;
   padding-left: 1em;
   box-sizing: border-box;
 }
@@ -899,36 +904,12 @@ html {
   border: solid rgb(50, 50, 50);
   opacity: 0.75;
   overflow: hidden;
-  width: 100%;
-  height: 12em;
+  aspect-ratio: 1/1; /* Ensures the image is always square */
+  min-height: 75px;
+  min-width: 75px;
   object-fit: cover;
   opacity: 0.75;
   display: block;
-}
-@media screen and (max-width: 1500px) {
-  .article-link #div-articlesidecardcontent-container #div-articlesidecardcontent-image #image-articlesidecardcontent {
-    height: 8em;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .article-link #div-articlesidecardcontent-container #div-articlesidecardcontent-image #image-articlesidecardcontent {
-    height: 12em;
-  }
-}
-@media screen and (max-width: 1000px) {
-  .article-link #div-articlesidecardcontent-container #div-articlesidecardcontent-image #image-articlesidecardcontent {
-    height: 8em;
-  }
-}
-@media screen and (max-width: 600px) {
-  .article-link #div-articlesidecardcontent-container #div-articlesidecardcontent-image #image-articlesidecardcontent {
-    height: 7em;
-  }
-}
-@media screen and (max-width: 500px) {
-  .article-link #div-articlesidecardcontent-container #div-articlesidecardcontent-image #image-articlesidecardcontent {
-    height: 5em;
-  }
 }
 .article-link #div-articlesidecardcontent-container #div-articlesidecardcontent-title {
   display: flex;
