@@ -210,36 +210,40 @@ function ArticleCard({ article }) {
                         <div id="div-articlecard-title">
                             <p id="p-articlecard-title">{articleData.title}</p>
                         </div>
-                        <div id="div-articlecard-author-date" className={authorDateAlignmentClass}>
-                            <p id="p-articlecard-author"
-                                onClick={(e) => {
-                                        e.stopPropagation();
-                                        handleNavigation(`/authors/${articleData.author.toLowerCase()}`);
-                                }}
-                            >
-                                {articleData.author}
-                            </p>
-                            <p id="p-articlecard-separator">⋅─⊱༺♰༻⊰─⋅</p>
-                            <p id="p-articlecard-date">{articleData.date}</p>
+                        <div id="div-articlecard-author-date-container">
+                            <div id="div-articlecard-author-date" className={authorDateAlignmentClass}>
+                                <p id="p-articlecard-author"
+                                    onClick={(e) => {
+                                            e.stopPropagation();
+                                            handleNavigation(`/authors/${articleData.author.toLowerCase()}`);
+                                    }}
+                                >
+                                    {articleData.author}
+                                </p>
+                                <p id="p-articlecard-separator">⋅─⊱༺♰༻⊰─⋅</p>
+                                <p id="p-articlecard-date">{articleData.date}</p>
+                            </div>
                         </div>
                         <div id="div-tag-stitch"></div>
-                        <div id="div-articlecard-tags">
-                            {
-                                articleData.tags ?
-                                articleData.tags.map((item => (
-                                    <p
-                                        key={item}
-                                        className="p-articlecard-tags"
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            handleNavigation(`/tags/${item}`);
-                                        }}
-                                    >
-                                        {item}
-                                    </p>
-                                )))
-                                : <p className="p-articlecard-tags" style={{ visibility: "hidden" }}>|</p>
-                            }
+                        <div id="div-article-tags-container">
+                            <div id="div-articlecard-tags">
+                                {
+                                    articleData.tags ?
+                                    articleData.tags.map((item => (
+                                        <p
+                                            key={item}
+                                            className="p-articlecard-tags"
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                handleNavigation(`/tags/${item}`);
+                                            }}
+                                        >
+                                            {item}
+                                        </p>
+                                    )))
+                                    : <p className="p-articlecard-tags" style={{ visibility: "hidden" }}>|</p>
+                                }
+                            </div>
                         </div>
                         {readAloud &&
                             <div id="div-readAloud">

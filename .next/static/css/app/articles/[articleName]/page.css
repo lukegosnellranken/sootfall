@@ -239,7 +239,11 @@ html {
     font-size: var(--site-size-artTitle-800);
   }
 }
-#div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-author-date {
+#div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-author-date-container {
+  display: flex;
+  justify-content: center;
+}
+#div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-author-date-container #div-articlecard-author-date {
   color: var(--site-theme-text-color);
   text-shadow: var(--site-theme-text-shadow);
   font-family: var(--site-font);
@@ -252,18 +256,19 @@ html {
   white-space: nowrap;
   gap: 0.5em;
   font-size: var(--site-size-artAuthDate-full);
+  width: 95%;
 }
 @media screen and (max-width: 1400px) {
-  #div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-author-date {
+  #div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-author-date-container #div-articlecard-author-date {
     font-size: var(--site-size-artAuthDate-1400);
   }
 }
 @media screen and (max-width: 800px) {
-  #div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-author-date {
+  #div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-author-date-container #div-articlecard-author-date {
     font-size: var(--site-size-artAuthDate-800);
   }
 }
-#div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-author-date #p-articlecard-author {
+#div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-author-date-container #div-articlecard-author-date #p-articlecard-author {
   text-decoration: underline dashed;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
@@ -275,10 +280,10 @@ html {
   min-width: 0;
   text-wrap: balance;
 }
-#div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-author-date #p-articlecard-author:hover {
+#div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-author-date-container #div-articlecard-author-date #p-articlecard-author:hover {
   transform: scale(1.1);
 }
-#div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-author-date #p-articlecard-separator {
+#div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-author-date-container #div-articlecard-author-date #p-articlecard-separator {
   opacity: 0.5;
   line-height: 100%;
   -webkit-user-select: none;
@@ -288,8 +293,14 @@ html {
   flex: 1 1;
   margin: 0;
   min-width: 0;
+  flex: 0 0 20%;
 }
-#div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-author-date #p-articlecard-date {
+@media screen and (max-width: 800px) {
+  #div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-author-date-container #div-articlecard-author-date #p-articlecard-separator {
+    flex: 0 0 33.33%;
+  }
+}
+#div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-author-date-container #div-articlecard-author-date #p-articlecard-date {
   line-height: 1;
   flex: 1 1;
   margin: 0;
@@ -316,14 +327,20 @@ html {
   margin-top: 1em;
   opacity: 0.5;
 }
+#div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-tags-container {
+  display: flex;
+  justify-content: center;
+}
 #div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-tags {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   text-wrap: balance;
   gap: 0 0.2em;
-  width: 100%;
   padding-top: 0.5em;
+  width: auto;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 #div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-tags .p-articlecard-tags {
   padding: 0;
