@@ -226,46 +226,45 @@ function ArticleCard({ article }) {
                                 : <p className="p-articlecard-tags" style={{ visibility: "hidden" }}>|</p>
                             }
                         </div>
+                        {readAloud &&
+                            <div id="div-readAloud">
+                                <div id="div-articlecard-voicesynthesis">
+                                    <select
+                                        id="select-voice"
+                                        className={isReading ? "select-disable" : ""}
+                                        disabled={isReading}
+                                        value={selectedVoice}
+                                        onChange={e => setSelectedVoice(e.target.value)}
+                                    >
+                                        {voices.map((voice, index) => (
+                                            <option key={voice.name} className="option-voice" value={voice.name}>
+                                                Read Aloud with Voice #{index + 1}
+                                            </option>
+                                        ))}
+                                    </select>
+                                    <button id="btn-read" onClick={() => readArticle(removeImagesAndLinks(articleData.content))}>
+                                        <i id="i-btn-read" className="material-icons">
+                                            {isReading ? "stop" : "play_arrow"}
+                                        </i>
+                                    </button>
+                                    {speechMethodSupport.current &&
+                                        <button 
+                                            id="btn-pause"
+                                            className={isReading ? "" : "btn-disable"}
+                                            disabled={!isReading}
+                                            onClick={() => pauseArticle()}
+                                        >
+                                            <i id="i-btn-pause" className="material-icons">
+                                                {isPaused ? "play_circle_outline" : "pause_circle_outline"}
+                                            </i>
+                                        </button>
+                                    }
+                                </div>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div className="separator"></div>
-                {readAloud &&
-                    <div id="div-readAloud">
-                        <div id="div-articlecard-voicesynthesis">
-                            <select
-                                id="select-voice"
-                                className={isReading ? "select-disable" : ""}
-                                disabled={isReading}
-                                value={selectedVoice}
-                                onChange={e => setSelectedVoice(e.target.value)}
-                            >
-                                {voices.map((voice, index) => (
-                                    <option key={voice.name} className="option-voice" value={voice.name}>
-                                        Read Aloud with Voice #{index + 1}
-                                    </option>
-                                ))}
-                            </select>
-                            <button id="btn-read" onClick={() => readArticle(removeImagesAndLinks(articleData.content))}>
-                                <i id="i-btn-read" className="material-icons">
-                                    {isReading ? "stop" : "play_arrow"}
-                                </i>
-                            </button>
-                            {speechMethodSupport.current &&
-                                <button 
-                                    id="btn-pause"
-                                    className={isReading ? "" : "btn-disable"}
-                                    disabled={!isReading}
-                                    onClick={() => pauseArticle()}
-                                >
-                                    <i id="i-btn-pause" className="material-icons">
-                                        {isPaused ? "play_circle_outline" : "pause_circle_outline"}
-                                    </i>
-                                </button>
-                            }
-                        </div>
-                        <div className="separator"></div>
-                    </div>
-                }
                 <div id="div-articlecard-main-content">
                     <div id="p-articlecard-main-content"><ReactMarkdown>{articleData.content}</ReactMarkdown></div>
                 </div>

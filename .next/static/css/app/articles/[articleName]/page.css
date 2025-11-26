@@ -154,7 +154,7 @@ html {
   display: flex;
   justify-content: center;
   padding-top: 2.5em;
-  padding-bottom: 2.5em;
+  padding-bottom: 0.5em;
 }
 @media screen and (max-width: 1000px) {
   #div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date {
@@ -196,6 +196,7 @@ html {
   flex-direction: column;
   padding-left: 2em;
   padding-right: 2em;
+  padding-top: 2em;
   width: 50%;
 }
 @media screen and (max-width: 1000px) {
@@ -332,11 +333,14 @@ html {
 #div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-image-title-date #div-articlecard-title-date-tags #div-articlecard-tags .p-articlecard-tags:hover {
   transform: scale(1.1);
 }
+#div-articlecard-full-article-card #div-articlecard-stitch #div-readAloud {
+  padding-top: 2em;
+}
 #div-articlecard-full-article-card #div-articlecard-stitch #div-readAloud #div-articlecard-voicesynthesis {
   display: flex;
   justify-content: center;
   margin-top: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 #div-articlecard-full-article-card #div-articlecard-stitch #div-readAloud #div-articlecard-voicesynthesis #select-voice {
   margin-right: 0.5em;
@@ -389,7 +393,6 @@ html {
 #div-articlecard-full-article-card #div-articlecard-stitch #div-articlecard-main-content {
   display: flex;
   justify-content: center;
-  padding-top: 2em;
   padding-bottom: 1.5em;
   padding-right: 10%;
   padding-left: 10%;

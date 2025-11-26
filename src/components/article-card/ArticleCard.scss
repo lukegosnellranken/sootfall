@@ -47,7 +47,7 @@
         #div-articlecard-image-title-date {
             @include flex-center;
             padding-top: 2.5em;
-            padding-bottom: 2.5em;
+            padding-bottom: .5em;
 
             @media screen and (max-width: 1000px) {
                 padding-top: 1em;
@@ -80,6 +80,7 @@
                 flex-direction: column;
                 padding-left: 2em;
                 padding-right: 2em;
+                padding-top: 2em;
                 width: 50%;
 
                 @media screen and (max-width: 1000px) {
@@ -205,10 +206,11 @@
         }
 
         #div-readAloud {
+            padding-top: 2em;
             #div-articlecard-voicesynthesis {
                 @include flex-center;
                 margin-top: 1em;
-                margin-bottom: 1em;
+                margin-bottom: .5em;
 
                 #select-voice {
                     margin-right: .5em;
@@ -268,7 +270,6 @@
 
         #div-articlecard-main-content {
             @include flex-center;
-            padding-top: 2em;
             padding-bottom: 1.5em;
             padding-right: 10%;
             padding-left: 10%;
