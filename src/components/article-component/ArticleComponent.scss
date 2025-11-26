@@ -5,11 +5,16 @@ body.loading-active #div-articlecomponent-full-article-container {
 }
 
 #div-articlecomponent-full-article-container {
-    display: flex;
+    @include flex-center;
+    @include container-width;
+    @include container-padding;
+    box-sizing: border-box;
+    // display: flex;
     flex-direction: row;
     justify-content:space-between;
     box-sizing: border-box; // Needed for consistent width on iOS
     width: 100%; // Needed for consistent width on iOS
+    
     @media screen and (max-width: 1200px) {
         justify-content: center;
         flex-direction: column;
@@ -19,7 +24,6 @@ body.loading-active #div-articlecomponent-full-article-container {
         display: block;
         width: 75%;
         box-sizing: border-box; // Needed for consistent width on iOS
-        @include container-padding;
 
         @media screen and (max-width: 1200px) {
             width: 100%;
@@ -31,7 +35,7 @@ body.loading-active #div-articlecomponent-full-article-container {
         width: 25%;
         margin-left: .75%;
         box-sizing: border-box; // Needed for consistent width on iOS
-        @include container-padding;
+
         @media screen and (max-width: 1200px) {
             width: 100%;
             margin-left: 0;

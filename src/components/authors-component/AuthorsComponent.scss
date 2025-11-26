@@ -1,10 +1,18 @@
 @use '../../config/variables' as *;
 
 #authorscomponent-container {
+    @include flex-center;
     @include container-width;
-    @include container-margin;
+    @include container-padding;
+    box-sizing: border-box;
+
+    @media screen and (max-width: 1200px) {
+        display: flex;
+        flex-direction: column;
+    }
 
     #div-authorscomponent-card {
-        width: 100%;
+        display: block;
+        @include container-width;
     }
 }

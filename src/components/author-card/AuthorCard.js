@@ -10,7 +10,9 @@ function AuthorCard(props) {
         token = process.env.NEXT_PUBLIC_API_TOKEN_LOCAL;
     }
     else if (env === 'cloud') {
-        API_URL = process.env.NEXT_PUBLIC_API_URL_CLOUD;
+        // API_URL = process.env.NEXT_PUBLIC_API_URL_CLOUD;
+        // Set to nothing, as the URL is included already in props.authorImage.formats.small.url
+        API_URL = '';
         token = process.env.NEXT_PUBLIC_API_TOKEN_CLOUD;
     }
     

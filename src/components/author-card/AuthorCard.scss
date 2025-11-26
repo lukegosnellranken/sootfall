@@ -52,27 +52,12 @@
                 #img-authorcard {
                     @include common-image;
                     overflow: hidden;
-                    width: 100%;
-                    height: 15em;
+                    aspect-ratio: 1 / 1; /* Ensures the image is always square */
+                    min-height: 75px;
+                    min-width: 75px;
                     object-fit: cover;
                     opacity: .75;
                     display: block;
-
-                    @media screen and (max-width: 1050px) {
-                        height: 12em;
-                    }
-                    @media screen and (max-width: 800px) {
-                        height: 10em;
-                    }
-                    @media screen and (max-width: 550px) {
-                        height: 8em;
-                    }
-                    @media screen and (max-width: 425px) {
-                        height: 7em;
-                    }
-                    @media screen and (max-width: 400px) {
-                        height: 6em;
-                    }
                 }
             }
 
