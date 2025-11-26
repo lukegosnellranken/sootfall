@@ -134,8 +134,6 @@ function Nav() {
         hideContent();
     }, [hamburgerOpen, settingsOpen, hideContent]);
 
-    console.log(readAloud);
-
     return(
         <div id="div-nav-container">
             <nav id="nav-nav">
