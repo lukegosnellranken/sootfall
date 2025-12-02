@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Dark",
     "backgroundImage": "linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.95))",
-    "backgroundImageGradient": "linear-gradient(to bottom, rgba(5, 5, 5, .7), rgba(0, 0, 0, .7))",
+    "backgroundImageGradient": "linear-gradient(to bottom, rgba(5, 5, 5, .55), rgba(0, 0, 0, .55))",
     "backgroundImageBanner": "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6))",
     "backgroundColorInput": "rgba(10, 10, 10, 0.95)",
     "backgroundColorInputAlt": "rgba(50, 50, 50, 0.95)",

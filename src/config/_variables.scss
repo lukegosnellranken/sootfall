@@ -234,8 +234,12 @@ $card-vertical-margin-mobile: .5em;
 
 // Container width
 @mixin container-width {
-    width: 100%;
+    width: 80%;
     max-width: $site-container-max-width;
+
+    @media (max-width: 800px) {
+        width: 100%;
+    }
 }
 
 // Container margin
