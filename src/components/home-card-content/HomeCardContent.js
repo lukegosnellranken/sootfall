@@ -83,6 +83,7 @@ function HomeCardContent(props) {
                                         : props.tags.slice(0, visibleCount);
                                     return (
                                         <>
+                                            <span className="span-homecardcontent-tags-label">Tags: </span>
                                             {tagsToShow.map(item => (
                                                 <p
                                                     key={item}
