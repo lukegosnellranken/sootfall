@@ -19,25 +19,25 @@
         @include stitch;
 
         #div-homemobilecard-content-container {
-            display: flex;
+            @include flex-center;
 
             #div-homemobilecard-image {
                 @include flex-center;
                 align-items: center;
-                width: 25%;
-                padding-left: 1em;
-                padding-top: 1em;
-                padding-bottom: 1em;
+                width: 100%;
+                // padding-top: .5em;
+                // padding-bottom: .5em;
 
                 @media screen and (max-width: 800px) {
-                    display: none;
+                    // display: none;
                 }
 
                 #image-homemobilecard-image {
-                    width: 100%;
+                    width: 25%;
                     border-width: 3px 3px 5px 5px;
-                    border-radius: 4% 95% 6% 95% / 95% 4% 92% 5%;
-                    transform: rotate(-.8deg);
+                    border-radius: 10% 90% 10% 90% / 90% 10% 90% 10%;
+
+                    transform: rotate(-4deg);
                     border: solid rgb(50, 50, 50);
                 }
             }
@@ -65,7 +65,7 @@
                 #h1-homemobilecard-title {
                     @include common-text;
                     @include gradient-title;
-                    text-align: left;
+                    text-align: center;
                     padding-top: .5em;
                     padding-left: 1rem;
 
@@ -79,15 +79,14 @@
                 #p-homemobilecard-content {
                     @include common-text;
                     font-size: var(--site-size-hscContent-full);
-                    padding-left: 1rem;
                     text-wrap: balance;
+                    text-align: center;
 
                     @media screen and (max-width: 1400px) {
                         font-size: var(--site-size-hscContent-1400);
                     }
                     @media screen and (max-width: 800px) {
                         font-size: var(--site-size-hscContent-800);
-                        padding-left: 0;
                     }
                 }
             }

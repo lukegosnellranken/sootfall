@@ -114,8 +114,8 @@
 
                         #span-homecardcontent-author,
                         #span-homecardcontent-date {
-                            margin-left: .3em;
-                            margin-right: .3em;
+                            margin-left: .5em;
+                            margin-right: .5em;
                         }
 
                         #span-homecardcontent-author {
@@ -192,6 +192,7 @@
                         .tags-ellipsis {
                             cursor: default;
                             pointer-events: none;
+                            text-align: bottom;
                         }
                     }
                 }
