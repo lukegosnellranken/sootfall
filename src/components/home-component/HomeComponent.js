@@ -6,6 +6,8 @@ import { useSettings } from "../../config/Settings";
 import HomeCard from "../home-card/HomeCard";
 import HomeSideCard from "../home-side-card/HomeSideCard";
 import HomeMobileCard from "../home-mobile-card/HomeMobileCard";
+import wutheringLight from '../../app/public/images/wuthering-side-light.jpg';
+import wutheringDark from '../../app/public/images/wuthering-side-dark.jpg';
 import dustLight from '../../app/public/images/dust-light.jpg';
 import dustDark from '../../app/public/images/dust-dark.jpg';
 import beans from '../../app/public/images/coffee-beans.png';
@@ -34,7 +36,7 @@ function HomeComponent(props) {
             <div id="div-homecomponent-side-card">
                 <HomeSideCard
                     title1 = "Settle in the dust..."
-                    image1 = {lightTheme ? dustLight.src : dustDark.src}
+                    image1 = {lightTheme ? wutheringLight.src : wutheringDark.src}
                     description1 = "for a moment's rest among a heap of works stirred up from the blaze beneath the breath."
                     title2 = "Buy Us a Coffee"
                     image2 = {beans.src}

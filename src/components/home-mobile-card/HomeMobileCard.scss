@@ -57,8 +57,8 @@
                     }
                     @media screen and (max-width: 800px) {
                         font-size: var(--site-size-header-800);
-                        margin-bottom: .5rem;
-                        margin-top: .5rem;
+                        margin-bottom: .5em;
+                        margin-top: .5em;
                     }
                 }
 
@@ -66,10 +66,8 @@
                     @include common-text;
                     @include gradient-title;
                     text-align: center;
-                    padding-top: .5em;
-                    padding-left: 1rem;
 
-                    @media screen and (max-width: 800px) {
+                    @media screen and (max-width: 1000px) {
                         @include pm-reset;
                         margin-bottom: .5rem;
                         margin-top: .5rem;
@@ -85,6 +83,13 @@
                     @media screen and (max-width: 1400px) {
                         font-size: var(--site-size-hscContent-1400);
                     }
+
+                    @media screen and (max-width: 1000px) {
+                        @include pm-reset;
+                        margin-bottom: .5rem;
+                        margin-top: .5rem;
+                    }
+                    
                     @media screen and (max-width: 800px) {
                         font-size: var(--site-size-hscContent-800);
                     }
