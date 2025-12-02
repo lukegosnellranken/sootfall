@@ -10,13 +10,17 @@
             align-items: center;
 
             #div-nav-list {
-                width: 100%;
+                width: 80%;
                 height: 4.5rem;
                 max-width: 1950px;
                 padding-left: 1em;
                 padding-right: 1em;
                 display: flex;
                 justify-content: space-around;
+
+                @media screen and (max-width: 1200px) {
+                    width: 90%;
+                }
 
                 @media screen and (max-width: 800px) {
                     display: none;
@@ -29,7 +33,7 @@
                     list-style-type: none;
                     text-decoration: none;
                     flex-direction: row;
-                    justify-content: space-evenly;
+                    justify-content: space-between;
                     padding-left: 0%;
                     margin-left: 0%;
                 }
@@ -39,6 +43,8 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    padding-left: 5%;
+                    padding-right: 5%;
 
                     #input-search {
                         @include common-text;
