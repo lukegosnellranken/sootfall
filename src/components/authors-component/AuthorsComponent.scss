@@ -3,6 +3,7 @@
 #authorscomponent-container {
     @include flex-center;
     @include container-width;
+    @include container-margin;
     box-sizing: border-box;
 
     @media screen and (max-width: 1200px) {

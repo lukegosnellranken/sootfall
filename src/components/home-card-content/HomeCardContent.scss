@@ -21,7 +21,7 @@
 
         #div-homecardcontent-image {
             @include flex-center;
-            width: 25%;
+            width: 20%;
             max-width: 300px;
             align-items: center;
             padding-left: .5em;
@@ -34,7 +34,7 @@
             #image-homecardcontent-image {
                 @include common-image;
                 overflow: hidden;
-                width: 100%;
+                width: 80%;
                 aspect-ratio: 1 / 1; /* Ensures the image is always square */
                 min-height: 75px;
                 min-width: 75px;
@@ -47,9 +47,9 @@
         #div-homecardcontent-article-info {
             @include flex-center;
             width: 75%;
-            margin-right: .5em;;
+            margin-right: .5em;
 
-            @media screen and (max-width: 700px) {
+            @media screen and (max-width: 800px) {
                 width: 66.66%;
             }
 

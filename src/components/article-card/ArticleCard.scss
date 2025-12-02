@@ -59,9 +59,10 @@
             #div-articlecard-image {
                 @include flex-center;
                 align-items: center;
-                width: 50%;
+                width: 40%;
                 overflow: hidden;
                 max-width: 20em;
+                padding-left: 2em;
 
                 @media screen and (max-width: 1000px) {
                     @include pm-reset;
@@ -70,7 +71,7 @@
 
                 #img-articlecard-image {
                     @include common-image;
-                    width: 100%;
+                    width: 80%;
                     object-fit: contain;
                 }
             }
@@ -78,10 +79,10 @@
             #div-articlecard-title-date-tags {
                 @include flex-center;
                 flex-direction: column;
-                padding-left: 2em;
-                padding-right: 2em;
+                // padding-left: 2em;
+                padding-right: 4em;
                 padding-top: 2em;
-                width: 50%;
+                width: 60%;
 
                 @media screen and (max-width: 1000px) {
                     width: 100%;

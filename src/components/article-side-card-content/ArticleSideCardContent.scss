@@ -21,7 +21,7 @@
 
         #div-articlesidecardcontent-image {
             @include flex-center;
-            width: 50%;
+            width: 35%;
             align-items: center;
             // margin-left: .5em;
             padding-left: 1em;
@@ -41,8 +41,8 @@
                 @include common-image;
                 overflow: hidden;
                 aspect-ratio: 1 / 1; /* Ensures the image is always square */
-                min-height: 75px;
-                min-width: 75px;
+                // min-height: 75px;
+                // min-width: 75px;
                 object-fit: cover;
                 opacity: .75;
                 display: block;
@@ -51,7 +51,7 @@
 
         #div-articlesidecardcontent-title {
             @include flex-center;
-            width: 50%;
+            width: 65%;
             margin-top: 1.5%;
             flex-direction: column;
             margin-left: 2.5%;
