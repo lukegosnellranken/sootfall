@@ -51,7 +51,6 @@
 
             @media screen and (max-width: 1000px) {
                 padding-top: 2em;
-                padding-bottom: 1em;
                 flex-direction: column;
                 align-items: center;
             }
@@ -312,6 +311,7 @@
             padding-bottom: 2em;
             padding-right: 10%;
             padding-left: 10%;
+            padding-top: 2em;
             box-sizing: border-box;
 
             @media screen and (max-width: 1000px) {
