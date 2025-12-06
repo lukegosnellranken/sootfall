@@ -63,8 +63,8 @@
                     width: 95%;
                     margin: 0;
                     margin-left: .5rem;
-                    padding-top: 0.25em;
-                    padding-bottom: 0.25em;
+                    padding-top: 0.25rem;
+                    padding-bottom: 0.25rem;
                     display: flex;
                     justify-content: left;
                     text-align: left;
@@ -91,8 +91,8 @@
 
                     #p-homecardcontent-author-date {
                         @include pm-reset;
-                        padding-top: 0.25em;
-                        padding-bottom: 0.25em;
+                        padding-top: 0.25rem;
+                        padding-bottom: 0.25rem;
                         margin-left: .5rem;
                         font-size: var(--site-size-hccDate-full);
                         color: var(--site-text-color);
@@ -144,8 +144,8 @@
                         overflow: hidden;
                         text-overflow: ellipsis;
                         width: 100%;
-                        padding-top: .5em;
-                        padding-bottom: 0.25em;
+                        padding-top: .25rem;
+                        padding-bottom: 0.25rem;
                         margin-left: .5rem;
                         text-align: left;
 

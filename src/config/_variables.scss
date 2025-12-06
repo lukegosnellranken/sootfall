@@ -1,6 +1,6 @@
 // Various site styles
 $site-font: Bilbo, sans-serif;
-$site-letter-spacing: 0.03em;
+$site-letter-spacing: 0.03rem;
 $site-font-size-adjust: cap-height 1;
 
 // Set variables to custom properties defined in Settings.js: Theme
@@ -104,7 +104,7 @@ $site-search-mobile: 100%;
 
 $site-active-background-color: #818181; // switch item
 $site-disabled-background-color: #414141; // pagination
-$site-letter-spacing: .03em;
+$site-letter-spacing: .03rem;
 $site-transition: all .2s ease-in-out;
 $site-transform: scale(1.1);
 $site-container-max-width: 1920px;
@@ -216,8 +216,8 @@ $fs-content: 200%;
 
 // Top margin and padding of all cards
 $card-vertical-margin: 1.5rem;
-$card-vertical-padding: .2em;
-$card-vertical-margin-mobile: .5em;
+$card-vertical-padding: .2rem;
+$card-vertical-margin-mobile: .5rem;
 
 // Unset base element styles (use for overriding mobile browser-enforced styling)
 @mixin unset {
