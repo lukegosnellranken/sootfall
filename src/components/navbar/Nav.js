@@ -15,7 +15,7 @@ function Nav() {
     const [search, setSearch] = useState("");
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
     const [settingsOpen, setSettingsOpen] = useState(false);
-    const { theme, setTheme, font, setFont, size, setSize, readAloud, setReadAloud } = useSettings();
+    const { theme, setTheme, font, setFont, size, setSize, readAloud, setReadAloud, voicesAvailable } = useSettings();
     // Dropdown variables
     const [themeDropdownOpen, setThemeDropdownOpen] = useState(false);
     const themeOptions = themes.map(t => t.title);
@@ -345,19 +345,21 @@ function Nav() {
                                 </div>
                             </div>
                         </div>
-                        <div className="switch-item">
-                            <div className="switch-item-text">Audio</div>
-                            <div className="switch-item-selection">
-                                <div className="div-switch">
-                                    <label className="switch">
-                                        <input id="switch-input" type="checkbox" onChange={toggleReadAloud} checked={readAloud}/>
-                                        <span className="slider">
-                                            <span className="slider-knob"></span>
-                                        </span>
-                                    </label>
+                        {voicesAvailable && (
+                            <div className="switch-item">
+                                <div className="switch-item-text">Audio</div>
+                                <div className="switch-item-selection">
+                                    <div className="div-switch">
+                                        <label className="switch">
+                                            <input id="switch-input" type="checkbox" onChange={toggleReadAloud} checked={readAloud}/>
+                                            <span className="slider">
+                                                <span className="slider-knob"></span>
+                                            </span>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        )}
                     </div>
                 </ul>
             </div>

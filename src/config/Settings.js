@@ -12,6 +12,7 @@ export const Settings = ({ children }) => {
     const [font, setFont] = useState(fonts.find(f => f.id === 1));
     const [size, setSize] = useState(sizes.find(s => s.id === 1));
     const [readAloud, setReadAloud] = useState(false);
+    const [voicesAvailable, setVoicesAvailable] = useState(false);
 
     useEffect(() => {
         const storedTheme = localStorage.getItem("theme");
@@ -143,7 +144,7 @@ export const Settings = ({ children }) => {
     }, [theme, font, size, readAloud]);
 
     return (
-        <SettingsContext.Provider value= {{ font, setFont, readAloud, setReadAloud, theme, setTheme, size, setSize }}>
+        <SettingsContext.Provider value= {{ font, setFont, readAloud, setReadAloud, voicesAvailable, setVoicesAvailable, theme, setTheme, size, setSize }}>
             {children}
         </SettingsContext.Provider>
     );
