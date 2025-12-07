@@ -84,9 +84,13 @@
                 display: flex;
                 justify-content: left;
                 font-size: var(--site-size-ascAuth-full);
+                margin-top: .25rem;
 
                 @media screen and (max-width: 1400px) {
                     font-size: var(--site-size-ascAuth-1400);
+                }
+                @media screen and (max-width: 1200px) {
+                    margin-top: .5rem;
                 }
                 @media screen and (max-width: 800px) {
                     font-size: var(--site-size-ascAuth-800);

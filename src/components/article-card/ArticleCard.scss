@@ -78,12 +78,12 @@
             #div-articlecard-title-date-tags {
                 @include flex-center;
                 flex-direction: column;
-                padding-right: 4em;
-                padding-top: 2em;
+                padding-right: 4rem;
                 width: 60%;
 
                 @media screen and (max-width: 1000px) {
                     padding-right: 0;
+                    padding-top: 2rem;
                     width: 100%;
                 }
 
@@ -93,9 +93,9 @@
                     #p-articlecard-title {
                         @include pm-reset;
                         @include common-text;
-                        padding-top: 1em;
-                        padding-bottom: .5em;
-                        letter-spacing: 0.03em;
+                        padding-top: 1rem;
+                        padding-bottom: .5rem;
+                        letter-spacing: 0.03rem;
                         font-weight: bold;
                         text-align: center;
                         text-wrap: balance;
@@ -126,7 +126,7 @@
                         align-items: center;
                         letter-spacing: $site-letter-spacing;
                         white-space: nowrap;
-                        gap: 0.5em;
+                        gap: 0.5rem;
                         font-size: var(--site-size-artAuthDate-full);
                         width: 95%;
 
@@ -197,12 +197,12 @@
                 }
 
                 #div-tag-stitch {
-                    border-bottom-width: .1em;
+                    border-bottom-width: .1rem;
                     border-bottom-style: solid;
                     border-color: rgb(50, 50, 50);
                     margin-right: 20%;
                     margin-left: 20%;
-                    margin-top: 1em;
+                    margin-top: 1rem;
                     opacity: .5;
                 }
 
@@ -215,8 +215,8 @@
                     @include flex-center;
                     flex-wrap: wrap;
                     text-wrap: balance;
-                    gap: 0 .2em;
-                    padding-top: .5em;
+                    gap: 0 .2rem;
+                    padding-top: .5rem;
                     width: auto;
                     padding-left: 5%;
                     padding-right: 5%;
@@ -225,9 +225,9 @@
                         @include pm-reset;
                         @include common-text;
                         letter-spacing: $site-letter-spacing;
-                        padding-top: 0.5em;
-                        margin-left: .5em;
-                        margin-right: .5em;
+                        padding-top: 0.5rem;
+                        margin-left: .5rem;
+                        margin-right: .5rem;
                         transition: $site-transition;
                         cursor: pointer;
                         font-size: var(--site-size-artTags-full);
@@ -251,15 +251,15 @@
             padding-top: 2em;
             #div-articlecard-voicesynthesis {
                 @include flex-center;
-                margin-top: 1em;
-                margin-bottom: .5em;
+                margin-top: 1rem;
+                margin-bottom: .5rem;
 
                 #select-voice {
-                    margin-right: .5em;
+                    margin-right: .5rem;
                     background-color: var(--site-background-color-switch-item);
                     color: black !important;
                     font-family: var(--site-font);
-                    border-radius: .25em;
+                    border-radius: .25rem;
                     border-width: 1px;
                     border-color: gray;
                     cursor: pointer;
@@ -283,7 +283,7 @@
                     background-color: var(--site-background-color-switch-item);
                     min-width: 35px;
                     text-align: center;
-                    border-radius: .25em;
+                    border-radius: .25rem;
                     border-style: solid;
                     border-color: gray;
                     border-width: 1px;
@@ -295,7 +295,7 @@
                 }
 
                 #btn-pause {
-                    margin-left: .25em;
+                    margin-left: .25rem;
                 }
 
                 .btn-disable,
@@ -308,10 +308,10 @@
 
         #div-articlecard-main-content {
             @include flex-center;
-            padding-bottom: 2em;
+            padding-bottom: 2rem;
             padding-right: 10%;
             padding-left: 10%;
-            padding-top: 2em;
+            padding-top: 2rem;
             box-sizing: border-box;
 
             @media screen and (max-width: 1000px) {
@@ -326,7 +326,7 @@
 
             #p-articlecard-main-content {
                 @include common-text;
-                letter-spacing: 0.03em;
+                letter-spacing: 0.03rem;
                 line-height: 1.5;
                 box-sizing: border-box;
                 font-size: var(--site-size-artContent-full);
@@ -344,7 +344,7 @@
                 img {
                     @include common-image;
                     width: 75%;
-                    max-width: 15em;
+                    max-width: 15rem;
                 }
             }
         }
