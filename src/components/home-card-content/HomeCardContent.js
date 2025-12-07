@@ -65,7 +65,7 @@ function HomeCardContent(props) {
                                     >
                                         {props.author}
                                     </span>
-                                    ⋆ 
+                                    ∽ 
                                     <span id="span-homecardcontent-date">{props.date}</span>
                                 </p>
                             }
