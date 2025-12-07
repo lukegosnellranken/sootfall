@@ -8,8 +8,7 @@ import ReactMarkdown from 'react-markdown'
 import './ArticleCard.scss';
 
 function ArticleCard({ article }) {
-    const { readAloud, setVoicesAvailable } = useSettings();
-    const [voices, setVoices] = useState([]);
+    const { readAloud, voices, voicesAvailable } = useSettings();
     const [selectedVoice, setSelectedVoice] = useState("");
     const [isReading, setIsReading] = useState(false);
     const [isPaused, setIsPaused] = useState(false);
@@ -91,38 +90,6 @@ function ArticleCard({ article }) {
             speechMethodSupport.current = false;
         }
     }, []);
-
-    // Load speech synthesis voices
-    useEffect(() => {
-        function loadVoices() {
-            const allVoices = window.speechSynthesis.getVoices();
-            const uniqueVoices = allVoices.reduce((acc, voice) => {
-            if (!acc.some(v => v.voiceURI === voice.voiceURI)) {
-                acc.push(voice);
-            }
-            return acc;
-            }, []);
-            const englishVoices = uniqueVoices.filter(voice =>
-                voice.lang.toLowerCase().startsWith('en') &&
-                (
-                    voice.name.toLowerCase().includes('english') ||
-                    voice.name.toLowerCase().includes('English') ||
-                    voice.name.toLowerCase().includes('US') ||
-                    voice.name.toLowerCase().includes('United')
-                )
-            );
-            setVoices(englishVoices);
-            if (englishVoices.length > 0 && !selectedVoice) {
-                setSelectedVoice(englishVoices[0].name);
-            }
-            setVoicesAvailable(englishVoices.length > 0);
-        }
-        loadVoices();
-        window.speechSynthesis.onvoiceschanged = loadVoices;
-        return () => {
-            window.speechSynthesis.onvoiceschanged = null;
-        }
-    }, [readAloud, selectedVoice, setVoicesAvailable]);
 
     function readArticle(content) {
         if (!isReading) {
@@ -246,7 +213,7 @@ function ArticleCard({ article }) {
                                 }
                             </div>
                         </div>
-                        {readAloud && voices.length > 0 &&
+                        {readAloud && voicesAvailable &&
                             <div id="div-readAloud">
                                 <div id="div-articlecard-voicesynthesis">
                                     <select

@@ -12,7 +12,25 @@ export const Settings = ({ children }) => {
     const [font, setFont] = useState(fonts.find(f => f.id === 1));
     const [size, setSize] = useState(sizes.find(s => s.id === 1));
     const [readAloud, setReadAloud] = useState(false);
+    const [voices, setVoices] = useState([]);
     const [voicesAvailable, setVoicesAvailable] = useState(false);
+
+    useEffect(() => {
+        const synth = window.speechSynthesis;
+        const loadVoices = () => {
+            const availableVoices = synth.getVoices();
+            if (availableVoices.length > 0) {
+                const filteredVoices = availableVoices.filter(voice => voice.lang.includes('en'));
+                setVoices(filteredVoices);
+                setVoicesAvailable(true);
+            }
+        };
+        loadVoices();
+        synth.onvoiceschanged = loadVoices;
+        return () => {
+            synth.onvoiceschanged = null;
+        };
+    }, []);
 
     useEffect(() => {
         const storedTheme = localStorage.getItem("theme");
@@ -144,7 +162,7 @@ export const Settings = ({ children }) => {
     }, [theme, font, size, readAloud]);
 
     return (
-        <SettingsContext.Provider value= {{ font, setFont, readAloud, setReadAloud, voicesAvailable, setVoicesAvailable, theme, setTheme, size, setSize }}>
+        <SettingsContext.Provider value= {{ font, setFont, readAloud, setReadAloud, voices, voicesAvailable, setVoicesAvailable, theme, setTheme, size, setSize }}>
             {children}
         </SettingsContext.Provider>
     );
