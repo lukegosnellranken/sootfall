@@ -43,8 +43,8 @@ export const Settings = ({ children }) => {
 
         // Return stored JSON if it exists, otherwise return themes object with an id of 1
         const initialTheme = storedTheme ? JSON.parse(storedTheme) : themes.find(t => t.id === 1);
-        const initialFont = storedFont ? JSON.parse(storedFont) : themes.find(t => t.id === 1);
-        const initialSize = storedSize ? JSON.parse(storedSize) : themes.find(t => t.id === 1);
+        const initialFont = storedFont ? JSON.parse(storedFont) : fonts.find(f => f.id === 1);
+        const initialSize = storedSize ? JSON.parse(storedSize) : sizes.find(s => s.id === 1);
         // Get readAloud from localStorage, otherwise set to false by default
         const initialReadAloud = storedReadAloud !== null ? JSON.parse(storedReadAloud) : false;
         setTheme(initialTheme);
