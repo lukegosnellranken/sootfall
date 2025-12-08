@@ -40,7 +40,7 @@ function HomeComponent(props) {
                     description1 = "for a moment's rest among a heap of works stirred up from the blaze beneath the breath."
                     title2 = "Buy Us a Coffee"
                     image2 = {beans.src}
-                    description2 = "Sootfall is ran completely independently. To help continue covering site costs, please consider donating. All gifts are greatly appreciated."
+                    description2 = "Sootfall is run completely independently. To help continue covering site costs, please consider donating. All gifts are greatly appreciated."
                 />
             </div>
         </div>

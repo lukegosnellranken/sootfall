@@ -3,9 +3,15 @@ import Link from "next/link";
 import './NavItem.scss';
 
 function NavItem(props) {
+    const isExternal = props.href && props.href.startsWith('http');
+
     return (
         <li className="li-nav-item">
-            <Link href={`/${props.href}`}>{props.name}</Link>
+            {isExternal ? (
+                <a href={props.href} target="_blank" rel="noopener noreferrer">{props.name}</a>
+            ) : (
+                <Link href={props.href === '#' ? '#' : `/${props.href}`}>{props.name}</Link>
+            )}
         </li>
     )
 }

@@ -143,7 +143,7 @@ function Nav() {
                             <NavItem name="Home" href="#"/>
                             <NavItem name="Writings" href="articles"/>
                             <NavItem name="Authors" href="authors"/>
-                            <NavItem name="Donate" href="#"/>
+                            <NavItem name="Donate" href="https://buymeacoffee.com/lukegosnell"/>
                         </ul>
                         <form id="form-search" onSubmit={handleSearch}>
                             <input
@@ -222,7 +222,7 @@ function Nav() {
                             <NavItem name="Home" href="#"/>
                             <NavItem name="Writings" href="articles"/>
                             <NavItem name="Authors" href="authors"/>
-                            <NavItem name="Donate" href="#"/>
+                            <NavItem name="Donate" href="https://buymeacoffee.com/lukegosnell"/>
                         </div>
                     </ul>
                 </div>
