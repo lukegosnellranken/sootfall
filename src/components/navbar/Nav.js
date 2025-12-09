@@ -140,7 +140,7 @@ function Nav() {
                 <div id="nav-list-desktop">
                     <div id="div-nav-list">
                         <ul id="ul-nav-list">
-                            <NavItem name="Home" href="#"/>
+                            <NavItem name="Home" href="/"/>
                             <NavItem name="Writings" href="articles"/>
                             <NavItem name="Authors" href="authors"/>
                             <NavItem name="Donate" href="https://buymeacoffee.com/lukegosnell"/>
@@ -219,7 +219,7 @@ function Nav() {
                     <ul id="ul-nav-list-mobile" className={hamburgerOpen && !settingsOpen ? "open" : "close"}>
                         <div className="settings-stitch"></div>
                         <div id="div-ul-nav-list-mobile-items">
-                            <NavItem name="Home" href="#"/>
+                            <NavItem name="Home" href="/"/>
                             <NavItem name="Writings" href="articles"/>
                             <NavItem name="Authors" href="authors"/>
                             <NavItem name="Donate" href="https://buymeacoffee.com/lukegosnell"/>
