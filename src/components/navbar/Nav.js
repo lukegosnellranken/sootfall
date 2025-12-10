@@ -27,8 +27,8 @@ function Nav() {
     const [svgColorDormant, setSvgColorDormant] = useState('');
     const [svgColorActive, setSvgColorActive] = useState('');
     useEffect(() => {
-        const colorDormant = getComputedStyle(document.documentElement).getPropertyValue('--site-theme-element-color-dormant');
-        const colorActive = getComputedStyle(document.documentElement).getPropertyValue('--site-theme-text-color');
+        const colorDormant = getComputedStyle(document.documentElement).getPropertyValue('--site-theme-element-color-dormant').trim();
+        const colorActive = getComputedStyle(document.documentElement).getPropertyValue('--site-theme-text-color').trim();
         setSvgColorDormant(colorDormant);
         setSvgColorActive(colorActive);
     }, [theme]);
