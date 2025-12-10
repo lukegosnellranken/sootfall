@@ -101,9 +101,11 @@
                         font-family: var(--site-font);
                         @media screen and (max-width: 1400px) {
                             font-size: var(--site-size-hccDate-1400);
+                            padding-top: 0.15rem;
                         }
                         @media screen and (max-width: 800px) {
                             font-size: var(--site-size-hccDate-800);
+                            padding-top: .1rem;
                         }
 
                         #span-homecardcontent-author,
@@ -144,10 +146,17 @@
                         overflow: hidden;
                         text-overflow: ellipsis;
                         width: 100%;
-                        padding-top: .25rem;
+                        padding-top: 1rem;
                         padding-bottom: 0.25rem;
                         margin-left: .5rem;
                         text-align: left;
+
+                        @media screen and (max-width: 1400px) {
+                            padding-top: .5rem;
+                        }
+                        @media screen and (max-width: 800px) {
+                            padding-top: .25rem;
+                        }
 
                         .p-homecardcontent-tags, .span-homecardcontent-tags-label {
                             display: inline-block;
