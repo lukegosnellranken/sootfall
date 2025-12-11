@@ -53,7 +53,10 @@ function ArticleCard({ article }) {
             tags = tags.split(",").map(item => item.trim());
         }
 
-        const content = article.content.replaceAll(/https?:\/\/[^/]+/g, API_URL);
+        // Should not have to do this...
+        // const content = article.content.replaceAll(/https?:\/\/[^/]+/g, API_URL);
+
+        const content = article.content;
 
         return {
             title: title,
@@ -253,7 +256,17 @@ function ArticleCard({ article }) {
                 </div>
                 <div className="separator"></div>
                 <div id="div-articlecard-main-content">
-                    <div id="p-articlecard-main-content"><ReactMarkdown>{articleData.content}</ReactMarkdown></div>
+                    <div id="p-articlecard-main-content">
+                        <ReactMarkdown
+                            components={{
+                                a: ({node, ...props}) => (
+                                <a {...props} target="_blank" rel="noopener noreferrer" className="content-link" />
+                                ),
+                            }}
+                        >
+                            {articleData.content}
+                        </ReactMarkdown>
+                    </div>
                 </div>
             </div>
         </div>

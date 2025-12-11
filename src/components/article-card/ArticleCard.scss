@@ -344,6 +344,11 @@
                     max-width: 15rem;
                 }
             }
+
+            .content-link {
+                @include common-text;
+                text-decoration: "underline";
+            }
         }
     }
 }
