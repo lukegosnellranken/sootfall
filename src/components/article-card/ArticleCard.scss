@@ -349,6 +349,67 @@
                 @include common-text;
                 text-decoration: "underline";
             }
+
+            .embed {
+                @include flex-center;
+                padding-top: .5rem;
+                padding-bottom: .5rem;
+            }
+
+            .rsme-instagram-embed {
+                @include flex-center;
+                // @media screen and (max-width: 600px) {
+                //     max-width: 80% !important;
+                // }
+                // @media screen and (max-width: 500px) {
+                //     max-width: 70% !important;
+                // }
+            }
+
+            .instagram-embed iframe, .youtube-iframe iframe, .tiktok-embed iframe {
+                border: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                width: 100% !important;
+                min-width: 200px !important;
+                display: inline-block !important;
+            }
+
+            .rsme-youtube-embed {
+                width: 80%;
+                @media screen and (max-width: 800px) {
+                    width: 100%;
+                }
+            }
+
+            .tiktok-embed {
+                width: 100%;
+                height: auto;
+                @media screen and (max-width: 400px) {
+                    // aspect-ratio: 2 / 10;
+                    // .tiktok-embed {
+                    //     width: calc(325px * 0.85); /* sync wrapper width */
+                    // }
+                }
+
+                .tiktok-embed-container {
+                    @include flex-center;
+                }
+
+                iframe {
+                    width: 100%;
+                    // @media screen and (max-width: 400px) {
+                    //     transform: scale(.85); /* shrink */
+                    //     transform-origin: center;
+                    // }
+                }
+            } 
+
+            .youtube-iframe iframe {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 16 / 9;
+            }
         }
     }
 }

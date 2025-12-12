@@ -5,6 +5,12 @@ import { useSettings } from '../../config/Settings';
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import ReactMarkdown from 'react-markdown'
+import {
+  InstagramEmbed,
+  TwitterEmbed,
+  TikTokEmbed,
+  YouTubeEmbed,
+} from 'react-social-media-embed';
 import './ArticleCard.scss';
 
 function ArticleCard({ article }) {
@@ -262,6 +268,44 @@ function ArticleCard({ article }) {
                                 a: ({node, ...props}) => (
                                 <a {...props} target="_blank" rel="noopener noreferrer" className="content-link" />
                                 ),
+                                p: ({ node, children }) => {
+                                    const text = children[0];
+                                    if (typeof text === "string") {
+                                        if (text.startsWith("https://www.instagram.com/p/")) {
+                                            return (
+                                                <div className="embed instagram-embed">
+                                                        <InstagramEmbed url={text} />
+                                                </div>
+                                            );
+                                        }
+                                        if (text.startsWith("https://twitter.com/")) {
+                                            return (
+                                                <div className="embed twitter-embed">
+                                                    <TwitterEmbed url={text} width={550} />
+                                                </div>
+                                            );
+                                        }
+                                        if (text.startsWith("https://www.tiktok.com/")) {
+                                            return (
+                                                <div className="embed tiktok-embed">
+                                                    <TikTokEmbed url={text} />
+                                                </div>
+                                            );
+                                        }
+                                        if (
+                                            text.startsWith("https://www.youtube.com/") ||
+                                            text.startsWith("https://youtu.be/")
+                                        ) {
+                                            return (
+                                                <div className="embed youtube-embed">
+                                                    <YouTubeEmbed url={text} />
+                                                </div>
+                                            );
+                                        }
+                                    }
+
+                                    return <p>{children}</p>;
+                                },
                             }}
                         >
                             {articleData.content}
