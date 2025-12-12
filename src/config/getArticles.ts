@@ -11,7 +11,11 @@ interface Article {
 async function getArticles(fetchEndpoint: string) {
     let articles: Article[] = [];
     try {
-        const res = await fetch(fetchEndpoint, { headers: { 'Authorization': `Bearer ${token}` } });
+        const res = await fetch(fetchEndpoint, { headers: { 
+            'Authorization': `Bearer ${token}`,
+            // Prevents AWS caching API responses -- only fetch updated content
+            'Cache-Control': 'no-cache'  
+        } });
         if (res.ok) {
             const data = await res.json();
             articles = data.data.map((item: any) => {
