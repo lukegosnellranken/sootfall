@@ -308,6 +308,33 @@ function ArticleCard({ article }) {
                                 <a {...props} target="_blank" rel="noopener noreferrer" className="content-link" />
                                 ),
                                 p: ({ node, children }) => {
+                                    // Check if the paragraph starts with an image and is followed by " | "
+                                    // ReactMarkdown processes images into an <img> JSX element within the children array.
+                                    // The text content after the image will be in the next child.
+                                    if (
+                                        children.length >= 2 &&
+                                        typeof children[0] === 'object' && children[0] !== null &&
+                                        children[0].type === 'img' && // This checks if the first child is an <img> element
+                                        typeof children[1] === 'string' &&
+                                        children[1].startsWith(" | ")
+                                    ) {
+                                        const imageElement = children[0]; // The <img> JSX element
+                                        const textContent = children[1].substring(3).trim(); // Text after " | "
+
+                                        return (
+                                            <div className="div-side-by-side">
+                                                <div className="div-side-1">
+                                                    {imageElement}
+                                                </div>
+                                                <div className="div-side-2">
+                                                    {mediaChecks(textContent)}
+                                                </div>
+                                            </div>
+                                        );
+                                    }
+
+                                    // Original logic for handling text content and embedded media.
+                                    // This applies if the paragraph does not start with an image followed by " | ".
                                     let text = children[0];
                                     if (typeof text === "string") {
                                         const firstPipeIndex = text.indexOf(" | ");
@@ -331,6 +358,7 @@ function ArticleCard({ article }) {
                                         }
                                     }
 
+                                    // Default rendering for any other complex paragraph structures or if children[0] is not a string
                                     return <p>{children}</p>;
                                 },
                             }}
