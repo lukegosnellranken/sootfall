@@ -331,10 +331,29 @@ function ArticleCard({ article }) {
                                                 </div>
                                             </div>
                                         );
+
+                                    // Check if the paragraph starts with text and is followed by an image after the " | "
+                                    } else if (
+                                        children.length >= 2 &&
+                                        typeof children[0] === 'string' &&
+                                        children[0].includes(" | ") &&
+                                        typeof children[1] === 'object' &&
+                                        children[1] !== null &&
+                                        children[1].type === 'img'
+                                        ) {
+                                        const textContent = children[0].split(" | ")[0].trim(); // text before the pipe
+                                        const imageElement = children[1];
+
+                                        return (
+                                            <div className="div-side-by-side">
+                                            <div className="div-side-1">{mediaChecks(textContent)}</div>
+                                            <div className="div-side-2">{imageElement}</div>
+                                            </div>
+                                        );
                                     }
 
                                     // Original logic for handling text content and embedded media.
-                                    // This applies if the paragraph does not start with an image followed by " | ".
+                                    // This applies for paragraphs without an image on either/both sides of the " | ".
                                     let text = children[0];
                                     if (typeof text === "string") {
                                         const firstPipeIndex = text.indexOf(" | ");

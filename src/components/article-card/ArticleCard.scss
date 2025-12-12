@@ -355,15 +355,19 @@
                 @media screen and (max-width: 1400px) {
                     display: block;
                 }
-            }
 
-            .div-side-1, .div-side-2 {
-                width: 50%;
-                align-self: center;
-                text-align: center;
-                @media screen and (max-width: 1400px) {
-                    width: 100%;
-                    text-align: left;
+                .div-side-1, .div-side-2 {
+                    width: 50%;
+                    align-self: center;
+                    text-align: center;
+                    @media screen and (max-width: 1400px) {
+                        width: 100%;
+                        text-align: left;
+                    }
+                }
+
+                .div-side-1:has(img), .div-side-2:has(img) {
+                    @include flex-center;
                 }
             }
 
