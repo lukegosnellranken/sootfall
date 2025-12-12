@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import ReactMarkdown from 'react-markdown'
 import {
   InstagramEmbed,
-  TwitterEmbed,
+  XEmbed,
   TikTokEmbed,
   YouTubeEmbed,
 } from 'react-social-media-embed';
@@ -274,14 +274,14 @@ function ArticleCard({ article }) {
                                         if (text.startsWith("https://www.instagram.com/p/")) {
                                             return (
                                                 <div className="embed instagram-embed">
-                                                        <InstagramEmbed url={text} />
+                                                    <InstagramEmbed url={text} />
                                                 </div>
                                             );
                                         }
-                                        if (text.startsWith("https://twitter.com/")) {
+                                        if (text.startsWith("https://x.com/")) {
                                             return (
-                                                <div className="embed twitter-embed">
-                                                    <TwitterEmbed url={text} width={550} />
+                                                <div className="embed x-embed">
+                                                    <XEmbed url={text} />
                                                 </div>
                                             );
                                         }

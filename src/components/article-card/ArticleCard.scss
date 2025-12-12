@@ -367,28 +367,16 @@
                     height: auto;
                     aspect-ratio: 16 / 9;
                 }
-
-                .tiktok-embed {
-                    width: 100%;
-                    height: auto;
-
-                    .tiktok-embed-container {
-                        @include flex-center;
-                    }
-
-                    iframe {
-                        width: 100%;
-                    }
-                } 
             }
 
             // Unsetting default embed styles
-            .instagram-embed iframe, .youtube-iframe iframe, .tiktok-embed iframe {
+            .instagram-embed iframe, .youtube-iframe iframe, .tiktok-embed iframe, .x-embed iframe {
                 border: none !important;
                 margin: 0 !important;
                 padding: 0 !important;
                 width: 100% !important;
                 min-width: 200px !important;
+                max-width: unset !important;
                 display: inline-block !important;
             }
         }
