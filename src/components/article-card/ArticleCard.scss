@@ -350,6 +350,23 @@
                 text-decoration: "underline";
             }
 
+            .div-side-by-side {
+                @include flex-center;
+                @media screen and (max-width: 1400px) {
+                    display: block;
+                }
+            }
+
+            .div-side-1, .div-side-2 {
+                width: 50%;
+                align-self: center;
+                text-align: center;
+                @media screen and (max-width: 1400px) {
+                    width: 100%;
+                    text-align: left;
+                }
+            }
+
             .embed {
                 @include flex-center;
                 padding-top: .5rem;

@@ -169,6 +169,45 @@ function ArticleCard({ article }) {
         return <div>Loading...</div>;
     }
 
+    function mediaChecks(text) {
+        switch (true) {
+            case text.startsWith("https://www.instagram.com/p/"):
+                return (
+                    <div className="embed instagram-embed">
+                        <InstagramEmbed url={text} />
+                    </div>
+                );
+            
+            case text.startsWith("https://x.com/"):
+                return (
+                    <div className="embed x-embed">
+                        <XEmbed url={text} />
+                    </div>
+                );
+
+            case text.startsWith("https://www.tiktok.com/"):
+                return (
+                    <div className="embed tiktok-embed">
+                        <TikTokEmbed url={text} />
+                    </div>
+                );
+
+            case text.startsWith("https://www.youtube.com/") || text.startsWith("https://youtu.be/"):
+                return (
+                    <div className="embed youtube-embed">
+                        <YouTubeEmbed url={text} />
+                    </div>
+                );
+            
+            default:
+                return (
+                    <div className="text-line">
+                        <p>{text}</p>
+                    </div>
+                );
+        }
+    }
+
     return (
         <div id="div-articlecard-full-article-card">
             <div id="div-articlecard-stitch">
@@ -269,38 +308,26 @@ function ArticleCard({ article }) {
                                 <a {...props} target="_blank" rel="noopener noreferrer" className="content-link" />
                                 ),
                                 p: ({ node, children }) => {
-                                    const text = children[0];
+                                    let text = children[0];
                                     if (typeof text === "string") {
-                                        if (text.startsWith("https://www.instagram.com/p/")) {
+                                        const firstPipeIndex = text.indexOf(" | ");
+                                        let left, right;
+                                        if (firstPipeIndex === -1) {
+                                            // No pipe found: everything goes into "left"
+                                            left = text;
+                                            right = "";
+                                            return (mediaChecks(left))
+                                        } else {
+                                            left = text.substring(0, firstPipeIndex);
+                                            right = text.substring(firstPipeIndex + 3);
+                                            left = mediaChecks(left);
+                                            right = mediaChecks(right);
                                             return (
-                                                <div className="embed instagram-embed">
-                                                    <InstagramEmbed url={text} />
+                                                <div className="div-side-by-side">
+                                                    <div className="div-side-1">{left}</div>
+                                                    <div className="div-side-2">{right}</div>
                                                 </div>
-                                            );
-                                        }
-                                        if (text.startsWith("https://x.com/")) {
-                                            return (
-                                                <div className="embed x-embed">
-                                                    <XEmbed url={text} />
-                                                </div>
-                                            );
-                                        }
-                                        if (text.startsWith("https://www.tiktok.com/")) {
-                                            return (
-                                                <div className="embed tiktok-embed">
-                                                    <TikTokEmbed url={text} />
-                                                </div>
-                                            );
-                                        }
-                                        if (
-                                            text.startsWith("https://www.youtube.com/") ||
-                                            text.startsWith("https://youtu.be/")
-                                        ) {
-                                            return (
-                                                <div className="embed youtube-embed">
-                                                    <YouTubeEmbed url={text} />
-                                                </div>
-                                            );
+                                            )
                                         }
                                     }
 
