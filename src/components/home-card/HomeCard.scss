@@ -1,5 +1,11 @@
 @use '../../config/variables' as *;
 
+#div-search-component {
+    @include flex-center;
+    @include container-width;
+    @include container-margin;
+}
+
 #div-homecard-card {
     background-image: var(--site-background-image-gradient);
     border-radius: 15px;
