@@ -5,7 +5,7 @@ import { backendLink, token } from '../../../config/api.ts';
 // Tell Next.js how often to revalidate this page (in seconds)
 export const revalidate = 60; // regenerate every 60 seconds
 
-// This function tells Next.js which article pages to pre-render at build time
+// Pre-render article pages at build time
 export async function generateStaticParams() {
   const res = await fetch(`${backendLink}/api/articles?populate=*`, {
     headers: { Authorization: `Bearer ${token}` },
@@ -18,7 +18,7 @@ export async function generateStaticParams() {
   }));
 }
 
-// Fetches a single article by its slug
+// Fetch a single article by its slug
 async function getArticle(articleName: string) {
   const res = await fetch(
     `${backendLink}/api/articles?filters[slug][$eq]=${articleName}&populate=*`,
@@ -36,13 +36,14 @@ async function getArticle(articleName: string) {
   return articles.data[0];
 }
 
-interface Props {
-  params: { articleName: string };
-}
-
-export default async function Article({ params }: Props) {
-  // params is a plain object, no await
-  const article = await getArticle(params.articleName);
+export default async function ArticlePage({
+  params,
+}: {
+  params: Promise<{ articleName: string }>;
+}) {
+  // Await params before using
+  const { articleName } = await params;
+  const article = await getArticle(articleName);
 
   if (!article) {
     notFound();

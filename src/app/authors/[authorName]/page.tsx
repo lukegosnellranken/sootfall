@@ -47,7 +47,7 @@ export default async function AuthorPage({
 }: {
   params: Promise<{ authorName: string }>;
 }) {
-  // Await params before using
+  // ✅ Await params before using
   const { authorName } = await params;
   const decodedAuthorName = decodeURIComponent(authorName);
 
