@@ -1,3 +1,7 @@
+// This file defines the component that is displayed when a page cannot be found.
+// It provides a user-friendly message indicating that no page was found.
+
+// We're importing necessary components and hooks here.
 import React from "react";
 import './notfound.scss';
 
@@ -10,4 +14,5 @@ function NotFound() {
     );
 }
 
+// We export the 'NoResults' component as the default export.
 export default NotFound; 
