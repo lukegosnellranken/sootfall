@@ -7,7 +7,7 @@ body.loading-active #div-articlecomponent-full-article-container {
 #div-article-component {
     @include flex-center;
     @include container-width;
-    @include container-margin;
+    @include container-spacing;
 }
 
 #div-articlecomponent-full-article-container {

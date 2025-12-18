@@ -3,7 +3,7 @@
 #div-search-component {
     @include flex-center;
     @include container-width;
-    @include container-margin;
+    @include container-spacing;
 }
 
 #div-homecard-card {

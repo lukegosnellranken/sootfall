@@ -2,7 +2,7 @@
 
 #div-tag-component {
     @include container-width;
-    @include container-margin;
+    @include container-spacing;
 }
 
 #tagcomponent-container {

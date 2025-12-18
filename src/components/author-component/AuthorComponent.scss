@@ -6,5 +6,5 @@ body.loading-active #authorscomponent-container {
 
 #div-author-component {
     @include container-width;
-    @include container-margin;
+    @include container-spacing;
 }

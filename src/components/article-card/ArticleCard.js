@@ -5,13 +5,29 @@ import { useSettings } from '../../config/Settings';
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import ReactMarkdown from 'react-markdown'
-import {
-  InstagramEmbed,
-  XEmbed,
-  TikTokEmbed,
-  YouTubeEmbed,
-} from 'react-social-media-embed';
 import './ArticleCard.scss';
+
+// Wrap each embed with dynamic import and disable SSR
+import dynamic from 'next/dynamic';
+const InstagramEmbed = dynamic(
+  () => import('react-social-media-embed').then(mod => mod.InstagramEmbed),
+  { ssr: false }
+);
+
+const XEmbed = dynamic(
+  () => import('react-social-media-embed').then(mod => mod.XEmbed),
+  { ssr: false }
+);
+
+const TikTokEmbed = dynamic(
+  () => import('react-social-media-embed').then(mod => mod.TikTokEmbed),
+  { ssr: false }
+);
+
+const YouTubeEmbed = dynamic(
+  () => import('react-social-media-embed').then(mod => mod.YouTubeEmbed),
+  { ssr: false }
+);
 
 function ArticleCard({ article }) {
     const { readAloud, voices, voicesAvailable } = useSettings();

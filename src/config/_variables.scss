@@ -239,13 +239,21 @@ $card-vertical-margin-mobile: .5rem;
 
     @media (max-width: 800px) {
         width: 100%;
+        box-sizing: border-box;
     }
 }
 
-// Container margin
-@mixin container-margin {
+// Container spacing
+@mixin container-spacing {
     margin-left: 3%;
     margin-right: 3%;
+
+    @media (max-width: 800px) {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
 }
 
 // Container padding

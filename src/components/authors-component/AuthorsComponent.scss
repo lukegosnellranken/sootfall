@@ -3,7 +3,7 @@
 #div-authors-component {
     @include flex-center;
     @include container-width;
-    @include container-margin;
+    @include container-spacing;
 }
 
 #authorscomponent-container {

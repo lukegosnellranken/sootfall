@@ -7,7 +7,7 @@ body.loading-active #homecomponent-container {
 #homecomponent-container {
     @include flex-center;
     @include container-width;
-    @include container-margin;
+    @include container-spacing;
     box-sizing: border-box;
 
     @media screen and (max-width: 1200px) {
