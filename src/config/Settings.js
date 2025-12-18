@@ -1,38 +1,59 @@
 "use client";
 
+// This file sets up global settings for the entire website, like themes, fonts, and text sizes.
+// It uses React's Context API to make these settings available to any part of the application.
+
 import { createContext, useContext, useEffect, useState } from "react";
+// These lines import predefined settings for themes, fonts, and text sizes from local JSON files.
 import themes from './themes.json';
 import fonts from './fonts.json';
 import sizes from './sizes.json';
 
+// createContext creates a "context" object. This object allows us to share data (like our settings)
+// throughout the component tree without having to pass props down manually at every level.
 const SettingsContext = createContext();
 
+// The 'Settings' component is a "Provider". It wraps around all other components in our app
+// and makes the current settings available to them.
 export const Settings = ({ children }) => {
-    const [theme, setTheme] = useState(themes.find(t => t.id === 1));
-    const [font, setFont] = useState(fonts.find(f => f.id === 1));
-    const [size, setSize] = useState(sizes.find(s => s.id === 1));
-    const [readAloud, setReadAloud] = useState(false);
-    const [voices, setVoices] = useState([]);
-    const [voicesAvailable, setVoicesAvailable] = useState(false);
+    // useState are "hooks" that allow us to add React state to functional components.
+    // Here, they are used to store the currently selected theme, font, size, and read-aloud preference.
+    // We initialize them with default values from our imported JSON files.
+    const [theme, setTheme] = useState(themes.find(t => t.id === 1)); // Current visual theme (e.g., light, dark)
+    const [font, setFont] = useState(fonts.find(f => f.id === 1));   // Current text font style
+    const [size, setSize] = useState(sizes.find(s => s.id === 1));   // Current text size settings
+    const [readAloud, setReadAloud] = useState(false);             // Whether text-to-speech is enabled
+    const [voices, setVoices] = useState([]);                       // List of available text-to-speech voices
+    const [voicesAvailable, setVoicesAvailable] = useState(false);  // Flag to indicate if voices are loaded
 
+    // This useEffect hook runs once when the component mounts (when the page loads).
+    // Its purpose is to detect and load available text-to-speech voices from the browser.
     useEffect(() => {
+        // 'window.speechSynthesis' is a browser API for text-to-speech.
         const synth = window.speechSynthesis;
         const loadVoices = () => {
+            // Get all voices available in the user's browser.
             const availableVoices = synth.getVoices();
             if (availableVoices.length > 0) {
+                // Filter for English voices to ensure relevant options.
                 const filteredVoices = availableVoices.filter(voice => voice.lang.includes('en'));
-                setVoices(filteredVoices);
-                setVoicesAvailable(true);
+                setVoices(filteredVoices);         // Store the filtered voices.
+                setVoicesAvailable(true);          // Mark voices as available.
             }
         };
-        loadVoices();
+        loadVoices(); // Call it once to load voices initially.
+        // If voices change (e.g., new language packs installed), reload them.
         synth.onvoiceschanged = loadVoices;
+        // Cleanup function: when the component unmounts, remove the event listener.
         return () => {
             synth.onvoiceschanged = null;
         };
-    }, []);
+    }, []); // The empty array [] means this effect runs only once after the initial render.
 
+    // This useEffect hook runs once when the component mounts to load user preferences
+    // from the browser's local storage. This way, settings persist across sessions.
     useEffect(() => {
+        // Attempt to retrieve previously saved settings from local storage.
         const storedTheme = localStorage.getItem("theme");
         const storedFont = localStorage.getItem("font");
         const storedSize = localStorage.getItem("size");
@@ -41,20 +62,25 @@ export const Settings = ({ children }) => {
         // For testing, nuke localStorage
         // localStorage.clear();
 
-        // Return stored JSON if it exists, otherwise return themes object with an id of 1
+        // If a setting was stored, parse it from JSON; otherwise, use the default (id=1).
         const initialTheme = storedTheme ? JSON.parse(storedTheme) : themes.find(t => t.id === 1);
         const initialFont = storedFont ? JSON.parse(storedFont) : fonts.find(f => f.id === 1);
         const initialSize = storedSize ? JSON.parse(storedSize) : sizes.find(s => s.id === 1);
-        // Get readAloud from localStorage, otherwise set to false by default
+        // Read-aloud is a boolean, default to false if not found.
         const initialReadAloud = storedReadAloud !== null ? JSON.parse(storedReadAloud) : false;
+
+        // Update the component's state with the loaded or default settings.
         setTheme(initialTheme);
         setFont(initialFont);
         setSize(initialSize);
         setReadAloud(initialReadAloud);
-    }, []);
+    }, []); // The empty array [] means this effect runs only once after the initial render.
 
-    // Persist config changes
+    // This useEffect hook runs whenever theme, font, size, or readAloud state changes.
+    // It's responsible for saving the current settings to local storage and applying them
+    // to the website's visual appearance by setting CSS variables.
     useEffect(() => {
+        // Save current settings to local storage so they are remembered.
         if (theme) {
             localStorage.setItem('theme', JSON.stringify(theme));
         }
@@ -68,7 +94,10 @@ export const Settings = ({ children }) => {
             localStorage.setItem('readAloud', JSON.stringify(readAloud));
         }
 
-         // Set CSS custom properties: Theme
+        // Apply theme settings to the document's root element (<html>).
+        // This is done by setting CSS Custom Properties (variables) that are
+        // then used in our CSS files to style the website dynamically.
+        // For example, '--site-theme' might control the general color scheme.
         if (theme) {
             document.documentElement.style.setProperty('--site-theme', theme.title);
             document.documentElement.style.setProperty('--site-theme-background-image', theme.backgroundImage);
@@ -89,12 +118,12 @@ export const Settings = ({ children }) => {
             document.documentElement.style.setProperty('--site-theme-element-color-dormant', theme.elementColorDormant);
         }
         
-        // Set CSS custom properties: Font
+        // Apply font settings by updating CSS variables.
         document.documentElement.style.setProperty('--site-font', font.value);
         document.documentElement.style.setProperty('--site-letter-spacing', font.letterSpacing);
         document.documentElement.style.setProperty('--site-font-size-adjust', font.fontSizeAdjust);
 
-        // Set CSS custom properties: Size
+        // Apply size settings by updating CSS variables.
         document.documentElement.style.setProperty('--site-size', size.title);
         document.documentElement.style.setProperty('--site-size-header-full', size.headerFull);
         document.documentElement.style.setProperty('--site-size-header-1400', size.header1400);
@@ -159,8 +188,10 @@ export const Settings = ({ children }) => {
         document.documentElement.style.setProperty('--site-size-ascAuth-full', size.ascAuthFull);
         document.documentElement.style.setProperty('--site-size-ascAuth-1400', size.ascAuth1400);
         document.documentElement.style.setProperty('--site-size-ascAuth-800', size.ascAuth800);
-    }, [theme, font, size, readAloud]);
+    }, [theme, font, size, readAloud]); // This effect re-runs whenever these values change.
 
+    // This part makes the settings and the functions to change them available to all
+    // components wrapped by the 'Settings' provider. 'children' represents those wrapped components.
     return (
         <SettingsContext.Provider value= {{ font, setFont, readAloud, setReadAloud, voices, voicesAvailable, setVoicesAvailable, theme, setTheme, size, setSize }}>
             {children}
@@ -168,4 +199,6 @@ export const Settings = ({ children }) => {
     );
 };
 
+// This is a custom hook that makes it easy for any component to access the current settings
+// without needing to know about the 'SettingsContext' directly. It simplifies using the context.
 export const useSettings = () => useContext(SettingsContext);
