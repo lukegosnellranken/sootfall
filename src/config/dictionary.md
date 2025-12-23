@@ -126,11 +126,3 @@ These properties control the font sizes of titles and author information within 
 *   **ascAuthFull**: Font size for article side card author information at full screen width.
 *   **ascAuth1400**: Font size for article side card author information at 1400px screen width.
 *   **ascAuth800**: Font size for article side card author information at 800px screen width.
-
-**Other Sizes:**
-These properties are defined as global CSS custom properties but are not explicitly referenced within the application's SCSS files. Their usage may be handled directly via JavaScript or intended for future styling.
-*   **sliderX-full**: Horizontal positioning for a slider component at full screen width. *(Note: This property is defined but not explicitly referenced in SCSS.)*
-*   **sliderX-800**: Horizontal positioning for a slider component at 800px screen width. *(Note: This property is defined but not explicitly referenced in SCSS.)*
-*   **sliderX-400**: Horizontal positioning for a slider component at 400px screen width. *(Note: This property is defined but not explicitly referenced in SCSS.)*
-*   **search-desktop**: Size setting for the desktop search component. *(Note: This property is defined but not explicitly referenced in SCSS.)*
-*   **search-mobile**: Size setting for the mobile search component. *(Note: This property is defined but not explicitly referenced in SCSS.)*

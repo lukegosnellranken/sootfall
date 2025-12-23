@@ -147,9 +147,6 @@ export const Settings = ({ children }) => {
         document.documentElement.style.setProperty('--site-size-ddHeight-1400', size.ddHeight1400);
         document.documentElement.style.setProperty('--site-size-ddHeight-800', size.ddHeight800);
         document.documentElement.style.setProperty('--site-size-ddHeight-400', size.ddHeight400);
-        document.documentElement.style.setProperty('--site-size-sliderX-full', size.sliderXFull);
-        document.documentElement.style.setProperty('--site-size-sliderX-800', size.sliderX800);
-        document.documentElement.style.setProperty('--site-size-sliderX-400', size.sliderX400);
         document.documentElement.style.setProperty('--site-size-search-desktop', size.searchDesktop);
         document.documentElement.style.setProperty('--site-size-search-mobile', size.searchMobile);
         document.documentElement.style.setProperty('--site-size-hccTitle-full', size.hccTitleFull);
